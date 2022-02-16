@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="57.8" height="48.84" viewBox="0 0 57.8 48.84">
+  <g id="descartado" transform="translate(9.422 11.494)">
+    <path id="Trazado_4390" data-name="Trazado 4390" d="M0,0H37.346V37.346H0Z" fill="none"/>
+    <path id="Trazado_4391" data-name="Trazado 4391" d="M22.508,9.327a5.327,5.327,0,1,1-5.327,5.327,5.343,5.343,0,0,1,5.327-5.327m0,23.971c7.191,0,15.448,3.463,15.981,5.327v2.663H6.527V38.625C7.06,36.761,15.316,33.3,22.508,33.3m0-29.3A10.654,10.654,0,1,0,33.162,14.654,10.517,10.517,0,0,0,22.508,4Zm0,23.971C15.316,27.971,1.2,31.434,1.2,38.625v7.99H43.815v-7.99C43.815,31.434,29.7,27.971,22.508,27.971Z" transform="translate(-10.622 -15.494)" fill="#707070"/>
+    <rect id="Rectángulo_91" data-name="Rectángulo 91" width="20.775" height="5.327" transform="translate(33.594 -6.412) rotate(45)" fill="#707070"/>
+    <rect id="Rectángulo_92" data-name="Rectángulo 92" width="20.775" height="5.327" transform="translate(29.922 8.356) rotate(-45)" fill="#707070"/>
+  </g>
+</svg>

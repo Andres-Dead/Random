@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="108" height="142" viewBox="0 0 108 142">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_400" data-name="Rectángulo 400" width="108" height="142" transform="translate(1812 1840)" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectángulo_321" data-name="Rectángulo 321" width="273" height="142" transform="translate(1661 1849)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5db64b"/>
+      <stop offset="0.23" stop-color="#4da667"/>
+      <stop offset="0.72" stop-color="#247ead"/>
+      <stop offset="1" stop-color="#0c66d8"/>
+    </linearGradient>
+  </defs>
+  <g id="Enmascarar_grupo_9" data-name="Enmascarar grupo 9" transform="translate(-1812 -1840)" clip-path="url(#clip-path)">
+    <g id="Enmascarar_grupo_7" data-name="Enmascarar grupo 7" transform="translate(123 -9)" clip-path="url(#clip-path-2)">
+      <g id="Layer_2" data-name="Layer 2" transform="matrix(-0.017, -1, 1, -0.017, 1695.584, 2070.145)">
+        <g id="Layer_1" data-name="Layer 1" transform="translate(0 0)">
+          <path id="Trazado_1" data-name="Trazado 1" d="M103.6,207.274A103.617,103.617,0,1,1,207.274,103.617,103.617,103.617,0,0,1,103.6,207.274Zm0-189.4a85.721,85.721,0,1,0,85.781,85.741A85.721,85.721,0,0,0,103.6,17.876Z" transform="translate(-0.04 -0.04)" fill="url(#linear-gradient)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

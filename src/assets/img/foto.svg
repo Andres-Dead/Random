@@ -1,0 +1,25 @@
+<svg id="Componente_14_1" data-name="Componente 14 – 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="159" height="163" viewBox="0 0 159 163">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_21" data-name="Rectángulo 21" width="153" height="153" transform="translate(285 244)" fill="#b2b3b5"/>
+    </clipPath>
+  </defs>
+  <g id="Componente_13_1" data-name="Componente 13 – 1">
+    <g id="Enmascarar_grupo_5" data-name="Enmascarar grupo 5" transform="translate(-285 -244)" opacity="0.43" clip-path="url(#clip-path)">
+      <g id="face_black_24dp" transform="translate(285 244)">
+        <path id="Trazado_283" data-name="Trazado 283" d="M0,0H153V153H0Z" fill="none"/>
+        <path id="Trazado_284" data-name="Trazado 284" d="M65.344,82.875a7.969,7.969,0,1,1-7.969-7.969A7.972,7.972,0,0,1,65.344,82.875Zm30.281-7.969a7.969,7.969,0,1,0,7.969,7.969A7.972,7.972,0,0,0,95.625,74.906ZM140.25,76.5A63.75,63.75,0,1,1,76.5,12.75,63.773,63.773,0,0,1,140.25,76.5ZM67.957,26.265A50.933,50.933,0,0,0,111.563,51a53.205,53.205,0,0,0,8.543-.765A50.933,50.933,0,0,0,76.5,25.5,53.2,53.2,0,0,0,67.957,26.265ZM28.177,60.371A51.293,51.293,0,0,0,51.51,32.066,51.293,51.293,0,0,0,28.177,60.371ZM127.5,76.5a50.233,50.233,0,0,0-2.1-14.28,65.7,65.7,0,0,1-13.834,1.53,63.747,63.747,0,0,1-49.47-23.524A63.853,63.853,0,0,1,25.5,75.607a4.165,4.165,0,0,1,0,.893,51,51,0,0,0,102,0Z" fill="#b2b3b5"/>
+      </g>
+    </g>
+    <g id="Grupo_70" data-name="Grupo 70" transform="translate(-246.889 -359)">
+      <rect id="Rectángulo_25" data-name="Rectángulo 25" width="34" height="34" rx="8" transform="translate(371.889 488)" fill="#1c4a83"/>
+      <g id="edit" transform="translate(378.243 494.243)">
+        <path id="Trazado_32" data-name="Trazado 32" d="M156.367,44.39l12.062-12.062,3.89,3.89L160.257,48.28Zm0,0" transform="translate(-154.399 -29.68)" fill="#fff"/>
+        <path id="Trazado_33" data-name="Trazado 33" d="M132.543,201.518l4.3-1.191-3.108-3.108Zm0,0" transform="translate(-132.543 -180.949)" fill="#fff"/>
+        <path id="Trazado_34" data-name="Trazado 34" d="M320.324.872a2.068,2.068,0,0,0-2.921,0l-.876.876,3.89,3.89.876-.876a2.067,2.067,0,0,0,0-2.921Zm0,0" transform="translate(-301.328 -0.269)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+  <text id="Agrega_una_foto_de_perfil" data-name="Agrega una 
+foto de perfil" transform="translate(75 72)" fill="#707070" font-size="14" font-family="SegoeUI, Segoe UI"><tspan x="-37.734" y="0">Agrega una </tspan><tspan x="-40.175" y="19">foto de perfil</tspan></text>
+</svg>

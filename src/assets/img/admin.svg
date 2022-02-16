@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="53.776" height="53.776" viewBox="0 0 53.776 53.776">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5db64b"/>
+      <stop offset="0.23" stop-color="#4da667"/>
+      <stop offset="0.72" stop-color="#247ead"/>
+      <stop offset="1" stop-color="#0c66d8"/>
+    </linearGradient>
+  </defs>
+  <g id="folder_shared_black_24dp" transform="translate(0)">
+    <path id="Trazado_280" data-name="Trazado 280" d="M0,0H53.776V53.776H0Z" transform="translate(0)" fill="none"/>
+    <path id="Trazado_281" data-name="Trazado 281" d="M42.332,8.481H24.407L19.925,4H6.481A4.475,4.475,0,0,0,2.022,8.481L2,35.369a4.5,4.5,0,0,0,4.481,4.481H42.332a4.5,4.5,0,0,0,4.481-4.481V12.963A4.5,4.5,0,0,0,42.332,8.481Zm0,26.888H6.481V8.481H18.066l4.481,4.481H42.332Zm-11.2-11.2a4.481,4.481,0,1,0-4.481-4.481A4.495,4.495,0,0,0,31.129,24.166Zm-8.963,8.963H40.091V30.888c0-2.98-5.983-4.481-8.963-4.481s-8.963,1.5-8.963,4.481Z" transform="translate(2.482 4.963)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-path">
+      <circle id="Elipse_4" data-name="Elipse 4" cx="8" cy="8" r="8" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Enmascarar_grupo_1" data-name="Enmascarar grupo 1" clip-path="url(#clip-path)">
+    <g id="pin" transform="translate(2.499 0)">
+      <path id="Trazado_18" data-name="Trazado 18" d="M12.582,2.74A5.43,5.43,0,0,0,7.968,0C7.887,0,7.8,0,7.722,0A5.43,5.43,0,0,0,3.108,2.74a5.57,5.57,0,0,0-.073,5.5L7,15.506l.005.01a.964.964,0,0,0,1.673,0l.005-.01,3.968-7.262a5.57,5.57,0,0,0-.073-5.5ZM7.845,7.25A2.25,2.25,0,1,1,10.1,5,2.253,2.253,0,0,1,7.845,7.25Z" transform="translate(-2.344 0)" fill="#404040"/>
+    </g>
+  </g>
+</svg>

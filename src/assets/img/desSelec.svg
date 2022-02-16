@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="24" viewBox="0 0 32 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_448" data-name="Rectángulo 448" width="32" height="24" transform="translate(192.915 98.863)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Enmascarar_grupo_9" data-name="Enmascarar grupo 9" transform="translate(-192.915 -98.863)" clip-path="url(#clip-path)">
+    <g id="contratado" transform="translate(193.412 94.073)">
+      <path id="Trazado_4388" data-name="Trazado 4388" d="M0,0H31.123V33.791H0Z" fill="none"/>
+      <path id="Trazado_4389" data-name="Trazado 4389" d="M12.464,6.816A2.816,2.816,0,1,1,9.648,9.632a2.824,2.824,0,0,1,2.816-2.816m0,12.672c3.8,0,8.166,1.83,8.448,2.816v1.408H4.016V22.3c.282-.986,4.646-2.816,8.448-2.816M12.464,4A5.632,5.632,0,1,0,18.1,9.632,5.559,5.559,0,0,0,12.464,4Zm0,12.672C8.662,16.672,1.2,18.5,1.2,22.3v4.224H23.727V22.3C23.727,18.5,16.265,16.672,12.464,16.672Z" transform="translate(0.49 1.632)" fill="#b2b3b5"/>
+      <rect id="Rectángulo_89" data-name="Rectángulo 89" width="10.982" height="2.816" transform="translate(21.598 16.125) rotate(-45)" fill="#b2b3b5"/>
+      <rect id="Rectángulo_90" data-name="Rectángulo 90" width="6.195" height="2.816" transform="translate(23.351 17.918) rotate(-135)" fill="#b2b3b5"/>
+    </g>
+  </g>
+</svg>

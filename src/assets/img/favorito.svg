@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39">
+  <g id="Grupo_55" data-name="Grupo 55" transform="translate(-1557 -218)">
+    <g id="Rectángulo_20" data-name="Rectángulo 20" transform="translate(1557 218)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="39" height="39" rx="11" stroke="none"/>
+      <rect x="0.5" y="0.5" width="38" height="38" rx="10.5" fill="none"/>
+    </g>
+    <g id="heart_relleno" data-name="heart relleno" transform="translate(1564.63 229.022)">
+      <g id="Grupo_54" data-name="Grupo 54" transform="translate(0 0)">
+        <path id="Trazado_27" data-name="Trazado 27" d="M11.289,51.469C4.665,45.673,0,42.6,0,37.72,0,34.027,2.633,31,6.238,31a6.211,6.211,0,0,1,5.5,3.716A6.211,6.211,0,0,1,17.246,31c3.605,0,6.238,3.028,6.238,6.72,0,4.883-4.659,7.948-11.289,13.749A.688.688,0,0,1,11.289,51.469Z" transform="translate(0 -31)" fill="none" stroke="#707070" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="67" height="52" viewBox="0 0 67 52">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_400" data-name="Rectángulo 400" width="67" height="52" transform="translate(293)" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5db64b"/>
+      <stop offset="0.23" stop-color="#4da667"/>
+      <stop offset="0.72" stop-color="#247ead"/>
+      <stop offset="1" stop-color="#0c66d8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="0" y1="0.5" y2="0.5" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-6" x1="0" y1="0.499" y2="0.499" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-10" x1="0" y1="0.5" y2="0.5" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-12" x1="0" y1="0.5" y2="0.5" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-13" x1="0" y1="0.5" y2="0.5" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Enmascarar_grupo_9" data-name="Enmascarar grupo 9" transform="translate(-293)" clip-path="url(#clip-path)">
+    <g id="Layer_2" data-name="Layer 2" transform="translate(332.521 -19.373)">
+      <g id="Layer_1" data-name="Layer 1" transform="translate(-40 -10)">
+        <path id="Trazado_2" data-name="Trazado 2" d="M34.07,2.66A40.994,40.994,0,0,0,7.68,24.578Z" transform="translate(-3.704 -1.283)" fill="url(#linear-gradient)"/>
+        <path id="Trazado_3" data-name="Trazado 3" d="M41.82,0h-.326a41.3,41.3,0,0,0-5.4.368L2.633,28.161A41.034,41.034,0,0,0,1.24,33.71Z" transform="translate(-0.598)" fill="url(#linear-gradient)"/>
+        <path id="Trazado_4" data-name="Trazado 4" d="M49.364,1.074A42.051,42.051,0,0,0,44.907.38L.155,37.548C.057,38.713,0,39.888,0,41.079c0,.326,0,.652.026.973Z" transform="translate(0 -0.183)" fill="url(#linear-gradient)"/>
+        <path id="Trazado_5" data-name="Trazado 5" d="M56.3,4.464c-1.217-.487-2.459-.927-3.727-1.294L.39,46.5a36.7,36.7,0,0,0,.585,3.914Z" transform="translate(-0.188 -1.529)" fill="url(#linear-gradient-4)"/>
+        <path id="Trazado_6" data-name="Trazado 6" d="M63.207,9.584C62.172,8.963,61.1,8.378,60,7.85L2.76,55.387q.481,1.77,1.113,3.474Z" transform="translate(-1.331 -3.786)" fill="url(#linear-gradient)"/>
+        <path id="Trazado_7" data-name="Trazado 7" d="M70.131,16.071c-.9-.73-1.822-1.434-2.775-2.071L6.79,64.286Q7.5,65.88,8.343,67.392Z" transform="translate(-3.275 -6.753)" fill="url(#linear-gradient-6)"/>
+        <path id="Trazado_8" data-name="Trazado 8" d="M77.085,23.622Q75.946,22.364,74.7,21.21L12.31,73.023c.606.958,1.258,1.884,1.941,2.785Z" transform="translate(-5.938 -10.23)" fill="url(#linear-gradient)"/>
+        <path id="Trazado_9" data-name="Trazado 9" d="M21.4,84.247,83.995,32.263q-.947-1.4-2.014-2.723L19.09,81.772Q20.193,83.061,21.4,84.247Z" transform="translate(-9.208 -14.248)" fill="url(#linear-gradient)"/>
+        <path id="Trazado_10" data-name="Trazado 10" d="M90.839,41.979c-.518-1.035-1.035-2.071-1.625-3.049L27.13,90.494c.864.756,1.765,1.475,2.692,2.159Z" transform="translate(-13.086 -18.777)" fill="url(#linear-gradient)"/>
+        <path id="Trazado_11" data-name="Trazado 11" d="M97.606,52.836q-.518-1.729-1.2-3.4L36.48,99.187q1.517.973,3.106,1.807Z" transform="translate(-17.596 -23.847)" fill="url(#linear-gradient-10)"/>
+        <path id="Trazado_12" data-name="Trazado 12" d="M104.233,64.925q-.264-1.936-.7-3.815L47.29,107.819c1.18.518,2.392.978,3.624,1.387Z" transform="translate(-22.81 -29.476)" fill="url(#linear-gradient-4)"/>
+        <path id="Trazado_13" data-name="Trazado 13" d="M110.617,78.654c.031-.637.052-1.284.052-1.931,0-.818,0-1.636-.078-2.443L59.86,116.4a40.378,40.378,0,0,0,4.3.828Z" transform="translate(-28.873 -35.828)" fill="url(#linear-gradient-12)"/>
+        <path id="Trazado_14" data-name="Trazado 14" d="M80.379,124.83l36.148-30.024A41.364,41.364,0,0,0,117.6,89.52L75,124.913c.688.036,1.382.062,2.071.062C78.189,124.97,79.286,124.918,80.379,124.83Z" transform="translate(-36.175 -43.179)" fill="url(#linear-gradient-13)"/>
+        <path id="Trazado_15" data-name="Trazado 15" d="M94.47,133.328A40.942,40.942,0,0,0,124.4,108.48Z" transform="translate(-45.566 -52.324)" fill="url(#linear-gradient-10)"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="54" height="54" viewBox="0 0 54 54">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5db64b"/>
+      <stop offset="0.23" stop-color="#4da667"/>
+      <stop offset="0.72" stop-color="#247ead"/>
+      <stop offset="1" stop-color="#0c66d8"/>
+    </linearGradient>
+  </defs>
+  <g id="payments_black_24dp" transform="translate(-0.197 -0.123)">
+    <rect id="Rectángulo_51" data-name="Rectángulo 51" width="54" height="54" transform="translate(0.197 0.123)" fill="none"/>
+    <path id="Trazado_274" data-name="Trazado 274" d="M41.332,26.407V8.481A4.5,4.5,0,0,0,36.851,4H5.481A4.5,4.5,0,0,0,1,8.481V26.407a4.5,4.5,0,0,0,4.481,4.481H36.851A4.5,4.5,0,0,0,41.332,26.407Zm-4.481,0H5.481V8.481H36.851ZM21.166,10.722a6.722,6.722,0,1,0,6.722,6.722A6.713,6.713,0,0,0,21.166,10.722Zm29.129,0V35.369a4.5,4.5,0,0,1-4.481,4.481H7.722V35.369H45.813V10.722Z" transform="translate(1.241 4.963)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>
