@@ -572,4 +572,24 @@ export class CompanyServiceService {
     );
   }
 
+  public getInfoPayment(token: string, id_package): Observable<any> {
+    return this.httpService
+      .get(`${this.session.API}payment/${id_package}`, {
+        headers: new HttpHeaders({ Authorization: token }),
+      })
+      .pipe(
+        timeout(30000),
+        catchError((e) => {
+          Swal.close();
+          Swal.fire({
+            icon: 'error',
+            title: '404',
+            text: e.error.error ? e.error.error : 'Tiempo agotado',
+            confirmButtonColor: '#1c4a83',
+          });
+          return of(null);
+        })
+      );
+  }
+
 }

@@ -16,6 +16,8 @@ import { RecognitionsComponent } from './components/recognitions/recognitions.co
 import { LanguagesComponent } from './components/languages/languages.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ReviewCompanyComponent } from './components/review-company/review-company.component';
+import { WorkTableComponent } from './components/work-table/work-table.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -32,13 +34,15 @@ import { ReviewCompanyComponent } from './components/review-company/review-compa
     LanguagesComponent,
     SkillsComponent,
     ReviewCompanyComponent,
+    WorkTableComponent,
   ],
   imports: [
     CommonModule,
     TalentRoutingModule,
     RouterModule,
+    ReactiveFormsModule,
     FormsModule,
-    ReactiveFormsModule
+    NgxPaginationModule
   ]
 })
 export class TalentModule { }

@@ -65,7 +65,7 @@ export class HeaderComponent {
   }
   //meotodo para redireccionar a la mesa de trabajo del talento
   mesaTrabajoTalento() {
-    this.router.navigate(['/vista_empleos', '']);
+    this.router.navigate(['/talento/empleos', '']);
   }
   //metodo para redireccionar a la pagina de buscar empleos
   buscarEmpleos() {
