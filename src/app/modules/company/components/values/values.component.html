@@ -1,0 +1,13 @@
+<form  [formGroup]="info" (ngSubmit)="updateInfo()">
+    <h1 class="titulo">Valores</h1>
+    <label class="sub">Descripción de los valores de la empresa</label>
+    <textarea formControlName="business_values" [readonly]="readOnly" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Lorem ipsum, Lorem ipsum"></textarea>
+    <div class="row">
+        <div class="col-8 col-lg-4 col-md-6 mt-3">
+            <button class="boton2" (click)="disabled()">Editar información</button>
+        </div>
+        <div class="col-8 col-lg-4 col-md-6 mt-3">
+            <button class="boton2" [disabled]="readOnly" >Guardar</button>
+        </div>
+    </div>
+</form>

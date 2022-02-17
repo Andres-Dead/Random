@@ -72,7 +72,7 @@
 <!--Talento NO logeado-->
 <header *ngIf="getGroup() == null">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-      <a class="navbar-brand" href="/home">
+      <a class="navbar-brand" href="/">
         <img src="../../../assets/img/logo.svg" alt="" />
       </a>
       <button
@@ -94,7 +94,7 @@
                       <a class="nav-link" href="empresa">Capital Talento</a>
                   </li> -->
           <li class="nav-item me-xxl-3">
-            <a class="nav-link" href="#">Publica una vacante</a>
+            <a class="nav-link" href="/login/registrar_empresa">Publica una vacante</a>
           </li>
           <li class="nav-item me-xxl-3">
             <a class="nav-link" href="/login">Inicia sesión</a>
@@ -128,16 +128,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav d-flex justify-content-end">
           <li class="nav-item me-xxl-3">
-            <a class="nav-link" href="empresa">Mesa de trabajo</a>
+            <a class="nav-link" href="/empresa/mesa_trabajo">Mesa de trabajo</a>
           </li>
           <li class="nav-item me-xxl-3" (click)="vacantes()">
             <a class="nav-link">Vacantes</a>
           </li>
           <li class="nav-item me-xxl-3" (click)="buscarTalento()">
-            <a class="nav-link">Buscar talento</a>
-          </li>
-          <li class="nav-item me-xxl-3">
-            <a class="nav-link" href="#">Reclutadores</a>
+            <a class="nav-link" href="/empresa/buscar_talento">Buscar talento</a>
           </li>
           <li class="nav-item dropdown me-xxl-3">
             <a

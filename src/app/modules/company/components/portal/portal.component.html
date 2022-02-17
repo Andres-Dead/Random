@@ -1,0 +1,964 @@
+<div class="reclutadores">
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Reclutadores activos</button>
+            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Reclutadores Inactivos</button>
+            <button class="nav-link nuevo" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" data-toggle="modal" data-target="#modalNuevoReclutador">Nuevo reclutador +</button>
+        </div>
+    </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <div class="gris">
+            <div class="row pt-3 pb-3 ps-3 pe-3">
+                <div class="col-12 col-md-12 col-lg-3 col-xl-2 col-xxl-2">
+                    <label class="text1 mt-2">Recursos disponibles</label>
+                </div>
+                <div class="col-3 col-md-3 col-lg col-xl pe-lg-2">
+                    <div class="cuadro3">
+                        <div class="act">
+                            <div class="row">
+                                <div class="col-5 col-lg-5 col-md-5 col-xl-5 col-xxl-6">
+                                    <label class=""><img class="" src="../../../../../assets/img/reclutadores.svg" alt="">##</label>
+                                </div>
+                                <div class="col-7 col-lg-7 col-md-7 col-xl-7 col-xxl-4">
+                                    <span>RECLUTADORES DISPONIBLES</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 col-md-3 col-lg col-xl pe-lg-2">
+                    <div class="cuadro3">
+                        <div class="act">
+                            <div class="row">
+                                <div class="col-5 col-lg-7 col-md-5 col-xl-7 col-xxl-7">
+                                    <label class=""><img class="" src="../../../../../assets/img/creditos.svg" alt="">####</label>
+                                </div>
+                                <div class="col-7 col-lg-5 col-md-7 col-xl-5 col-xxl-4">
+                                    <span>CRÉDITOS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 col-md-3 col-lg col-xl pe-lg-2">
+                    <div class="cuadro3">
+                        <div class="act">
+                            <div class="row">
+                                <div class="col-5 col-lg-5 col-md-5 col-xl-5 col-xxl-6">
+                                    <label class=""><img class="" src="../../../../../assets/img/activas.svg" alt="">##</label>
+                                </div>
+                            <div class="col-7 col-lg-7 col-md-7 col-xl-7 col-xxl-4">
+                                <span>VACANTES ACTIVAS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 col-md-3 col-lg col-xl pe-lg-2">
+                <div class="cuadro3">
+                    <div class="act">
+                        <div class="row">
+                            <div class="col-5 col-lg-5 col-md-5 col-xl-5 col-xxl-6">
+                                <label class=""><img class="" src="../../../../../assets/img/destacadas.svg" alt="">##</label>
+                            </div>
+                            <div class="col-7 col-lg-7 col-md-7 col-xl-7 col-xxl-4">
+                                <span>VACANTES DESTACADAS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 col-md-3 col-lg col-xl pe-lg-2">
+                <div class="cuadro3">
+                    <div class="act">
+                        <div class="row">
+                            <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-6">
+                                <label class=""><img class="mr-5" src="../../../../../assets/img/confidenciales.svg" alt="">#</label>
+                            </div>
+                            <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-4">
+                                <span>VACANTES COFIDENCIALES</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 col-md-3 col-lg-4 col-xl-1 col-xxl-1 offset-xl-0 offset-xxl-1 d-flex align-items-center justify-content-end offset-md-0 offset-lg-4">
+                <label class="text1">Ordenar por: </label>
+            </div>
+            <div class="col-4 col-md-4 col-lg-4 col-xl-2 d-flex align-items-center">
+                <div class="dropdown">
+                    <button class="drop2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Más reciente
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Tipo de trabajo</a>
+                        <a class="dropdown-item" href="#">Salario estimado</a>
+                        <a class="dropdown-item" href="#">Modo de empleo</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="row mb-3">
+                            <div class="col-12 col-lg-8 col-md-4 col-xl-6 col-xxl-8">
+                                <label class="text2">Martha Ebaile</label>
+                            </div>
+                            <div class="col-6 col-lg-2 col-md-4 col-xl-3 col-xxl-2">
+                                <label class="text3 text-md-end">Guadalajara, Jalisco.</label>
+                            </div>
+                            <div class="col-6 col-lg-2 col-md-4 col-xl-3 col-xxl-2">
+                                <label class="text3 text-end">Agregado el 04/02/2020</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                <div class="cuadro4">
+                                    <div class="row">
+                                        <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                            <label class="mt-2"><img class="" src="../../../../../assets/img/creditos.svg" alt=""> 30</label>
+                                        </div>
+                                        <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                            <span>Créditos disponibles</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                <div class="cuadro4">
+                                    <div class="row">
+                                        <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                            <label class="mt-2"><img class="" src="../../../../../assets/img/activas.svg" alt=""> 50</label>
+                                        </div>
+                                        <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                            <span>Vacantes disponibles</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                <div class="cuadro4">
+                                    <div class="row">
+                                        <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                            <label class="mt-2"><img class="" src="../../../../../assets/img/destacadas.svg" alt=""> 30</label>
+                                        </div>
+                                        <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                            <span>Vacantes destacadas</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                <div class="cuadro4">
+                                    <div class="row">
+                                        <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                            <label class="mt-2"><img class="" src="../../../../../assets/img/confidenciales.svg" alt=""> 30</label>
+                                        </div>
+                                        <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                            <span>Vacantes confidenciales</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg col-md-5 col-xxl-2 mb-3 mt-3 mt-md-3 mt-lg-0 offset-md-7 offset-lg-0">
+                                <div class="dropdown">
+                                    <button class="drop dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img class="me-2" src="../../../../../assets/img/asignadasBtn.svg" alt="">5 Vacantes asignadas
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Ejecutivo de cuenta jr-UAG</a>
+                                        <a class="dropdown-item" href="#">Ejecutivo de cuenta Bilingüe-UAG</a>
+                                        <a class="dropdown-item" href="#">Ejecutivo de cuenta SENIOR Bilingüe-UAG</a>
+                                        <a class="dropdown-item" href="#">Programador FULLSATCK-Creative Soft</a>
+                                        <a class="dropdown-item" href="#">Programador angular-Creative Soft</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3 col-xl mb-3 offset-lg-6 offset-xl-0">
+                                <button class="boton4 p-2" type="button" data-toggle="modal" data-target="#modalBorrar">Borrar reclutador</button>
+                            </div>
+                            <div class="col-6 col-lg-3 col-xl">
+                                <button class="boton p-2" type="button">Desactivar reclutador</button>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <button class="boton2" type="button"  data-toggle="modal" data-target="#modalRecursos">
+                                    <ins>Ajustar recursos</ins>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item azul">
+                        <div class="row mb-3">
+                            <div class="col-12 col-lg-8 col-md-4 col-xl-6 col-xxl-8">
+                                <label class="text2">Martha Ebaile</label>
+                            </div>
+                            <div class="col-6 col-lg-2 col-md-4 col-xl-3 col-xxl-2">
+                                <label class="text3 text-md-end">Guadalajara, Jalisco.</label>
+                            </div>
+                            <div class="col-6 col-lg-2 col-md-4 col-xl-3 col-xxl-2">
+                                <label class="text3 text-end">Agregado el 04/02/2020</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                <div class="cuadro4">
+                                    <div class="row">
+                                        <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                            <label class="mt-2"><img class="" src="../../../../../assets/img/creditos.svg" alt=""> 30</label>
+                                        </div>
+                                        <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                            <span>Créditos disponibles</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                <div class="cuadro4">
+                                    <div class="row">
+                                        <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                            <label class="mt-2"><img class="" src="../../../../../assets/img/activas.svg" alt=""> 50</label>
+                                        </div>
+                                        <div class="col-8 col-lg-7 col-md-7 col-xl-17 col-xxl-6 d-flex align-items-center">
+                                            <span>Vacantes disponibles</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                <div class="cuadro4">
+                                    <div class="row">
+                                        <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                            <label class="mt-2"><img class="" src="../../../../../assets/img/destacadas.svg" alt=""> 30</label>
+                                        </div>
+                                        <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                            <span>Vacantes destacadas</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                <div class="cuadro4">
+                                    <div class="row">
+                                        <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                            <label class="mt-2"><img class="" src="../../../../../assets/img/confidenciales.svg" alt=""> 30</label>
+                                        </div>
+                                        <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                            <span>Vacantes confidenciales</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg col-md-5 col-xxl-2 mb-3 mt-3 mt-md-3 mt-lg-0 offset-md-7 offset-lg-0">
+                                <div class="dropdown">
+                                    <button class="drop dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img class="me-2" src="../../../../../assets/img/asignadasBtn.svg" alt="">5 Vacantes asignadas
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Ejecutivo de cuenta jr-UAG</a>
+                                        <a class="dropdown-item" href="#">Ejecutivo de cuenta Bilingüe-UAG</a>
+                                        <a class="dropdown-item" href="#">Ejecutivo de cuenta SENIOR Bilingüe-UAG</a>
+                                        <a class="dropdown-item" href="#">Programador FULLSATCK-Creative Soft</a>
+                                        <a class="dropdown-item" href="#">Programador angular-Creative Soft</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3 col-xl mb-3 offset-lg-6 offset-xl-0">
+                                <button class="boton4 p-2" type="button" data-toggle="modal" data-target="#modalBorrar">Borrar reclutador</button>
+                            </div>
+                            <div class="col-6 col-lg-3 col-xl">
+                                <button class="boton p-2" type="button">Desactivar reclutador</button>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <button class="boton2" type="button"  data-toggle="modal" data-target="#modalRecursos">
+                                    <ins>Ajustar recursos</ins>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row mb-3">
+                            <div class="col-12 col-lg-8 col-md-4 col-xl-6 col-xxl-8">
+                                <label class="text2">Martha Ebaile</label>
+                            </div>
+                            <div class="col-6 col-lg-2 col-md-4 col-xl-3 col-xxl-2">
+                                <label class="text3 text-md-end">Guadalajara, Jalisco.</label>
+                            </div>
+                            <div class="col-6 col-lg-2 col-md-4 col-xl-3 col-xxl-2">
+                                <label class="text3 text-end">Agregado el 04/02/2020</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                <div class="cuadro4">
+                                    <div class="row">
+                                        <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                            <label class="des mt-2"><img class="desCRE" src="../../../../../assets/img/creditos.svg" alt=""> 0</label>
+                                        </div>
+                                        <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                            <span class="des">Créditos disponibles</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                <div class="cuadro4">
+                                    <div class="row">
+                                        <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                            <label class="des mt-2"><img class="desDIS" src="../../../../../assets/img/activas.svg" alt=""> 0</label>
+                                        </div>
+                                        <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                            <span class="des">Vacantes disponibles</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                <div class="cuadro4">
+                                    <div class="row">
+                                        <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                            <label class="des mt-2"><img class="desDES" src="../../../../../assets/img/destacadasazul.svg" alt=""> 0</label>
+                                        </div>
+                                        <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                            <span class="des">Vacantes destacadas</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                <div class="cuadro4">
+                                    <div class="row">
+                                        <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                            <label class="des mt-2"><img class="desCONF" src="../../../../../assets/img/confidencial.svg" alt=""> 0</label>
+                                        </div>
+                                        <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                            <span class="des">Vacantes confidenciales</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg col-md-5 col-xxl-2 mb-3 mt-3 mt-md-3 mt-lg-0 offset-md-7 offset-lg-0">
+                                <div class="dropdown des">
+                                    <button class="drop dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img class="me-2" src="../../../../../assets/img/asignadasBtn.svg" alt="">0 Vacantes asignadas
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Ejecutivo de cuenta jr-UAG</a>
+                                        <a class="dropdown-item" href="#">Ejecutivo de cuenta Bilingüe-UAG</a>
+                                        <a class="dropdown-item" href="#">Ejecutivo de cuenta SENIOR Bilingüe-UAG</a>
+                                        <a class="dropdown-item" href="#">Programador FULLSATCK-Creative Soft</a>
+                                        <a class="dropdown-item" href="#">Programador angular-Creative Soft</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3 col-xl mb-3 offset-lg-6 offset-xl-0">
+                                <button class="boton4 p-2" type="button" data-toggle="modal" data-target="#modalBorrar">Borrar reclutador</button>
+                            </div>
+                            <div class="col-6 col-lg-3 col-xl">
+                                <button class="boton p-2" type="button">Desactivar reclutador</button>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <button class="boton2" type="button"  data-toggle="modal" data-target="#modalRecursos">
+                                    <ins>Ajustar recursos</ins>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="gris">
+            <div class="row pt-3 pb-3 ps-3 pe-3">
+                <div class="col-12 col-md-12 col-lg-3 col-xl-2 col-xxl-2">
+                    <label class="text1 mt-2">Recursos disponibles</label>
+                </div>
+                <div class="col-3 col-md-3 col-lg col-xl pe-lg-2">
+                    <div class="cuadro3">
+                        <div class="act">
+                            <div class="row">
+                                <div class="col-5 col-lg-5 col-md-5 col-xl-5 col-xxl-6">
+                                    <label class=""><img class="" src="../../../../../assets/img/reclutadores.svg" alt="">##</label>
+                                </div>
+                                <div class="col-7 col-lg-7 col-md-7 col-xl-7 col-xxl-4">
+                                    <span>RECLUTADORES DISPONIBLES</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 col-md-3 col-lg col-xl pe-lg-2">
+                    <div class="cuadro3">
+                        <div class="act">
+                            <div class="row">
+                                <div class="col-5 col-lg-7 col-md-5 col-xl-7 col-xxl-7">
+                                    <label class=""><img class="" src="../../../../../assets/img/creditos.svg" alt="">####</label>
+                                </div>
+                                <div class="col-7 col-lg-5 col-md-7 col-xl-5 col-xxl-4">
+                                    <span>CRÉDITOS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 col-md-3 col-lg col-xl pe-lg-2">
+                    <div class="cuadro3">
+                        <div class="act">
+                            <div class="row">
+                                <div class="col-5 col-lg-5 col-md-5 col-xl-5 col-xxl-6">
+                                    <label class=""><img class="" src="../../../../../assets/img/activas.svg" alt="">##</label>
+                                </div>
+                            <div class="col-7 col-lg-7 col-md-7 col-xl-7 col-xxl-4">
+                                <span>VACANTES ACTIVAS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 col-md-3 col-lg col-xl pe-lg-2">
+                <div class="cuadro3">
+                    <div class="act">
+                        <div class="row">
+                            <div class="col-5 col-lg-5 col-md-5 col-xl-5 col-xxl-6">
+                                <label class=""><img class="" src="../../../../../assets/img/destacadas.svg" alt="">##</label>
+                            </div>
+                            <div class="col-7 col-lg-7 col-md-7 col-xl-7 col-xxl-4">
+                                <span>VACANTES DESTACADAS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 col-md-3 col-lg col-xl pe-lg-2">
+                <div class="cuadro3">
+                    <div class="act">
+                        <div class="row">
+                            <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-6">
+                                <label class=""><img class="mr-5" src="../../../../../assets/img/confidenciales.svg" alt="">#</label>
+                            </div>
+                            <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-4">
+                                <span>VACANTES COFIDENCIALES</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 col-md-3 col-lg-4 col-xl-1 col-xxl-1 offset-xl-0 offset-xxl-1 d-flex align-items-center justify-content-end offset-md-0 offset-lg-4">
+                <label class="text1">Ordenar por: </label>
+            </div>
+            <div class="col-4 col-md-4 col-lg-4 col-xl-2 d-flex align-items-center">
+                <div class="dropdown">
+                    <button class="drop2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Más reciente
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Tipo de trabajo</a>
+                        <a class="dropdown-item" href="#">Salario estimado</a>
+                        <a class="dropdown-item" href="#">Modo de empleo</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item pt-3 inactivos">
+                            <div class="row mb-3">
+                                <div class="col-12 col-lg-8 col-md-4 col-xl-6 col-xxl-8">
+                                    <label class="text2">Martha Ebaile</label>
+                                </div>
+                                <div class="col-6 col-lg-2 col-md-4 col-xl-3 col-xxl-2">
+                                    <label class="text3 text-md-end">Guadalajara, Jalisco.</label>
+                                </div>
+                                <div class="col-6 col-lg-2 col-md-4 col-xl-3 col-xxl-2">
+                                    <label class="text3 text-end">Agregado el 04/02/2020</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                    <div class="cuadro4">
+                                        <div class="row">
+                                            <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                                <label class="mt-2"><img class="creditos" src="../../../../../assets/img/creditos.svg" alt=""> 30</label>
+                                            </div>
+                                            <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                                <span>Créditos disponibles</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                    <div class="cuadro4">
+                                        <div class="row">
+                                            <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                                <label class="mt-2"><img class="activas" src="../../../../../assets/img/activas.svg" alt=""> 50</label>
+                                            </div>
+                                            <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                                <span>Vacantes disponibles</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                    <div class="cuadro4">
+                                        <div class="row">
+                                            <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                                <label class="mt-2"><img class="destacadas" src="../../../../../assets/img/destacadas.svg" alt=""> 30</label>
+                                            </div>
+                                            <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                                <span>Vacantes destacadas</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                    <div class="cuadro4">
+                                        <div class="row">
+                                            <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                                <label class="mt-2"><img class="confidenciales" src="../../../../../assets/img/confidenciales.svg" alt=""> 30</label>
+                                            </div>
+                                            <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                                <span>Vacantes confidenciales</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg col-md-5 col-xxl-2 mb-3 mt-3 mt-md-3 mt-lg-0 offset-md-7 offset-lg-0">
+                                    <div class="dropdown">
+                                        <button class="drop dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img class="me-2" src="../../../../../assets/img/asignadasBtn.svg" alt="">5 Vacantes asignadas
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Ejecutivo de cuenta jr-UAG</a>
+                                            <a class="dropdown-item" href="#">Ejecutivo de cuenta Bilingüe-UAG</a>
+                                            <a class="dropdown-item" href="#">Ejecutivo de cuenta SENIOR Bilingüe-UAG</a>
+                                            <a class="dropdown-item" href="#">Programador FULLSATCK-Creative Soft</a>
+                                            <a class="dropdown-item" href="#">Programador angular-Creative Soft</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3 col-xl mb-3 offset-lg-6 offset-xl-0">
+                                    <button class="boton4 p-2" type="button" data-toggle="modal" data-target="#modalBorrar">Borrar reclutador</button>
+                                </div>
+                                <div class="col-6 col-lg-3 col-xl">
+                                    <button class="boton p-2" type="button">Activar reclutador</button>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-6 col-md-12 col-lg-3 col-xl-3 col-xxl-2">
+                                    <button class="boton2" type="button"  data-toggle="modal" data-target="#modalRecursos">
+                                        <ins>Ajustar recursos</ins>
+                                    </button>
+                                </div>
+                                <div class="col-6 col-lg-3">
+                                    <button class="boton2 des" type="button"  data-toggle="modal" data-target="#modalReintegrar">
+                                        <ins>Reintegrar recursos</ins>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item azul inactivos">
+                            <div class="row mb-3">
+                                <div class="col-12 col-lg-8 col-md-4 col-xl-6 col-xxl-8">
+                                    <label class="text2">Martha Ebaile</label>
+                                </div>
+                                <div class="col-6 col-lg-2 col-md-4 col-xl-3 col-xxl-2">
+                                    <label class="text3 text-md-end">Guadalajara, Jalisco.</label>
+                                </div>
+                                <div class="col-6 col-lg-2 col-md-4 col-xl-3 col-xxl-2">
+                                    <label class="text3 text-end">Agregado el 04/02/2020</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                    <div class="cuadro4">
+                                        <div class="row">
+                                            <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                                <label class="mt-2"><img class="creditos" src="../../../../../assets/img/creditos.svg" alt=""> 30</label>
+                                            </div>
+                                            <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6d-flex align-items-center">
+                                                <span>Créditos disponibles</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                    <div class="cuadro4">
+                                        <div class="row">
+                                            <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                                <label class="mt-2"><img class="activas" src="../../../../../assets/img/activas.svg" alt=""> 50</label>
+                                            </div>
+                                            <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                                <span>Vacantes disponibles</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                    <div class="cuadro4">
+                                        <div class="row">
+                                            <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                                <label class="mt-2"><img class="destacadas" src="../../../../../assets/img/destacadas.svg" alt=""> 30</label>
+                                            </div>
+                                            <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                                <span>Vacantes destacadas</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                    <div class="cuadro4">
+                                        <div class="row">
+                                            <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                                <label class="mt-2"><img class="confidenciales" src="../../../../../assets/img/confidenciales.svg" alt=""> 30</label>
+                                            </div>
+                                            <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                                <span>Vacantes confidenciales</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg col-md-5 col-xxl-2 mb-3 mt-3 mt-md-3 mt-lg-0 offset-md-7 offset-lg-0">
+                                    <div class="dropdown">
+                                        <button class="drop dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img class="me-2" src="../../../../../assets/img/asignadasBtn.svg" alt="">5 Vacantes asignadas
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Ejecutivo de cuenta jr-UAG</a>
+                                            <a class="dropdown-item" href="#">Ejecutivo de cuenta Bilingüe-UAG</a>
+                                            <a class="dropdown-item" href="#">Ejecutivo de cuenta SENIOR Bilingüe-UAG</a>
+                                            <a class="dropdown-item" href="#">Programador FULLSATCK-Creative Soft</a>
+                                            <a class="dropdown-item" href="#">Programador angular-Creative Soft</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3 col-xl mb-3 offset-lg-6 offset-xl-0">
+                                    <button class="boton4 p-2" type="button" data-toggle="modal" data-target="#modalBorrar">Borrar reclutador</button>
+                                </div>
+                                <div class="col-6 col-lg-3 col-xl">
+                                    <button class="boton p-2" type="button">Activar reclutador</button>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-6 col-md-12 col-lg-3 col-xl-3 col-xxl-2">
+                                    <button class="boton2" type="button"  data-toggle="modal" data-target="#modalRecursos">
+                                        <ins>Ajustar recursos</ins>
+                                    </button>
+                                </div>
+                                <div class="col-6 col-lg-3">
+                                    <button class="boton2 des" type="button"  data-toggle="modal" data-target="#modalReintegrar">
+                                        <ins>Reintegrar recursos</ins>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item inactivos">
+                            <div class="row mb-3">
+                                <div class="col-12 col-lg-8 col-md-4 col-xl-6 col-xxl-8">
+                                    <label class="text2">Martha Ebaile</label>
+                                </div>
+                                <div class="col-6 col-lg-2 col-md-4 col-xl-3 col-xxl-2">
+                                    <label class="text3 text-md-end">Guadalajara, Jalisco.</label>
+                                </div>
+                                <div class="col-6 col-lg-2 col-md-4 col-xl-3 col-xxl-2">
+                                    <label class="text3 text-end">Agregado el 04/02/2020</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                    <div class="cuadro4">
+                                        <div class="row">
+                                            <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                                <label class="des mt-2"><img class="creditos" src="../../../../../assets/img/creditos.svg" alt=""> 0</label>
+                                            </div>
+                                            <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                                <span class="des">Créditos disponibles</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                    <div class="cuadro4">
+                                        <div class="row">
+                                            <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                                <label class="des mt-2"><img class="activas" src="../../../../../assets/img/activas.svg" alt=""> 0</label>
+                                            </div>
+                                            <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                                <span class="des">Vacantes disponibles</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                    <div class="cuadro4">
+                                        <div class="row">
+                                            <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                                <label class="des mt-2"><img class="destacadas" src="../../../../../assets/img/destacadasazul.svg" alt=""> 0</label>
+                                            </div>
+                                            <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                                <span class="des">Vacantes destacadas</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3 col-lg pe-lg-2">
+                                    <div class="cuadro4">
+                                        <div class="row">
+                                            <div class="col-4 col-lg-5 col-md-5 col-xl-5 col-xxl-4 d-flex justify-content-md-center">
+                                                <label class="des mt-2"><img class="confidenciales" src="../../../../../assets/img/confidencial.svg" alt=""> 0</label>
+                                            </div>
+                                            <div class="col-8 col-lg-7 col-md-7 col-xl-7 col-xxl-6 d-flex align-items-center">
+                                                <span class="des">Vacantes confidenciales</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg col-md-5 col-xxl-2 mb-3 mt-3 mt-md-3 mt-lg-0 offset-md-7 offset-lg-0">
+                                    <div class="dropdown des">
+                                        <button class="drop dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img class="me-2" src="../../../../../assets/img/asignadasBtn.svg" alt="">0 Vacantes asignadas
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Ejecutivo de cuenta jr-UAG</a>
+                                            <a class="dropdown-item" href="#">Ejecutivo de cuenta Bilingüe-UAG</a>
+                                            <a class="dropdown-item" href="#">Ejecutivo de cuenta SENIOR Bilingüe-UAG</a>
+                                            <a class="dropdown-item" href="#">Programador FULLSATCK-Creative Soft</a>
+                                            <a class="dropdown-item" href="#">Programador angular-Creative Soft</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3 col-xl mb-3 offset-lg-6 offset-xl-0">
+                                    <button class="boton4 p-2" type="button" data-toggle="modal" data-target="#modalBorrar">Borrar reclutador</button>
+                                </div>
+                                <div class="col-6 col-lg-3 col-xl">
+                                    <button class="boton p-2" type="button">Activar reclutador</button>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-6 col-md-12 col-lg-3 col-xl-3 col-xxl-2">
+                                    <button class="boton2" type="button"  data-toggle="modal" data-target="#modalRecursos">
+                                        <ins>Ajustar recursos</ins>
+                                    </button>
+                                </div>
+                                <div class="col-6 col-lg-3">
+                                    <button class="boton2 des" type="button"  data-toggle="modal" data-target="#modalReintegrar">
+                                        <ins>Reintegrar recursos</ins>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+        <!-- Button trigger modal -->
+        <!--button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalNuevoReclutador">
+            Launch demo modal
+        </button>
+          <!-- Modal reasignar vacante-->
+          <div class="modal fade modalReasignar" id="modalReasignar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header d-flex justify-content-end">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <h5 class="modal-title" id="exampleModalLongTitle">Reasignar vacante</h5>
+                          <p class="text">Ejecutivo de cuenta SENIOR Bilingüe-UAG</p>
+                          <p class="text2">Elige al reclutador al que le quieres reasignar la vacante</p>
+                          <div class="dropdown">
+                              <button class="drop dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Martha Ebaile
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="#">Martha Ebaile</a>
+                                  <a class="dropdown-item" href="#">Martha Ebaile</a>
+                                  <a class="dropdown-item" href="#">Martha Ebaile</a>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="boton mx-auto d-block" data-dismiss="modal">Asignar</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Modal asignar recursos-->
+          <div class="modal fade modalRecursos" id="modalRecursos" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header d-flex justify-content-end">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <h5 class="modal-title" id="exampleModalLongTitle">Asigna recursos a</h5>
+                          <h5 class="modal-title mayus" id="exampleModalLongTitle">NOMBRE DEL RECLUTADOR</h5>
+                          <p class="text">Cuentas con los siguientes recursos para asignar.</p>
+                          <div class="row mb-3">
+                              <div class="col-3 ps-1 pe-1">
+                                  <div class="cuadro d-flex justify-content-center">
+                                      <label class="text-center"><img class="me-2" src="../../../../../assets/img/creditos.svg" alt="">30</label>
+                                  </div>
+                              </div>
+                              <div class="col-3 ps-1 pe-1">
+                                  <div class="cuadro d-flex justify-content-center">
+                                      <label class="des"><img class="desDIS me-2" src="../../../../../assets/img/activas.svg" alt="">0</label>
+                                  </div>
+                              </div>
+                              <div class="col-3 ps-1 pe-1">
+                                  <div class="cuadro d-flex justify-content-center">
+                                      <label class=""><img class="me-2" src="../../../../../assets/img/destacadas.svg" alt="">1</label>
+                                  </div>
+                              </div>
+                              <div class="col-3 ps-1 pe-1">
+                                  <div class="cuadro d-flex justify-content-center">
+                                      <label class="des"><img class="desCONF me-2" src="../../../../../assets/img/confidenciales.svg" alt="">0</label>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row linea">
+                              <div class="col-2 d-flex justify-content-center">
+                                  <img class="icono" src="../../../../../assets/img/creditos.svg" alt="">
+                              </div>
+                              <div class="col-3">
+                                  <input type="text" class="" value="30">
+                              </div>
+                              <div class="col-7">
+                                  <label class="text2">Créditos disponibles</label>
+                              </div>
+                          </div>
+                          <div class="row linea">
+                              <div class="col-2 d-flex justify-content-center">
+                                  <img class="icono2" src="../../../../../assets/img/activas.svg" alt="">
+                              </div>
+                              <div class="col-3">
+                                  <input type="text" class="" value="30">
+                              </div>
+                              <div class="col-7">
+                                  <label class="text2">Vacantes disponibles</label>
+                              </div>
+                          </div>
+                          <div class="row linea">
+                              <div class="col-2 d-flex justify-content-center">
+                                  <img class="icono" src="../../../../../assets/img/destacadas.svg" alt="">
+                              </div>
+                              <div class="col-3">
+                                  <input type="text" class="" value="30">
+                              </div>
+                              <div class="col-7">
+                                  <label class="text2">Vacantes destacadas</label>
+                              </div>
+                          </div>
+                          <div class="row linea">
+                              <div class="col-2">
+                                  <img class="icono" src="../../../../../assets/img/confidenciales.svg" alt="">
+                              </div>
+                              <div class="col-3">
+                                  <input type="text" class="" value="30">
+                              </div>
+                              <div class="col-7">
+                                  <label class="text2">Vacantes confidenciales</label>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="boton mx-auto d-block" data-dismiss="modal">Asignar</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        <!-- Modal Reintegrar recursos-->
+        <div class="modal fade modalReintegrar" id="modalReintegrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-end">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="mx-auto d-block"src=".../../assets/img/iconoModalDes.svg" alt="">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Reintegrar recursos</h5>
+                        <p class="text">Estás por reintegrar los recursos de</p>
+                        <p class="text mayus">NOMBRE RECLUTADOR</p>
+                        <p class="text">a tu cuenta</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="boton desactivado mx-auto d-block" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="boton mx-auto d-block" data-dismiss="modal">Reintegrar recursos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal nuevo Reclutador-->
+        <div class="modal fade modalReintegrar" id="modalNuevoReclutador" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-end">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Invita a un nuevo reclutador</h5>
+                        <p class="text mb-4">Escribe el nombre y correo electrónico de tu colaborador para que se una a tu equipo de trabajo.</p>
+                        <input type="text" class="input" placeholder="Nombre del reclutador">
+                        <input type="email" class="input" placeholder="reclutador@tucorreo.com">
+                    </div>  
+                    <hr>
+                    <div class="modal-body">
+                        <input type="text" class="input" placeholder="Nombre del reclutador">
+                        <input type="email" class="input" placeholder="reclutador@tucorreo.com">
+                        <button type="button" class="boton2" data-dismiss="modal">
+                            <img class=""src=".../../assets/img/btnAgregar.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="boton mx-auto d-block" data-dismiss="modal">Enviar invitación</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal borrar reclutador-->
+        <div class="modal fade modalReintegrar" id="modalBorrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-end">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Borrar reclutador</h5>
+                        <p class="text">Estas a punto de borrar la cuenta de</p>
+                        <p class="text mb-3"><b>Martha Ebaile</b></p>
+                        <p class="text">Todos sus recursos disponibles serán reintegrados a tu cuenta.</p>
+                    </div>
+                    <div class="modal-footer borrar">
+                        <button type="button" class="boton3" data-dismiss="modal">Borrar cuenta</button>
+                        <button type="button" class="boton" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>

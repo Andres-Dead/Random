@@ -1,0 +1,892 @@
+<div class="mesaReclutadores">
+    <div class="row">
+        <div class="col-12">
+        <label class="titulo mb-5">Mi mesa de trabajo</label>
+            <div class="row desktop">
+                <div class="col-lg-4">
+                    <div class="one">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="titulo">Buscar talento ahora</label>
+                                    </div>
+                                    <div class="col-12 col-md-12 col-lg-12 col-xl-12 col-xxl-9">
+                                        <input type="password" class="input1" id="inputPassword4" placeholder="Puesto o palabra clave">
+                                    </div>
+                                    <div class="col-12 col-md-12 col-lg-12 col-xl-12 col-xxl-3">
+                                        <button type="submit" class="boton mx-auto d-block mt-lg-3">Buscar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="four">
+                        <div class="card">
+                            <div class="row linea">
+                                <div class="col-12 ms-4 mt-4">
+                                    <label class="titulo">Vacantes asignadas</label>
+                                </div>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li *ngFor="let vacante of vacantes" class="list-group-item azul linea">
+                                    <div class="destacado">
+                                        <img class="" src="../../assets/img/destacada.svg" alt="">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-md-12 col-lg-12 col-xl-12 col-xxl-8 mt-lg-4">
+                                            <label class="text2">{{vacante.name}}</label>
+                                            <label class="text3">{{vacante.location}}</label>
+                                            <label *ngFor="let item of vacante.job_type" class="text3">{{item}}</label>
+                                            <label class="text4">{{vacante.min_salary | currency : 'USD' : 'symbol' : '1.0-0' }} - {{vacante.max_salary | currency : 'USD' : 'symbol' : '1.0-0' }} MNX</label>
+                                            <label class="text11">Publicada por {{reclutador.data.recruiter_info.name}}</label>
+                                            <label class="text12">Expira en 20 días</label>
+                                        </div>
+                                        <div class="col-12 col-md-12 col-lg-12 col-xl-12 col-xxl-4 mt-5 mb-4">
+                                            <button type="submit" class="boton2 mx-auto d-block mb-4">Ver candidatos</button>
+                                            <button type="submit" class="boton mx-auto d-block">Editar</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="cuadro2">
+                                                <div class="activo"><img class="me-2" src="../../assets/img/vistas.svg" alt="">25 vistas</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="cuadro2">
+                                                <div class="activo"><img class="me-2" src="../../assets/img/vistas2.svg" alt="">5 postulados</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="cuadro2">
+                                                <div class="activo" style="color:#68B744"><img class="me-2" src="../../assets/img/vistas3.svg" alt="">2 nuevos</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-4 offset-xxl-4">
+                                    <button type="submit" class="boton3 mx-auto d-block">Ver todas</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="eight">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-12 ms-4 mt-4">
+                                    <label class="titulo">Tus vacantes inactivas</label>
+                                </div>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li *ngFor="let inactiva of inactivas" class="list-group-item linea">
+                                   <div *ngIf="(inactiva | json) != '{}'">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label class="text2" style="color:#B2B3B5">{{inactiva.name}}</label>
+                                            <label class="text3">{{inactiva.location}}</label>
+                                            <label *ngFor="let item of inactiva.job_type" class="text3">{{item}}</label>
+                                            <label class="text4">{{inactiva.min_salary | currency : 'USD' : 'symbol' : '1.0-0' }} - {{inactiva.max_salary | currency : 'USD' : 'symbol' : '1.0-0' }} MNX</label>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-4">
+                                            <button type="submit" class="boton2 mx-auto d-block mb-4">Reactivar</button>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-4 offset-xxl-4">
+                                            <button type="submit" class="boton6 mx-auto d-block">Editar</button>
+                                        </div>
+                                    </div>
+                                   </div>
+                                </li>
+                            </ul>
+                            <div class="row mb-3 me-3">
+                                <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-4 offset-xxl-4">
+                                    <button type="submit" class="boton3 mx-auto d-block">Ver todas</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="two">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="titulo">Nueva Vacante</label>
+                                    </div>
+                                    <div class="col-12 col-md-12 col-lg-12 col-xl-12 col-xxl-9">
+                                        <input type="text" class="input1" id="inputPassword4" placeholder="Título del empleo">
+                                    </div>
+                                    <div class="col-12 col-md-12 col-lg-12 col-xl-12 col-xxl-3">
+                                        <button routerLink="/recruiters/NuevaVacanteReclutador" class="boton2 mx-auto d-block mt-lg-3">Crear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="five">
+                        <div class="card">
+                            <div class="card-body mb-2">
+                                <div class="row">
+                                    <div class="col-12 mb-2">
+                                        <label class="titulo">Recursos disponibles</label>
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-12 col-md-12 col-lg-6 col-xl-6 col-xxl-3 mb-lg-3">
+                                        <div class="card azul2">
+                                            <div class="row">
+                                                <div class="col-12 d-flex justify-content-center mb-2">
+                                                    <img class="icono ms-1 me-2" src="../../assets/img/iconorec.svg" alt="">
+                                                    <label class="text9">{{recurso.num_vacants}}</label>
+                                                </div>
+                                                <div class="col-12 col-lg-12 col-md-12">
+                                                    <label class="text6">VACANTES <br>DISPONIBLES</label>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-12 col-lg-6 col-xl-6 col-xxl-3 mb-lg-3">
+                                        <div class="card azul2">
+                                            <div class="row">
+                                                <div class="col-12 d-flex justify-content-center mb-2">
+                                                    <img class="icono ms-1 me-2" src="../../assets/img/iconorec2.svg" alt="">
+                                                    <label class="text9">{{recurso.num_creds}}</label>
+                                                </div>
+                                                <div class="col-12 col-lg-12 col-md-12">
+                                                    <label class="text6">CRÉDITOS <br>DISPONIBLES</label>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-12 col-lg-6 col-xl-6 col-xxl-3">
+                                        <div class="card azul2">
+                                            <div class="row">
+                                                <div class="col-12 d-flex justify-content-center mb-2">
+                                                    <img class="icono ms-1 me-2" src="../../assets/img/iconorec4.svg" alt="">
+                                                    <label class="text9">{{recurso.num_feat}}</label>
+                                                </div>
+                                                <div class="col-12 col-lg-12 col-md-12">
+                                                    <label class="text6">VACANTE <br>DESTACADA</label>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-12 col-lg-6 col-xl-6 col-xxl-3">
+                                        <div class="card azul2 des">
+                                            <div class="row">
+                                                <div class="col-12 d-flex justify-content-center mb-2">
+                                                    <img class="icono ms-1 me-2 desConf" src="../../assets/img/iconorec5.svg" alt="">
+                                                    <label class="text9">{{recurso.num_confidential}}</label>
+                                                </div>
+                                                <div class="col-12 col-lg-12 col-md-12">
+                                                    <label class="text6">VACANTE <br>CONFIDENCIAL</label>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <label class="titulo mt-3">¿Necesitas más recursos? Contacta a tu empresa.</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="seven">
+                           <div class="card">
+                             <div class="row linea">
+                                <div class="col-12 ms-4 mt-4 me-lg-4">
+                                    <label class="titulo">Últimos talentos postulados en tus vacacantes</label>
+                                </div>
+                            </div>
+                            <ul *ngFor="let postulado of postulados" class="list-group list-group-flush">
+                                <li class="list-group-item azul linea">
+                                    <div class="row">
+                                        <div class="col-12 col-md-12 col-lg-12 col-xl-12 col-xxl-8">
+                                            <label class="text2">{{postulado.user.first_name}} {{postulado.user.last_name}}</label>
+                                            <label class="text3">{{postulado.vacant_info.name}}</label>
+                                            <label class="text3">{{postulado.vacant_info.location}}</label>
+                                            </div>
+                                        <div class="col-12 col-md-12 col-lg-12 col-xl-12 col-xxl-4 d-flex align-items-center">
+                                            <button type="submit" class="boton mx-auto d-block">Ver Perfil</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="row">
+                                <div class="col-12 col-md-12 col-lg-9 col-xl-8 col-xxl-6">
+                                    <button type="submit" class="boton3 mx-auto d-block">Ver todas las vacantes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="three">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row mt-5 ms-1">
+                                    <div class="col-12 col-lg-12 col-md-12">
+                                        <div class="cuadro mx-auto d-block">
+                                            <img class="mx-auto d-block" src="../../../../../assets/img/{{company.company.profile_pic}}" alt="">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="estrellas">
+                                    <div class="row mt-3 ms-1 d-flex justify-content-center">
+                                        <div col="col-lg-1">
+                                            <div class="completa"></div>
+                                        </div>
+                                        <div col="col-lg-2">
+                                            <div class="completa"></div>
+                                        </div>
+                                        <div col="col-lg-2">
+                                            <div class="completa"></div>
+                                        </div>
+                                        <div col="col-lg-2">
+                                            <div class="media"></div>
+                                        </div>
+                                        <div col="col-lg-2">
+                                            <div class="vacia"></div>
+                                    </div>
+                                </div>
+                                
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <label class="text1 text-center"><b>{{company.num_reviews}} evaluaciones</b></label>
+                                    </div>
+                                </div>
+                                <div class="row mt-3 mb-5 d-flex justify-content-center">
+                                    <div class="col-10 ms-3">
+                                        <button type="submit" class="boton2 mx-auto d-block" style="width: 95%;">Ver evaluaciones</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nine">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-12">
+                                    <label class="titulo ms-4 mt-4">Conviértete em un reclutador experto</label>
+                                </div>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-12">
+                                            <p class="text3 mb-0">¡Estas por expandir tu empresa y necesitas que todos te vean</p>
+                                            <label class="text7"><b>¡Anúnciate con nosotros!</b></label>
+                                            <img class="imganuncio mx-auto d-block mt-5" src="../../assets/img/imgAnuncioRecluta.svg" alt="" >
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-lg-10 mt-5 offset-lg-1">
+                                            <button type="submit" class="boton2 mx-auto d-block mb-lg-4">Ir a capital  talento</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ten">
+                    </div>
+                </div>  
+            </div>
+            <!----------------Version movil------------------------------------------------->
+            <div class="row movil">
+                <div class="col-12">
+                    <!-------------Parte 1-------------->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row mt-5 ms-1">
+                                <div class="col-12 col-lg-12 col-md-12">
+                                    <div class="cuadro mx-auto d-block">
+                                        <img class="mx-auto d-block pt-4 pt-lg-4 pt-md-3" src="../../../../../assets/img/{{company.company.profile_pic}}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="estrellas">
+                                <div *ngIf="company.score === 5" class="row mt-3 ms-1 d-flex justify-content-center">
+                                    <div col="col-lg-1">
+                                        <div class="completa"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="completa"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="completa"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="completa"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="completa"></div>
+                                    </div>
+                                </div>
+                                <div *ngIf="company.score <= 4.5 && company.score >= 5" class="row mt-3 ms-1 d-flex justify-content-center">
+                                    <div col="col-lg-1">
+                                        <div class="completa"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="completa"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="completa"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="completa"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="media"></div>
+                                    </div>
+                                </div>
+                                <div *ngIf="company.score <= 3.5 && company.score >= 4" class="row mt-3 ms-1 d-flex justify-content-center">
+                                    <div col="col-lg-1">
+                                        <div class="completa"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="completa"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="completa"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="media"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="vacia"></div>
+                                    </div>
+                                </div>
+                                <div *ngIf="company.score <= 2.5 && company.score >= 3" class="row mt-3 ms-1 d-flex justify-content-center">
+                                    <div col="col-lg-1">
+                                        <div class="completa"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="completa"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="media"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="vacia"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="vacia"></div>
+                                    </div>
+                                </div>
+                                <div *ngIf="company.score <= 1.5 && company.score >= 2" class="row mt-3 ms-1 d-flex justify-content-center">
+                                    <div col="col-lg-1">
+                                        <div class="completa"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="media"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="vacia"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="vacia"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="vacia"></div>
+                                    </div>
+                                </div>
+                                <div *ngIf="company.score <= .5 && company.score >= 1" class="row mt-3 ms-1 d-flex justify-content-center">
+                                    <div col="col-lg-1">
+                                        <div class="media"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="vacia"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="vacia"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="vacia"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="vacia"></div>
+                                    </div>
+                                </div>
+                                <div *ngIf="company.score === 0" class="row mt-3 ms-1 d-flex justify-content-center">
+                                    <div col="col-lg-1">
+                                        <div class="vacia"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="vacia"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="vacia"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="vacia"></div>
+                                    </div>
+                                    <div col="col-lg-2">
+                                        <div class="vacia"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <label class="text1"><b>13,671 evaluaciones</b></label>
+                                </div>
+                            </div>
+                            <div class="row mt-3 mb-5 d-flex justify-content-center">
+                                <div class="col-10 ms-3">
+                                    <button type="submit" class="boton2 mx-auto d-block" style="width: 95%;">Ver evaluaciones</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-------------Parte 2-------------->
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-12">
+                                <label class="titulo ms-4 mt-4">Completa tu perfil</label>
+                            </div>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="row d-flex justify-content-center mb-3">
+                                    <div class="col-6">
+                                        <label class="porcentaje">70%</label>
+                                        <canvas id="myChart"></canvas>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-12">
+                                        <p class="text3">Mejora tu posición en las búsquedas de los talentos,
+                                            completa tu perfil para recibir opiniones y crear confianza entre la comunidad.</p>
+                                    </div>
+                                    <div class="col-10">
+                                        <button type="submit" class="boton mx-auto d-block">Cambiar información</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item azul">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="text10"><img class="me-2" src="../../assets/img/verifica.svg" alt="">Verifica tu empresa</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-7">
+                                        <input type="password" class="input1" id="inputPassword4" placeholder="Documento SAT">
+                                    </div>
+                                    <div class="col-5">
+                                        <button type="submit" class="boton2 mx-auto d-block">Examinar</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-5 ms-4 mt-4 mb-4">
+                                <button type="submit" class="boton4 mx-auto d-block">Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-------------Parte 3-------------->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <label class="titulo">Buscar talento ahora</label>
+                                </div>
+                                <div class="col-8 col-md-9 col-lg-12 col-xl-12 col-xxl-9">
+                                    <input type="password" class="input1" id="inputPassword4" placeholder="Puesto o palabra clave">
+                                </div>
+                                <div class="col-4 col-md-3 col-lg-12 col-xl-12 col-xxl-3">
+                                    <button type="submit" class="boton mx-auto d-block mt-3">Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <label class="titulo">Nueva Vacante</label>
+                                </div>
+                                <div class="col-8 col-lg-9 col-md-9">
+                                    <input type="password" class="input1" id="inputPassword4" placeholder="Título del empleo">
+                                </div>
+                                <div class="col-4 col-lg-3 col-md-3">
+                                    <button type="submit" class="boton2 mx-auto d-block">Crear</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-------------Parte 4-------------->
+                    <div class="card">
+                        <div class="card-body mb-2">
+                            <div class="row">
+                                <div class="col-12 mb-2">
+                                    <label class="titulo">Recursos disponibles</label>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-12 col-lg-3 col-md-3 mb-3">
+                                    <div class="card azul2">
+                                        <div class="row">
+                                            <div class="col-12 d-flex justify-content-center mb-2">
+                                                <img class="icono ms-1 me-2" src="../../assets/img/iconorec.svg" alt="">
+                                                <label class="text9">{{recurso.num_vacants}}</label>
+                                            </div>
+                                            <div class="col-12 col-lg-12 col-md-12">
+                                                <label class="text6">VACANTES <br>DISPONIBLES</label>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-3 col-md-3 mb-3">
+                                    <div class="card azul2">
+                                        <div class="row">
+                                            <div class="col-12 d-flex justify-content-center mb-2">
+                                                <img class="icono ms-1 me-2" src="../../assets/img/iconorec2.svg" alt="">
+                                                <label class="text9">{{recurso.num_creds}}</label>
+                                            </div>
+                                            <div class="col-12 col-lg-12 col-md-12">
+                                                <label class="text6">CRÉDITOS <br>DISPONIBLES</label>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-3 col-md-3 mb-3">
+                                    <div class="card azul2">
+                                        <div class="row">
+                                            <div class="col-12 d-flex justify-content-center mb-2">
+                                                <img class="icono ms-1 me-2" src="../../assets/img/iconorec4.svg" alt="">
+                                                <label class="text9">{{recurso.num_feat}}</label>
+                                            </div>
+                                            <div class="col-12 col-lg-12 col-md-12">
+                                                <label class="text6">VACANTE <br>DESTACADA</label>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-3 col-md-3 mb-3">
+                                    <div class="card azul2 des">
+                                        <div class="row">
+                                            <div class="col-12 d-flex justify-content-center mb-2">
+                                                <img class="icono ms-1 me-2" src="../../assets/img/iconorec5.svg" alt="">
+                                                <label class="text9">{{recurso.num_confidential}}</label>
+                                            </div>
+                                            <div class="col-12 col-lg-12 col-md-12">
+                                                <label class="text6">VACANTE <br>CONFIDENCIAL</label>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-8">
+                                    <label class="titulo mt-3">¿Necesitas más recursos? Contacta a tu empresa.</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body mb-2">
+                            <div class="row">
+                                <div class="col-12 mb-2">
+                                    <label class="titulo">Tus números de este mes</label>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-12 col-lg-3 col-md-3 mb-3">
+                                    <div class="card azul2">
+                                        <div class="row">
+                                            <div class="col-12 d-flex justify-content-center mb-2">
+                                                <img class="icono ms-1 me-2" src="../../assets/img/iconorec.svg" alt="">
+                                                <label class="text9">5</label>
+                                            </div>
+                                            <div class="col-12 col-lg-12 col-md-12">
+                                                <label class="text6">VACANTES <br>ACTIVAS</label>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-3 col-md-3 mb-3">
+                                    <div class="card azul2">
+                                        <div class="row">
+                                            <div class="col-12 d-flex justify-content-center mb-2">
+                                                <img class="icono ms-1 me-2" src="../../assets/img/iconoportal1.svg" alt="">
+                                                <label class="text9" style="color: #68B744;">30</label>
+                                            </div>
+                                            <div class="col-12 col-lg-12 col-md-12">
+                                                <label class="text6" style="color: #68B744;">NUEVOS <br>CANDIDATOS</label>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-3 col-md-3 mb-3">
+                                    <div class="card azul2">
+                                        <div class="row">
+                                            <div class="col-12 d-flex justify-content-center mb-2">
+                                                <img class="icono ms-1 me-2" src="../../assets/img/iconorec4.svg" alt="">
+                                                <label class="text9">30</label>
+                                            </div>
+                                            <div class="col-12 col-lg-12 col-md-12">
+                                                <label class="text6">SELECCIONADOS</label>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-3 col-md-3 mb-3">
+                                    <div class="card azul2 des">
+                                        <div class="row">
+                                            <div class="col-12 d-flex justify-content-center mb-2">
+                                                <img class="icono ms-1 me-2" src="../../assets/img/iconorec5.svg" alt="">
+                                                <label class="text9">0</label>
+                                            </div>
+                                            <div class="col-12 col-lg-12 col-md-12">
+                                                <label class="text6">REVISADOS</label>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-12 col-lg-9 col-xl-8 col-xxl-5">
+                                    <button type="submit" class="boton3">Ver todas tus vacantes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-------------Parte 5-------------->
+                    <div class="card">
+                        <div class="row linea">
+                            <div class="col-12 ms-4 mt-4">
+                                <label class="titulo">Vacantes asignadas</label>
+                            </div>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li *ngFor="let vacante of vacantes" class="list-group-item azul linea">
+                                <div class="destacado">
+                                    <img class="" src="../../assets/img/destacada.svg" alt="">
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="text2">{{vacante.name}}</label>
+                                        <label class="text3">{{vacante.location}}</label>
+                                        <label *ngFor="let item of vacante.job_type" class="text3">{{item}}</label>
+                                        <label class="text4">{{vacante.min_salary | currency : 'USD' : 'symbol' : '1.0-0' }} - {{vacante.max_salary | currency : 'USD' : 'symbol' : '1.0-0' }} MNX</label>
+                                        <label class="text11">Publicada por {{reclutador.data.recruiter_info.name}}</label>
+                                        <label class="text12">Expira en 20 días</label>
+                                    </div>
+                                    <div class="col-12 mt-3 mb-4">
+                                        <button type="submit" class="boton2 mx-auto d-block mb-4">Ver candidatos</button>
+                                        <button type="submit" class="boton mx-auto d-block">Editar</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="cuadro2">
+                                            <div class="activo"><img class="me-2" src="../../assets/img/vistas.svg" alt="">25 vistas</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="cuadro2">
+                                            <div class="activo"><img class="me-2" src="../../assets/img/vistas2.svg" alt="">5 postulados</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="cuadro2">
+                                            <div class="activo" style="color:#68B744"><img class="me-2" src="../../assets/img/vistas3.svg" alt="">2 nuevos</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item linea">
+                            <div class="confidencial">
+                                <img class="" src="../../assets/img/confidencialBoton.svg" alt="">
+                            </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="text2">Ejecutivo de cuenta Bilingüe UAG</label>
+                                        <label class="text3">Guadalajara, Jalisco.</label>
+                                        <label class="text3">Medio tiempo</label>
+                                        <label class="text4">4,000 - 5,000 MNX</label>
+                                        <label class="text11">Publicada por Empresa</label>
+                                        <label class="text12">Expira en 20 días</label>
+                                    </div>
+                                    <div class="col-12 mt-3 mb-4">
+                                        <button type="submit" class="boton2 mx-auto d-block mb-4">Ver candidatos</button>
+                                        <button type="submit" class="boton mx-auto d-block">Editar</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="cuadro2">
+                                            <div class="activo"><img class="me-2" src="../../assets/img/vistas.svg" alt="">10 vistas</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="cuadro2">
+                                            <div class="des"><img class="desP me-2" src="../../assets/img/vistas2.svg" alt="">0 postulados</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="cuadro2">
+                                            <div class="des"><img class="desN me-2" src="../../assets/img/vistas3.svg" alt="">2 nuevos</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item azul linea">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="text2">Ejecutivo de cuenta Jr.</label>
+                                        <label class="text3">Guadalajara, Jalisco.</label>
+                                        <label class="text3">Medio tiempo</label>
+                                        <label class="text4">4,000 - 5,000 MNX</label>
+                                        <label class="text11">Publicada por Empresa</label>
+                                        <label class="text12">Expira en 20 días</label>
+                                    </div>
+                                    <div class="col-12 mt-3 mb-4">
+                                        <button type="submit" class="boton2 mx-auto d-block mb-4">Ver candidatos</button>
+                                        <button type="submit" class="boton mx-auto d-block">Editar</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="cuadro2">
+                                            <div class="des"><img class="desV me-2" src="../../assets/img/vistas.svg" alt="">0 vistas</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="cuadro2">
+                                            <div class="des"><img class="desP me-2" src="../../assets/img/vistas2.svg" alt="">0 postulados</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="cuadro2">
+                                            <div class="des"><img class="desN me-2" src="../../assets/img/vistas3.svg" alt="">0 nuevos</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-6 col-lg-3 col-md-3 ms-md-2">
+                                <button type="submit" class="boton3 mx-auto d-block">Ver todas</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-------------Parte 6-------------->
+                    <div class="card">
+                        <div class="row linea">
+                            <div class="col-12 ms-4 mt-4">
+                                <label class="titulo">Últimos talentos postulados</label>
+                            </div>
+                        </div>
+                        <ul *ngFor="let postulado of postulados" class="list-group list-group-flush">
+                            <li class="list-group-item azul linea">
+                                <div class="row">
+                                    <div class="col-7 col-lg-8 col-md-8">
+                                        <label class="text2">{{postulado.user.first_name}} {{postulado.user.last_name}}</label>
+                                        <label class="text3">{{postulado.vacant_info.name}}</label>
+                                        <label class="text3">{{postulado.vacant_info.location}}</label>
+                                    </div>
+                                    <div class="col-5 col-lg-4 col-md-4 d-flex align-items-center">
+                                        <button type="submit" class="boton mx-auto d-block">Ver Perfil</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-12 col-md-12 col-lg-9 col-xl-8 col-xxl-5">
+                                <button type="submit" class="boton3 mx-auto d-block">Ver todas las vacantes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-------------Parte 7-------------->
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-12 ms-4 mt-4">
+                                <label class="titulo">Tus vacantes inactivas</label>
+                            </div>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item linea">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="text2" style="color:#B2B3B5">Ejecutivo de cuenta Jr.</label>
+                                        <label class="text3">Guadalajara, Jalisco.</label>
+                                        <label class="text3">Medio tiempo</label>
+                                        <label class="text4">4,000 - 5,000 MNX</label>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-6">
+                                        <button type="submit" class="boton2 mx-auto d-block mb-4">Reactivar</button>
+                                    </div>
+                                    <div class="col-6 offset-lg-4">
+                                        <button type="submit" class="boton6 mx-auto d-block">Editar</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item linea">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="text2" style="color:#B2B3B5">Ejecutivo de cuenta Jr.</label>
+                                        <label class="text3">Guadalajara, Jalisco.</label>
+                                        <label class="text3">Medio tiempo</label>
+                                        <label class="text4">4,000 - 5,000 MNX</label>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-6">
+                                        <button type="submit" class="boton2 mx-auto d-block mb-4">Reactivar</button>
+                                    </div>
+                                    <div class="col-6 offset-lg-4">
+                                        <button type="submit" class="boton6 mx-auto d-block">Editar</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="row mb-3 me-3">
+                            <div class="col-9 col-lg-4 col-md-4 ">
+                                <button type="submit" class="boton3 mx-auto d-block">Ver todas</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-------------Parte 8-------------->
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-12">
+                                <label class="titulo ms-4 mt-4">Conviértete em un reclutador experto</label>
+                            </div>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-12">
+                                        <p class="text3 mb-0">¡Estas por expandir tu empresa y necesitas que todos te vean</p>
+                                        <label class="text7"><b>¡Anúnciate con nosotros!</b></label>
+                                        <img class="imganuncio mx-auto d-block mt-5" src="../../assets/img/imgAnuncioRecluta.svg" alt="" >
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-lg-10 mt-5 offset-lg-1">
+                                        <button type="submit" class="boton2 mx-auto d-block">Ir a capital  talento</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>

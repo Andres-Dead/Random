@@ -1,0 +1,102 @@
+<div class="container-fluid">
+    <div class="cuenta">
+      <div class="parte">
+        <div class="row">
+          <div class="col-12">
+            <label class="titulo">Modificar e-mail y contraseña</label>
+            <p class="text">
+              Estás registrado con el e-mail <a>{{ this.email }}</a
+              >. A esta dirección te enviaremos las notificaciones sobre nuevas
+              ofertas y tus postulaciones.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 d-flex justify-content-start">
+            <button class="boton" type="button">Editar información</button>
+          </div>
+          <div class="col-6 d-flex justify-content-end">
+            <button class="boton" type="button" (click)="changePass()">Cambiar contraseña</button>
+          </div>
+        </div>
+      </div>
+      <div class="parte">
+        <form [formGroup]="formGroup" (ngSubmit)="setVisibility()">
+          <div class="row">
+            <div class="col-12">
+              <label class="titulo">Modificar nivel de privacidad</label>
+              <label class="radio mb-4">
+                <input
+                  id="male"
+                  type="radio"
+                  value="1"
+                  name="visibilidad"
+                  formControlName="visibilidad"
+                  [checked]="this.cvVisibility == true"
+                />
+                <span>Currículum visible para las empresas. </span>
+              </label>
+  
+              <label class="radio mb-4">
+                <input
+                  id="female"
+                  type="radio"
+                  value="0"
+                  name="visibilidad"
+                  formControlName="visibilidad"
+                  [checked]="this.cvVisibility == false"
+                />
+                <span>Currículum no visible para las empresas. </span>
+              </label>
+              <p class="text ml-4">
+                Las empresas no tienen acceso a sus datos y no pueden contactar
+                contigo. Solamente las empresas a cuyas ofertas has postulado
+                pueden visualizar tus datos y contactarte.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 d-flex justify-content-start">
+              <button class="boton" type="submit" [disabled]="!formGroup.valid">
+                Actualizar preferencia
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="parte">
+        <form [formGroup]="formGroupE" (ngSubmit)="deleteAccount()">
+          <div class="row">
+            <div class="col-12">
+              <label class="titulo">Eliminar cuenta</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-5">
+              <!--Input checkox-->
+              <label class="checkbox">
+                <input type="checkbox" formControlName="token"/>
+                <span class="check"></span>
+                <span class="textCheck">Eliminar cuenta {{ this.email }}</span>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p class="text ml-4">
+                Esta opción hace que tu cuenta {{ this.email }} se elimine de
+                manera definitiva junto con toda tu actividad en Capital Talento y
+                todos los servicios contratados hasta la fecha
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 d-flex justify-content-start">
+              <button class="boton" type="submit" [disabled]="!formGroupE.valid">Eliminar cuenta</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

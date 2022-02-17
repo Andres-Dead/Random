@@ -1,0 +1,97 @@
+<form method="get">
+    <h1 class="titulo">Preferencias de empleo</h1>
+    <label class="sub">Puesto de trabajo deseado</label>
+    <input value="">
+    <label class="sub">Industria deseada</label>
+    <input value="">
+    <label class="sub">Tipo de trabajo</label>
+    <div class="row">
+        <div class="col-12 col-lg-4 col-md-4">
+            <!--Input checkox-->
+            <label class="checkbox">
+                <input type="checkbox">
+                <span class="check"></span>
+                <span class="textCheck">Tiempo completo</span>
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" checked>
+                <span class="check"></span>
+                <span class="textCheck">Medio tiempo</span>
+            </label>
+            <label class="checkbox">
+                <input type="checkbox">
+                <span class="check"></span>
+                <span class="textCheck">Tiempo indefinido</span>
+            </label>
+            <label class="checkbox">
+                <input type="checkbox">
+                <span class="check"></span>
+                <span class="textCheck">Por contrato</span>
+            </label>
+            <label class="checkbox">
+                <input type="checkbox">
+                <span class="check"></span>
+                <span class="textCheck">Temporal</span>
+            </label>
+            <label class="checkbox">
+                <input type="checkbox">
+                <span class="check"></span>
+                <span class="textCheck">Comisión</span>
+            </label>
+            <label class="checkbox">
+                <input type="checkbox">
+                <span class="check"></span>
+                <span class="textCheck">Becario/Prácticas profesionales</span>
+            </label>
+            <label class="checkbox">
+                <input type="checkbox">
+                <span class="check"></span>
+                <span class="textCheck">Desde casa</span>
+            </label>
+        </div>
+    </div>
+    <label class="sub">Tiempo de experiencia</label>
+    <div class="dropdown">
+        <button class="drop dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Selecciona una opción
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Jr. (0-2 años de experiencia)</a>
+            <a class="dropdown-item" href="#">Full (3-6 años de experiencia)</a>
+            <a class="dropdown-item" href="#">Sr. (+ 6 años de experiencia)</a>
+        </div>
+    </div>
+    <label class="sub">Rango de salario deseado</label>
+    <div class="row">
+        <div class="col-8 col-lg-5 col-md-8">                        
+            <input type="number">
+        </div>
+        <div class="col-4 col-lg-3 col-md-4">
+            <div class="dropdown">
+                <button class="drop dropdown-toggle mt-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    al mes
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">al mes</a>
+                    <a class="dropdown-item" href="#">al año</a>
+                    <a class="dropdown-item" href="#">por semana</a>
+                    <a class="dropdown-item" href="#">al día</a>
+                    <a class="dropdown-item" href="#">por hora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8 col-lg-4 col-md-6 mt-3">
+            <!--button type="submit" class="boton2">Editar información</button-->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 col-lg-4 col-md-6">
+            <button type="submit" class="boton2">Guardar</button>
+        </div>
+        <div class="col-6 col-lg-4 col-md-6">
+            <button type="submit" class="boton5">Cancelar</button>
+        </div>
+    </div>
+</form>

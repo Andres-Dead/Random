@@ -1,0 +1,2014 @@
+<body>
+    <div class="container-fluid">
+      <div class="vacantes">
+        <div class="row">
+          <div class="col-12 p-0">
+            <nav>
+              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button
+                  class="nav-link active bActivas"
+                  id="nav-home-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#pActiva"
+                  type="button"
+                  role="tab"
+                  aria-controls="nav-home"
+                  aria-selected="true"
+                >
+                  Activas
+                </button>
+                <button
+                  class="nav-link bExpiradas"
+                  id="nav-profile-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#pExpiradas"
+                  type="button"
+                  role="tab"
+                  aria-controls="nav-contact"
+                  aria-selected="false"
+                >
+                  Expiradas
+                </button>
+                <button
+                  class="nav-link bInactivas"
+                  id="nav-profile-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#pInactivas"
+                  type="button"
+                  role="tab"
+                  aria-controls="nav-contact"
+                  aria-selected="false"
+                >
+                  Inactivas
+                </button>
+                <button
+                  class="nav-link bBorradores"
+                  id="nav-profile-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#pBorradores"
+                  type="button"
+                  role="tab"
+                  aria-controls="nav-contact"
+                  aria-selected="false"
+                >
+                  Borradores
+                </button>
+                <button
+                  class="nav-link bVacante"
+                  id="nav-profile-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#"
+                  type="button"
+                  role="tab"
+                  aria-controls="nav-contact"
+                  aria-selected="false"
+                  data-toggle="modal"
+                >
+                  Crear vacante nueva +
+                </button>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <div class="tab-content" id="nav-tabContent">
+          <div
+            class="tab-pane fade show active pActiva"
+            id="pActiva"
+            role="tabpanel"
+            aria-labelledby="nav-home-tab"
+          >
+            <div class="row pt-3 pb-3 gris">
+              <div class="col-12 col-md-12 col-lg-2">
+                <label class="text1 mb-3">Recursos disponibles</label>
+              </div>
+              <div class="col-3 col-md-3 col-lg pe-lg-2">
+                <div class="cuadro3">
+                  <div class="act">
+                    <div class="row">
+                      <div class="col-5 col-lg-5 col-md-5 col-xl-5 col-xxl-6">
+                        <label class=""
+                          ><img
+                            class=""
+                            src="../../../../../assets/img/creditos.svg"
+                            alt=""
+                          />
+                          {{ this.arrResources["num_cred"] }}</label
+                        >
+                      </div>
+                      <div class="col-7 col-lg-7 col-md-7 col-xl-6 col-xxl-4">
+                        <span class="pt-1">CRÉDITOS</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col-md-3 col-lg pe-lg-2">
+                <div class="cuadro3">
+                  <div class="act">
+                    <div class="row">
+                      <div class="col-4 col-lg-4 col-md-4 col-xl-5 col-xxl-6">
+                        <label class=""
+                          ><img
+                            class=""
+                            src="../../../../../assets/img/activas.svg"
+                            alt=""
+                          />
+                          {{ this.arrResources["num_vacants"] }}</label
+                        >
+                      </div>
+                      <div class="col-8 col-lg-8 col-md-8 col-xl-6 col-xxl-4">
+                        <span>VACANTES ACTIVAS</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col-md-3 col-lg pe-lg-2">
+                <div class="cuadro3">
+                  <div class="act">
+                    <div class="row">
+                      <div class="col-4 col-lg-4 col-md-4 col-xl-5 col-xxl-6">
+                        <label class=""
+                          ><img
+                            class=""
+                            src="../../../../../assets/img/destacadas.svg"
+                            alt=""
+                          />
+                          {{ this.arrResources["num_featured"] }}</label
+                        >
+                      </div>
+                      <div class="col-8 col-lg-8 col-md-8 col-xl-6 col-xxl-4">
+                        <span>VACANTES DESTACADAS</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col-md-3 col-lg">
+                <div class="cuadro3">
+                  <div class="des">
+                    <div class="row">
+                      <div class="col-4 col-lg-4 col-md-4 col-xl-5 col-xxl-6">
+                        <label class=""
+                          ><img
+                            class="me-1"
+                            src="../../../../../assets/img/confidencialesDes.svg"
+                            alt=""
+                          />{{ this.arrResources["num_confidential"] }}</label
+                        >
+                      </div>
+                      <div class="col-8 col-lg-8 col-md-8 col-xl-5 col-xxl-4">
+                        <span>VACANTES COFIDENCIALES</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-3 col-md-3 col-lg-1 offset-xxl-1 d-flex align-items-center offset-5 offset-md-0 mt-3"
+              >
+                <label class="text1">Ordenar por: </label>
+              </div>
+              <div class="col-4 col-md-4 col-lg-2 mt-3">
+                <div class="dropdown">
+                  <button
+                    class="drop2 dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    {{ this.elegido }}
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" (click)="ordenarFecha()"
+                      >Más recientes</a
+                    >
+                    <a class="dropdown-item" (click)="ordenarFecha2()"
+                      >Más antiguas</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="card">
+                <ul class="list-group list-group-flush">
+                  <div
+                    class="divh"
+                    *ngIf="this.arrActivas.length != 0; else noVacants"
+                  >
+                    <div
+                      *ngFor="
+                        let item of this.arrActivas
+                          | paginate
+                            : {
+                                itemsPerPage: this.numPages,
+                                currentPage: p,
+                                id: 'activas'
+                              };
+                        let i = index
+                      "
+                      [attr.data-index]="i"
+                    >
+                      <li
+                        class="{{
+                          i % 2 == 0 ? 'list-group-item' : 'list-group-item azul'
+                        }}"
+                      >
+                        <div class="grid-container">
+                          <div class="grid1">
+                            <div class="row">
+                              <div
+                                class="col-12 col-lg-2 col-md-3"
+                                *ngIf="
+                                  item.type_vacant.includes(2) ||
+                                  item.type_vacant.includes(3) == true
+                                "
+                              >
+                                <button class="boton5" type="button">
+                                  <img
+                                    class="me-1"
+                                    src="../../../../../assets/img/destacada.svg"
+                                    alt=""
+                                  />Destacada
+                                </button>
+                              </div>
+                              <div
+                                class="col-4 col-md-4 col-lg-2"
+                                *ngIf="
+                                  item.type_vacant.includes(1) ||
+                                  item.type_vacant.includes(3) == true
+                                "
+                              >
+                                <button
+                                  class="botonConf"
+                                  type="button"
+                                  style="min-height: 34px"
+                                >
+                                  <img
+                                    class="me-1"
+                                    src="img/confidencialBoton.svg"
+                                    alt=""
+                                  />Confidencial
+                                </button>
+                              </div>
+                              <div class="col-8 col-lg-8 col-md-8">
+                                <label class="text2">{{ item.name }}</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div
+                                class="col-6 col-md-12 col-lg-4 col-xl-3 col-xxl-2"
+                              >
+                                <label class="text3"
+                                  >Publicada {{ item.date_published }}</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(1) == true"
+                                  >Permanente</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(2) == true"
+                                  >Temporal/por Proyecto</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(3) == true"
+                                  >Becario</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(4) == true"
+                                  >Tiempo completo</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(5) == true"
+                                  >Medio tiempo</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(6) == true"
+                                  >Nomina</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(7) == true"
+                                  >Honorarios asimilados</label
+                                >
+                              </div>
+                              <div
+                                class="col-6 col-md-12 col-lg-4 col-xl-3 col-xxl-2"
+                              >
+                                <label class="text3">{{ item.location }}</label>
+                                <label
+                                  class="text3"
+                                  *ngIf="item.modality.includes(2) == true"
+                                  >Presencial</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.modality.includes(1) == true"
+                                  >Remoto</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.modality.includes(3) == true"
+                                  >Desde casa</label
+                                >
+                              </div>
+                              <div
+                                class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 offset-xl-2 offset-xxl-4"
+                              >
+                                <label
+                                  class="text4 text-end"
+                                  *ngIf="item.max_salary == 0"
+                                  >{{ item.min_salary }} MNX</label
+                                >
+                                <label
+                                  class="text4 text-end"
+                                  *ngIf="item.max_salary != 0"
+                                  >${{ item.min_salary }} - ${{
+                                    item.max_salary
+                                  }}
+                                  mxn</label
+                                >
+                              </div>
+                            </div>
+                            <div class="row mt-2">
+                              <div class="col-12">
+                                <p class="text3 text-truncate">
+                                  {{ item.description }}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid2">
+                            <div class="row mb-3">
+                              <div
+                                class="col-4 col-lg-12 d-flex justify-content-center"
+                              >
+                                <button
+                                  class="botonDes mt-3 mt-lg-0"
+                                  type="button"
+                                  (click)="setDestacada(item.id_vacant, false)"
+                                  *ngIf="
+                                    item.type_vacant.includes(1) ||
+                                      item.type_vacant.includes(0) == true;
+                                    else elseblock
+                                  "
+                                >
+                                  <img
+                                    class="me-2"
+                                    src="../../../../../assets/img/destacada.svg"
+                                    alt=""
+                                  />
+                                  Destacar
+                                </button>
+                                <ng-template #elseblock>
+                                  <button
+                                    class="botonDesactivo mt-3"
+                                    type="button"
+                                    (click)="setDestacada(item.id_vacant, true)"
+                                  >
+                                    <img
+                                      class="btnDesD me-2"
+                                      src="../../../../../assets/img/destacada.svg"
+                                      alt=""
+                                    />
+                                    Desdestacar
+                                  </button>
+                                </ng-template>
+                              </div>
+  
+                              <div
+                                class="col-4 col-lg-12 d-flex justify-content-center"
+                              >
+                                <button
+                                  class="botonConf mt-3"
+                                  type="button"
+                                  (click)="setConfidencial(item.id_vacant, false)"
+                                  *ngIf="
+                                    item.type_vacant.includes(2) ||
+                                      item.type_vacant.includes(0) == true;
+                                    else elseblock2
+                                  "
+                                >
+                                  <img
+                                    class="me-2"
+                                    src="../../../../../assets/img/confidencialBoton.svg"
+                                    alt=""
+                                  />
+                                  Hacer Confidencial
+                                </button>
+                                <ng-template #elseblock2>
+                                  <button
+                                    class="botonDesactivo mt-3"
+                                    type="button"
+                                    (click)="
+                                      setConfidencial(item.id_vacant, true)
+                                    "
+                                  >
+                                    <img
+                                      class="me-2"
+                                      src="../../../../../assets/img/confidencialBoton.svg"
+                                      alt=""
+                                    />
+                                    Hacer Confidencial
+                                  </button>
+                                </ng-template>
+                              </div>
+  
+                              <!-- Modal vacante confidencial-->
+                              <div
+                                class="modal fade modalConfidencial"
+                                id="modalConfidencial"
+                                tabindex="-1"
+                                role="dialog"
+                                aria-labelledby="exampleModalCenterTitle"
+                                aria-hidden="true"
+                              >
+                                <div
+                                  class="modal-dialog modal-dialog-centered"
+                                  role="document"
+                                >
+                                  <div class="modal-content">
+                                    <div
+                                      class="modal-header d-flex justify-content-end"
+                                    >
+                                      <button
+                                        type="button"
+                                        class="close"
+                                        data-dismiss="modal"
+                                        aria-label="Close"
+                                      >
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <img
+                                        class="mx-auto d-block"
+                                        src="img/iconoModalConf.svg"
+                                        alt=""
+                                      />
+                                      <h5
+                                        class="modal-title"
+                                        id="exampleModalLongTitle"
+                                      >
+                                        ¡Estás por usar una de tus vacantes
+                                        confidenciales!
+                                      </h5>
+                                      <p class="text">
+                                        Tu vacante será confidencial, eso
+                                        significa que no será visible el perfil ni
+                                        la información de tu empresa para los
+                                        talentos que la vean.
+                                      </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button
+                                        type="button"
+                                        class="boton desactivado mx-auto d-block"
+                                        data-dismiss="modal"
+                                      >
+                                        Cancelar
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="boton mx-auto d-block"
+                                        data-dismiss="modal"
+                                        (click)="setConfidencial(item.id_vacant, false)"
+                                      >
+                                        Hacer esta vacante conficencial
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="col-4 col-lg-12 d-flex justify-content-center"
+                              >
+                                <button class="boton mt-3" type="button">
+                                  Editar vacante
+                                </button>
+                              </div>
+                              <div
+                                class="col-4 col-lg-12 d-flex justify-content-center offset-8 offset-lg-0"
+                              >
+                                <button class="boton4 mt-3 mb-3" type="button">
+                                  Previsualizar
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid3">
+                            <div class="row">
+                              <div class="col-3 col-md col-lg pe-lg-2">
+                                <div class="cuadro3">
+                                  <div class="vistas mt-1">
+                                    <img
+                                      class="me-2"
+                                      src="../../../../../assets/img/iconoV.svg"
+                                      alt=""
+                                    />{{ item.views }} vistas
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 col-md col-lg pe-lg-2">
+                                <div class="cuadro3">
+                                  <div class="postulados mt-1">
+                                    <img
+                                      class="me-2"
+                                      src="../../../../../assets/img/iconoP.svg"
+                                      alt=""
+                                    />{{ item.data.applied }} postulados
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 col-md col-lg pe-lg-2">
+                                <div class="cuadro3">
+                                  <div class="postulados mt-1">
+                                    <img
+                                      class="me-2"
+                                      src="../../../../../assets/img/iconoN.svg"
+                                      alt=""
+                                    />{{ item.data.new_applied }} nuevos
+                                    postulados
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 col-md col-lg pe-lg-2">
+                                <div class="cuadro3">
+                                  <div class="seleccion mt-1">
+                                    <img
+                                      class="me-2"
+                                      src="../../../../../assets/img/iconoS.svg"
+                                      alt=""
+                                    />{{ item.data.selected }} seleccionado
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="col-4 col-md col-lg-2 offset-lg-1 pt-md-3 pt-lg-0 offset-8 mt-3 mt-md-0"
+                              >
+                                <button
+                                  class="boton"
+                                  type="button"
+                                  [routerLink]="['/postulados', item.id_vacant]"
+                                >
+                                  Ver candidatos
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid6">
+                            <div class="row mt-2">
+                              <div
+                                class="col-6 col-md-6 col-lg-6 col-xl-7 col-xxl-6 d-flex align-items-center"
+                              >
+                                <label class="text5"
+                                  >Asignada a {{ item.recruiter }}
+                                </label>
+                              </div>
+                              <div
+                                class="col-6 col-md-6 col-lg-6 col-xl-5 col-xxl-4 d-flex align-items-center"
+                              >
+                                <button
+                                  class="boton2"
+                                  type="button"
+                                  (click)="cambiaReclutador(item.id_vacant)"
+                                >
+                                  Cambiar
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid4">
+                            <div class="row mt-3 d-flex justify-content-end">
+                              <div
+                                class="col-12 col-md-12 col-lg-6 col-xl-5 col-xxl-4"
+                              >
+                                <button
+                                  class="boton3 text-end"
+                                  type="button"
+                                  (click)="setExtender(item.id_vacant)"
+                                  *ngIf="this.ExpiraEn(item.date_expired) <= 5"
+                                >
+                                  Extender vigencia
+                                </button>
+                              </div>
+                              <div
+                                class="col-12 col-md-12 col-lg-6 col-xl-5 col-xxl-4 d-flex align-items-center justify-content-end"
+                              >
+                                <label
+                                  class="text1"
+                                  style="color: #d96375"
+                                  *ngIf="
+                                    this.ExpiraEn(item.date_expired) <= 5;
+                                    else normal
+                                  "
+                                >
+                                  {{
+                                    this.ExpiraEn(item.date_expired) + 1 < 1
+                                      ? "Expirada"
+                                      : "Expira en " +
+                                        this.ExpiraEn(item.date_expired) +
+                                        " día(s)"
+                                  }}
+                                </label>
+                                <ng-template #normal>
+                                  <label class="text1" style="color: #1c4a83"
+                                    >Expira en
+                                    {{ this.ExpiraEn(item.date_expired) + 1 }}
+                                    días</label
+                                  >
+                                </ng-template>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid5">
+                            <div class="row">
+                              <div class="col-5 col-lg-12 offset-7 offset-lg-0">
+                                <button
+                                  class="boton3"
+                                  type="button"
+                                  (click)="setInactiva(item.id_vacant)"
+                                >
+                                  Desactivar vacante
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </div>
+                  </div>
+                  <pagination-controls
+                    class="paginacion"
+                    (pageChange)="p = $event"
+                    id="activas"
+                    previousLabel="Anterior"
+                    nextLabel="Siguiente"
+                  ></pagination-controls>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade pExpiradas"
+            id="pExpiradas"
+            role="tabpanel"
+            aria-labelledby="nav-home-tab"
+          >
+            <div class="row pt-3 pb-3 gris">
+              <div class="col-12 col-md-12 col-lg-2">
+                <label class="text1">Recursos disponibles</label>
+              </div>
+              <div class="col-3 col-md-3 col-lg pe-lg-2">
+                <div class="cuadro3">
+                  <div class="act">
+                    <div class="row">
+                      <div class="col-5 col-lg-5 col-md-5 col-xl-5 col-xxl-6">
+                        <label class=""
+                          ><img
+                            class=""
+                            src="../../../../../assets/img/creditos.svg"
+                            alt=""
+                          />
+                          {{ this.arrResources["num_cred"] }}</label
+                        >
+                      </div>
+                      <div class="col-7 col-lg-7 col-md-7 col-xl-6 col-xxl-4">
+                        <span class="pt-1">CRÉDITOS</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col-md-3 col-lg pe-lg-2">
+                <div class="cuadro3">
+                  <div class="act">
+                    <div class="row">
+                      <div class="col-4 col-lg-4 col-md-4 col-xl-5 col-xxl-6">
+                        <label class=""
+                          ><img
+                            class=""
+                            src="../../../../../assets/img/activas.svg"
+                            alt=""
+                          />
+                          {{ this.arrResources["num_vacants"] }}</label
+                        >
+                      </div>
+                      <div class="col-8 col-lg-8 col-md-8 col-xl-6 col-xxl-4">
+                        <span>VACANTES ACTIVAS</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col-md-3 col-lg pe-lg-2">
+                <div class="cuadro3">
+                  <div class="act">
+                    <div class="row">
+                      <div class="col-4 col-lg-4 col-md-4 col-xl-5 col-xxl-6">
+                        <label class=""
+                          ><img
+                            class=""
+                            src="../../../../../assets/img/destacadas.svg"
+                            alt=""
+                          />
+                          {{ this.arrResources["num_featured"] }}</label
+                        >
+                      </div>
+                      <div class="col-8 col-lg-8 col-md-8 col-xl-6 col-xxl-4">
+                        <span>VACANTES DESTACADAS</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col-md-3 col-lg">
+                <div class="cuadro3">
+                  <div class="des">
+                    <div class="row">
+                      <div class="col-4 col-lg-4 col-md-4 col-xl-5 col-xxl-6">
+                        <label class=""
+                          ><img
+                            class="me-1"
+                            src="../../../../../assets/img/confidencialesDes.svg"
+                            alt=""
+                          />{{ this.arrResources["num_confidential"] }}</label
+                        >
+                      </div>
+                      <div class="col-8 col-lg-8 col-md-8 col-xl-6 col-xxl-4">
+                        <span>VACANTES COFIDENCIALES</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-3 col-md-3 col-lg-1 offset-xxl-1 d-flex align-items-center offset-5 offset-md-0 mt-3"
+              >
+                <label class="text1">Ordenar por: </label>
+              </div>
+              <div class="col-4 col-md-4 col-lg-2 mt-3">
+                <div class="dropdown">
+                  <button
+                    class="drop2 dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    {{ this.elegido }}
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" (click)="ordenarFecha()"
+                      >Más recientes</a
+                    >
+                    <a class="dropdown-item" (click)="ordenarFecha2()"
+                      >Más antiguas</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="card">
+                <ul class="list-group list-group-flush">
+                  <div
+                    class="divh"
+                    *ngIf="this.arrExpiradas.length != 0; else noVacants"
+                  >
+                    <div
+                      *ngFor="
+                        let item of this.arrExpiradas
+                          | paginate
+                            : {
+                                itemsPerPage: this.numPages,
+                                currentPage: p2,
+                                id: 'expiradas'
+                              };
+                        let i = index
+                      "
+                      [attr.data-index]="i"
+                    >
+                      <li
+                        class="{{
+                          i % 2 == 0 ? 'list-group-item' : 'list-group-item azul'
+                        }}"
+                      >
+                        <div class="grid-container">
+                          <div class="grid1">
+                            <div class="row">
+                              <div class="col-12 col-lg-8 col-md-8">
+                                <label class="text2">{{ item.name }}</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div
+                                class="col-12 col-md-12 col-lg-4 col-xl-3 col-xxl-2"
+                              >
+                                <label class="text3"
+                                  >Publicada {{ item.date_published }}</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(1) == true"
+                                  >Permanente</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(2) == true"
+                                  >Temporal/por Proyecto</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(3) == true"
+                                  >Becario</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(4) == true"
+                                  >Tiempo completo</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(5) == true"
+                                  >Medio tiempo</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(6) == true"
+                                  >Nomina</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(7) == true"
+                                  >Honorarios asimilados</label
+                                >
+                              </div>
+                              <div
+                                class="col-12 col-md-12 col-lg-4 col-xl-3 col-xxl-2"
+                              >
+                                <label class="text3">{{ item.location }}</label>
+                                <label
+                                  class="text3"
+                                  *ngIf="item.modality.includes(2) == true"
+                                  >Presencial</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.modality.includes(1) == true"
+                                  >Remoto</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.modality.includes(3) == true"
+                                  >Desde casa</label
+                                >
+                              </div>
+                              <div
+                                class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 offset-xl-2 offset-xxl-4"
+                              >
+                                ${{ item.min_salary }} - ${{ item.max_salary }}
+                                mxn
+                              </div>
+                            </div>
+                            <div class="row mt-2">
+                              <div class="col-12">
+                                <p class="text3">
+                                  {{ item.description }}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid2">
+                            <div class="row">
+                              <div
+                                class="col-6 col-lg-12 d-flex justify-content-center"
+                              >
+                                <button class="boton mt-3" type="button">
+                                  Editar vacante
+                                </button>
+                              </div>
+                              <div
+                                class="col-6 col-lg-12 d-flex justify-content-center"
+                              >
+                                <button
+                                  class="boton5 mt-3"
+                                  style="height: 41px"
+                                  type="button"
+                                  (click)="activarVacante(item.id_vacant)"
+                                >
+                                  Activar
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid3">
+                            <div class="row mt-3">
+                              <div class="col">
+                                <div class="cuadro3">
+                                  <div class="vistas mt-1">
+                                    <img
+                                      class="me-2"
+                                      src="../../../../../assets/img/iconoV.svg"
+                                      alt=""
+                                    />{{ item.views }} vistas
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="cuadro3">
+                                  <div class="postulados mt-1">
+                                    <img
+                                      class="me-2"
+                                      src="../../../../../assets/img/iconoP.svg"
+                                      alt=""
+                                    />{{ item.data.applied }} postulados
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="cuadro3">
+                                  <div class="postulados mt-1">
+                                    <img
+                                      class="me-2"
+                                      src="../../../../../assets/img/iconoN.svg"
+                                      alt=""
+                                    />{{ item.data.new_applied }} nuevos
+                                    postulados
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="cuadro3">
+                                  <div class="seleccion mt-1">
+                                    <img
+                                      class="me-2"
+                                      src="../../../../../assets/img/iconoS.svg"
+                                      alt=""
+                                    />{{ item.data.selected }} seleccionado
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="col-4 col-md col-lg-2 offset-lg-1 pt-md-3 pt-lg-0 offset-8 mt-3 mt-md-0"
+                              >
+                                <button
+                                  class="boton"
+                                  type="button"
+                                  [routerLink]="['/postulados', item.id_vacant]"
+                                >
+                                  Ver candidatos
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid6">
+                            <div class="row mt-2">
+                              <div
+                                class="col-6 col-md-6 col-lg-6 col-xl-7 col-xxl-6 d-flex align-items-center"
+                              >
+                                <label class="text5"
+                                  >Asignada a {{ item.recruiter }}
+                                </label>
+                              </div>
+                              <div
+                                class="col-6 col-md-6 col-lg-6 col-xl-5 col-xxl-4 d-flex align-items-center"
+                              >
+                                <button
+                                  class="boton2"
+                                  type="button"
+                                  (click)="cambiaReclutador(item.id_vacant)"
+                                >
+                                  Cambiar
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid4">
+                            <div class="row mt-3 d-flex justify-content-end">
+                              <div
+                                class="col-12 col-md-12 col-lg-7 col-xl-6 col-xxl-5 d-flex align-items-center justify-content-end"
+                              >
+                                <label class="text3"
+                                  >Expirada el {{ item.date_expired }}</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid5">
+                            <div class="row">
+                              <div class="col-5 col-lg-12 offset-7 offset-lg-0">
+                                <button
+                                  class="boton3 mt-3"
+                                  type="button"
+                                  (click)="deleteVacante(item.id_vacant)"
+                                >
+                                  Borrar vacante
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </div>
+                    <pagination-controls
+                      class="paginacion"
+                      (pageChange)="p2 = $event"
+                      id="expiradas"
+                      previousLabel="Anterior"
+                      nextLabel="Siguiente"
+                    ></pagination-controls>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade pInactivas"
+            id="pInactivas"
+            role="tabpanel"
+            aria-labelledby="nav-home-tab"
+          >
+            <div class="row pt-3 pb-3 gris">
+              <div class="col-12 col-md-12 col-lg-2">
+                <label class="text1">Recursos disponibles</label>
+              </div>
+              <div class="col-3 col-md-3 col-lg pe-lg-2">
+                <div class="cuadro3">
+                  <div class="act">
+                    <div class="row">
+                      <div class="col-5 col-lg-5 col-md-5 col-xl-5 col-xxl-6">
+                        <label class=""
+                          ><img
+                            class=""
+                            src="../../../../../assets/img/creditos.svg"
+                            alt=""
+                          />
+                          {{ this.arrResources["num_cred"] }}</label
+                        >
+                      </div>
+                      <div class="col-7 col-lg-7 col-md-7 col-xl-6 col-xxl-4">
+                        <span class="pt-1">CRÉDITOS</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col-md-3 col-lg pe-lg-2">
+                <div class="cuadro3">
+                  <div class="act">
+                    <div class="row">
+                      <div class="col-4 col-lg-4 col-md-4 col-xl-5 col-xxl-6">
+                        <label class=""
+                          ><img
+                            class=""
+                            src="../../../../../assets/img/activas.svg"
+                            alt=""
+                          />
+                          {{ this.arrResources["num_vacants"] }}</label
+                        >
+                      </div>
+                      <div class="col-8 col-lg-8 col-md-8 col-xl-6 col-xxl-4">
+                        <span>VACANTES ACTIVAS</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col-md-3 col-lg pe-lg-2">
+                <div class="cuadro3">
+                  <div class="act">
+                    <div class="row">
+                      <div class="col-4 col-lg-4 col-md-4 col-xl-5 col-xxl-6">
+                        <label class=""
+                          ><img
+                            class=""
+                            src="../../../../../assets/img/destacadas.svg"
+                            alt=""
+                          />
+                          {{ this.arrResources["num_featured"] }}</label
+                        >
+                      </div>
+                      <div class="col-8 col-lg-8 col-md-8 col-xl-6 col-xxl-4">
+                        <span>VACANTES DESTACADAS</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col-md-3 col-lg">
+                <div class="cuadro3">
+                  <div class="des">
+                    <div class="row">
+                      <div class="col-4 col-lg-4 col-md-4 col-xl-5 col-xxl-6">
+                        <label class=""
+                          ><img
+                            class="me-1"
+                            src="../../../../../assets/img/confidencialesDes.svg"
+                            alt=""
+                          />{{ this.arrResources["num_confidential"] }}</label
+                        >
+                      </div>
+                      <div class="col-8 col-lg-8 col-md-8 col-xl-6 col-xxl-4">
+                        <span>VACANTES COFIDENCIALES</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-3 col-md-3 col-lg-1 offset-xxl-1 d-flex align-items-center offset-5 offset-md-0 mt-3"
+              >
+                <label class="text1">Ordenar por: </label>
+              </div>
+              <div class="col-4 col-md-4 col-lg-2 mt-3">
+                <div class="dropdown">
+                  <button
+                    class="drop2 dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    {{ this.elegido }}
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" (click)="ordenarFecha()"
+                      >Más recientes</a
+                    >
+                    <a class="dropdown-item" (click)="ordenarFecha2()"
+                      >Más antiguas</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="card">
+                <ul class="list-group list-group-flush">
+                  <div
+                    class="divh"
+                    *ngIf="this.arrInactive.length != 0; else noVacants"
+                  >
+                    <div
+                      *ngFor="
+                        let item of this.arrInactive
+                          | paginate
+                            : {
+                                itemsPerPage: this.numPages,
+                                currentPage: p3,
+                                id: 'inactivas'
+                              };
+                        let i = index
+                      "
+                      [attr.data-index]="i"
+                    >
+                      <li
+                        class="{{
+                          i % 2 == 0 ? 'list-group-item' : 'list-group-item azul'
+                        }}"
+                      >
+                        <div class="grid-container">
+                          <div class="grid1">
+                            <div class="row">
+                              <div class="col-12 col-lg-8 col-md-8">
+                                <label class="text2">{{ item.name }}</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div
+                                class="col-12 col-md-12 col-lg-4 col-xl-3 col-xxl-2"
+                              >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(1) == true"
+                                  >Permanente</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(2) == true"
+                                  >Temporal/por Proyecto</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(3) == true"
+                                  >Becario</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(4) == true"
+                                  >Tiempo completo</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(5) == true"
+                                  >Medio tiempo</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(6) == true"
+                                  >Nomina</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(7) == true"
+                                  >Honorarios asimilados</label
+                                >
+                              </div>
+                              <div
+                                class="col-12 col-md-12 col-lg-4 col-xl-3 col-xxl-2"
+                              >
+                                <label class="text3">{{ item.location }}</label>
+                                <label
+                                  class="text3"
+                                  *ngIf="item.modality.includes(2) == true"
+                                  >Presencial</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.modality.includes(1) == true"
+                                  >Remoto</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.modality.includes(3) == true"
+                                  >Desde casa</label
+                                >
+                              </div>
+                              <div
+                                class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 offset-xl-2 offset-xxl-4"
+                              >
+                                <label
+                                  class="text4 text-end"
+                                  *ngIf="item.max_salary == 0"
+                                  >{{ item.min_salary }} MNX</label
+                                >
+                                <label
+                                  class="text4 text-end"
+                                  *ngIf="item.max_salary != 0"
+                                  >${{ item.min_salary }} - ${{
+                                    item.max_salary
+                                  }}
+                                  mxn</label
+                                >
+                              </div>
+                            </div>
+                            <div class="row mt-2">
+                              <div class="col-12">
+                                <p class="text3 text-truncate">
+                                  {{ item.description }}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid2">
+                            <div class="row">
+                              <div
+                                class="col-6 col-lg-12 d-flex justify-content-center"
+                              >
+                                <button class="boton mt-3" type="button">
+                                  Editar vacante
+                                </button>
+                              </div>
+                              <div
+                                class="col-6 col-lg-12 d-flex justify-content-center"
+                              >
+                                <button
+                                  class="boton5 mt-3"
+                                  style="height: 41px"
+                                  type="button"
+                                  (click)="activarVacante(item.id_vacant)"
+                                >
+                                  Activar
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid3">
+                            <div class="row mt-3">
+                              <div class="col">
+                                <div class="cuadro3">
+                                  <div class="vistas mt-1">
+                                    <img
+                                      class="me-2"
+                                      src="../../../../../assets/img/iconoV.svg"
+                                      alt=""
+                                    />{{ item.views }} vistas
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="cuadro3">
+                                  <div class="postulados mt-1">
+                                    <img
+                                      class="me-2"
+                                      src="../../../../../assets/img/iconoP.svg"
+                                      alt=""
+                                    />{{ item.data.applied }} postulados
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="cuadro3">
+                                  <div class="postulados mt-1">
+                                    <img
+                                      class="me-2"
+                                      src="../../../../../assets/img/iconoN.svg"
+                                      alt=""
+                                    />{{ item.data.new_applied }} nuevos
+                                    postulados
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="cuadro3">
+                                  <div class="seleccion mt-1">
+                                    <img
+                                      class="me-2"
+                                      src="../../../../../assets/img/iconoS.svg"
+                                      alt=""
+                                    />{{ item.data.selected }} seleccionado
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="col-4 col-md col-lg-2 offset-lg-1 pt-md-3 pt-lg-0 offset-8 mt-3 mt-md-0"
+                              >
+                                <button
+                                  class="boton"
+                                  type="button"
+                                  [routerLink]="['/postulados', item.id_vacant]"
+                                >
+                                  Ver candidatos
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid6">
+                            <div class="row mt-2">
+                              <div
+                                class="col-6 col-md-6 col-lg-6 col-xl-7 col-xxl-6 d-flex align-items-center"
+                              >
+                                <label class="text5"
+                                  >Asignada a {{ item.recruiter }}
+                                </label>
+                              </div>
+                              <div
+                                class="col-6 col-md-6 col-lg-6 col-xl-5 col-xxl-6 d-flex align-items-center"
+                              >
+                                <button
+                                  class="boton2"
+                                  type="button"
+                                  (click)="cambiaReclutador(item.id_vacant)"
+                                >
+                                  Cambiar
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid4">
+                            <div class="mt-3 d-flex justify-content-end">
+                              <div
+                                class="col-12 col-md-12 col-lg-7 col-xl-6 col-xxl-5 d-flex align-items-center justify-content-end"
+                              >
+                                <label class="text3"
+                                  >Desactivada el {{ item.date_published }}</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid5">
+                            <div class="row">
+                              <div class="col-5 col-lg-12 offset-7 offset-lg-0">
+                                <button
+                                  class="boton3 mt-3"
+                                  type="button"
+                                  (click)="deleteVacante(item.id_vacant)"
+                                >
+                                  Borrar vacante
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </div>
+                    <pagination-controls
+                      class="paginacion"
+                      (pageChange)="p3 = $event"
+                      id="inactivas"
+                      previousLabel="Anterior"
+                      nextLabel="Siguiente"
+                    ></pagination-controls>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade pBorradores"
+            id="pBorradores"
+            role="tabpanel"
+            aria-labelledby="nav-home-tab"
+          >
+            <div class="row pt-3 pb-3 gris">
+              <div class="col-12 col-md-12 col-lg-2">
+                <label class="text1">Recursos disponibles</label>
+              </div>
+              <div class="col-3 col-md-3 col-lg pe-lg-2">
+                <div class="cuadro3">
+                  <div class="act">
+                    <div class="row">
+                      <div class="col-5 col-lg-5 col-md-5 col-xl-5 col-xxl-6">
+                        <label class=""
+                          ><img
+                            class=""
+                            src="../../../../../assets/img/creditos.svg"
+                            alt=""
+                          />
+                          {{ this.arrResources["num_cred"] }}</label
+                        >
+                      </div>
+                      <div class="col-7 col-lg-7 col-md-7 col-xl-6 col-xxl-4">
+                        <span class="pt-1">CRÉDITOS</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col-md-3 col-lg pe-lg-2">
+                <div class="cuadro3">
+                  <div class="act">
+                    <div class="row">
+                      <div class="col-4 col-lg-4 col-md-4 col-xl-5 col-xxl-6">
+                        <label class=""
+                          ><img
+                            class=""
+                            src="../../../../../assets/img/activas.svg"
+                            alt=""
+                          />
+                          {{ this.arrResources["num_vacants"] }}</label
+                        >
+                      </div>
+                      <div class="col-8 col-lg-8 col-md-8 col-xl-6 col-xxl-4">
+                        <span>VACANTES ACTIVAS</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col-md-3 col-lg pe-lg-2">
+                <div class="cuadro3">
+                  <div class="act">
+                    <div class="row">
+                      <div class="col-4 col-lg-4 col-md-4 col-xl-5 col-xxl-6">
+                        <label class=""
+                          ><img
+                            class=""
+                            src="../../../../../assets/img/destacadas.svg"
+                            alt=""
+                          />
+                          {{ this.arrResources["num_featured"] }}</label
+                        >
+                      </div>
+                      <div class="col-8 col-lg-8 col-md-8 col-xl-6 col-xxl-4">
+                        <span>VACANTES DESTACADAS</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col-md-3 col-lg">
+                <div class="cuadro3">
+                  <div class="des">
+                    <div class="row">
+                      <div class="col-4 col-lg-4 col-md-4 col-xl-5 col-xxl-6">
+                        <label class=""
+                          ><img
+                            class="me-1"
+                            src="../../../../../assets/img/confidencialesDes.svg"
+                            alt=""
+                          />{{ this.arrResources["num_confidential"] }}</label
+                        >
+                      </div>
+                      <div class="col-8 col-lg-8 col-md-8 col-xl-6 col-xxl-4">
+                        <span>VACANTES COFIDENCIALES</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-3 col-md-3 col-lg-1 offset-xxl-1 d-flex align-items-center offset-5 offset-md-0 mt-3"
+              >
+                <label class="text1">Ordenar por: </label>
+              </div>
+              <div class="col-4 col-md-4 col-lg-2 mt-3">
+                <div class="dropdown">
+                  <button
+                    class="drop2 dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    {{ this.elegido }}
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" (click)="ordenarFecha()"
+                      >Más recientes</a
+                    >
+                    <a class="dropdown-item" (click)="ordenarFecha2()"
+                      >Más antiguas</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="card">
+                <ul class="list-group list-group-flush">
+                  <div
+                    class="divh"
+                    *ngIf="this.arrDrafts.length != 0; else noVacants"
+                  >
+                    <div
+                      *ngFor="
+                        let item of this.arrDrafts
+                          | paginate
+                            : {
+                                itemsPerPage: this.numPages,
+                                currentPage: p4,
+                                id: 'borradores'
+                              };
+                        let i = index
+                      "
+                      [attr.data-index]="i"
+                    >
+                      <li
+                        class="{{
+                          i % 2 == 0 ? 'list-group-item' : 'list-group-item azul'
+                        }}"
+                      >
+                        <div class="grid-container">
+                          <div class="grid1">
+                            <div class="row">
+                              <div class="col-12 col-lg-8 col-md-8">
+                                <label class="text2">{{ item.name }}</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div
+                                class="col-12 col-md-12 col-lg-4 col-xl-3 col-xxl-2"
+                              >
+                                <label class="text3"
+                                  >Publicada {{ item.date_published }}</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(1) == true"
+                                  >Permanente</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(2) == true"
+                                  >Temporal/por Proyecto</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(3) == true"
+                                  >Becario</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(4) == true"
+                                  >Tiempo completo</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(5) == true"
+                                  >Medio tiempo</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(6) == true"
+                                  >Nomina</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.job_type.includes(7) == true"
+                                  >Honorarios asimilados</label
+                                >
+                              </div>
+                              <div
+                                class="col-12 col-md-12 col-lg-4 col-xl-3 col-xxl-2"
+                              >
+                                <label class="text3">{{ item.location }}</label>
+                                <label
+                                  class="text3"
+                                  *ngIf="item.modality.includes(2) == true"
+                                  >Presencial</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.modality.includes(1) == true"
+                                  >Remoto</label
+                                >
+                                <label
+                                  class="text3"
+                                  *ngIf="item.modality.includes(3) == true"
+                                  >Desde casa</label
+                                >
+                              </div>
+                              <div
+                                class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 offset-xl-2 offset-xxl-4"
+                              >
+                                <label class="text4 text-end"
+                                  >{{ item.min_salary }} -
+                                  {{ item.max_salary }} MNX</label
+                                >
+                              </div>
+                            </div>
+                            <div class="row mt-2">
+                              <div class="col-12">
+                                <p class="text3">
+                                  {{ item.description }}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid2">
+                            <div class="row">
+                              <div
+                                class="col-6 col-lg-12 d-flex justify-content-center"
+                              >
+                                <button class="boton mt-3" type="button">
+                                  Editar vacante
+                                </button>
+                              </div>
+                              <div
+                                class="col-6 col-lg-12 d-flex justify-content-center"
+                              >
+                                <button
+                                  class="boton5 mt-3"
+                                  type="button"
+                                  (click)="activarVacante(item.id_vacant)"
+                                >
+                                  Publicar
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid3"></div>
+                          <div class="grid6">
+                            <div class="row mt-2">
+                              <div
+                                class="col-6 col-md-6 col-lg-6 col-xl-7 col-xxl-6 d-flex align-items-center"
+                              >
+                                <label class="text5"
+                                  >Asignada a {{ item.recruiter }}
+                                </label>
+                              </div>
+                              <div
+                                class="col-6 col-md-6 col-lg-6 col-xl-5 col-xxl-6 d-flex align-items-center"
+                              >
+                                <button
+                                  class="boton2"
+                                  type="button"
+                                  (click)="cambiaReclutador(item.id_vacant)"
+                                >
+                                  Cambiar
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid4"></div>
+                          <div class="grid5">
+                            <div class="row">
+                              <div class="col-5 col-lg-12 offset-7 offset-lg-0">
+                                <button
+                                  class="boton3 mt-3"
+                                  type="button"
+                                  (click)="deleteVacante(item.id_vacant)"
+                                >
+                                  Borrar vacante
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </div>
+                    <pagination-controls
+                      class="paginacion"
+                      (pageChange)="p4 = $event"
+                      id="borradores"
+                      previousLabel="Anterior"
+                      nextLabel="Siguiente"
+                    ></pagination-controls>
+                  </div>
+                  <ng-template #noVacants>
+                    <div class="alert alert-success" role="alert">
+                      No hay vacantes disponibles
+                    </div>
+                  </ng-template>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal reasignar vacante-->
+    <div
+      class="modal fade modalReasignar"
+      id="modalReasignar"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header d-flex justify-content-end">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Reasignar vacante
+            </h5>
+            <p class="text">Ejecutivo de cuenta SENIOR Bilingüe-UAG</p>
+            <p class="text2">
+              Elige al reclutador al que le quieres reasignar la vacante
+            </p>
+            <div class="dropdown">
+              <button
+                class="drop dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Martha Ebaile
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Martha Ebaile</a>
+                <a class="dropdown-item" href="#">Martha Ebaile</a>
+                <a class="dropdown-item" href="#">Martha Ebaile</a>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="boton mx-auto d-block"
+              data-dismiss="modal"
+            >
+              Asignar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Modal desactivar vacante-->
+    <div
+      class="modal fade modalConfidencial"
+      id="modalDesactivar"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header d-flex justify-content-end">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img class="mx-auto d-block" src="img/iconoModalDes.svg" alt="" />
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              ¡Estás por desactivar una vacante!
+            </h5>
+            <p class="text">
+              Al desactivar esta vacante ya no será visible por el talento pero
+              puedes reactivarla cuando quieras.
+            </p>
+            <p class="text">
+              La vacante y sus datos recabados seguirán disponibles en la pestaña
+              de vacantes inactivas
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="boton desactivado mx-auto d-block"
+              data-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="boton mx-auto d-block"
+              data-dismiss="modal"
+            >
+              Desactivar vacante
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal extender vacante-->
+    <div
+      class="modal fade modalConfidencial"
+      id="modalExtender"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header d-flex justify-content-end">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img class="mx-auto d-block" src="img/iconoModalDes.svg" alt="" />
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Estás por extender la vigencia de tu vacante
+            </h5>
+            <p class="text">
+              Si decides extender su vigencia, la vacante contará con 60 días más
+              en estado activo.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="boton desactivado mx-auto d-block"
+              data-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="boton mx-auto d-block"
+              data-dismiss="modal"
+            >
+              Extender vigencia
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Modal activar vacante-->
+    <div
+      class="modal fade modalActivarVacante"
+      id="modalActivarVacante"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header d-flex justify-content-end">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img class="mx-auto d-block" src="img/iconoModalActiva.svg" alt="" />
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Estás por activar tu vacante
+            </h5>
+            <p class="text">Elije el tipo de vacante que quieres activar.</p>
+            <div class="dropdown">
+              <button
+                class="drop dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Vacante estándar
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Vacante estándar</a>
+                <a class="dropdown-item" href="#">Vacante estándar</a>
+                <a class="dropdown-item" href="#">Vacante estándar</a>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="boton desactivado mx-auto d-block"
+              data-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="boton mx-auto d-block"
+              data-dismiss="modal"
+            >
+              Aceptar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal borrar vacante-->
+    <div
+      class="modal fade modalConfidencial"
+      id="modalBorrar"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header d-flex justify-content-end">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img class="mx-auto d-block" src="img/iconoModalDes.svg" alt="" />
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Estás por borrar esta vacante
+            </h5>
+            <p class="text">
+              La información de esta y los datos recabados se eliminarán
+              definitivamente.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="boton desactivado mx-auto d-block"
+              data-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="boton mx-auto d-block"
+              data-dismiss="modal"
+            >
+              Eliminar definitivamente
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  

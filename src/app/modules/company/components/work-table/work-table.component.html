@@ -1,0 +1,816 @@
+<div class="fondo2">
+    <img src="../../../../../assets/img/circulo2.svg" alt="">
+</div>
+<div class="container-fluid">
+    <div class="portal">
+        <div class="row">
+            <div class="col-12">
+                <label class="titulo mb-5">Mi mesa de trabajo</label>
+                <div class="row desktop">
+                    <div class="col-lg-4">
+                        <div class="one">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label class="titulo">Buscar talento ahora</label>
+                                        </div>
+                                        <div class="col-8 col-lg-9 col-md-9">
+                                            <input type="password" class="input1" id="inputPassword4"
+                                                placeholder="Puesto o palabra clave">
+                                        </div>
+                                        <div class="col-4 col-lg-3 col-md-3">
+                                            <button type="submit" class="boton mx-auto d-block">Buscar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="four">
+                            <div class="card">
+                                <div class="row linea">
+                                    <div class="col-12 ms-4 mt-4">
+                                        <label class="titulo">Vacantes activas</label>
+                                    </div>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <div *ngFor="let vacante of vacantesActivas">
+                                        <li class="list-group-item azul linea">
+                                            <div class="destacado">
+                                                <img class="" src="../../../../../assets/img/destacada.svg" alt="">
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <label class="text2">{{vacante.name}}</label>
+                                                    <label class="text3">{{vacante.location}}</label>
+                                                    <label class="text3">{{vacante.job_type[0]}}, {{vacante.job_type[1]}}</label>
+                                                    <label class="text4">{{vacante.min_salary | currency}} - {{vacante.max_salary | currency}} MXN</label>
+                                                    <label class="text11">Publicada por {{vacante.recruiter.name}}</label>
+                                                    <label class="text12">Expira en 20 días</label>
+                                                </div>
+                                                <div class="col-4 mt-5">
+                                                    <button type="submit" class="boton2 mx-auto d-block mb-4">Ver
+                                                        candidatos</button>
+                                                    <button type="submit" class="boton mx-auto d-block">Editar</button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="cuadro2">
+                                                        <div class="activo"><img class="me-2"
+                                                                src="../../../../../assets/img/vistas.svg" alt="">25 vistas</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="cuadro2">
+                                                        <div class="activo"><img class="me-2"
+                                                                src="../../../../../assets/img/vistas2.svg" alt="">{{vacante.num_applications}} postulados</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="cuadro2">
+                                                        <div class="activo" style="color:#68B744"><img class="me-2"
+                                                                src="../../../../../assets/img/vistas3.svg" alt="">{{vacante.new_applications}} nuevos</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </div>
+                                </ul>
+                                <div class="row">
+                                    <div class="col-6 col-lg-3 col-md-3 ms-md-2">
+                                        <button type="submit" class="boton3 mx-auto d-block">Ver todas</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="eleven">
+                            <div class="card">
+                                <div class="row ">
+                                    <div class="col-12 ms-4 mt-4">
+                                        <label class="titulo">Reclutadores</label>
+                                    </div>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <div *ngFor="let recruiter of recruiters">
+                                        <li class="list-group-item linea">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <label class="text13">{{recruiter.name}}</label>
+                                                    <div class="activo">
+                                                        <img class="me-1" src="../../../../../assets/img/iconoR1.svg" alt="">
+                                                        {{recruiter.num_creds}} créditos disponibles
+                                                    </div>
+                                                    <div class="activo">
+                                                        <img class="me-1" src="../../../../../assets/img/iconoR2.svg" alt="">
+                                                        {{recruiter.num_vacants}} Vacantes disponibles
+                                                    </div>
+                                                    <div class="activo">
+                                                        <img class="me-1" src="../../../../../assets/img/iconoR3.svg" alt="">
+                                                        {{recruiter.num_feat}} Vacantes destacadas
+                                                    </div>
+                                                    <div class="des">
+                                                        <img class="me-1" src="../../../../../assets/img/iconoR4D.svg" alt="">
+                                                         vacantes confidenciales
+                                                    </div>
+                                                    <div class="activoV">
+                                                        <img class="me-1" src="../../../../../assets/img/iconoR5.svg" alt="">
+                                                         Vacantes asignadas
+                                                    </div>
+                                                    <div class="activoV">
+                                                        <img class="me-1" src="../../../../../assets/img/iconoR6.svg" alt="">
+                                                         Talentos seleccionados
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 d-flex align-items-end mt-3">
+                                                    <button type="submit" class="boton5 mx-auto d-block">Asignar
+                                                        recursos</button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </div>
+                                </ul>
+                                <div class="row m-3 ms-2">
+                                    <div class="col-12">
+                                        <button type="submit" class="boton mx-auto d-block">Ver todas</button>
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <button type="submit" class="boton2 mx-auto d-block">Agregar reclutador</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="two">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label class="titulo">Nueva Vacante</label>
+                                        </div>
+                                        <div class="col-8 col-lg-9 col-md-9">
+                                            <input type="password" class="input1" id="inputPassword4"
+                                                placeholder="Título del empleo">
+                                        </div>
+                                        <div class="col-4 col-lg-3 col-md-3">
+                                            <button type="submit" class="boton2 mx-auto d-block" [routerLink]="['/company/newVacant']" routerLinkActive="router-link-active" >Crear</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="five">
+                            <div class="card">
+                                <div class="card-body mb-2">
+                                    <div class="row">
+                                        <div class="col-12 mb-2">
+                                            <label class="titulo">Recursos disponibles con tu plan <span>Talento
+                                                    1</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-12 col-lg-4 col-md-4">
+                                            <div class="card azul2">
+                                                <div class="row">
+                                                    <div class="col-12 d-flex justify-content-center mb-2">
+                                                        <img class="icono ms-1 me-2" src="../../../../../assets/img/iconorec.svg"
+                                                            alt="">
+                                                        <label class="text9">{{resource.data.num_vacants}}</label>
+                                                    </div>
+                                                    <div class="col-12 col-lg-12 col-md-12">
+                                                        <label class="text6">VACANTES <br>DISPONIBLES</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-4 col-md-4">
+                                            <div class="card azul2">
+                                                <div class="row">
+                                                    <div class="col-12 d-flex justify-content-center mb-2">
+                                                        <img class="icono ms-1 me-2"
+                                                            src="../../../../../assets/img/iconorec2.svg" alt="">
+                                                        <label class="text9">{{resource.data.num_cred}}</label>
+                                                    </div>
+                                                    <div class="col-12 col-lg-12 col-md-12">
+                                                        <label class="text6">CRÉDITOS <br>DISPONIBLES</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-4 col-md-4">
+                                            <div class="card azul2">
+                                                <div class="row">
+                                                    <div class="col-12 d-flex justify-content-center mb-2">
+                                                        <img class="icono ms-1 me-2"
+                                                            src="../../../../../assets/img/iconorec3.svg" alt="">
+                                                        <label class="text9">{{resource.data.num_recruiters}}</label>
+                                                    </div>
+                                                    <div class="col-12 col-lg-12 col-md-12">
+                                                        <label class="text6">RECLUTADORES <br>DISPONIBLES</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-lg-4 col-md-4">
+                                            <div class="card azul2">
+                                                <div class="row">
+                                                    <div class="col-12 d-flex justify-content-center mb-2">
+                                                        <img class="icono ms-1 me-2"
+                                                            src="../../../../../assets/img/iconorec4.svg" alt="">
+                                                        <label class="text9">{{resource.data.num_featured}}</label>
+                                                    </div>
+                                                    <div class="col-12 col-lg-12 col-md-12">
+                                                        <label class="text6">VACANTE <br>DESTACADA</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-4 col-md-4">
+                                            <div class="card azul2">
+                                                <div class="row">
+                                                    <div class="col-12 d-flex justify-content-center mb-2">
+                                                        <img class="icono ms-1 me-2"
+                                                            src="../../../../../assets/img/iconorec5.svg" alt="">
+                                                        <label class="text9">{{resource.data.num_confidential}}</label>
+                                                    </div>
+                                                    <div class="col-12 col-lg-12 col-md-12">
+                                                        <label class="text6">VACANTE <br>CONFIDENCIAL</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="col-8">
+                                            <label class="titulo mt-3">¿Necesitas más recursos?</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="submit" class="boton2 mx-auto d-block">Aumentar mi
+                                                plan</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="seven">
+                            <div class="card">
+                                <div class="row linea">
+                                    <div class="col-12 ms-4 mt-4">
+                                        <label class="titulo">Últimos talentos postulados</label>
+                                    </div>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <div *ngFor="let lastTalent of LastTalents">
+                                        <li class="list-group-item azul linea">
+                                            <div class="row">
+                                                <div class="col-7 col-lg-8 col-md-8">
+                                                    <div class="text2">{{lastTalent.user.first_name}} {{lastTalent.user.last_name}}</div>
+                                                    <div class="text3">{{lastTalent.vacant_info.name}}</div>
+                                                    <div class="text3">{{lastTalent.vacant_info.location}}</div>
+                                                </div>
+                                                <div class="col-5 col-lg-4 col-md-4 d-flex align-items-center">
+                                                    <button type="submit" class="boton mx-auto d-block mt-3">Ver Perfil</button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </div>
+                                </ul>
+                                <div class="row">
+                                    <div class="col-8 col-lg-5 col-md-6">
+                                        <button type="submit" class="boton3 mx-auto d-block">Ver todas las
+                                            vacantes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="eight">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="col-12 ms-4 mt-4">
+                                        <label class="titulo">Últimos comentarios</label>
+                                    </div>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <div *ngFor="let review of reviews">
+                                        <li class="list-group-item linea">
+                                            <div class="row">
+                                                <div class="col-7 col-lg-8 col-md-8">
+                                                    <label class="text8">{{review.datetime | date}}</label>
+                                                    <label class="text7">{{review.review}}</label>
+                                                </div>
+                                                <div class="col-5 col-lg-4 col-md-4 estrellas">
+                                                    <div class="row mt-3 ms-0 ms-lg-4">
+                                                        <div col="col-2">
+                                                            <div class="completa"></div>
+                                                        </div>
+                                                        <div col="col-2">
+                                                            <div class="completa"></div>
+                                                        </div>
+                                                        <div col="col-2">
+                                                            <div class="completa"></div>
+                                                        </div>
+                                                        <div col="col-2">
+                                                            <div class="media"></div>
+                                                        </div>
+                                                        <div col="col-2">
+                                                            <div class="vacia"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </div>
+                                </ul>
+                                <div class="row mb-3 me-3">
+                                    <div class="col-9 col-lg-4 col-md-4 offset-lg-8 offset-md-8 offset-2">
+                                        <button type="submit" class="boton2 mx-auto d-block">Ver todos</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="three">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row mt-5 ms-1">
+                                        <div class="col-12 col-lg-12 col-md-12">
+                                            <div class="cuadro mx-auto d-block">
+                                                <img class="mx-auto d-block pt-4 pt-lg-4 pt-md-3"
+                                                    src="../../../../../assets/img/ferrero.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="estrellas">
+                                        <div class="row mt-3 ms-1 d-flex justify-content-center">
+                                            <div col="col-2">
+                                                <div class="completa"></div>
+                                            </div>
+                                            <div col="col-2">
+                                                <div class="completa"></div>
+                                            </div>
+                                            <div col="col-2">
+                                                <div class="completa"></div>
+                                            </div>
+                                            <div col="col-2">
+                                                <div class="media"></div>
+                                            </div>
+                                            <div col="col-2">
+                                                <div class="vacia"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <label class="text1"><b>13,671 evaluaciones</b></label>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3 mb-5 d-flex justify-content-center">
+                                        <div class="col-10 ms-3">
+                                            <button type="submit" class="boton2 mx-auto d-block" style="width: 95%;">Ver
+                                                evaluaciones</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nine">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="titulo ms-4 mt-4">Completa tu perfil</label>
+                                    </div>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item azul">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <label class="text10"><img class="me-2"
+                                                        src="../../../../../assets/img/verifica.svg" alt="">Verifica tu
+                                                    empresa</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-7">
+                                                <input type="password" class="input1" id="inputPassword4"
+                                                    placeholder="Documento SAT">
+                                            </div>
+                                            <div class="col-5">
+                                                <button type="submit" class="boton2 mx-auto d-block">Examinar</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="row">
+                                    <div class="col-5 ms-4 mt-4 mb-4">
+                                        <button type="submit" class="boton4 mx-auto d-block">Enviar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ten">
+                            <div class="card anuncio">
+                                <div class="card-body">
+                                    <label class="text10 ">Anunciar vacante</label>
+                                    <label class="text3">¡Estas por expandir tu empresa y necesitas que todos te
+                                        vean?</label>
+                                    <label class="text7"><b>¡Anúnciate con nosotros!</b></label>
+                                    <img class="imganuncio mx-auto d-block" src="../../../../../assets/img/anuncio.svg" alt="">
+                                    <button class="botonR mx-auto d-block" type="button">Crear anuncio</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!----------------Version movil------------------------------------------------->
+                <div class="row movil">
+                    <div class="col-12">
+                        <!-------------Parte 1-------------->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row mt-5 ms-1">
+                                    <div class="col-12 col-lg-12 col-md-12">
+                                        <div class="cuadro mx-auto d-block">
+                                            <img class="mx-auto d-block pt-4 pt-lg-4 pt-md-3"
+                                                src="../../../../../assets/img/ferrero.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="estrellas">
+                                    <div class="row mt-3 ms-1 d-flex justify-content-center">
+                                        <div col="col-2">
+                                            <div class="completa"></div>
+                                        </div>
+                                        <div col="col-2">
+                                            <div class="completa"></div>
+                                        </div>
+                                        <div col="col-2">
+                                            <div class="completa"></div>
+                                        </div>
+                                        <div col="col-2">
+                                            <div class="media"></div>
+                                        </div>
+                                        <div col="col-2">
+                                            <div class="vacia"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <label class="text1"><b>13,671 evaluaciones</b></label>
+                                    </div>
+                                </div>
+                                <div class="row mt-3 mb-5 d-flex justify-content-center">
+                                    <div class="col-10 ms-3">
+                                        <button type="submit" class="boton2 mx-auto d-block" style="width: 95%;">Ver
+                                            evaluaciones</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-------------Parte 2-------------->
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-12">
+                                    <label class="titulo ms-4 mt-4">Completa tu perfil</label>
+                                </div>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item azul">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label class="text10"><img class="me-2" src="../../../../../assets/img/verifica.svg"
+                                                    alt="">Verifica tu empresa</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <input type="password" class="input1" id="inputPassword4"
+                                                placeholder="Documento SAT">
+                                        </div>
+                                        <div class="col-5">
+                                            <button type="submit" class="boton2 mx-auto d-block" style="width: 100% !important;">Examinar</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="row">
+                                <div class="col-5 ms-4 mt-4 mb-4">
+                                    <button type="submit" class="boton4 mx-auto d-block" >Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-------------Parte 3-------------->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="titulo">Buscar talento ahora</label>
+                                    </div>
+                                    <div class="col-8 col-lg-9 col-md-9">
+                                        <input type="password" class="input1" id="inputPassword4"
+                                            placeholder="Puesto o palabra clave">
+                                    </div>
+                                    <div class="col-4 col-lg-3 col-md-3">
+                                        <button type="submit" class="boton" style="width: 100% !important;">Buscar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="titulo">Nueva Vacante</label>
+                                    </div>
+                                    <div class="col-8 col-lg-9 col-md-9">
+                                        <input type="password" class="input1" id="inputPassword4"
+                                            placeholder="Título del empleo">
+                                    </div>
+                                    <div class="col-4 col-lg-3 col-md-3">
+                                        <button type="submit" class="boton2"  style="width: 100% !important;">Crear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-------------Parte 4-------------->
+                        <div class="card">
+                            <div class="card-body mb-2">
+                                <div class="row">
+                                    <div class="col-12 mb-2">
+                                        <label class="titulo">Recursos disponibles con tu plan <span>Talento
+                                                1</span></label>
+                                    </div>
+                                </div>
+                                <div class="row mb-md-3 mb-0">
+                                    <div class="col-12 col-lg-4 col-md-4">
+                                        <div class="card azul2">
+                                            <div class="row">
+                                                <div class="col-12 d-flex justify-content-center mb-2">
+                                                    <img class="icono ms-1 me-2" src="../../../../../assets/img/iconorec.svg"
+                                                        alt="">
+                                                    <label class="text9">5</label>
+                                                </div>
+                                                <div class="col-12 col-lg-12 col-md-12">
+                                                    <label class="text6">VACANTES <br>DISPONIBLES</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-4 col-md-4">
+                                        <div class="card azul2">
+                                            <div class="row">
+                                                <div class="col-12 d-flex justify-content-center mb-2">
+                                                    <img class="icono ms-1 me-2" src="../../../../../assets/img/iconorec2.svg"
+                                                        alt="">
+                                                    <label class="text9">{{resource.data.num_cred}}</label>
+                                                </div>
+                                                <div class="col-12 col-lg-12 col-md-12">
+                                                    <label class="text6">CRÉDITOS <br>DISPONIBLES</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-4 col-md-4">
+                                        <div class="card azul2">
+                                            <div class="row">
+                                                <div class="col-12 d-flex justify-content-center mb-2">
+                                                    <img class="icono ms-1 me-2" src="../../../../../assets/img/iconorec3.svg"
+                                                        alt="">
+                                                    <label class="text9">30</label>
+                                                </div>
+                                                <div class="col-12 col-lg-12 col-md-12">
+                                                    <label class="text6">RECLUTADORES <br>DISPONIBLES</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-lg-4 col-md-4">
+                                        <div class="card azul2">
+                                            <div class="row">
+                                                <div class="col-12 d-flex justify-content-center mb-2">
+                                                    <img class="icono ms-1 me-2" src="../../../../../assets/img/iconorec4.svg"
+                                                        alt="">
+                                                    <label class="text9">30</label>
+                                                </div>
+                                                <div class="col-12 col-lg-12 col-md-12">
+                                                    <label class="text6">VACANTE <br>DESTACADA</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-4 col-md-4">
+                                        <div class="card azul2">
+                                            <div class="row">
+                                                <div class="col-12 d-flex justify-content-center mb-2">
+                                                    <img class="icono ms-1 me-2" src="../../../../../assets/img/iconorec5.svg"
+                                                        alt="">
+                                                    <label class="text9">30</label>
+                                                </div>
+                                                <div class="col-12 col-lg-12 col-md-12">
+                                                    <label class="text6">VACANTE <br>CONFIDENCIAL</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-12">
+                                        <label class="titulo mt-3">¿Necesitas más recursos?</label>
+                                    </div>
+                                    <div class="col-12 mt-3 d-flex justify-content-end">
+                                        <button type="submit" class="boton2">Aumentar mi plan</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-------------Parte 5-------------->
+                        <div class="card">
+                            <div class="row linea">
+                                <div class="col-12 ms-4 mt-4">
+                                    <label class="titulo">Vacantes activas</label>
+                                </div>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item azul linea">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label class="text2">Ejecutivo de cuenta Jr.</label>
+                                            <label class="text3">Guadalajara, Jalisco.</label>
+                                            <label class="text3">Medio tiempo</label>
+                                            <label class="text4">4,000 - 5,000 MNX</label>
+                                            <label class="text11">Publicada por Empresa</label>
+                                            <label class="text12">Expira en 20 días</label>
+                                        </div>
+                                        <div class="col-12 mt-2 mb-4">
+                                            <button type="submit" class="boton2 mx-auto d-block mb-4">Ver
+                                                candidatos</button>
+                                            <button type="submit" class="boton mx-auto d-block">Editar</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 mt-md-2 d-flex justify-content-center">
+                                            <div class="cuadro2">
+                                                <div class="activo">
+                                                    <img class="me-2" src="../../../../../assets/img/vistas.svg" alt="">
+                                                        25 vistas
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-md-2 d-flex justify-content-center">
+                                            <div class="cuadro2">
+                                                <div class="activo"><img class="me-2" src="../../../../../assets/img/vistas2.svg"
+                                                        alt="">5 postulados</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-md-2 d-flex justify-content-center">
+                                            <div class="cuadro2">
+                                                <div class="activo" style="color:#68B744"><img class="me-2"
+                                                        src="../../../../../assets/img/vistas3.svg" alt="">2 nuevos</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="row">
+                                <div class="col-6 col-lg-3 col-md-3 ms-md-2">
+                                    <button type="submit" class="boton3 mx-auto d-block">Ver todas</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-------------Parte 6-------------->
+                        <div class="card">
+                            <div class="row linea">
+                                <div class="col-12 ms-4 mt-4">
+                                    <label class="titulo">Últimos talentos postulados</label>
+                                </div>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item azul linea">
+                                    <div class="row">
+                                        <div class="col-12 col-lg-8 col-md-12">
+                                            <label class="text2">Carmen Elektra</label>
+                                            <label class="text3">Ejecutivo de cuenta Jr.</label>
+                                            <label class="text3">Guadalajara, Jalisco.</label>
+                                        </div>
+                                        <div class="col-12 col-lg-4 col-md-12 d-flex justify-content-end">
+                                            <button type="submit" class="boton mt-3">Ver Perfil</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="row">
+                                <div class="col-8 col-lg-5 col-md-6">
+                                    <button type="submit" class="boton3 mx-auto d-block">Ver todas las vacantes</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-------------Parte 7-------------->
+                        <div class="card">
+                            <div class="row ">
+                                <div class="col-12 ms-4 mt-4">
+                                    <label class="titulo">Reclutadores</label>
+                                </div>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item linea">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label class="text13">Ana de la Reguera</label>
+                                            <div class="activo">
+                                                <img class="me-1" src="../../../../../assets/img/iconoR1.svg" alt="">
+                                                {{resource.num_cred}} créditos disponibles
+                                            </div>
+                                            <div class="activo">
+                                                <img class="me-1" src="../../../../../assets/img/iconoR2.svg" alt="">
+                                                5 Vacantes disponibles
+                                            </div>
+                                            <div class="activo">
+                                                <img class="me-1" src="../../../../../assets/img/iconoR3.svg" alt="">
+                                                1 Vacantes destacadas
+                                            </div>
+                                            <div class="des">
+                                                <img class="me-1" src="../../../../../assets/img/iconoR4D.svg" alt="">
+                                                0 vacantes confidenciales
+                                            </div>
+                                            <div class="activoV">
+                                                <img class="me-1" src="../../../../../assets/img/iconoR5.svg" alt="">
+                                                5 Vacantes asignadas
+                                            </div>
+                                            <div class="activoV">
+                                                <img class="me-1" src="../../../../../assets/img/iconoR6.svg" alt="">
+                                                5 Talentos seleccionados
+                                            </div>
+                                        </div>
+                                        <div class="col-12 d-flex align-items-end mt-3">
+                                            <button type="submit" class="boton5 mx-auto d-block">Asignar
+                                                recursos</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="row m-3 ms-2">
+                                <div class="col-12">
+                                    <button type="submit" class="boton mx-auto d-block">Ver todas</button>
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <button type="submit" class="boton2 mx-auto d-block">Agregar reclutador</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-------------Parte 8-------------->
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-12 ms-4 mt-4">
+                                    <label class="titulo">Últimos comentarios</label>
+                                </div>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item linea">
+                                    <div class="row">
+                                        <div class="col-7 col-lg-8 col-md-8">
+                                            <label class="text8">27 de septiembre del 2021</label>
+                                            <label class="text7">Buen lugar para trabajar</label>
+                                        </div>
+                                        <div class="col-5 col-lg-4 col-md-4 estrellas">
+                                            <div class="row mt-3 ms-0 ms-lg-4">
+                                                <div col="col-2">
+                                                    <div class="completa"></div>
+                                                </div>
+                                                <div col="col-2">
+                                                    <div class="completa"></div>
+                                                </div>
+                                                <div col="col-2">
+                                                    <div class="completa"></div>
+                                                </div>
+                                                <div col="col-2">
+                                                    <div class="media"></div>
+                                                </div>
+                                                <div col="col-2">
+                                                    <div class="vacia"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="row mb-3 ms-3">
+                                <div class="col-11 col-lg-4 col-md-12 d-flex justify-content-end mt-3">
+                                    <button type="submit" class="boton2 mt-md-3">Ver todos</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-------------Parte 9-------------->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

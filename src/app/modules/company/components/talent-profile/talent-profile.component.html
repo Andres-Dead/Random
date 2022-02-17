@@ -1,0 +1,1102 @@
+<div class="container-fluid">
+    <div class="talento">
+      <div class="row">
+        <div class="col-12 col-lg-9 col-md-9">
+          <div class="row mb-1">
+            <div
+              class="col-12 col-lg-3 col-md-3"
+              *ngIf="this.arrApplication['status'] == 1"
+            >
+              <label class="text8"
+                ><img
+                  class="icononuevo me-2"
+                  src="../../../../../assets/img/nuevopostulado.svg"
+                  alt=""
+                />Nuevo postulado</label
+              >
+            </div>
+            <div class="col-12 col-lg-4 col-md-4" *ngIf="this.arrApplication['recruiter']">
+              <label class="text9"
+                ><img
+                  class="me-2 icononuevo"
+                  src="../../../../../assets/img/visibility.svg"
+                  alt=""
+                />
+                Visto por {{ this.arrApplication["recruiter"] }}</label
+              >
+            </div>
+            <div class="col-12 col-lg-5 col-md-5 text-end mt-2">
+              <label class="text text-center text-md-end text-lg-end"
+                >Actualizado hace {{ this.arrProfile["updated_at"] }} días</label
+              >
+            </div>
+          </div>
+          <div class="parte">
+            <div class="row">
+              <div class="col-12 col-lg-3 col-md-3 align-self-lg-center">
+                <img
+                  class="fotoPerfil"
+                  src="../../../../../assets/img/perfilTalento.svg"
+                  alt=""
+                />
+              </div>
+              <div class="col-12 col-lg-9 col-md-9">
+                <label class="titulo text-center text-md-start">{{
+                  this.arrProfile["first_name"] +
+                    " " +
+                    this.arrProfile["last_name"]
+                }}</label>
+                <label class="text2 text-center text-md-start text-lg-start"
+                  >{{ this.arrProfile["age"] }} años</label
+                >
+                <label class="text2 text-center text-md-start text-lg-start"
+                  ><i class="fas fa-map-marker-alt me-2"></i
+                  >{{
+                    this.arrProfile["city"] + " " + this.arrProfile["state"]
+                  }}</label
+                >
+                <label class="text3" *ngIf="this.arrProfile['move'] == 1"
+                  >Con disponibilidad para reubicarse</label
+                >
+                <label class="text2 text-center text-md-start text-lg-start"
+                  ><img
+                    src="../../../../../assets/img/billete.svg"
+                    alt=""
+                    class="me-2 icononuevo"
+                  />${{ this.arrProfile["exp_salary"] }}</label
+                >
+                <p class="text3 mb-3">{{ this.arrProfile["description"] }}</p>
+                <div *ngFor="let item of this.arrProfile['education']">
+                  <label class="text3">{{ item.level }}</label>
+                  <label class="text mb-3">{{ item.institution }}</label>
+                </div>
+                <!-------Ver datos de contacto-------------------------->
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                        *ngIf="this.showInfoTalento == true; else infoTalento"
+                      >
+                        Ver datos de contacto
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseOne"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingOne"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body mt-3">
+                        <div class="row">
+                          <div class="col-12 col-lg-6 col-md-6">
+                            <label class="text3">Correo electrónico</label>
+                            <label class="text"
+                              ><a href="#">{{
+                                this.arrProfile["contact_email"]
+                              }}</a></label
+                            >
+                            <label class="text3">Tiktok</label>
+                            <label class="text"
+                              ><a href="#"
+                                >https://tiktok.com/kosdkkLjioud/</a
+                              ></label
+                            >
+                            <label class="text3">Número de teléfono</label>
+                            <label class="text"
+                              >+52 {{ this.arrProfile["phone"] }}</label
+                            >
+                          </div>
+                          <div class="col-12 col-lg-6 col-md-6">
+                            <label class="text3">LinkedIn o web</label>
+                            <label class="text"
+                              ><a href="#"
+                                >http://linkedIn.com/in/tuperfil</a
+                              ></label
+                            >
+                            <label class="text3">Web o portafolio</label>
+                            <label class="text"
+                              ><a href="#">http://mipaginaweb.com</a></label
+                            >
+                            <label class="text3">Whatsapp</label>
+                            <label class="text"
+                              >+52 {{ this.arrProfile["whatsapp"] }}</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ng-template #infoTalento>
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      aria-controls="collapseOne"
+                      (click)="this.alertaSeleccionar()"
+                    >
+                      Ver datos de contacto
+                    </button>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lineshadow"></div>
+        </div>
+        <div class="col-12 col-lg-3 col-md-3 mt-5">
+          <button class="botonL" type="button">
+            <img
+              src="../../../../../assets/img/post-linkedin.svg"
+              alt=""
+              class="me-2 me-md-2"
+            /><a href="{{ this.arrProfile['linkedin'] }}" target="_blank"
+              >Ver LinkedIn</a
+            >
+          </button>
+          <button class="botonG" type="button" (click)="guardarTalento()">
+            <img
+              src="../../../../../assets/img/talento.svg"
+              alt=""
+              class="me-2 me-md-2"
+            />Guardar talento
+          </button>
+          <button class="botonD" type="button">
+            <img
+              src="../../../../../assets/img/cvdes.svg"
+              alt=""
+              class="me-3 me-md-2"
+            />Descargar CV
+          </button>
+          <a
+            href="https://wa.me/{{ this.arrProfile['whatsapp'] }}"
+            target="_blank"
+          >
+            <button class="botonW mb-5" type="button">
+              <img
+                src="../../../../../assets/img/enviaW.svg"
+                alt=""
+                class="me-2 me-md-2"
+              />Enviar Whatsapp
+            </button>
+          </a>
+  
+          <div *ngIf="id_vacan">
+            <button
+              class="botonS mt-4"
+              type="button"
+              *ngIf="this.selected == false; else disableSelect"
+              (click)="seleccionar()"
+            >
+              <img
+                class="contratado me-2"
+                src="../../../../../assets/img/contratado.svg"
+                alt=""
+              />Seleccionar
+            </button>
+            <ng-template #disableSelect>
+              <button class="botonS seleccion mt-5" type="button">
+                <img
+                  class="contratado me-2"
+                  src="../../../../../assets/img/contratado.svg"
+                  alt=""
+                />Seleccionado
+              </button>
+            </ng-template>
+            <button class="botonS botonDes" type="button" (click)="descartar()">
+              <img
+                src="../../../../../assets/img/descartado2.svg"
+                alt=""
+                class="me-2"
+              />Descartar
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-12">
+          <label class="titulo">Área de especialidad</label>
+          <button class="boton2" type="button">Diseño web</button>
+          <button class="boton2" type="button">Programación front end</button>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-12">
+          <label class="titulo">Habilidades</label>
+          <button
+            class="boton3"
+            *ngFor="let item of this.arrProfile['skills']"
+            type="button"
+          >
+            {{ item }}
+          </button>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-12">
+          <label class="titulo mb-3">Experiencia profesional</label>
+        </div>
+      </div>
+      <div class="row mb-5" *ngFor="let item of this.arrProfile['workExp']">
+        <div class="col-2 col-lg-1 col-md-1">
+          <img
+            src="../../../../../assets/img/iconoexp.svg"
+            alt=""
+            class="mx-auto d-block"
+          />
+        </div>
+        <div class="col-10 col-lg-11 col-md-11">
+          <label class="text4">{{ item.role }}</label>
+          <label class="text5" *ngIf="item.active == 0; else activo"
+            >{{ item.company_name }} - {{ item.location }} -
+            {{ item.start_date.substring(0, 4) }} -
+            {{ item.end_date.substring(0, 4) }}</label
+          >
+          <ng-template #activo>
+            <label class="text5"
+              >{{ item.company_name }} - {{ item.location }} -
+              {{ item.start_date.substring(0, 4) }} - Actual ({{
+                this.anios(item.start_date)
+              }}
+              años)
+            </label>
+          </ng-template>
+          <p class="text">{{ item.details }}</p>
+        </div>
+      </div>
+      <!--                 <div class="row mb-5">
+                      <div class="col-2 col-lg-1 col-md-1">
+                           <img src="../../../../../assets/img/iconoexp.svg" alt="" class="mx-auto d-block">
+                      </div>
+                      <div class="col-10 col-lg-11 col-md-11">
+                           <label class="text4">Diseñador gráfico Jr</label>
+                           <label class="text5">2017 - 2019 (2 años)</label>
+                           <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut odio metus, sollicitudin nec faucibus eget,
+                              luctus quis ligula. Sed mollis, dui ac imperdiet ultrices, nisi purus facilisis tellus,
+                              vitae gravida augue mauris sit amet ex. Donec lacinia, ante scelerisque suscipit sodales, ipsum erat euismo
+                           </p>
+                           <p class="text">Dolor sit amet, consectetur adipiscing elit. Ut odio metus, sollicitudin nec faucibus eget, luctus quis ligula.
+                              Sed mollis, dui ac imperdiet ultrices, nisi purus facilisis tellus, vitae gravida augue mauris sit amet ex.
+                              Donec lacinia, ante scelerisque suscipit sodales, ipsum erat euismod ex, eu placerat purus quam in dui.
+                              Nullam at neque molestie, posuere ante nec, consequat dui. In hac habitasse platea dictumst.
+                              Sed aliquet sapien vel aliquet molestie. Nunc lorem enim, viverra id efficitur vel, lacinia non ex.
+                              Duis vel dictum odio. Praesent cursus ac metus a hendrerit. 
+                              enean tempor ex tortor, nec tincidunt nisi molestie in.
+                           </p>
+                      </div>
+                  </div>
+                  <div class="row mb-5">
+                      <div class="col-2 col-lg-1 col-md-1">
+                           <img src="../../../../../assets/img/iconoexp.svg" alt="" class="mx-auto d-block">
+                      </div>
+                      <div class="col-10 col-lg-11 col-md-11">
+                           <label class="text4">Diseñador gráfico Jr</label>
+                           <label class="text5">2015 - 2016 (1 años)</label>
+                           <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut odio metus, sollicitudin nec faucibus eget,
+                              luctus quis ligula. Sed mollis, dui ac imperdiet ultrices, nisi purus facilisis tellus,
+                              vitae gravida augue mauris sit amet ex. Donec lacinia, ante scelerisque suscipit sodales, ipsum erat euismo
+                           </p>
+                           <p class="text">Dolor sit amet, consectetur adipiscing elit. Ut odio metus, sollicitudin nec faucibus eget, luctus quis ligula.
+                              Sed mollis, dui ac imperdiet ultrices, nisi purus facilisis tellus, vitae gravida augue mauris sit amet ex.
+                              Donec lacinia, ante scelerisque suscipit sodales, ipsum erat euismod ex, eu placerat purus quam in dui.
+                              Nullam at neque molestie, posuere ante nec, consequat dui. In hac habitasse platea dictumst.
+                              Sed aliquet sapien vel aliquet molestie. Nunc lorem enim, viverra id efficitur vel, lacinia non ex.
+                              Duis vel dictum odio. Praesent cursus ac metus a hendrerit. 
+                              enean tempor ex tortor, nec tincidunt nisi molestie in.
+                           </p>
+                      </div>
+                  </div> -->
+      <div class="row mb-3">
+        <div class="col-12 col-lg-6 col-md-6">
+          <label class="titulo mb-3">Educación</label>
+          <div class="row" *ngFor="let item of this.arrProfile['education']">
+            <div class="col-1 col-lg-2">
+              <img
+                src="../../../../../assets/img/educacion.svg"
+                alt=""
+                class="mx-auto d-block"
+              />
+            </div>
+            <div class="col-10">
+              <label class="text4">{{ item.institution }}</label>
+              <label class="text5 mb-0">{{ item.title }}</label>
+              <label class="text5"
+                >{{ item.start_date.substring(0, 4) }} -
+                {{ item.end_date.substring(0, 4) }}
+              </label>
+            </div>
+          </div>
+          <!-- <div class="row">
+                <div class="col-2 d-flex align-items-center">
+                  <img
+                    src="../../../../../assets/img/educacion.svg"
+                    alt=""
+                    class="mx-auto d-block"
+                  />
+                </div>
+                <div class="col-10">
+                  <label class="text4">Universidad de Guadalajara</label>
+                  <label class="text5 mb-0"
+                    >Licenciatura en Diseñado gráfico</label
+                  >
+                  <label class="text5">2010 - 2013 </label>
+                </div>
+              </div> -->
+        </div>
+        <div class="col-12 col-lg-6 col-md-6">
+          <label class="titulo mb-3">Idiomas</label>
+          <div class="row" *ngFor="let item of this.arrProfile['language']">
+            <div class="col-1 col-lg-2">
+              <img
+                src="../../../../../assets/img/idioma.svg"
+                alt=""
+                class="mx-auto d-block"
+              />
+            </div>
+            <div class="col-10">
+              <label class="text4">{{ item.name }}</label>
+              <label class="text5" *ngIf="item.level == 0">Nivel Básico</label>
+              <label class="text5" *ngIf="item.level == 1">Nivel Medio</label>
+              <label class="text5" *ngIf="item.level == 2">Nivel Avanzado</label>
+              <label class="text5" *ngIf="item.level == 3">Nativo</label>
+            </div>
+          </div>
+          <!-- <div class="row">
+                <div class="col-2 d-flex align-items-center">
+                  <img
+                    src="../../../../../assets/img/idioma.svg"
+                    alt=""
+                    class="mx-auto d-block"
+                  />
+                </div>
+                <div class="col-10">
+                  <label class="text4">Inglés </label>
+                  <label class="text5">Nivel medio</label>
+                </div>
+              </div> -->
+        </div>
+      </div>
+      <!-- <div class="row Acapital">
+            <div class="col-12 col-lg-12 col-md-12">
+              <label class="titulo mt-3 mb-3"
+                >Autoaprendizaje en Capital Talento</label
+              >
+            </div>
+            <div class="col-12 col-lg-6 col-md-6">
+              <div class="row">
+                <div class="col-1 col-lg-2">
+                  <img
+                    src="../../../../../assets/img/aptalento.svg"
+                    alt=""
+                    class="mx-auto d-block"
+                  />
+                </div>
+                <div class="col-10">
+                  <label class="text4">El valor de las ideas</label>
+                  <label class="text5 mb-0">Mercadotecnia</label>
+                  <label class="text5">Impartido por Ana Boleana</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-1 col-lg-2">
+                  <img
+                    src="../../../../../assets/img/aptalento.svg"
+                    alt=""
+                    class="mx-auto d-block"
+                  />
+                </div>
+                <div class="col-10">
+                  <label class="text4">Protocolo de llamadas</label>
+                  <label class="text5 mb-0">Soft skills</label>
+                  <label class="text5">Impartido por Ana Boleana</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 col-md-6">
+              <div class="row">
+                <div class="col-2 d-flex align-items-center">
+                  <img
+                    src="../../../../../assets/img/aptalento.svg"
+                    alt=""
+                    class="mx-auto d-block"
+                  />
+                </div>
+                <div class="col-10">
+                  <label class="text4">El valor de las ideas</label>
+                  <label class="text5 mb-0">Mercadotecnia</label>
+                  <label class="text5">Impartido por Ana Boleana</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2 d-flex align-items-center">
+                  <img
+                    src="../../../../../assets/img/aptalento.svg"
+                    alt=""
+                    class="mx-auto d-block"
+                  />
+                </div>
+                <div class="col-10">
+                  <label class="text4">Protocolo de llamadas</label>
+                  <label class="text5 mb-0">Soft skills</label>
+                  <label class="text5">Impartido por Ana Boleana</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="boton5" type="button">
+                Ver todos<i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+          </div> -->
+      <div class="row">
+        <div class="col-12">
+          <button class="boton4" type="button" [routerLink]="['/empresa/filtrar_talento']">
+            <i class="fas fa-chevron-left me-2"></i>Volver
+          </button>
+        </div>
+      </div>
+      <!---------------------------->
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <!--------------------- Carrusel-------------------------------------------->
+        <!-- <div
+            id="carouselExampleControls"
+            class="carousel slide"
+            data-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="cards-wrapper">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-12 text-end">
+                          <label class="text">Actualizado hace 2 días</label>
+                        </div>
+                      </div>
+                      <div class="row mb-2 mt-3">
+                        <div class="col-4 col-lg-3 col-md-2">
+                          <img src="../../../../../assets/img/perfilTalento.svg" alt="" />
+                        </div>
+                        <div class="col-8 col-lg-9 col-md-10">
+                          <h5 class="titulo">Diseñador gráfico Sr. y animador</h5>
+                          <label class="text5">30 años</label>
+                          <div class="row">
+                            <div class="col-12 col-lg-6 col-md-6">
+                              <label class="text6"
+                                ><i class="fas fa-map-marker-alt me-2"></i
+                                >Guadalajara, Jal.</label
+                              >
+                            </div>
+                            <div class="col-12 col-lg-6 col-md-6">
+                              <label class="text6"
+                                ><img
+                                  src="../../../../../assets/img/billete.svg"
+                                  alt=""
+                                  class="me-2"
+                                />$8,000</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text7"
+                            >Diseñador gráfico Senior en Creative Soft</label
+                          >
+                          <label class="text6"
+                            >Junio 2020 - Diciembre 2020 (6 meses)</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text7"
+                            >Diseñador Gráfico Senior en Alsain</label
+                          >
+                          <label class="text6"
+                            >Enero 2021 - Septiembre 2021 (9 meses)</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text mb-0"
+                            >Universidad de Guadalajara</label
+                          >
+                          <label class="text"
+                            >Instituto Tecnológico y de Estudios Superiores de
+                            Occidente</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-12 col-lg-7 col-md-10 offset-lg-5 offset-md-2 d-flex justify-content-end"
+                        >
+                          <button class="botonR mt-2" type="button">
+                            Ver talento
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card d-none d-lg-block">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-12 text-end">
+                          <label class="text">Actualizado hace 2 días</label>
+                        </div>
+                      </div>
+                      <div class="row mb-2 mt-3">
+                        <div class="col-4 col-lg-3 col-md-2">
+                          <img src="../../../../../assets/img/perfilTalento.svg" alt="" />
+                        </div>
+                        <div class="col-8 col-lg-9 col-md-10">
+                          <h5 class="titulo">Diseñador gráfico Sr. y animador</h5>
+                          <label class="text5">30 años</label>
+                          <div class="row">
+                            <div class="col-12 col-lg-6 col-md-6">
+                              <label class="text6"
+                                ><i class="fas fa-map-marker-alt me-2"></i
+                                >Guadalajara, Jal.</label
+                              >
+                            </div>
+                            <div class="col-12 col-lg-6 col-md-6">
+                              <label class="text6"
+                                ><img
+                                  src="../../../../../assets/img/billete.svg"
+                                  alt=""
+                                  class="me-2"
+                                />$8,000</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text7"
+                            >Diseñador gráfico Senior en Creative Soft</label
+                          >
+                          <label class="text6"
+                            >Junio 2020 - Diciembre 2020 (6 meses)</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text7"
+                            >Diseñador Gráfico Senior en Alsain</label
+                          >
+                          <label class="text6"
+                            >Enero 2021 - Septiembre 2021 (9 meses)</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text mb-0"
+                            >Universidad de Guadalajara</label
+                          >
+                          <label class="text"
+                            >Instituto Tecnológico y de Estudios Superiores de
+                            Occidente</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-12 col-lg-7 col-md-10 offset-lg-5 offset-md-2 d-flex justify-content-end"
+                        >
+                          <button class="botonR mt-2" type="button">
+                            Ver talento
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card d-none d-lg-block">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-12 text-end">
+                          <label class="text">Actualizado hace 2 días</label>
+                        </div>
+                      </div>
+                      <div class="row mb-2 mt-3">
+                        <div class="col-4 col-lg-3 col-md-2">
+                          <img src="../../../../../assets/img/perfilTalento.svg" alt="" />
+                        </div>
+                        <div class="col-8 col-lg-9 col-md-10">
+                          <h5 class="titulo">Diseñador gráfico Sr. y animador</h5>
+                          <label class="text5">30 años</label>
+                          <div class="row">
+                            <div class="col-12 col-lg-6 col-md-6">
+                              <label class="text6"
+                                ><i class="fas fa-map-marker-alt me-2"></i
+                                >Guadalajara, Jal.</label
+                              >
+                            </div>
+                            <div class="col-12 col-lg-6 col-md-6">
+                              <label class="text6"
+                                ><img
+                                  src="../../../../../assets/img/billete.svg"
+                                  alt=""
+                                  class="me-2"
+                                />$8,000</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text7"
+                            >Diseñador gráfico Senior en Creative Soft</label
+                          >
+                          <label class="text6"
+                            >Junio 2020 - Diciembre 2020 (6 meses)</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text7"
+                            >Diseñador Gráfico Senior en Alsain</label
+                          >
+                          <label class="text6"
+                            >Enero 2021 - Septiembre 2021 (9 meses)</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text mb-0"
+                            >Universidad de Guadalajara</label
+                          >
+                          <label class="text"
+                            >Instituto Tecnológico y de Estudios Superiores de
+                            Occidente</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-12 col-lg-7 col-md-10 offset-lg-5 offset-md-2 d-flex justify-content-end"
+                        >
+                          <button class="botonR mt-2" type="button">
+                            Ver talento
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="cards-wrapper">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-12 text-end">
+                          <label class="text">Actualizado hace 2 días</label>
+                        </div>
+                      </div>
+                      <div class="row mb-2 mt-3">
+                        <div class="col-4 col-lg-3 col-md-2">
+                          <img src="../../../../../assets/img/perfilTalento.svg" alt="" />
+                        </div>
+                        <div class="col-8 col-lg-9 col-md-10">
+                          <h5 class="titulo">Diseñador gráfico Sr. y animador</h5>
+                          <label class="text5">30 años</label>
+                          <div class="row">
+                            <div class="col-12 col-lg-6 col-md-6">
+                              <label class="text6"
+                                ><i class="fas fa-map-marker-alt me-2"></i
+                                >Guadalajara, Jal.</label
+                              >
+                            </div>
+                            <div class="col-12 col-lg-6 col-md-6">
+                              <label class="text6"
+                                ><img
+                                  src="../../../../../assets/img/billete.svg"
+                                  alt=""
+                                  class="me-2"
+                                />$8,000</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text7"
+                            >Diseñador gráfico Senior en Creative Soft</label
+                          >
+                          <label class="text6"
+                            >Junio 2020 - Diciembre 2020 (6 meses)</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text7"
+                            >Diseñador Gráfico Senior en Alsain</label
+                          >
+                          <label class="text6"
+                            >Enero 2021 - Septiembre 2021 (9 meses)</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text mb-0"
+                            >Universidad de Guadalajara</label
+                          >
+                          <label class="text"
+                            >Instituto Tecnológico y de Estudios Superiores de
+                            Occidente</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-12 col-lg-7 col-md-10 offset-lg-5 offset-md-2 d-flex justify-content-end"
+                        >
+                          <button class="botonR mt-2" type="button">
+                            Ver talento
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card d-none d-lg-block">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-12 text-end">
+                          <label class="text">Actualizado hace 2 días</label>
+                        </div>
+                      </div>
+                      <div class="row mb-2 mt-3">
+                        <div class="col-4 col-lg-3 col-md-2">
+                          <img src="../../../../../assets/img/perfilTalento.svg" alt="" />
+                        </div>
+                        <div class="col-8 col-lg-9 col-md-10">
+                          <h5 class="titulo">Diseñador gráfico Sr. y animador</h5>
+                          <label class="text5">30 años</label>
+                          <div class="row">
+                            <div class="col-12 col-lg-6 col-md-6">
+                              <label class="text6"
+                                ><i class="fas fa-map-marker-alt me-2"></i
+                                >Guadalajara, Jal.</label
+                              >
+                            </div>
+                            <div class="col-12 col-lg-6 col-md-6">
+                              <label class="text6"
+                                ><img
+                                  src="../../../../../assets/img/billete.svg"
+                                  alt=""
+                                  class="me-2"
+                                />$8,000</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text7"
+                            >Diseñador gráfico Senior en Creative Soft</label
+                          >
+                          <label class="text6"
+                            >Junio 2020 - Diciembre 2020 (6 meses)</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text7"
+                            >Diseñador Gráfico Senior en Alsain</label
+                          >
+                          <label class="text6"
+                            >Enero 2021 - Septiembre 2021 (9 meses)</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text mb-0"
+                            >Universidad de Guadalajara</label
+                          >
+                          <label class="text"
+                            >Instituto Tecnológico y de Estudios Superiores de
+                            Occidente</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-12 col-lg-7 col-md-10 offset-lg-5 offset-md-2 d-flex justify-content-end"
+                        >
+                          <button class="botonR mt-2" type="button">
+                            Ver talento
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card d-none d-lg-block">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-12 text-end">
+                          <label class="text">Actualizado hace 2 días</label>
+                        </div>
+                      </div>
+                      <div class="row mb-2 mt-3">
+                        <div class="col-4 col-lg-3 col-md-2">
+                          <img src="../../../../../assets/img/perfilTalento.svg" alt="" />
+                        </div>
+                        <div class="col-8 col-lg-9 col-md-10">
+                          <h5 class="titulo">Diseñador gráfico Sr. y animador</h5>
+                          <label class="text5">30 años</label>
+                          <div class="row">
+                            <div class="col-12 col-lg-6 col-md-6">
+                              <label class="text6"
+                                ><i class="fas fa-map-marker-alt me-2"></i
+                                >Guadalajara, Jal.</label
+                              >
+                            </div>
+                            <div class="col-12 col-lg-6 col-md-6">
+                              <label class="text6"
+                                ><img
+                                  src="../../../../../assets/img/billete.svg"
+                                  alt=""
+                                  class="me-2"
+                                />$8,000</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text7"
+                            >Diseñador gráfico Senior en Creative Soft</label
+                          >
+                          <label class="text6"
+                            >Junio 2020 - Diciembre 2020 (6 meses)</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text7"
+                            >Diseñador Gráfico Senior en Alsain</label
+                          >
+                          <label class="text6"
+                            >Enero 2021 - Septiembre 2021 (9 meses)</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text mb-0"
+                            >Universidad de Guadalajara</label
+                          >
+                          <label class="text"
+                            >Instituto Tecnológico y de Estudios Superiores de
+                            Occidente</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-12 col-lg-7 col-md-10 offset-lg-5 offset-md-2 d-flex justify-content-end"
+                        >
+                          <button class="botonR mt-2" type="button">
+                            Ver talento
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#carouselExampleControls"
+              role="button"
+              data-slide="prev"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carouselExampleControls"
+              role="button"
+              data-slide="next"
+            >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div> -->
+        <!--------------------- Termina Carrusel-------------------------------------------->
+      </div>
+    </div>
+  
+    <!-- Modal descartar -->
+    <!-- <div
+    class="modal fade modalDescartar"
+    id="modalDescartar"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-end">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5 class="titulo" id="exampleModalLongTitle">Descartar talento</h5>
+          <p class="text">
+            Estas por descartar un talento de tu vacante, esto significa que ya no
+            lo verás en tu lista de talentos postulados.
+          </p>
+          <div class="cuadro">
+            <p>Esta vacante ya ha sido cubierta.</p>
+            <p>Agradecemos tu interés.</p>
+            <p class="mt-3">Sigue atento a nuevas vacantes</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="boton mx-auto d-block">Aceptar</button>
+          <button
+            type="button"
+            class="botonC mx-auto d-block"
+            data-dismiss="modal"
+          >
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+    <!-- Modal seleccionar talento -->
+    <!-- <div
+    class="modal fade modalDescartar"
+    id="modalSeleccionar"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-end">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5 class="titulo" id="exampleModalLongTitle">Seleccionar talento</h5>
+          <p class="text">
+            Enviaremos un mensaje de aceptación de tu parte al candidato.
+          </p>
+          <div class="cuadro">
+            <p>¡Felicidades!</p>
+            <p>Haz sido seleccionado.</p>
+            <p class="mt-3">Nos pondremos en contacto contigo a la brevedad</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="boton mx-auto d-block">Aceptar</button>
+          <button
+            type="button"
+            class="botonC mx-auto d-block"
+            data-dismiss="modal"
+          >
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+    <!-- Modal seleccionar talento -->
+    <!-- <div
+    class="modal fade modalDescartar"
+    id="modalGuardarTalento"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-end">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5 class="titulo" id="exampleModalLongTitle">Guardar talento</h5>
+          <p class="text">Selecciona la vacante en la que deseas guardarlo</p>
+          <div class="cuadro2">
+            <button type="button" class="boton activado">
+              <p class="text">Ejecutivo de cuenta Jr.!</p>
+              <p class="text2">UAG</p>
+              <p class="text2">Guadalajara, jal</p>
+            </button>
+            <button type="button" class="boton">
+              <p class="text">Ejecutivo de cuenta Jr.!</p>
+              <p class="text2">UAG</p>
+              <p class="text2">Guadalajara, jal</p>
+            </button>
+            <button type="button" class="boton">
+              <p class="text">Ejecutivo de cuenta Jr.!</p>
+              <p class="text2">UAG</p>
+              <p class="text2">Guadalajara, jal</p>
+            </button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="boton mx-auto d-block">Aceptar</button>
+          <button
+            type="button"
+            class="botonC mx-auto d-block"
+            data-dismiss="modal"
+          >
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  </div>
+  

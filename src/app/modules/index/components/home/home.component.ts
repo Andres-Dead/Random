@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
     //metodo para buscar empresas
     //cuando se busca una empresa se redirige a la pagina de
     //la empresa y se le pasa el area y la ubicacion via queryParams
-    this.route.navigate(['/empleos'], {
+    this.route.navigate(['/inicio/empleos'], {
       queryParams: {
         area: this.formGroup.value.area,
         ubicacion: this.formGroup.value.ubicacion,

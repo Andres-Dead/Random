@@ -1,0 +1,72 @@
+<form [formGroup]="profileForm" >
+    <h1 class="titulo">Información personal</h1>
+    <label class="sub">Nombre - Obligatorio</label>
+    <input
+      class="form-control"
+      formControlName="first_name"
+      [readonly]="readOnly"
+    />
+    <label class="sub">Apellido - Obligatorio</label>
+    <input
+      class="form-control"
+      formControlName="last_name"
+      [readonly]="readOnly"
+    />
+    <div class="row">
+      <div class="col-12 col-lg-5 col-md-5">
+        <label class="sub">Fecha de nacimiento</label>
+        <input
+          type="text"
+          formControlName="birthdate"
+          [readonly]="readOnly"
+        />
+      </div>
+    </div>
+    <label class="sub">Estado/Localidad - Obligatorio</label>
+    <input
+      style="margin-bottom: 5%"
+      formControlName="location"
+      [readonly]="readOnly"
+    />
+  
+    <label
+      class="checkbox">
+      <input formControlName="handicap" type="checkbox" (change)="MoveLocation()" [disabled]="readOnly"/>
+      <span class="check"></span>
+      <span class="textCheck">Estoy dispuesto a reubicarme</span>
+    </label>
+    <h1 class="titulo">Información de contacto</h1>
+    <label class="sub">LinkedIn</label>
+    <input formControlName="linkedin" [readonly]="readOnly"/>
+    <div class="row">
+      <div class="col-12 col-lg-7 col-md-7">
+        <label class="sub">Correo electrónico</label>
+        <div class="row">
+          <div class="col-9">
+            <input formControlName="contact_email" [readonly]="readOnly"/>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-5 col-md-5">
+        <label class="sub">Número de teléfono</label>
+        <input
+          formControlName="phone"
+          [readonly]="readOnly"
+        />
+      </div>
+    </div>
+    <label class="sub">Whatsapp</label>
+    <input 
+      formControlName="whatsapp"
+      [readonly]="readOnly"
+    />
+    <div class="row">
+      <div class="col-8 col-lg-4 col-md-6 mt-3">
+        <button class="boton2" (click)="disabled()">Editar información</button>
+      </div>
+      <div class="col-8 col-lg-4 col-md-6 mt-3">
+        <button class="boton2" type="submit" [disabled]="readOnly">Guardar</button>
+      </div>
+    </div>
+  </form>
+  

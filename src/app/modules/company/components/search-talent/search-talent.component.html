@@ -1,0 +1,135 @@
+<div class="container-fluid">
+    <div class="buscarTalento">
+      <div class="pActiva" id="pActiva">
+        <div class="row">
+          <div class="col-12 col-md-12 col-lg-12">
+            <label class="titulo">Buscar talento</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-12 col-lg-12">
+            <form class="form1" [formGroup]="formGroup">
+              <div class="row">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4">
+                  <label class="text1"
+                    >¿Qué tipo de talento estás buscando?</label
+                  >
+                  <input
+                    type="text"
+                    class="input"
+                    value="Puesto, palabra clave, frase exacta"
+                    formControlName="tipo"
+                  />
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4">
+                  <label class="text1">¿En cuál estado?</label>
+                  <select class="custom-select" formControlName="estado">
+                    <option *ngFor="let item of this.arrStates" [ngValue]="item.name" selected>{{item.name}}</option>
+                  </select>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 d-flex align-items-center mt-md-3">
+                  <button
+                    type="submit"
+                    class="boton mx-auto d-block"
+                    (click)="buscarTalento()"
+                  >
+                    <i class="fas fa-search me-2"></i>Buscar talento
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col-12">
+                <button
+                  class="boton2 mx-auto d-block"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#multiCollapseExample1"
+                  aria-expanded="false"
+                  aria-controls="multiCollapseExample2"
+                >
+                  Más opciones<i class="fas fa-chevron-down ms-2"></i>
+                </button>
+              </div>
+            </div>
+            <div class="collapse mt-5" id="multiCollapseExample1">
+              <form>
+                <div class="row">
+                  <div class="col-12 col-md-6 col-lg-4 col-xl-4 mb-5">
+                    <label class="text1">Sector de experiencia</label>
+                    <div class="dropdown">
+                      <button
+                        class="drop2 dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Seleccione una opción
+                      </button>
+                      <div
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton"
+                      >
+                        <a class="dropdown-item" href="#">Tipo de trabajo</a>
+                        <a class="dropdown-item" href="#">Salario estimado</a>
+                        <a class="dropdown-item" href="#">Modo de empleo</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-4 col-xl-4 mb-5">
+                    <label class="text1">Sueldo</label>
+                    <div class="dropdown">
+                      <button
+                        class="drop2 dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Seleccione una opción
+                      </button>
+                      <div
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton"
+                      >
+                        <a class="dropdown-item" href="#">Tipo de trabajo</a>
+                        <a class="dropdown-item" href="#">Salario estimado</a>
+                        <a class="dropdown-item" href="#">Modo de empleo</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-4 col-xl-4 mb-5">
+                    <label class="text1">Edad</label>
+                    <div class="dropdown">
+                      <button
+                        class="drop2 dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Seleccione una opción
+                      </button>
+                      <div
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton"
+                      >
+                        <a class="dropdown-item" href="#">Tipo de trabajo</a>
+                        <a class="dropdown-item" href="#">Salario estimado</a>
+                        <a class="dropdown-item" href="#">Modo de empleo</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

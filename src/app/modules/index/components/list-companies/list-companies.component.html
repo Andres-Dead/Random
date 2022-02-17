@@ -1,0 +1,115 @@
+<div class="fondo1">
+    <img src="../../assets/img/circulo1.svg" alt="" />
+  </div>
+  <div class="container-fluid">
+    <div class="buscar">
+      <div class="row mt-5">
+        <div class="col-12 col-lg-12 col-md-12 mt-lg-0 mt-5">
+          <label class="sub">Buscar empresa</label>
+          <form [formGroup]="formGroup">
+            <div class="row">
+              <div class="col-8 col-lg-4 col-md-6 mt-3 mt-lg-0 mt-md-0">
+                <div class="form-outline">
+                  <input
+                    type="search"
+                    (search)="limpiar()"
+                    class="input pl-2"
+                    placeholder="Nombre de la empresa"
+                    aria-label="Search"
+                    formControlName="ubicacion"
+                  />
+                </div>
+              </div>
+              <div class="col-4 col-lg-2 col-md-3 d-flex align-items-end">
+                <button
+                  class="boton"
+                  type="button"
+                  style
+                  (click)="buscarEmpresas()"
+                >
+                  Buscar
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fondo2">
+    <img src="../../assets/img/circulo2.svg" alt="" />
+  </div>
+  <div class="fondo4">
+    <img src="../../assets/img/circulo3.svg" alt="" />
+  </div>
+  <div class="container-fluid">
+    <div class="buscar mt-lg-3 mt-xl-5">
+      <div class="row">
+        <div class="col-12 col-lg-12 col-md-12 mr-5">
+          <h1 class="titulo">
+            Las mejores empresas están contratando a los mejores profesionales
+          </h1>
+        </div>
+      </div>
+      <div class="row mt-2 mt-md-5">
+        <div class="col-6 col-lg-1 col-md-2">
+          <label class="text">Ordenar</label>
+        </div>
+        <div class="col-6 col-lg-2 col-md-4">
+          <div class="dropdown">
+            <button
+              class="drop2 dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              {{this.elegido}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" (click)="ordenaraz()">A a la Z</a>
+              <a class="dropdown-item" (click)="ordenarza()">Z a la A</a>
+              <a class="dropdown-item" (click)="numVacants()">Número de vacantes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          *ngFor="
+            let item of arrEmpresas
+              | paginate
+                : {
+                    itemsPerPage: this.numPages,
+                    currentPage: p
+                  }
+          "
+          class="col-12 col-lg-3 col-md-6 mt-3"
+        >
+          <div class="row mb-5" [routerLink]="['/perfil_empresa', item.ID]">
+            <div class="col-3">
+              <div class="cuadro">
+                <img class="mx-auto d-block" [src]="item.profile_pic" alt="" />
+              </div>
+            </div>
+            <div class="col-9">
+              <label class="nombre">{{ item.display_name }}</label
+              ><br />
+              <label class="vacante">{{ item.vacants }} Vacantes</label>
+            </div>
+          </div>
+        </div>
+        <pagination-controls
+          class="paginacion"
+          (pageChange)="p = $event"
+          previousLabel="Anterior"
+          nextLabel="Siguiente"
+        ></pagination-controls>
+      </div>
+    </div>
+  </div>
+  <div class="fondo6">
+    <img src="../../assets/img/circulo6.svg" alt="" />
+  </div>
+  

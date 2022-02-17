@@ -1,0 +1,76 @@
+<body>
+    <div class="fondo2">
+      <img src="../../assets/img/circulo2.svg" alt="" />
+    </div>
+    <div class="container-fluid">
+      <div class="inicio">
+        <div class="row mt-5">
+          <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-7 mt-lg-0 mt-5">
+            <h1 class="titulo1"><span>¡El empleo llegó hasta ti!</span></h1>
+            <label class="sub1">Encuentra el empleo que estás buscando</label>
+            <img class="imgReg" src="../../assets/img/registrate.svg" alt="" />
+          </div>
+          <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-4 mt-lg-0 mt-5 offset-xxl-1 offset-xl-0">
+            <form class="registro" >
+              <h1 class="titulo">¡Regístrate!</h1>
+              <label class="sub">y recibe ofertas de empleo en tu email</label>
+              <div class="form-group">
+                <label class="text" for="inputEmail4">Email</label>
+                <input
+                  type="email"
+                  class="input1"
+                  id="inputEmail4"
+                  placeholder=""
+                  formControlName="email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="text" for="inputPassword4">Contraseña</label>
+                <input
+                  type="password"
+                  class="input1"
+                  id="inputPassword4"
+                  placeholder=""
+                  formControlName="password"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="text" for="inputPassword4"
+                  >Confirmar contraseña</label
+                >
+                <input
+                  type="password"
+                  class="input1"
+                  id="inputPassword4a"
+                  placeholder=""
+                  formControlName="pwdrep"
+                  required
+                />
+              </div>
+              <label class="text2"
+                >Al registrarte aceptas los términos y condiciones</label
+              >
+              <button
+                type="submit"
+                id="quieroregistrarme"
+                class="boton mx-auto d-block"
+              >
+                Quiero registrarme
+              </button>
+              <button type="submit" class="boton2" >
+                Google
+              </button>
+              <button type="submit" class="boton2" >
+                Facebook
+              </button>
+            </form>
+            <label class="sub mt-3 d-flex justify-content-center">¿Eres una empresa?</label>
+            <label class="sub d-flex justify-content-center">Regístrate  <a  class="ms-1" [routerLink]="['/registroEmpresa']">aquí</a></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  

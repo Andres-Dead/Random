@@ -1,0 +1,31 @@
+<form [formGroup]="info" (ngSubmit)="updateInfo()">
+    <h1 class="titulo">Sobre de la Empresa</h1>
+    <label class="sub">Sector</label>
+    <div class="dropdown">
+        <select formControlName="category" class="drop2 dropdown-toggle" style="color:black" [disabled]="readOnly">
+            <option *ngFor="let categoria of categorias" value="{{categoria.ID}}" style="font-weight: normal;">{{categoria.name}}</option>
+        </select>
+    </div>
+    <label class="sub">Número de trabajadores</label>
+    <div class="dropdown">
+        <select formControlName="num_workers" [disabled]="readOnly" >
+            <option [value]=0> 1 a 5 </option>
+            <option [value]=1> 6 a 10 </option>
+            <option [value]=2> 11 a 50 </option>
+            <option [value]=3> 51 a 250 </option>
+            <option [value]=4> más de 250 </option>
+        </select>
+    </div>
+
+    <label class="sub">Descripción de la empresa</label>
+    <textarea [readonly]="readOnly"  formControlName="description" class="form-control" id="exampleFormControlTextarea1" rows="3"
+        placeholder="{{information.description}}"></textarea>
+    <div class="row">
+        <div class="col-8 col-lg-4 col-md-6 mt-3">
+            <button class="boton2" (click)="disabled()">Editar información</button>
+        </div>
+        <div class="col-8 col-lg-4 col-md-6 mt-3">
+            <button class="boton2" [disabled]="readOnly">Guardar</button>
+        </div>
+    </div>
+</form>

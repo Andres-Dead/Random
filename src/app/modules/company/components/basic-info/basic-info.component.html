@@ -1,0 +1,48 @@
+<form [formGroup]="basicInfo" (ngSubmit)="updateInfo()">
+    <h1 class="titulo">Información de la empresa</h1>
+    <label class="sub">Nombre de la Empresa</label>
+    <input
+      placeholder="{{ information.display_name }}"
+      formControlName="display_name"
+      [readonly]="readOnly"
+    />
+    <label class="sub">Razón social</label>
+    <input
+      placeholder="{{ information.business_name }}"
+      formControlName="business_name"
+      [readonly]="readOnly"
+    />
+    <label class="sub">RFC</label>
+    <input
+      placeholder="{{ information.rfc }}"
+      formControlName="rfc"
+      [readonly]="readOnly"
+    />
+    <div class="row">
+      <div class="col-12 col-lg-7 col-md-7">
+        <label class="sub">Correo electrónico de acceso</label>
+        <div class="row">
+          <div class="col-9">
+            <input
+              placeholder="Correoelectronico@correo.com"
+              value="{{ information.contact_email }}"
+              formControlName="contact_email"
+              [readonly]="readOnly"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col-8 col-lg-4 col-md-6 mt-3">
+        <button class="boton2" (click)="changeEmail()">Cambiar correo</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8 col-lg-4 col-md-6 mt-3">
+        <button class="boton2" (click)="disabled()">Editar información</button>
+      </div>
+      <div class="col-8 col-lg-4 col-md-6 mt-3">
+        <button class="boton2" [disabled]="readOnly">Guardar</button>
+      </div>
+    </div>
+  </form>
+  

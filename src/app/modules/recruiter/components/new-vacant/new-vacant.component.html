@@ -1,0 +1,267 @@
+<div class="container-fluid">
+    <div class="nuevaVacante">
+        <form [formGroup]="vacanteForm" (ngSubmit)="onNewVacant()">
+            <div class="row">
+                <div class="col-12 col-md-7 col-lg-7">
+                    <label class="titulo">Nueva vacante</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12 ">
+                    <form>
+                        <h1 class="text1 mb-3">Sobre el empleo</h1>
+                        <div class="row d-flex justify-content-end">
+                            <div class="col-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3 offset-lg-6 mb-3">
+                                <button type="button" class="boton5 mx-auto d-block" data-toggle="modal"
+                                    data-target="#modalDestacada">
+                                    <img class="me-2" src="../../../../../assets/img/iconoDestacar.svg" alt="">Destacar
+                                    esta
+                                    vacante
+                                </button>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3 mb-3">
+                                <button type="button" class="boton5 mx-auto d-block" data-toggle="modal"
+                                    data-target="#modalConfidencial">
+                                    <img class="me-2" src="../../../../../assets/img/iconoConfidencial.svg" alt="">hacer
+                                    confidencial
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <label class="text2">Título del empleo</label>
+                                <input type="text" class="input" placeholder="Ej, Jefe de producción"
+                                    formControlName="name" style="color: black;">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6 col-md-6">
+                                <label class="text2">Sector</label>
+                                <div class="dropdown">
+                                    <select class="drop2 dropdown-toggle" style="color:black"
+                                        formControlName="category">
+                                        <option *ngFor="let categoria of categorias" value="{{categoria.ID}}">
+                                            {{categoria.name}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- <div class="col-12 col-lg-6 col-md-6">
+                        <label class="text2">Sub categoría</label>
+                        <div class="dropdown">
+                            <button class="drop2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Seleccione una opción
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Tipo de trabajo</a>
+                                <a class="dropdown-item" href="#">Salario estimado</a>
+                                <a class="dropdown-item" href="#">Modo de empleo</a>
+                            </div>
+                        </div>
+                    </div> -->
+                        </div>
+                        <div class="row" [formGroup]="location">
+                            <label class="text2">Ubicación</label>
+                            <div class="col-4">
+                                <label class="text2">País</label>
+                                <div class="dropdown">
+                                    <select class="drop2 dropdown-toggle" style="color:black" formControlName="pais">
+                                        <option *ngFor="let pais of paises" value="{{pais.name}}">{{pais.name}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <label class="text2">Estado</label>
+                                <div class="dropdown">
+                                    <select class="drop2 dropdown-toggle" style="color:black" formControlName="estado">
+                                        <option *ngFor="let estado of estados" value="{{estado.name}}">{{estado.name}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <label class="text2">Ciudad</label>
+                                <div class="dropdown">
+                                    <select class="drop2 dropdown-toggle" style="color:black" formControlName="ciudad">
+                                        <option *ngFor="let ciudad of ciudades" value="{{ciudad.name}}">{{ciudad.name}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6 col-md-6">
+                                <label class="text2">Educación mínima requerida</label>
+                                <div class="dropdown">
+                                    <select class="drop2 dropdown-toggle" style="color:black"
+                                        formControlName="education">
+                                        <option *ngFor="let educacion of educaciones" value="{{educacion.ID}}">
+                                            {{educacion.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 col-md-6">
+                                <label class="text2">Experiencia</label>
+                                <div class="dropdown">
+                                    <select class="drop2 dropdown-toggle" style="color:black"
+                                        formControlName="experience">
+                                        <option value=0>Sin Experiencia</option>
+                                        <option value=1>1 año</option>
+                                        <option value=2>2 años o más</option>
+                                        <option value=3>5 años o más</option>
+                                        <option value=4>10 años o más</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <label class="text2">Edad entre</label>
+                            </div>
+                            <div class="col-4">
+                                <input type="number" class="input" placeholder="Ej. 18" style="color: black;"
+                                    formControlName="min_age">
+                            </div>
+                            <div class="col-1 text-center">
+                                <label class="text2">a</label>
+                            </div>
+                            <div class="col-4">
+                                <input type="number" class="input" placeholder="Ej. 80" style="color: black;"
+                                    formControlName="max_age">
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-12">
+                                <label class="checkbox">
+                                    <input type="checkbox" formControlName="travel">
+                                    <span class="check"></span>
+                                    <span class="text2">Disponibilidad para viajar</span>
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" formControlName="handicap">
+                                    <span class="check"></span>
+                                    <span class="text2">Personas con discapacidad</span>
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" formControlName="move">
+                                    <span class="check"></span>
+                                    <span class="text2">Disponibilidad de cambio de residencia</span>
+                                </label>
+                            </div>
+                        </div>
+                        <h1 class="text1">Salario</h1>
+                        <div class="row">
+                            <div class="col-5 col-lg-4 col-md-4">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" class="form-control" placeholder="Ej., 4,000"
+                                        style="color: black;" formControlName="min_salary">
+                                </div>
+                            </div>
+                            <div class="col-1 col-lg-1 col-md-1">
+                                <label class="text2 text-center">a</label>
+                            </div>
+                            <div class="col-5 col-lg-4 col-md-4">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" class="form-control" placeholder="Ej., 4,000"
+                                        style="color: black;" formControlName="max_salary">
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-3 col-md-3">
+                                <label class="checkbox">
+                                    <input type="checkbox" formControlName="comissions">
+                                    <span class="check"></span>
+                                    <span class="text2">Más comisiones</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <!-- Default switch -->
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked"
+                                        formControlName="hide_salary">
+                                    <label class="form-check-label text2" for="flexSwitchCheckChecked">Ocultar el rango
+                                        salarial
+                                        en la publicación</label>
+                                </div>
+                            </div>
+                        </div>
+                        <h1 class="text1 mb-1">Detalles del empleo</h1>
+                        <h1 class="text3 mb-3">Puedes seleccionar varios.</h1>
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="text4">Contratación</h1>
+                            </div>
+                        </div>
+                        <ng-container formArrayName="job_type">
+                            <div class="row" [formGroup]="jobTypeForm">
+                                <div class="dropdown col-12 col-lg-4 col-md-4">
+                                    <select class="drop2 dropdown-toggle" style="color:black" formControlName="ID">
+                                        <option [value]="tipos[0].ID">{{tipos[0].type}}</option>
+                                        <option [value]="tipos[1].ID">{{tipos[1].type}}</option>
+                                        <option [value]="tipos[2].ID">{{tipos[2].type}}</option>
+                                    </select>
+                                </div>
+                                <div class="dropdown col-12 col-lg-4 col-md-4">
+                                    <select class="drop2 dropdown-toggle" style="color:black" formControlName="ID1">
+                                        <option [value]="tipos[3].ID">{{tipos[3].type}}</option>
+                                        <option [value]="tipos[4].ID">{{tipos[4].type}}</option>
+                                    </select>
+                                </div>
+                                <div class="dropdown col-12 col-lg-4 col-md-4">
+                                    <select class="drop2 dropdown-toggle" style="color:black" formControlName="ID2">
+                                        <option [value]=tipos[5].ID>{{tipos[5].type}}</option>
+                                        <option [value]=tipos[6].ID>{{tipos[6].type}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </ng-container>
+                        <h1 class="text1 mb-1">Espacio de trabajo<span>(opcional)</span></h1>
+                        <h1 class="text3 mb-3">Debido a las nuevas formas de trabajo, indícanos si el empleo permite
+                            trabajar
+                            desde casa o en oficina.</h1>
+                        <ng-container formArrayName="modality">
+                            <div class="row" [formGroup]="modalityForm">
+                                <div class="col-12">
+                                    <h1 class="text4">Modalidad</h1>
+                                    <div class="dropdown col-12 col-lg-4 col-md-4">
+                                        <select class="drop2 dropdown-toggle" style="color:black"
+                                            formControlName="modality" formControlName="ID">
+                                            <option *ngFor="let modalidad of modalidades" [value]=modalidad.ID>
+                                                {{modalidad.mode}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                        <h1 class="text1">Descripción del empleo</h1>
+                        <div class="row mt-5">
+                            <div class="col-12">
+                                <textarea class="textarea" id="exampleFormControlTextarea1" rows="20"
+                                    formControlName="description" style="color: black;"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-end">
+                                <label class="text3 mt-3">Mínimo 50 carácteres</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-3 col-md-3">
+                    <button [routerLink]="['/routePath']" routerLinkActive="router-link-active"  class="boton4">Descartar</button>
+                </div>
+                <div class="col-12 col-lg-3 col-md-3 offset-lg-3">
+                    <button type="submit" class="boton">Guardar borrador</button>
+                </div>
+                <div class="col-12 col-lg-3 col-md-3">
+                    <button type="submit" class="boton3">Publicar
+                    </button>
+                </div>
+            </div>

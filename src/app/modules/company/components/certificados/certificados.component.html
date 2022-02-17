@@ -1,0 +1,13 @@
+<form [formGroup]="info" (ngSubmit)="updateInfo()">
+    <h1 class="titulo">Certificaciones</h1>
+    <label class="sub">Descripción de las certificaciones de la empresa</label>
+    <textarea formControlName="cert" [readonly]="readOnly" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Lorem ipsum, Lorem ipsum"></textarea>
+    <div class="row">
+        <div class="col-8 col-lg-4 col-md-6 mt-3">
+            <button class="boton2" (click)="disabled()">Editar información</button>
+        </div>
+        <div class="col-8 col-lg-4 col-md-6 mt-3">
+            <button class="boton2" [disabled]="readOnly" >Guardar</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,43 @@
+<div class="container-fluid">   
+    <div class="inicio">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-6 col-xl-7 col-xxl-7 mt-lg-0 mt-5">
+                <h1 class="titulo1 text-left">Aquí encuentras el <span><br>mejor talento humano</span></h1>
+                <label class="sub1 mb-5 text-left">Más de 1,200,000 personas han enviado su CV a capitalempleo</label>
+                <img class="imgRegE mt-5" src="../../assets/img/personaje3.svg" alt="">
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 col-xl-5 col-xxl-4 mt-lg-0 mt-5 offset-xxl-1 offset-xl-0">
+                <form class="registro" [formGroup]="formGroup">
+                    <h1 class="titulo">¡Regístrate!</h1>
+                    <label class="sub mb-3">para publicar vacantes y encontrar a tu candidato ideal</label>
+                    <div class="form-group">
+                        <label class="text" for="inputEmail4">Nombre de la empresa</label>
+                        <input type="text" class="input1" placeholder="" formControlName="username">
+                    </div>
+                    <div class="form-group">
+                        <label class="text" for="inputEmail4">Razón social</label>
+                        <input type="text" class="input1" placeholder="" formControlName="razonSocial">
+                    </div>
+                    <div class="form-group">
+                        <label class="text" for="inputEmail4">RFC</label>
+                        <input type="text" id="rfc" class="input1 text-uppercase" placeholder="" formControlName="rfc">
+                    </div>
+                    <div class="form-group">
+                        <label class="text" for="inputEmail4">Email</label>
+                        <input type="email" class="input1" placeholder="" formControlName="email">
+                    </div>
+                    <div class="form-group">
+                        <label class="text" for="inputPassword4">Contraseña</label>
+                        <input type="password" class="input1" placeholder="" formControlName="password">
+                    </div>
+                    <div class="form-group">
+                        <label class="text" for="inputPassword4">Confirmar contraseña</label>
+                        <input type="password" class="input1" placeholder="" formControlName="pwdrep">
+                    </div>
+                    <label class="text2">Al registrarte aceptas los términos y condiciones</label>
+                    <button type="submit" class="boton mx-auto d-block" (click)="registrarEmpresa()" >Quiero registrarme</button>
+                </form>
+            </div>  
+        </div>
+    </div>
+</div>      

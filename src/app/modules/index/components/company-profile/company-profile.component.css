@@ -1,0 +1,406 @@
+.Perfilempresa{
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.cuadro{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px 2px rgba(22, 22, 26, 0.18);
+    border: none;
+}
+.cuadro img{
+    width: 90%
+}
+.text1{
+    font-family: 'SegoeUISemibold';
+    font-size: 2.25rem;
+    color: #707070;
+}
+.text2{
+    font-family: 'SegoeUIBold';
+    font-size: 0.938rem;
+    color: #68B744;
+    display: block;
+}
+.text2 img{
+    width: 2%;
+}
+.text3{
+    font-family: 'SegoeUI';
+    font-size: 0.875rem;
+    color: #989898;
+}
+.text4{
+    font-family: 'SegoeUIBold';
+    font-size: 0.75rem;
+    color: #707070;
+}
+.text5{
+    font-family: 'SegoeUIBold';
+    font-size: 1.375rem;
+    color: #707070;
+}
+.text6{
+    font-family: 'SegoeUI';
+    font-size: 1rem;
+    color: #8E8E8E;
+}
+.text7{
+    font-family: 'SegoeUISemibold';
+    font-size: 1rem;
+    color: #707070;
+}
+.text8{
+    font-family: 'SegoeUIBold';
+    font-size: 0.875rem;
+    color: #8E8E8E;
+}
+.text9{
+    font-family: 'SegoeUIBold';
+    font-size: 1.5rem;
+    color: #707070;
+}
+.text10{
+    font-family: 'SegoeUISemibold';
+    font-size: 1.125rem;
+    color: #707070;
+}
+.text11{
+    font-family: 'SegoeUI';
+    font-size: 1.125rem;
+    color: #707070;
+}
+.text12{
+    font-family: 'SegoeUI';
+    font-size: 0.75rem;
+    color: #6B89AE;
+}
+.text13{
+    font-family: 'SegoeUIBold';
+    font-size: 1.25rem;
+    color: #707070;
+}
+.text14{
+    font-family: 'SegoeUIBold';
+    font-size: 1.125rem;
+    color: #707070;
+}
+.anuncio .text3{
+    color: #8E8E8E;
+}
+.estrellas .col{
+    padding-left: 0;
+    padding-right: 0;
+}
+.botonf{
+    width: 90%;
+    min-height: 46px;
+    border: 1px solid #1C4A83;
+    border-radius: 23px;
+    font-family: 'SegoeUI';
+    font-size: .9rem;
+    color: #1C4A83;
+    background: #fff;
+    padding: 3%;
+}
+.botonu{
+    width: 90%;
+    min-height: 46px;
+    border: 1px solid #1C4A83;
+    border-radius: 23px;
+    font-family: 'SegoeUI';
+    font-size: .9rem;
+    background: #1C4A83;
+    color: #fff;
+}
+.accordion{
+    border-right: 4px solid #707070;
+    padding-right: 5%;
+    margin-right: 10%;
+}
+.accordion-item{
+    border: none;
+}
+.accordion-button{
+    font-family: 'SegoeUISemibold';
+    font-size: 1.1rem;
+    color: #707070;
+    background: #F3F3F3;
+    box-shadow: none;
+    border: none;
+}
+ .accordion-button:not(.collapsed){
+    color: #707070;
+    background: #fff;
+    box-shadow: none;
+    border: none;
+}
+ .accordion-button:focus{
+    box-shadow: none;
+}
+ .accordion-body{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.accordion-body button{
+    color: #707070;
+    background: #fff;
+    border: none;
+    font-family: 'SegoeUI';
+    font-size: .9rem;
+    margin-bottom: 5%;
+    width: 100%;
+    height: 35px;
+    text-align: left;
+    padding-left: 5%;
+}
+ .accordion-body button:active{
+    background: #EEF5FF;
+    border-radius: 21px;
+}
+.accordion-body label{
+    font-family: 'SegoeUI';
+    font-size: .9rem;
+    color: #707070;
+}
+.busqueda{
+    font-family: 'SegoeUI','Font Awesome 5 Pro';
+    text-decoration: inherit;
+    border-radius: 16px;
+    font-size: .9rem;
+    color: #707070;
+    background: #fff;
+    border: 1px solid #707070;
+    border-top-right-radius:16px !important;
+    border-bottom-right-radius:16px !important;
+}
+.btnBusqueda{
+    width: 30%;
+    border-radius: 16px;
+    font-family: 'SegoeUI';
+    font-size: .9rem;
+    color: #fff;
+    background: #1C4A83;
+    border: none;
+    border-top-left-radius:16px !important;
+    border-bottom-left-radius:16px !important;
+    margin-left: 10% !important;
+}
+ .btnTabs{
+    background: #F3F3F3;
+    border: none;
+    padding: 0;
+    border-bottom: 5px solid #707070;
+    text-align: center;
+}
+.btnTabs button{
+    background: transparent;
+    border: 0;
+    font-family: 'SegoeUISemibold';
+    font-size: 1.25rem;
+    color: #707070;
+    padding: 5%;
+}
+.activo{
+    border-bottom: 5px solid #1C4A83;
+    padding: 0;
+    padding-bottom: 5px;
+}
+.activo button{
+    color: #1C4A83 !important;
+}
+.completa{
+    width: 20px;
+    height: 19px;
+    background-image: url(../../../../../assets/img/estrellaC.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.media{
+    background-image: url(../../../../../assets/img/estrellaM.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 19px;
+}
+.vacia{
+    background-image: url(../../../../../assets/img/estrellaV.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 19px;
+}
+/*------------------Anuncio-------------------------------*/
+.anuncio {
+  background: #eef5ff;
+  padding: 3%;
+}
+.anuncio .imganuncio {
+  width: 90%;
+  margin-top: 30%;
+  margin-bottom: 30%;
+}
+.nav-link {
+  width: 33.3%;
+  min-height: 62px;
+  font-family: "SegoeUIBold";
+  font-size: 1.25rem;
+  color: #707070;
+  background: #f3f3f3;
+  border-radius: 0;
+  border-bottom: 4px solid #707070;
+}
+.nuevo {
+  background: #68b744;
+  color: #fff;
+  border-bottom: none;
+}
+.nav-tabs {
+  position: relative;
+  z-index: 1;
+}
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  background: #eef5ff;
+  border: none;
+  border-bottom: 4px solid #1c4a83;
+  color: #1c4a83;
+}
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.nuevo.active {
+  background: #68b744;
+  color: #fff;
+  border-bottom: none;
+}
+.tab-content .text7 {
+  color: #1c4a83;
+}
+.divh .card {
+  margin-bottom: 5%;
+}
+.divh .card .card-body .boton {
+  width: 100%;
+  height: 26px;
+  border: none;
+  border-radius: 23px;
+  font-family: "SegoeUIBold";
+  font-size: 0.9rem;
+  color: #fff;
+  background: #68b744;
+}
+.resena .dropdown .drop2 {
+  border: 0;
+  border-bottom: 1px solid #707070;
+}
+.resena .card {
+  margin: 0;
+}
+.resena .card .text3.gris {
+  color: #c5c5c5;
+  display: block;
+}
+.resena .card .boton {
+  width: 100%;
+  height: 36px;
+  border: none;
+  border-radius: 23px;
+  background: #b2b3b5;
+  color: #fff;
+  margin-bottom: 3%;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.Perfilempresa .input1 {
+  width: 100%;
+  min-height: 36px;
+  border-radius: 10px;
+  border: 1px solid #707070;
+}
+.divh .card .card-body .boton{
+    width: 100%;
+    height: 26px;
+    border: none;
+    border-radius: 23px;
+    font-family: 'SegoeUIBold';
+    font-size: .9rem;
+    color: #fff;
+    background: #68B744;
+}
+.resena .dropdown .drop2{
+    border: 0;
+    border-bottom: 1px solid #707070;
+    border-radius: 0;
+}
+.resena .card{
+    margin: 0;
+}
+.resena .card .text3.gris{
+    color: #C5C5C5;
+    display: block;
+}
+.resena .card .boton{
+    width: 100%;
+    height: 36px;
+    border: none;
+    border-radius: 23px;
+    background: #B2B3B5;
+    color: #fff;
+    margin-bottom: 3%;
+}
+.botonfiltro{
+    width: 100%;
+    min-height: 32px;
+    border: 1px solid #707070;
+    border-radius: 23px;
+    background: #fff;
+    color: #707070;
+}
+/*pagination*/
+.paginacion /deep/ .ngx-pagination .pagination-next a::after{
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+}
+.paginacion /deep/ .ngx-pagination .pagination-next.disabled::after{
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+}
+.paginacion /deep/ .ngx-pagination .pagination-previous a::before{
+    font-family: "Font Awesome 5 Pro";
+    content: "\f053";
+}
+.paginacion /deep/  .ngx-pagination .pagination-previous.disabled::before{
+    font-family: "Font Awesome 5 Pro";
+    content: "\f053";
+}
+/*modal filtros*/
+.modalFiltros .modal-content .modal-body{
+    padding: 0;
+}
+.modalFiltros .modal-content .text7{
+    color: #1C4A83;
+    text-decoration: underline;
+}
+.modalFiltros .modal-content .input1{
+    width: 100%;
+    border-radius: 10px;
+    min-height: 36px;
+    border: 1px solid #707070;
+}
+.modalFiltros .modal-content .accordion{
+    border: none;
+    padding-right: 0;
+    margin-right: 0;
+}
+.modalFiltros .modal-content .boton{
+    width: 40%;
+    min-height: 34px;
+    border: none;
+    border-radius: 23px;
+    background: #1C4A83;
+    color: #fff;
+}

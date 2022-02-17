@@ -28,7 +28,7 @@ export class HeaderComponent {
   //metodo para validar si el usuario esta logueado
   ngOnInit() {
     this.cvTkn = localStorage.getItem('token'); //obtenemos el token y lo guardamos en la variable cvTkn
-    this.obtenerNotificaciones();
+   /*  this.obtenerNotificaciones(); */
     this.obtenerGroup();
   }
 
@@ -45,7 +45,7 @@ export class HeaderComponent {
   }
 
   vacantes() {
-    this.router.navigate(['/vacantes']);
+    this.router.navigate(['/empresa/vacantes']);
   }
 
   buscarTalento() {
@@ -53,7 +53,7 @@ export class HeaderComponent {
   }
 
   perfilEmpresa() {
-    this.router.navigate(['/perfil_empresas']);
+    this.router.navigate(['/empresa']);
   }
 
   perfilTalento() {
@@ -94,14 +94,14 @@ export class HeaderComponent {
           localStorage.removeItem('token');
           localStorage.removeItem('group');
           //redireccionamos a la pagina de inicio despues de 7 segundos
-          this.router.navigate(['/home']);
+          this.router.navigate(['/']);
         }, 900);
       },
     });
   }
   //metodo para redireccionar al home
   home() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/']);
   }
 
   //notificaciones
@@ -110,7 +110,7 @@ export class HeaderComponent {
   }
 
   //obtener las notificaciones
-  obtenerNotificaciones() {
+  /* obtenerNotificaciones() {
     return this.service
       .getNotificaciones(localStorage.getItem('token'))
       .subscribe((data: Data) => {
@@ -123,7 +123,7 @@ export class HeaderComponent {
             parseInt(this.arrNotifications['profile_viewed']);
         }
       });
-  }
+  } */
 
   obtenerGroup() {
     return this.token

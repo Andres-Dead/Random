@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <div class="inicio">
+      <div class="row">
+        <div class="col-12 col-md-7 col-lg-8 col-xl-8 col-xxl-9 mt-5 mt-lg-0">
+          <img
+            class="persInicio"
+            src="../../../../../assets/img/PersonajeInicio.svg"
+            alt=""
+          />
+          <button type="submit" class="botonReg mx-auto d-block" [routerLink]="['/login/registrarse']">
+            Quiero registrarme
+            
+          </button>
+        </div>
+        <div class="col-12 col-md-5 col-lg-4 col-xl-4 col-xxl-3">
+          <form class="inicioSesion" [formGroup]="formGroup">
+            <h1 class="titulo">Inicia sesión</h1>
+            <div class="form-group">
+              <label class="text" for="inputEmail4">Email</label>
+              <input
+                type="email"
+                class="input1"
+                id="inputEmail4"
+                formControlName="email"
+                placeholder=""
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label class="text" for="inputPassword4">Password</label>
+              <input
+                type="password"
+                class="input1"
+                id="inputPassword4"
+                formControlName="password"
+                placeholder=""
+                required
+              />
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input
+                  class="form-check-input ml-0"
+                  type="checkbox"
+                  id="gridCheck"
+                />
+  
+                <label class="form-check-label" for="gridCheck">
+                  Mantener la sesión iniciada
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="boton mx-auto d-block" (click)="normalLogin()">
+              Ingresar
+            </button>
+            <div class="d-flex">
+              <a [routerLink]="['/login/reestablecer']" class="mx-auto contrasena">¿Olvidaste tu contraseña?</a>
+            </div>
+            <button type="submit" class="boton mx-auto d-block" (click)="loginGoogle()"> <!-- (click)="loginGoogle() -->
+              Google
+            </button>
+            <button type="submit" class="boton mx-auto d-block" (click)="loginFacebook()"> <!-- (click)="loginFacebook()" -->
+              Facebook
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

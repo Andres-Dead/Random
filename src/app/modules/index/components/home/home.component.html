@@ -1,214 +1,163 @@
 <body>
-    <div class="fondo1">
-      <img src="../../assets/img/circulo1.svg" alt="" />
-    </div>
-    <div class="container-fluid">
-      <div class="home">
-        <div class="row mt-5">
-          <div class="col-12 col-md-12 col-lg-4 col-xl-5 col-xxl-4 mt-5">
-            <label class="titulo mt-5"
-              >Empleabilidad <span>en acción</span></label
-            >
-            <li class="list">
-              <i class="fas fa-caret-right me-2"></i>El sitio donde puedes
-              desarrollar tu coeficiente empleable
-            </li>
-            <li class="list">
-              <i class="fas fa-caret-right me-2"></i>Empleo y futuro en un solo
-              lugar
-            </li>
-            <li class="list">
-              <i class="fas fa-caret-right me-2"></i>El empleo llegó hasta ti
-            </li>
-          </div>
-          <div class="col-12 col-md-12 col-lg-8 col-xl-7 col-xxl-8 mt-lg-5">
-            <form [formGroup]="formGroup">
-              <div class="row mt-5">
-                <div class="col-12 col-lg-6 col-md-4 mt-lg-5">
-                  <label class="sub">¿Que estas buscando?</label>
-                  <div class="form-outline">
-                    <input
-                      type="search"
-                      class="input pl-2"
-                      placeholder="Puesto, área profesional, empresa, idioma..."
-                      aria-label="Search"
-                      formControlName="area"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mt-3 mt-md-0 mt-lg-5"
-                >
-                  <label class="sub">¿Dónde?</label>
-                  <div class="form-outline">
-                    <input
-                      type="search"
-                      class="input pl-2"
-                      placeholder="Ciudad, estado"
-                      aria-label="Search"
-                      formControlName="ubicacion"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="col-12 col-md-4 col-lg-2 col-xl-2 col-xxl-2 mt-4 mt-lg-5"
-                >
-                  <button
-                    class="boton mx-auto d-block"
-                    type="button"
-                    (click)="buscar()"
-                    routerLinkActive="router-link-active"
-                  >
-                    Buscar
-                  </button>
+  <div class="fondo1">
+    <img src="../../assets/img/circulo1.svg" alt="" />
+  </div>
+  <div class="container-fluid">
+    <div class="home">
+      <div class="row mt-5">
+        <div class="col-12 col-md-12 col-lg-4 col-xl-5 col-xxl-4 mt-5">
+          <label class="titulo mt-5">Empleabilidad <span>en acción</span></label>
+          <li class="list">
+            <i class="fas fa-caret-right me-2"></i>El sitio donde puedes
+            desarrollar tu coeficiente empleable
+          </li>
+          <li class="list">
+            <i class="fas fa-caret-right me-2"></i>Empleo y futuro en un solo
+            lugar
+          </li>
+          <li class="list">
+            <i class="fas fa-caret-right me-2"></i>El empleo llegó hasta ti
+          </li>
+        </div>
+        <div class="col-12 col-md-12 col-lg-8 col-xl-7 col-xxl-8 mt-lg-5">
+          <form [formGroup]="formGroup">
+            <div class="row mt-5">
+              <div class="col-12 col-lg-6 col-md-4 mt-lg-5">
+                <label class="sub">¿Que estas buscando?</label>
+                <div class="form-outline">
+                  <input type="search" class="input pl-2" placeholder="Puesto, área profesional, empresa, idioma..."
+                    aria-label="Search" formControlName="area" />
                 </div>
               </div>
-            </form>
-            <div class="row">
-              <div class="col-12 d-flex justify-content-center">
-                <label class="sub2">{{ this.Nempleos }}</label>
+              <div class="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mt-3 mt-md-0 mt-lg-5">
+                <label class="sub">¿Dónde?</label>
+                <div class="form-outline">
+                  <input type="search" class="input pl-2" placeholder="Ciudad, estado" aria-label="Search"
+                    formControlName="ubicacion" />
+                </div>
               </div>
-              <div class="col-12 d-flex justify-content-center">
-                <label class="sub3">Ofertas de empleo</label>
+              <div class="col-12 col-md-4 col-lg-2 col-xl-2 col-xxl-2 mt-4 mt-lg-5">
+                <button class="boton mx-auto d-block" type="button" (click)="buscar()"
+                  routerLinkActive="router-link-active">
+                  Buscar
+                </button>
               </div>
+            </div>
+          </form>
+          <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+              <label class="sub2">{{ this.Nempleos }}</label>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+              <label class="sub3">Ofertas de empleo</label>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="fondo2">
-      <img src="../../assets/img/circulo2.svg" alt="" />
-    </div>
-    <div class="container-fluid">
-      <div class="home">
-        <div class="row mt-5">
-          <div
-            class="col-12 col-md-6 col-lg-4 col-xl-5 col-xxl-4 mb-5 mb-md-0 mb-lg-0"
-          >
-            <img class="imgPers" src="../../assets/img/Personaje.svg" alt="" />
-          </div>
-          <div class="col-12 col-md-6 col-lg-8 col-xl-7 col-xxl-8">
-            <div class="row cards1">
-              <div class="col-6 col-lg-3 col-md-6 mb-lg-0 mb-5">
-                <button class="botonVac">
-                  <img
-                    class="mx-auto d-block mb-lg-2"
-                    src="https://capitalempleo.com/img/categorias/{{
+  </div>
+  <div class="fondo2">
+    <img src="../../assets/img/circulo2.svg" alt="" />
+  </div>
+  <div class="container-fluid">
+    <div class="home">
+      <div class="row mt-5">
+        <div class="col-12 col-md-6 col-lg-4 col-xl-5 col-xxl-4 mb-5 mb-md-0 mb-lg-0">
+          <img class="imgPers" src="../../assets/img/Personaje.svg" alt="" />
+        </div>
+        <div class="col-12 col-md-6 col-lg-8 col-xl-7 col-xxl-8">
+          <div class="row cards1">
+            <div class="col-6 col-lg-3 col-md-6 mb-lg-0 mb-5">
+              <button class="botonVac">
+                <img class="mx-auto d-block mb-lg-2" src="https://capitalempleo.com/img/categorias/{{
                       this.arrCategories[0].ID
-                    }}.svg"
-                    alt=""
-                  />
-  
-                  <h5 class="card-title mb-lg-1">
-                    {{ this.arrCategories[0].name }}
-                  </h5>
-                  <label class="text">{{ this.arrCategories[0].quant }}</label>
-                  <label class="text2">Vacantes actuales</label>
-                </button>
-              </div>
-              <div class="col-6 col-lg-3 col-md-6 mb-lg-0 mb-5">
-                <button class="botonVac">
-                  <img
-                    class="mx-auto d-block mb-lg-3"
-                    src="https://capitalempleo.com/img/categorias/{{
-                      this.arrCategories[1].ID
-                    }}.svg"
-                    alt=""
-                  />
-  
-                  <h5 class="card-title mb-lg-1">
-                    {{ this.arrCategories[1].name }}
-                  </h5>
-                  <label class="text">{{ this.arrCategories[1].quant }}</label>
-                  <label class="text2">Vacantes actuales</label>
-                </button>
-              </div>
-              <div class="col-6 col-lg-3 col-md-6 mb-lg-0 mb-5">
-                <button class="botonVac">
-                  <img
-                    class="mx-auto d-block mb-lg-3"
-                    src="https://capitalempleo.com/img/categorias/{{
-                      this.arrCategories[2].ID
-                    }}.svg"
-                    alt=""
-                  />
-  
-                  <h5 class="card-title mb-lg-1">
-                    {{ this.arrCategories[2].name }}
-                  </h5>
-                  <label class="text">{{ this.arrCategories[2].quant }}</label>
-                  <label class="text2">Vacantes actuales</label>
-                </button>
-              </div>
-              <div class="col-6 col-lg-3 col-md-6 mb-lg-0 mb-5">
-                <button class="botonVac">
-                  <img
-                    class="mx-auto d-block mb-lg-3"
-                    src="https://capitalempleo.com/img/categorias/{{
-                      this.arrCategories[3].ID
-                    }}.svg"
-                    alt=""
-                  />
-  
-                  <h5 class="card-title mb-lg-1">
-                    {{ this.arrCategories[3].name }}
-                  </h5>
-                  <label class="text">{{ this.arrCategories[3].quant }}</label>
-                  <label class="text2">Vacantes actuales</label>
-                </button>
-              </div>
+                    }}.svg" alt="" />
+
+                <h5 class="card-title mb-lg-1">
+                  {{ this.arrCategories[0].name }}
+                </h5>
+                <label class="text">{{ this.arrCategories[0].quant }}</label>
+                <label class="text2">Vacantes actuales</label>
+              </button>
             </div>
-            <div class="row">
-              <div class="col-12 col-lg-12 col-md-12 mb-5">
-                <button
-                  class="botonR mx-auto d-block"
-                  type="button"
-                  [routerLink]="['/registro']"
-                >
-                  ¡Registrate ahora!
-                </button>
-              </div>
+            <div class="col-6 col-lg-3 col-md-6 mb-lg-0 mb-5">
+              <button class="botonVac">
+                <img class="mx-auto d-block mb-lg-3" src="https://capitalempleo.com/img/categorias/{{
+                      this.arrCategories[1].ID
+                    }}.svg" alt="" />
+
+                <h5 class="card-title mb-lg-1">
+                  {{ this.arrCategories[1].name }}
+                </h5>
+                <label class="text">{{ this.arrCategories[1].quant }}</label>
+                <label class="text2">Vacantes actuales</label>
+              </button>
+            </div>
+            <div class="col-6 col-lg-3 col-md-6 mb-lg-0 mb-5">
+              <button class="botonVac">
+                <img class="mx-auto d-block mb-lg-3" src="https://capitalempleo.com/img/categorias/{{
+                      this.arrCategories[2].ID
+                    }}.svg" alt="" />
+
+                <h5 class="card-title mb-lg-1">
+                  {{ this.arrCategories[2].name }}
+                </h5>
+                <label class="text">{{ this.arrCategories[2].quant }}</label>
+                <label class="text2">Vacantes actuales</label>
+              </button>
+            </div>
+            <div class="col-6 col-lg-3 col-md-6 mb-lg-0 mb-5">
+              <button class="botonVac">
+                <img class="mx-auto d-block mb-lg-3" src="https://capitalempleo.com/img/categorias/{{
+                      this.arrCategories[3].ID
+                    }}.svg" alt="" />
+
+                <h5 class="card-title mb-lg-1">
+                  {{ this.arrCategories[3].name }}
+                </h5>
+                <label class="text">{{ this.arrCategories[3].quant }}</label>
+                <label class="text2">Vacantes actuales</label>
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-lg-12 col-md-12 mb-5">
+              <button class="botonR mx-auto d-block" type="button" [routerLink]="['/login/registrarse']">
+                ¡Registrate ahora!
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="fondo3">
-      <img src="../../assets/img/circulo3.svg" alt="" />
-    </div>
-    <div class="container-fluid">
-      <div class="home">
-        <div class="row mt-5">
-          <div class="col-12 col-lg-7 col-md-7 mt-lg-5">
-            <h1 class="text2 mb-3">La capital del empleo</h1>
-            <label class="text5 d-block mb-3"
-              >Aquí encuentras el talento que estás buscando</label
-            >
-            <p class="text3">
-              Somos el servicio de empleo más dinámico. Las mejores empresas están
-              contratando a los mejores profesionales a través de
-              <img class="logoText" src="../../assets/img/logo.svg" alt="" />
-            </p>
-          </div>
-          <div class="col-12 col-lg-5 col-md-5">
-            <img
-              class="imgPers2 d-block mx-auto"
-              src="../../assets/img/manos.svg"
-              alt=""
-            />
-          </div>
-          <div class="col-12 col-lg-12 col-md-12 cards2">
-            <div class="row">
-              <div class="col">
-                <button
-                  *ngFor="let item of arrCompanies"
-                  class="botonEmp m-2"
-                  [routerLink]="['/perfil_empresa', item.ID]"
-                >
-                  <img [src]="item.profile_pic" alt="" />
-                </button>
-              </div>
-              <!--  <div class="col">
+  </div>
+  <div class="fondo3">
+    <img src="../../assets/img/circulo3.svg" alt="" />
+  </div>
+  <div class="container-fluid">
+    <div class="home">
+      <div class="row mt-5">
+        <div class="col-12 col-lg-7 col-md-7 mt-lg-5">
+          <h1 class="text2 mb-3">La capital del empleo</h1>
+          <label class="text5 d-block mb-3">Aquí encuentras el talento que estás buscando</label>
+          <p class="text3">
+            Somos el servicio de empleo más dinámico. Las mejores empresas están
+            contratando a los mejores profesionales a través de
+            <img class="logoText" src="../../assets/img/logo.svg" alt="" />
+          </p>
+        </div>
+        <div class="col-12 col-lg-5 col-md-5">
+          <img class="imgPers2 d-block mx-auto" src="../../assets/img/manos.svg" alt="" />
+        </div>
+        <div class="col-12 col-lg-12 col-md-12 cards2">
+          <div class="row">
+            <div class="col">
+              <button *ngFor="let item of arrCompanies" class="botonEmp m-2"
+                [routerLink]="['/inicio/perfil_empresa', item.ID]">
+                <img [src]="item.profile_pic" alt="" />
+              </button>
+            </div>
+            <!--  <div class="col">
                 <button class="botonEmp">
                   <img src="../../assets/img/logoEmp.svg" alt="" />
                 </button>
@@ -303,187 +252,32 @@
                   <img src="../../assets/img/logoEmp.svg" alt="" />
                 </button>
               </div> -->
-            </div>
-          </div>
-          <div class="col-12 col-lg-12 col-md-12 d-flex justify-content-end">
-            <label class="text4 mt-5"
-              ><a
-                [routerLink]="['/listado_empresas']"
-                routerLinkActive="router-link-active"
-                >Ver empresas</a
-              ></label
-            >
           </div>
         </div>
-        <div *ngIf="this.arrUrgentVacants.length > 0">
-          <div class="row">
-            <div class="col-12">
-              <label class="sub4">Ofertas de empleo inmediato</label>
-              <!--------------------- Carrusel-------------------------------------------->
-              <div class="offset-2 col-8">
-                <div
-                  id="carouselExampleControls"
-                  class="carousel slide"
-                  data-ride="carousel"
-                >
-                  <div class="carousel-inner" role="listbox">
-                    <div
-                      *ngFor="let item of this.arrUrgentVacants; let i = index"
-                      class="carousel-item"
-                      [ngClass]="{ active: i === 0 }"
-                    >
-                      <div class="cards-wrapper">
-                        <div class="card">
-                          <div class="ribbon" *ngIf="item.new == 1">Nuevo</div>
-                          <div class="card-body">
-                            <div class="row">
-                              <div class="col-7">
-                                <label
-                                  class="text1"
-                                  *ngIf="
-                                    item.type_vacant == 2 || item.type_vacant == 3
-                                  "
-                                  >Destacada</label
-                                >
-                              </div>
-                            </div>
-                            <div class="row mb-2 mt-3">
-                              <div class="col-4 col-lg-2 col-md-2">
-                                <img src="../../assets/img/logoCard.svg" alt="" />
-                              </div>
-                              <div class="col-8">
-                                <h5 class="card-title">
-                                  {{ item.name }}
-                                </h5>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-12">
-                                <label class="text2">{{ item.company }}</label>
-                                <label class="text3"
-                                  ><i class="fas fa-map-marker-alt"></i
-                                  >{{ item.location }}</label
-                                >
-                                <p class="text4 text-truncate">
-                                  {{ item.description }}
-                                </p>
-                              </div>
-                            </div>
-                            <div class="row mt-2">
-                              <div
-                                class="col-12 col-md-12 col-lg-12 col-xl-8 col-xxl-8 offset-xl-4 d-flex justify-content-end"
-                              >
-                                <label
-                                  class="card-title"
-                                  *ngIf="item.max_salary != 0"
-                                >
-                                  ${{ item.min_salary }} - ${{
-                                    item.max_salary
-                                  }}
-                                  mxn</label
-                                >
-                                <label
-                                  class="card-title"
-                                  *ngIf="item.max_salary == 0"
-                                >
-                                  ${{ item.min_salary }} mxn</label
-                                >
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div
-                                class="col-12 col-lg-7 col-md-10 offset-lg-5 offset-md-2 d-flex justify-content-end"
-                              >
-                                <button
-                                  class="botonR mt-2"
-                                  style="width: 80%"
-                                  type="button"
-                                  [routerLink]="[
-                                    '/detalle_trabajo',
-                                    item.id_vacant
-                                  ]"
-                                >
-                                  Postúlate ahora
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <a
-                    class="carousel-control-prev"
-                    href="#carouselExampleControls"
-                    role="button"
-                    data-slide="prev"
-                  >
-                    <span
-                      class="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a
-                    class="carousel-control-next"
-                    href="#carouselExampleControls"
-                    role="button"
-                    data-slide="next"
-                  >
-                    <span
-                      class="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </div>
-              </div>
-              <!--------------------- Termina Carrusel-------------------------------------------->
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <button
-                class="boton2 mx-auto d-block mt-3"
-                type="button"
-                style="width: 20%"
-                [routerLink]="['/empleos']"
-                routerLinkActive="router-link-active"
-              >
-                Ver todos
-              </button>
-            </div>
-          </div>
+        <div class="col-12 col-lg-12 col-md-12 d-flex justify-content-end">
+          <label class="text4 mt-5"><a [routerLink]="['/inicio/listar_empresas']"
+              routerLinkActive="router-link-active">Ver empresas</a></label>
         </div>
-        <div *ngIf="this.arrNewVacants.length > 0">
-          <div class="row">
-            <div class="col-12">
-              <label class="sub4">Ofertas de empleo recientes</label>
-              <!--------------------- Carrusel-------------------------------------------->
-              <div
-                id="carouselExampleControls2"
-                class="carousel slide"
-                data-ride="carousel"
-              >
+      </div>
+      <div *ngIf="this.arrUrgentVacants.length > 0">
+        <div class="row">
+          <div class="col-12">
+            <label class="sub4">Ofertas de empleo inmediato</label>
+            <!--------------------- Carrusel-------------------------------------------->
+            <div class="offset-2 col-8">
+              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
-                  <div
-                    *ngFor="let item of this.arrNewVacants; let i = index"
-                    class="carousel-item"
-                    [ngClass]="{ active: i === 0 }"
-                  >
+                  <div *ngFor="let item of this.arrUrgentVacants; let i = index" class="carousel-item"
+                    [ngClass]="{ active: i === 0 }">
                     <div class="cards-wrapper">
                       <div class="card">
-                        <div class="ribbon">Nuevo</div>
+                        <div class="ribbon" *ngIf="item.new == 1">Nuevo</div>
                         <div class="card-body">
                           <div class="row">
                             <div class="col-7">
-                              <label
-                                class="text1"
-                                *ngIf="
-                                  item.type_vacant == 2 || item.type_vacant == 3
-                                "
-                                >Destacada</label
-                              >
+                              <label class="text1" *ngIf="
+                                    item.type_vacant == 2 || item.type_vacant == 3
+                                  ">Destacada</label>
                             </div>
                           </div>
                           <div class="row mb-2 mt-3">
@@ -499,49 +293,30 @@
                           <div class="row">
                             <div class="col-12">
                               <label class="text2">{{ item.company }}</label>
-                              <label class="text3"
-                                ><i class="fas fa-map-marker-alt"></i
-                                >{{ item.location }}</label
-                              >
-                              <p class="text4">
+                              <label class="text3"><i class="fas fa-map-marker-alt"></i>{{ item.location }}</label>
+                              <p class="text4 text-truncate">
                                 {{ item.description }}
                               </p>
                             </div>
                           </div>
                           <div class="row mt-2">
                             <div
-                              class="col-12 col-md-12 col-lg-12 col-xl-8 col-xxl-8 offset-xl-4 d-flex justify-content-end"
-                            >
-                              <label
-                                class="card-title"
-                                *ngIf="item.max_salary != 0"
-                              >
+                              class="col-12 col-md-12 col-lg-12 col-xl-8 col-xxl-8 offset-xl-4 d-flex justify-content-end">
+                              <label class="card-title" *ngIf="item.max_salary != 0">
                                 ${{ item.min_salary }} - ${{
-                                  item.max_salary
+                                item.max_salary
                                 }}
-                                mxn</label
-                              >
-                              <label
-                                class="card-title"
-                                *ngIf="item.max_salary == 0"
-                              >
-                                ${{ item.min_salary }} mxn</label
-                              >
+                                mxn</label>
+                              <label class="card-title" *ngIf="item.max_salary == 0">
+                                ${{ item.min_salary }} mxn</label>
                             </div>
                           </div>
                           <div class="row">
-                            <div
-                              class="col-12 col-lg-7 col-md-10 offset-lg-5 offset-md-2 d-flex justify-content-end"
-                            >
-                              <button
-                                class="botonR mt-2"
-                                style="width: 80%"
-                                type="button"
-                                [routerLink]="[
-                                  '/detalle_trabajo',
-                                  item.id_vacant
-                                ]"
-                              >
+                            <div class="col-12 col-lg-7 col-md-10 offset-lg-5 offset-md-2 d-flex justify-content-end">
+                              <button class="botonR mt-2" style="width: 80%" type="button" [routerLink]="[
+                                    '/detalle_trabajo',
+                                    item.id_vacant
+                                  ]">
                                 Postúlate ahora
                               </button>
                             </div>
@@ -551,49 +326,115 @@
                     </div>
                   </div>
                 </div>
-                <a
-                  class="carousel-control-prev"
-                  href="#carouselExampleControls2"
-                  role="button"
-                  data-slide="prev"
-                >
-                  <span
-                    class="carousel-control-prev-icon"
-                    aria-hidden="true"
-                  ></span>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="sr-only">Previous</span>
                 </a>
-                <a
-                  class="carousel-control-next"
-                  href="#carouselExampleControls2"
-                  role="button"
-                  data-slide="next"
-                >
-                  <span
-                    class="carousel-control-next-icon"
-                    aria-hidden="true"
-                  ></span>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="sr-only">Next</span>
                 </a>
               </div>
-              <!--------------------- Termina Carrusel-------------------------------------------->
             </div>
+            <!--------------------- Termina Carrusel-------------------------------------------->
           </div>
-          <div class="row">
-            <div class="col-12">
-              <button
-                class="boton2 mx-auto d-block mt-3"
-                style="width: 20%"
-                type="button"
-                [routerLink]="['/empleos']"
-                routerLinkActive="router-link-active"
-              >
-                Ver todos
-              </button>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <button class="boton2 mx-auto d-block mt-3" type="button" style="width: 20%"
+              [routerLink]="['/inicio/empleos']" routerLinkActive="router-link-active">
+              Ver todos
+            </button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="this.arrNewVacants.length > 0">
+        <div class="row">
+          <div class="col-12">
+            <label class="sub4">Ofertas de empleo recientes</label>
+            <!--------------------- Carrusel-------------------------------------------->
+            <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner" role="listbox">
+                <div *ngFor="let item of this.arrNewVacants; let i = index" class="carousel-item"
+                  [ngClass]="{ active: i === 0 }">
+                  <div class="cards-wrapper">
+                    <div class="card">
+                      <div class="ribbon">Nuevo</div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-7">
+                            <label class="text1" *ngIf="
+                                  item.type_vacant == 2 || item.type_vacant == 3
+                                ">Destacada</label>
+                          </div>
+                        </div>
+                        <div class="row mb-2 mt-3">
+                          <div class="col-4 col-lg-2 col-md-2">
+                            <img src="../../assets/img/logoCard.svg" alt="" />
+                          </div>
+                          <div class="col-8">
+                            <h5 class="card-title">
+                              {{ item.name }}
+                            </h5>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12">
+                            <label class="text2">{{ item.company }}</label>
+                            <label class="text3"><i class="fas fa-map-marker-alt"></i>{{ item.location }}</label>
+                            <p class="text4">
+                              {{ item.description }}
+                            </p>
+                          </div>
+                        </div>
+                        <div class="row mt-2">
+                          <div
+                            class="col-12 col-md-12 col-lg-12 col-xl-8 col-xxl-8 offset-xl-4 d-flex justify-content-end">
+                            <label class="card-title" *ngIf="item.max_salary != 0">
+                              ${{ item.min_salary }} - ${{
+                              item.max_salary
+                              }}
+                              mxn</label>
+                            <label class="card-title" *ngIf="item.max_salary == 0">
+                              ${{ item.min_salary }} mxn</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12 col-lg-7 col-md-10 offset-lg-5 offset-md-2 d-flex justify-content-end">
+                            <button class="botonR mt-2" style="width: 80%" type="button" [routerLink]="[
+                                  '/inicio/detalle_empleo',
+                                  item.id_vacant
+                                ]">
+                              Postúlate ahora
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
             </div>
+            <!--------------------- Termina Carrusel-------------------------------------------->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <button class="boton2 mx-auto d-block mt-3" style="width: 20%" type="button" [routerLink]="['/empleos']"
+              routerLinkActive="router-link-active">
+              Ver todos
+            </button>
           </div>
         </div>
       </div>
     </div>
-  </body>
-  
+  </div>
+</body>

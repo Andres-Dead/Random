@@ -1,0 +1,43 @@
+<form [formGroup]="info" (ngSubmit)="updateInfo()">
+    <h1 class="titulo">Información de contacto</h1>
+    <label class="sub">Estado</label>
+    <input  placeholder="{{information.state}}" [readonly]="readOnly" formControlName="state">
+    <label class="sub">Ciudad</label>
+    <input placeholder="{{information.city}}" [readonly]="readOnly" formControlName="city">
+    <label class="sub">Código postal</label>
+    <input value="{{information.cp}}" placeholder="{{information.cp}}"  [readonly]="readOnly" formControlName="cp">
+    <label class="sub">Página web</label>
+    <input placeholder="{{information.web}}" [readonly]="readOnly" formControlName="web">
+    <label class="sub">Facebook</label>
+    <input placeholder="{{information.fb}}" [readonly]="readOnly" formControlName="fb">
+    <label class="sub">Instagram</label>
+    <input placeholder="{{information.ig}}" [readonly]="readOnly" formControlName="ig">
+    <label class="sub">LinkedIn</label>
+    <input placeholder="{{information.linkedin}}" [readonly]="readOnly" formControlName="linkedin">
+    <label class="sub">Twitter</label>
+    <input placeholder="{{information.twitter}}" [readonly]="readOnly" formControlName="twitter">
+    <label class="sub">Nombre de contácto</label>
+    <input placeholder="{{information.contact_name}}" [readonly]="readOnly" formControlName="contact_name">
+    <div class="row">
+        <div class="col-12 col-lg-7 col-md-7">
+            <label class="sub">Correo electrónico</label>
+            <div class="row">
+                <div class="col-9">
+                    <input [value]="information.contact_email" [readonly]="readOnly" formControlName="contact_email">
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-5 col-md-5">
+            <label class="sub">Número de teléfono</label>
+            <input placeholder="{{information.phone}}" [readonly]="readOnly" formControlName="phone">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8 col-lg-4 col-md-6 mt-3">
+            <button class="boton2" (click)="disabled()">Editar información</button>
+        </div>
+        <div class="col-8 col-lg-4 col-md-6 mt-3">
+            <button class="boton2" [disabled]="readOnly" >Guardar</button>
+        </div>
+    </div>
+</form>
