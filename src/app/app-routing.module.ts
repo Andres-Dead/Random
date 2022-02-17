@@ -3,6 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'inicio',
+    pathMatch: 'full',
+  },
+  {
     path: 'talento',
     loadChildren: () =>
       import('./modules/talent/talent.module').then((m) => m.TalentModule),
@@ -25,7 +30,7 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'home',
+    path: 'inicio',
     loadChildren: () =>
       import('./modules/index/index.module').then((m) => m.IndexModule),
   },
