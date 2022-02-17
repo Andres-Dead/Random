@@ -6,7 +6,6 @@ import { TalentComponent } from './talent.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AccountComponent } from './components/account/account.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { BasicInfoComponent } from './components/basic-info/basic-info.component';
 import { PresentationComponent } from './components/presentation/presentation.component';
 import { PersonInfoComponent } from './components/person-info/person-info.component';
@@ -16,13 +15,13 @@ import { EducationComponent } from './components/education/education.component';
 import { RecognitionsComponent } from './components/recognitions/recognitions.component';
 import { LanguagesComponent } from './components/languages/languages.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { ReviewCompanyComponent } from './components/review-company/review-company.component';
 
 
 @NgModule({
   declarations: [
     TalentComponent,
     AccountComponent,
-    ProfileComponent,
     BasicInfoComponent,
     PresentationComponent,
     PersonInfoComponent,
@@ -32,6 +31,7 @@ import { SkillsComponent } from './components/skills/skills.component';
     RecognitionsComponent,
     LanguagesComponent,
     SkillsComponent,
+    ReviewCompanyComponent,
   ],
   imports: [
     CommonModule,

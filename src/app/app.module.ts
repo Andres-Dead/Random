@@ -8,6 +8,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SocialAuthService, SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -20,6 +23,10 @@ import { GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-logi
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    NgxPaginationModule,
+    RouterModule
   ],
   providers: [
     SocialAuthService,

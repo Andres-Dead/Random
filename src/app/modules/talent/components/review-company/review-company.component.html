@@ -1,0 +1,147 @@
+<div class="container-fluid">
+    <div class="resenar">
+      <form [formGroup]="formGroup">
+        <h1 class="titulo">
+          ¿Estás trabajando o has trabajado en Nombre de la Empresa ?
+        </h1>
+        <label class="text"
+          >Escribe tu evaluación de esta empresa de forma anónima</label
+        >
+        <label class="sub" for="resumen"
+          >Relación con la empresa o puesto de trabajo</label
+        >
+        <input
+          type="text"
+          class="form-control resumen"
+          id="resumen"
+          placeholder="Ej, Cliente"
+          formControlName="relacion"
+        />
+        <div class="row">
+          <div class="col-12 col-lg-3 col-md-6">
+            <label class="sub">Valoración de la empresa</label>
+          </div>
+          <div class="col-12 col-lg-6 col-md-6">
+            <p class="clasificacion">
+              <input
+                id="radio1"
+                type="radio"
+                name="estrellas"
+                value="5"
+                formControlName="estrellas"
+              />
+              <label for="radio1"></label>
+              <input
+                id="radio2"
+                type="radio"
+                name="estrellas"
+                value="4"
+                formControlName="estrellas"
+              />
+              <label for="radio2"></label>
+              <input
+                id="radio3"
+                type="radio"
+                name="estrellas"
+                value="3"
+                formControlName="estrellas"
+              />
+              <label for="radio3"></label>
+              <input
+                id="radio4"
+                type="radio"
+                name="estrellas"
+                value="2"
+                formControlName="estrellas"
+              />
+              <label for="radio4"></label>
+              <input
+                id="radio5"
+                type="radio"
+                name="estrellas"
+                value="1"
+                formControlName="estrellas"
+              />
+              <label for="radio5"></label>
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="evaluación" class="sub mt-lg-4 mt-xl-3">Evaluación</label>
+          <textarea
+            class="form-control"
+            id="evaluación"
+            rows="10"
+            placeholder=""
+            formControlName="evaluacion"
+          >
+          </textarea>
+        </div>
+        <label class="text text-end">Mínimo 50 carácteres</label>
+        <div class="row">
+          <div class="col-6 d-flex justify-content-end">
+            <button class="boton mr-0 mr-lg-5 mr-md-5" type="button" (click)="limpiar()">
+              Limpiar campos
+            </button>
+          </div>
+          <div class="col-6">
+            <button
+              class="boton verde ml-0 ml-lg-5 ml-md-5"
+              (click)="enviarForm()"
+              style="background: #68b744"
+              type="button"
+              style
+            >
+              Publicar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  
+    <!-- Button trigger modal -->
+    <!--button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalresena">
+          Launch demo modal
+      </button>
+      < Modal mensaje-->
+    <div
+      class="modal fade modalresena"
+      id="modalresena"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img class="mx-auto d-block" src="img/modalresena.svg" alt="" />
+            <h5 class="titulo">
+              ¡Gracias por compartirnos <br />tu experiencia!
+            </h5>
+            <label class="text">Ya puedes comenzar a postularte.</label>
+          </div>
+          <div class="modal-footer d-flex justify-content-start">
+            <button
+              type="button"
+              class="boton mx-auto d-block"
+              data-dismiss="modal"
+            >
+              Volver a la empresa
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

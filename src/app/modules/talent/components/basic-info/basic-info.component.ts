@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { TalentServiceService } from '../../services/talent-service.service';
+import { TalentServiceService } from '../../services/talent.service';
 import { PersonaInfo } from '../../interfaces/persona-info';
 
 @Component({
@@ -47,7 +47,7 @@ export class BasicInfoComponent implements OnInit {
     return this.service
       .getInfo(localStorage.getItem('token'))
       .subscribe((response) => {
-        this.information = response.data;
+        this.information = response['data'];
         this.profileForm.patchValue({
           first_name: this.information.first_name,
           last_name:   this.information.last_name,
