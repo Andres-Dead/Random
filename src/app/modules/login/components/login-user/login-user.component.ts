@@ -67,10 +67,10 @@ export class LoginUserComponent implements OnInit {
           }
         } else if (tipo['group'] == 4) {
           if (datos['data'].complete == false) {
-            this.router.navigate(['/inicio']);
+            this.router.navigate(['/']);
             console.log(datos['data'].complete);
           } else {
-            this.router.navigate(['/recruiters']);
+            this.router.navigate(['/reclutador']);
           }
         }
          else {

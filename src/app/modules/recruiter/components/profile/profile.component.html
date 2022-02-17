@@ -1,0 +1,98 @@
+<div class="container-fluid">
+    <div class="perfil">
+        <div class="row">
+            <div class="col-12 col-md-4 col-lg-3 col-xl-3 col-xxl-2 mb-3">
+                <div class="cuadro">
+                    <img class="mx-auto d-block" src="../../assets/img/ferrero.svg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <form>
+                    <h1 class="titulo">Información del reclutador</h1>
+                    <label class="sub">Nombre </label>
+                    <input class="input" type="text" placeholder="Martha Ebaaile">
+                    <div class="row">
+                        <div class="col-12 col-lg-7 col-md-7">
+                            <label class="sub">Correo electrónico de acceso</label>
+                             <div class="row">
+                                <div class="col-9">
+                                    <input class="input" type="email" placeholder="Correoelectronico@correo.com" >
+                                </div>
+                                <div class="col-3">
+                                    <button type="submit" class="boton2 mt-3" >editar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-4 col-lg-6 col-xl-5 col-xxl-4 mt-3">
+                            <button type="submit" class="boton" data-toggle="modal" data-target="#modalGuardarCambios">Guardar información</button>
+                        </div>
+                    </div>
+                </form>
+                <form>
+                    <h1 class="titulo">Cambiar contraseña</h1>
+                    <div class="row">
+                        <div class="col-12 col-lg-6 col-md-6">
+                            <label class="sub">Escribe tu contraseña actual </label>
+                            <input class="input" type="password" placeholder="*******">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg-6 col-md-6">
+                            <label class="sub">Nueva contraseña</label>
+                            <input class="input" type="password" placeholder="*******">
+                        </div>
+                        <div class="col-12 col-lg-6 col-md-6">
+                            <label class="sub">Repite la nueva contraseña</label>
+                            <input class="input" type="password" placeholder="*******">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-4 col-lg-6 col-xl-5 col-xxl-4 mt-3">
+                            <button type="submit" class="boton" data-toggle="modal" data-target="#modalCambioContrasena">Cambiar contraseña</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Modal guardar cambios-->
+    <div class="modal fade modalCambios" id="modalGuardarCambios" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-end">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class="mx-auto d-block" src="../../assets/img/cambios.svg" alt="">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Cambios gradados</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="boton mx-auto d-block" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal cambio contraseña-->
+    <div class="modal fade modalCambios" id="modalCambioContrasena" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-end">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class="mx-auto d-block" src="../../assets/img/cambios.svg" alt="">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Tu contraseña se a actualizado</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="boton mx-auto d-block" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

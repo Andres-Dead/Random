@@ -9,6 +9,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { WorkTableComponent } from './components/work-table/work-table.component';
 import { PortalComponent } from './components/portal/portal.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PortalComponent } from './components/portal/portal.component';
     NewVacantComponent,
     WelcomeComponent,
     WorkTableComponent,
-    PortalComponent
+    PortalComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
