@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 })
 export class SessionService {
 
-  API: string = 'http://localhost:8080/API/';
+  API: string = 'http://06d7-187-212-196-100.ngrok.io/API/';
   excededTime: string = "Tiempo de espera agotado";
 
   constructor(

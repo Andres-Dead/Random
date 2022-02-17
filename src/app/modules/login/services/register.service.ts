@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class RegisterService {
-  API: string = 'http://localhost:8080/API';
+  API: string = 'http://06d7-187-212-196-100.ngrok.io/API';
   constructor(private clienteHttp: HttpClient) {}
   public TiempoAgotado: string =
     'Tiempo de espera agotado. Intente de nuevo más tarde.';
