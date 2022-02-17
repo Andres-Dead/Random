@@ -1,0 +1,328 @@
+<!-- <header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="navbar-brand me-lg-5" (click)="home()">
+            <img src="/assets/img/logo.svg" alt="image" >
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+                <i class="fas fa-bars"></i>
+            </span>
+        </button>
+
+        <div class="collapse navbar-collapse offset-lg-2 offset-xl-3 offset-xxl-5" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item me-lg-4">
+                    <a href="/home" class="nav-link border-0 bg-transparent">Capital Talento</a> 
+                </li>
+                <li class="nav-item me-lg-4">
+                    <a href="/vista_empleos" class="nav-link border-0 bg-transparent">Mis empleos</a> 
+                </li>
+                <li class="nav-item me-lg-4">
+                </li>
+
+                <li class="nav-item me-lg-4 d-flex justify-content-center" (click)="is()" *ngIf="log(); else logout">
+                    <button class="nav-link border-0 bg-transparent">Inicia sesión</button>
+                </li>
+                <ng-template #logout>
+                    <li class="nav-item me-lg-4" (click)="cerrarSesion()">
+                        <button class="nav-link registro">Cerrar sesión</button>
+                    </li>
+                </ng-template>
+                <a class="nav-item text-decoration-none" (click)="registrarse()" *ngIf="log()">
+                    <button class="nav-link registro">Registrate</button>
+                </a>
+
+            </ul>
+        </div>
+    </nav>
+</header> -->
+<!-- <header *ngIf="groups[0] == 1">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="navbar-brand me-lg-5">
+            <img src="/assets/img/logo.svg" alt="image" >
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+                <i class="fas fa-bars"></i>
+            </span>
+        </button>
+        <div class="collapse navbar-collapse offset-lg-1 offset-xl-3 offset-xxl-5" id="navbarNav">
+            <ul class="navbar-nav ml-lg-5">
+                <li class="nav-item me-lg-3">
+                    <a href="/home" class="nav-link border-0 bg-transparent">Capital Talento</a> 
+                </li>
+                <li class="nav-item me-lg-3">
+                </li>
+                <li class="nav-item me-lg-3" (click)="is()" *ngIf="log(); else logout">
+                    <button class="nav-link border-0 bg-transparent">Inicia sesión</button>
+                </li>
+                <ng-template #logout>
+                    <li class="nav-item me-lg-3" (click)="cerrarSesion()">
+                        <button class="nav-link registro">Cerrar sesión</button>
+                    </li>
+                </ng-template>
+                <a class="nav-item text-decoration-none" (click)="registrarse()" *ngIf="log()">
+                    <button class="nav-link registro">Registrate</button>
+                </a>
+            </ul>
+        </div>
+    </nav>
+</header> -->
+
+<!--Talento NO logeado-->
+<header *ngIf="getGroup() == null">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <a class="navbar-brand" href="/home">
+        <img src="../../../assets/img/logo.svg" alt="" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon">
+          <i class="fas fa-bars"></i>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav d-flex justify-content-end">
+          <!-- <li class="nav-item me-xxl-3">
+                      <a class="nav-link" href="empresa">Capital Talento</a>
+                  </li> -->
+          <li class="nav-item me-xxl-3">
+            <a class="nav-link" href="#">Publica una vacante</a>
+          </li>
+          <li class="nav-item me-xxl-3">
+            <a class="nav-link" href="/login">Inicia sesión</a>
+          </li>
+          <li class="nav-item me-xxl-3">
+            <a class="nav-link registro" (click)="registrarse()">Registrate</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!--Empresa logeado-->
+  <header *ngIf="getGroup() == '2'">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <a class="navbar-brand" href="#">
+        <img src="../../../assets/img/logo.svg" alt="" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon">
+          <i class="fas fa-bars"></i>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav d-flex justify-content-end">
+          <li class="nav-item me-xxl-3">
+            <a class="nav-link" href="empresa">Mesa de trabajo</a>
+          </li>
+          <li class="nav-item me-xxl-3" (click)="vacantes()">
+            <a class="nav-link">Vacantes</a>
+          </li>
+          <li class="nav-item me-xxl-3" (click)="buscarTalento()">
+            <a class="nav-link">Buscar talento</a>
+          </li>
+          <li class="nav-item me-xxl-3">
+            <a class="nav-link" href="#">Reclutadores</a>
+          </li>
+          <li class="nav-item dropdown me-xxl-3">
+            <a
+              class="nav-link"
+              href="#"
+              id="navbarDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <div class="iempresa me-1"></div>
+              Mi empresa
+            </a>
+            <ul class="dropdown-menu empresa" aria-labelledby="navbarDropdown">
+              <li (click)="perfilEmpresa()">
+                <a class="dropdown-item"
+                  >Perfil <img src="../../../assets/img/dropicono1.svg" alt=""
+                /></a>
+              </li>
+              <li (click)="cerrarSesion()">
+                <a class="dropdown-item"
+                  >Cerrar sesión
+                  <img src="../../../assets/img/dropicono6.svg" alt=""
+                /></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  <!--Reclutador logeado>
+  <header >
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+          <a class="navbar-brand" href="#">
+              <img src="../../../assets/img/logo.svg" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon">
+                  <i class="fas fa-bars"></i>
+              </span>
+          </button>
+          <div class="collapse navbar-collapse  offset-xl-1 offset-xxl-3" id="navbarNav">
+              <ul class="navbar-nav">
+                  <li class="nav-item me-xxl-3">
+                      <a class="nav-link" href="empresa">Mesa de trabajo</a>
+                  </li>
+                  <li class="nav-item me-xxl-3">
+                      <a class="nav-link" href="#">Vacantes</a>
+                  </li>
+                  <li class="nav-item me-xxl-3">
+                      <a class="nav-link" href="#">Buscar talento</a>
+                  </li>
+                  <li class="nav-item me-xxl-3">
+                      <a class="nav-link" href="#">Reclutadores</a>
+                  </li>
+                  <li class="nav-item me-xxl-3">
+                      <a class="nav-link" href="#"><div class="iempresa me-1"></div>Mi empresa</a>
+                  </li>
+                  <li class="nav-item dropdown me-xxl-3">
+                      <a class="nav-link" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                          Nombre reclutador
+                      </a>
+                      <ul class="dropdown-menu empresa" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Perfil <img src="../../../assets/img/dropicono1.svg" alt=""></a></li>
+                        <li><a class="dropdown-item" href="#">Cerrar sesión <img src="../../../assets/img/dropicono6.svg" alt=""></a></li>
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+  </header-->
+  
+  <!--Talento logeado-->
+  <header *ngIf="getGroup() == '1'">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <a class="navbar-brand">
+        <img src="../../../assets/img/logo.svg" (click)="home()" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon">
+          <i class="fas fa-bars"></i>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav d-flex justify-content-end">
+          <!--    <li class="nav-item me-lg-3">
+            <a class="nav-link" href="#">Capital Talento</a>
+          </li> -->
+          <li class="nav-item me-lg-3" (click)="mesaTrabajoTalento()">
+            <a class="nav-link">Mesa de trabajo</a>
+          </li>
+          <li class="nav-item me-lg-3" (click)="buscarEmpleos()">
+            <a class="nav-link">Buscar empleos</a>
+          </li>
+          <li class="nav-item dropdown me-xxl-3">
+            <a
+              class="nav-link"
+              href="#"
+              id="navbarDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <div class="num">
+                <div class="imensaje me-1"></div>
+                <span *ngIf="this.numNotifi > 0">{{this.numNotifi}}</span>
+              </div>
+            </a>
+            <ul class="dropdown-menu empresa" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" (click)="goToNotifi()"
+                  >{{this.arrNotifications['applications']>0?this.arrNotifications['applications']:''}} Alertas de postulacion</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" (click)="goToNotifi()"
+                  >{{this.arrNotifications['profile_viewed']>0?this.arrNotifications['profile_viewed']:''}} Empresas vieron tu perfil</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown me-lg-3">
+            <a
+              class="nav-link"
+              href="#"
+              id="navbarDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <div class="isesion me-1"></div>
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdown"
+            >
+              <li (click)="perfilTalento()">
+                <a class="dropdown-item"
+                  >Perfil <img src="../../../assets/img/dropicono1.svg" alt=""
+                /></a>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="http://localhost:8080/API/Pdfs/{{ this.cvTkn }}"
+                  target="_blank"
+                  >Descargar CV
+                  <img src="../../../assets/img/dropicono2.svg" alt=""
+                /></a>
+              </li>
+              <!--      <li (click)="mesaTrabajoTalento()">
+                <a class="dropdown-item" 
+                  >Mis empleos
+                  <img src="../../../assets/img/dropicono3.svg" alt=""
+                /></a>
+              </li> -->
+              <li (click)="mesaTrabajoTalento()">
+                <a class="dropdown-item"
+                  >Empresas que sigues
+                  <img src="../../../assets/img/dropicono4.svg" alt=""
+                /></a>
+              </li>
+              <li (click)="preferencias()">
+                <a class="dropdown-item"
+                  >Preferencias
+                  <img src="../../../assets/img/dropicono5.svg" alt=""
+                /></a>
+              </li>
+              <li (click)="cerrarSesion()">
+                <a class="dropdown-item"
+                  >Cerrar sesión
+                  <img src="../../../assets/img/dropicono6.svg" alt=""
+                /></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
