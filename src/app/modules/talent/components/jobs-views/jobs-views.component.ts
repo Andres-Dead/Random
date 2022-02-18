@@ -5,11 +5,11 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { RegisterService } from 'src/app/modules/login/services/register.service';
 
 @Component({
-  selector: 'app-jobs-view',
-  templateUrl: './jobs-view.component.html',
-  styleUrls: ['./jobs-view.component.css']
+  selector: 'app-jobs-views',
+  templateUrl: './jobs-views.component.html',
+  styleUrls: ['./jobs-views.component.css']
 })
-export class JobsViewComponent implements OnInit {
+export class JobsViewsComponent implements OnInit {
   public formGroup: FormGroup;
   public arrApplications: any[] = [];
   public arrFavsVacancies: any[] = [];
@@ -23,10 +23,10 @@ export class JobsViewComponent implements OnInit {
   public elegido: string = 'Mas recientes';
 
   //paginacion
-  public p: number = 1;
-  public p1: number = 1;
-  public p2: number = 1;
-  public p3: number = 1;
+  public p: any = 1;
+  public p1: any = 1;
+  public p2: any = 1;
+  public p3: any = 1;
   public pcompany: number = 1;
   public numPages: number = 2;
   public paginas: number;
