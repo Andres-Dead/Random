@@ -1,0 +1,690 @@
+.vacantes {
+  margin-top: 8%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.nav-link {
+  width: 20%;
+  min-height: 62px;
+  font-family: "SegoeUIBold";
+  font-size: 1.25rem;
+  color: #707070;
+  background: #d8d7d7;
+  border-radius: 0;
+  border: 1px solid #b2b3b5;
+}
+.nuevo {
+  background: #68b744;
+  color: #fff;
+}
+.nav-tabs {
+  position: relative;
+  z-index: 1;
+}
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  background: #fff;
+  border: none;
+  border-top: 4px solid #1c4a83;
+  color: #1c4a83;
+}
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.nuevo.active {
+  background: #68b744;
+  color: #fff;
+  border-top: none;
+}
+.vacantes .btnTabs {
+  border: 1px solid #b2b3b5;
+  padding: 0;
+  text-align: center;
+}
+.vacantes .bActivas,
+.bExpiradas {
+  background: #d8d7d7;
+}
+.vacantes .bInactivas {
+  background: #e5e5e5;
+}
+.vacantes .bBorradores {
+  background: #efeeee;
+}
+.vacantes .btnTabs button {
+  background: transparent;
+  border: 0;
+  font-family: "SegoeUISemibold";
+  font-size: 1.25rem;
+  color: #707070;
+  padding: 2%;
+  width: 100%;
+  border: none;
+  min-height: 62px;
+}
+.vacantes .bVacante {
+  background: #68b744;
+  border: none;
+  padding: 0;
+  border-bottom: none;
+  text-align: center;
+  color: #fff;
+  line-height: 1;
+}
+.vacantes .bVacante button {
+  color: #fff !important;
+}
+.vacantes .activo {
+  border: none;
+  border-top: 5px solid #1c4a83;
+  padding: 0;
+  background: #fff;
+}
+.vacantes .activo button {
+  color: #1c4a83 !important;
+}
+.vacantes .pActiva {
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+  box-shadow: 2px 2px 20px 2px rgba(22, 22, 26, 0.18);
+}
+.vacantes .pInactivas {
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+  box-shadow: 2px 2px 20px 2px rgba(22, 22, 26, 0.18);
+}
+.vacantes .pBorradores {
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+  box-shadow: 2px 2px 20px 2px rgba(22, 22, 26, 0.18);
+}
+.vacantes .gris {
+  background: #f3f3f3;
+}
+.vacantes .pActiva .cuadro2 {
+  width: 100%;
+  min-height: 31px;
+  background: #eef5ff;
+  border: none;
+  border-radius: 11px;
+  font-family: "SegoeUI";
+  font-size: 0.813rem;
+  text-align: center;
+  padding-top: 3%;
+}
+.vacantes .cuadro3 {
+  width: 100%;
+  min-height: 48px;
+  background: #fff;
+  border: none;
+  border-radius: 16px;
+  font-family: "SegoeUISemibold";
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 3%;
+}
+.vacantes .cuadro3 .act .col-7,
+.col-5 {
+  padding: 0;
+}
+.vacantes .cuadro3 .act .col-4 {
+  padding: 0;
+}
+.vacantes .cuadro3 .des .col-4 {
+  padding: 0;
+}
+.vacantes .cuadro3 .act .col-8 {
+  padding: 0;
+}
+.vacantes .cuadro3 .des .col-8 {
+  padding: 0;
+}
+.vacantes .cuadro3 span {
+  font-size: 0.563rem;
+  text-align: left;
+  display: block;
+  margin-top: 10%;
+}
+.vacantes .cuadro3 .act {
+  color: #1c4a83;
+}
+.vacantes .cuadro3 .des {
+  color: #b2b3b5;
+}
+.vacantes .list-group-item .cuadro3 {
+  width: 100%;
+  min-height: 42px;
+  background: #eef5ff;
+  border: none;
+  border-radius: 8px;
+  font-family: "SegoeUI";
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 3%;
+}
+.vacantes .azul .cuadro3 {
+  background: #fff;
+}
+.vacantes .list-group-item .cuadro3 .vistas {
+  color: #6b89ae;
+}
+.vacantes .list-group-item .cuadro3 .postulados {
+  color: #1c4a83;
+}
+.vacantes .list-group-item .cuadro3 .seleccion {
+  color: #68b744;
+}
+.vacantes .list-group-item .cuadro3 .des {
+  color: #b2b3b5;
+}
+/*-----------Iconos de cuadros desactivados-----------------------------------------*/
+.vacantes .list-group-item .cuadro3 .desV {
+  content: url("../../../../../assets/img/iconoVD.svg");
+}
+.vacantes .list-group-item .cuadro3 .desP {
+  content: url("../../../../../assets/img/iconoPD.svg");
+}
+.vacantes .list-group-item .cuadro3 .desN {
+  content: url("../../../../../assets/img/iconoND.svg");
+}
+.vacantes .list-group-item .cuadro3 .desS {
+  content: url("../../../../../assets/img/iconoSD.svg");
+}
+.vacantes .list-group-item .boton {
+  width: 100%;
+  min-height: 41px;
+  border: none;
+  font-family: "SegoeUISemibold";
+  font-size: 0.9rem;
+  color: #fff;
+  background: #6b89ae;
+  border-radius: 8px;
+  margin: 0;
+}
+.vacantes .list-group-item .boton.desactivo {
+  background: #b2b3b5;
+}
+.vacantes .list-group-item .boton2 {
+  width: 50%;
+  height: auto;
+  border: none;
+  font-family: "SegoeUIBold";
+  font-size: 0.9rem;
+  color: #1c4a83;
+  background: transparent;
+  border-radius: 8px;
+  margin: 0;
+  text-align: left;
+}
+.vacantes .list-group-item .boton3 {
+  width: 100%;
+  min-height: 41px;
+  border: none;
+  font-family: "SegoeUI";
+  font-size: 1rem;
+  color: #707070;
+  background: transparent;
+  border-radius: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-decoration: underline;
+}
+.vacantes .list-group-item .boton4 {
+  width: 100%;
+  min-height: 41px;
+  border: 2px solid #1c4a83;
+  font-family: "SegoeUISemibold";
+  font-size: 1rem;
+  color: #1c4a83;
+  background: #fff;
+  border-radius: 6px;
+  margin: 0;
+}
+/*----------Boton Destacar--------------------------------*/
+.vacantes .list-group-item .botonDes {
+  width: 100%;
+  min-height: 41px;
+  border: none;
+  font-family: "SegoeUIBold";
+  font-size: 0.9rem;
+  color: #fff;
+  background: #68b744;
+  border-radius: 7px;
+  margin: 0;
+}
+.vacantes .list-group-item .btnDesD {
+  content: url("../../../../../assets/img/destacarBotonD.svg");
+}
+/*----------Boton Confidencial--------------------------------*/
+.vacantes .list-group-item .botonConf {
+  width: 100%;
+  min-height: 41px;
+  border: none;
+  font-family: "SegoeUIBold";
+  font-size: 0.9rem;
+  color: #fff;
+  background: #1c4a83;
+  border-radius: 7px;
+  margin: 0;
+}
+.vacantes .list-group-item .btnConfD {
+  content: url("../../../../../assets/img/confidencialesDes.svg");
+}
+.vacantes .list-group-item .botonDesactivo {
+  width: 100%;
+  min-height: 41px;
+  border: none;
+  font-family: "SegoeUIBold";
+  font-size: 0.9rem;
+  color: #b2b3b5;
+  background: #f3f3f3;
+  border-radius: 7px;
+  margin: 0;
+}
+.vacantes .list-group-item .cuadro4 {
+  width: 100%;
+  min-height: 48px;
+  background: #eef5ff;
+  border: none;
+  border-radius: 16px;
+  padding: 5%;
+  color: #1c4a83;
+  font-family: "SegoeUISemibold";
+}
+.vacantes .azul .cuadro4 {
+  background: #fff;
+}
+.vacantes .list-group-item .cuadro4 .col-3 {
+  padding: 0;
+}
+.vacantes .list-group-item .cuadro4 .col-6 {
+  padding: 0;
+}
+.vacantes .list-group-item .cuadro4 label {
+  font-size: 1.1rem;
+  text-align: center;
+}
+.vacantes .list-group-item .cuadro4 .des {
+  color: #b2b3b5;
+}
+.vacantes .list-group-item .cuadro4 span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+.vacantes .list-group-item .dropdown {
+  background: #6b89ae;
+  border: none;
+}
+.vacantes .list-group-item .dropdown .drop {
+  border: none;
+  margin-bottom: 0;
+  color: #fff;
+  background: transparent;
+  font-size: 1rem;
+}
+.vacantes .list-group-item .dropdown.des {
+  background: #b2b3b5;
+}
+/*-------------Cambio de imagenes desactivas-------*/
+.vacantes .list-group-item .cuadro4 .desCRE {
+  content: url("../../../../../assets/img/iconoCD.svg");
+}
+.vacantes .list-group-item .cuadro4 .desDIS {
+  content: url("../../../../../assets/img/iconoDIS.svg");
+}
+.vacantes .list-group-item .cuadro4 .desDES {
+  content: url("../../../../../assets/img/iconoDES.svg");
+}
+.vacantes .list-group-item .cuadro4 .desCONF {
+  content: url("../../../../../assets/img/iconoCONF.svg");
+}
+.vacantes .card {
+  margin: 0;
+  padding: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  box-shadow: 1px 9px 29px 5px rgba(22, 22, 26, 0.18);
+}
+.vacantes .card .list-group-item {
+  padding-top: 2%;
+  padding-bottom: 1%;
+}
+.vacantes .text1 {
+  font-family: "SegoeUIBold";
+  font-size: 1rem;
+  color: #707070;
+  display: block;
+}
+.vacantes .text2 {
+  font-family: "SegoeUIBold";
+  font-size: 1.5rem;
+  color: #1c4a83;
+  display: block;
+  text-decoration: underline;
+  text-align: left;
+}
+.vacantes .text3 {
+  font-family: "SegoeUI";
+  font-size: 0.9rem;
+  color: #8e8e8e;
+  display: block;
+}
+.vacantes .text4 {
+  font-family: "SegoeUIBold";
+  font-size: 1.25rem;
+  color: #707070;
+  display: block;
+}
+.vacantes .text5 {
+  font-family: "SegoeUI";
+  font-size: 0.85rem;
+  color: #8e8e8e;
+}
+.vacantes .azul {
+  background: #eef5ff;
+}
+.vacantes .boton {
+  width: 50%;
+  min-height: 41px;
+  border: none;
+  font-family: "SegoeUIBold";
+  font-size: 0.9rem;
+  color: #fff;
+  background: #68b744;
+  border-radius: 32px;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+.vacantes .boton2 {
+  width: 50%;
+  min-height: 41px;
+  border: none;
+  font-family: "SegoeUIBold";
+  font-size: 0.9rem;
+  color: #fff;
+  background: #1c4a83;
+  border-radius: 32px;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+.vacantes .boton3 {
+  width: 50%;
+  min-height: 41px;
+  border: none;
+  font-family: "SegoeUIBold";
+  font-size: 0.9rem;
+  color: #fff;
+  background: #707070;
+  border-radius: 32px;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+.vacantes .boton4 {
+  width: 50%;
+  min-height: 41px;
+  border: none;
+  font-family: "SegoeUIBold";
+  font-size: 0.9rem;
+  color: #fff;
+  background: #b2b3b5;
+  border-radius: 32px;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+.vacantes .boton5 {
+  width: 100%;
+  min-height: 34px;
+  border: none;
+  font-family: "SegoeUIBold";
+  font-size: 0.9rem;
+  color: #fff;
+  background: #68b744;
+  border-radius: 7px;
+}
+.vacantes .dropdown {
+  border: 1px solid #707070;
+  border-radius: 16px;
+  padding: 2%;
+  width: 90%;
+  background: #fff;
+}
+.vacantes .dropdown .drop2 {
+  margin-bottom: 2%;
+  font-family: "SegoeUI";
+  font-size: 0.9rem;
+}
+/*-------Modal reasignar vacante -------------------------*/
+.modalReasignar .modal-content {
+  border-radius: 27px;
+  border: 1px solid #707070;
+  padding-bottom: 5%;
+}
+.modalReasignar .close {
+  font-size: 3rem;
+  border: 0;
+  background: transparent;
+  color: #1c4a83;
+}
+.modalReasignar .modal-header {
+  padding-bottom: 0;
+}
+.modalReasignar .modal-body {
+  padding-top: 0;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+.modalReasignar .modal-title {
+  font-family: "SegoeUISemibold";
+  font-size: 1.3rem;
+  color: #1c4a83;
+  text-align: center;
+  margin-bottom: 10%;
+  margin-top: 0;
+}
+.modalReasignar .text {
+  font-family: "SegoeUI";
+  font-size: 1rem;
+  color: #707070;
+  text-align: center;
+  margin-bottom: 10%;
+}
+.modalReasignar .text2 {
+  font-family: "SegoeUI";
+  font-size: 0.9rem;
+  color: #8e8e8e;
+  text-align: center;
+  margin-bottom: 10%;
+}
+.modalReasignar .boton {
+  width: 40%;
+  height: 45px;
+  border: none;
+  font-family: "SegoeUIBold";
+  font-size: 0.9rem;
+  color: #fff;
+  background: #1c4a83;
+  border-radius: 32px;
+}
+.modalReasignar .drop {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #707070;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+/*-------Modal vacante confidencial -------------------------*/
+.modalConfidencial .modal-content {
+  border-radius: 27px;
+  border: 1px solid #707070;
+  padding-bottom: 5%;
+}
+.modalConfidencial .close {
+  font-size: 3rem;
+  border: 0;
+  background: transparent;
+  color: #1c4a83;
+}
+.modalConfidencial .modal-header {
+  padding-bottom: 0;
+}
+.modalConfidencial .modal-body {
+  padding-top: 0;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+.modalConfidencial .modal-title {
+  font-family: "SegoeUISemibold";
+  font-size: 1.3rem;
+  color: #1c4a83;
+  text-align: center;
+  margin-bottom: 10%;
+  margin-top: 0;
+}
+.modalConfidencial .text {
+  font-family: "SegoeUI";
+  font-size: 0.9rem;
+  color: #707070;
+  text-align: center;
+  margin-bottom: 10%;
+}
+.modalConfidencial .text a {
+  color: #1c4a83;
+  text-align: center;
+  display: block;
+  text-decoration: underline;
+}
+.modalConfidencial .boton {
+  width: 100%;
+  height: 45px;
+  border: none;
+  font-family: "SegoeUIBold";
+  font-size: 0.9rem;
+  color: #fff;
+  background: #1c4a83;
+  border-radius: 32px;
+  margin-bottom: 10%;
+}
+.modalConfidencial .boton.desactivado {
+  background: #6b89ae;
+}
+.modalConfidencial .modal-footer {
+  padding-top: 0;
+  padding-left: 20%;
+  padding-right: 20%;
+  display: block;
+}
+/*-------Modal Activar Vacante -------------------------*/
+.modalActivarVacante .modal-content {
+  border-radius: 27px;
+  border: 1px solid #707070;
+  padding-bottom: 5%;
+}
+.modalActivarVacante .close {
+  font-size: 3rem;
+  border: 0;
+  background: transparent;
+  color: #1c4a83;
+}
+.modalActivarVacante .modal-header {
+  padding-bottom: 0;
+}
+.modalActivarVacante .modal-body {
+  padding-top: 0;
+  padding-left: 30%;
+  padding-right: 30%;
+}
+.modalActivarVacante .modal-title {
+  font-family: "SegoeUISemibold";
+  font-size: 1.3rem;
+  color: #1c4a83;
+  text-align: center;
+  margin-bottom: 10%;
+  margin-top: 0;
+}
+.modalActivarVacante .text {
+  font-family: "SegoeUI";
+  font-size: 0.9rem;
+  color: #707070;
+  text-align: center;
+  margin-bottom: 10%;
+}
+.modalActivarVacante .boton {
+  width: 100%;
+  height: 45px;
+  border: none;
+  font-family: "SegoeUIBold";
+  font-size: 0.9rem;
+  color: #fff;
+  background: #1c4a83;
+  border-radius: 32px;
+  margin-bottom: 10%;
+}
+.modalActivarVacante .boton.desactivado {
+  background: #6b89ae;
+}
+.modalActivarVacante .modal-footer {
+  padding-top: 0;
+  padding-left: 20%;
+  padding-right: 20%;
+  display: block;
+}
+.modalActivarVacante .drop {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #707070;
+  height: auto;
+  border-radius: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15%;
+}
+
+.bton {
+  background-color: red;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+.vacantes .grid-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 0.6fr;
+  grid-template-rows: auto auto auto;
+  gap: 0px 20px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "grid1 grid1 grid2"
+    "grid3 grid3 grid5"
+    "grid6 grid4 .";
+}
+.vacantes .grid1 {
+  grid-area: grid1;
+}
+.vacantes .grid3 {
+  grid-area: grid3;
+}
+.vacantes .grid2 {
+  grid-area: grid2;
+}
+.vacantes .grid6 {
+  grid-area: grid6;
+}
+.vacantes .grid4 {
+  grid-area: grid4;
+}
+.vacantes .grid5 {
+  grid-area: grid5;
+}
+
+.vacantes .boton6 {
+  width: 100%;
+  min-height: 34px;
+  border: none;
+  font-family: "SegoeUI";
+  font-size: 0.9rem;
+  color: #1c4a83;
+  background: #fff;
+  border-radius: 7px;
+  text-align: center;
+}
