@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { TalentRoutingModule } from './talent-routing.module';
 import { TalentComponent } from './talent.component';
-import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AccountComponent } from './components/account/account.component';
 import { BasicInfoComponent } from './components/basic-info/basic-info.component';
@@ -16,7 +15,9 @@ import { RecognitionsComponent } from './components/recognitions/recognitions.co
 import { LanguagesComponent } from './components/languages/languages.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ReviewCompanyComponent } from './components/review-company/review-company.component';
-
+import { WorkTableComponent } from './components/work-table/work-table.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { JobsViewsComponent } from './components/jobs-views/jobs-views.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +33,15 @@ import { ReviewCompanyComponent } from './components/review-company/review-compa
     LanguagesComponent,
     SkillsComponent,
     ReviewCompanyComponent,
+    WorkTableComponent,
+    JobsViewsComponent,
   ],
   imports: [
     CommonModule,
     TalentRoutingModule,
-    RouterModule,
+    ReactiveFormsModule,
     FormsModule,
-    ReactiveFormsModule
-  ]
+    NgxPaginationModule
+  ],
 })
-export class TalentModule { }
+export class TalentModule {}

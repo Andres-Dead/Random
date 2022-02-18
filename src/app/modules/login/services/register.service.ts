@@ -559,4 +559,24 @@ export class RegisterService {
       );
   }
 
+  public viewNotificaciones(section: string, token: string): Observable<any> {
+    let json = { section };
+    return this.clienteHttp
+      .put(`${this.API}/notifications`, JSON.stringify(json), {
+        headers: new HttpHeaders({ Authorization: token }),
+      })
+      .pipe(
+        timeout(30000),
+        catchError((e) => {
+          Swal.close();
+          Swal.fire({
+            icon: 'error',
+            text: e.error.error ? e.error.error : this.TiempoAgotado,
+            confirmButtonColor: '#1c4a83',
+          });
+          return of(null);
+        })
+      );
+  }
+
 }

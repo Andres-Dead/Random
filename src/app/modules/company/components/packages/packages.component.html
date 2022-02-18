@@ -1,1 +1,893 @@
-<p>packages works!</p>
+<div class="container-fluid">
+    <div class="paquetes">
+      <div class="row mt-5">
+        <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-end">
+          <img class="unete" src="../../assets/img/juan2.svg" alt="" />
+        </div>
+        <div class="col-12 col-lg-4 col-md-8 mt-5">
+          <h1 class="text1 text-center">
+            ¡Únete a nosotros y publica cinco ofertas gratis al mes!
+          </h1>
+          <p class="text2 mt-5 text-center">Publica ahora y empieza a reclutar</p>
+          <button type="submit" class="boton mx-auto d-block mt-5">
+            Publica una oferta
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grispaq">
+    <div class="paquetes">
+      <div class="row mt-md-5">
+        <div class="col-12 col-lg-4 col-md-7 offset-lg-4">
+          <h1 class="text1 text-center mt-5 mb-5">
+            Soluciones inteligentes creadas para ti
+          </h1>
+          <p class="text3 text-center mb-5">
+            Puedes registrarte y publicar gratuitamente. Contrata nuestros
+            productos solo cuando hayas comprobado la efectividad que te ofrecemos
+            y tengas mayores necesidades de reclutamiento.
+          </p>
+        </div>
+        <div class="col-12 col-lg-4 col-md-5">
+          <img class="solucion" src="../../assets/img/soluciones.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid">
+    <div class="paquetes">
+      <div class="row">
+        <div class="col-12 col-lg-6 col-md-5 d-flex justify-content-end">
+          <img class="puesto" src="../../assets/img/puestos.svg" alt="" />
+        </div>
+        <div class="col-12 col-lg-6 col-md-7 mt-lg-5 mt-5">
+          <h1 class="text1 mb-5">Cubre todo tipo de puestos</h1>
+          <p class="text3 mb-5">
+            Miles de candidatos nos visitan todos los días para conseguir un nuevo
+            trabajo. Cubre cualquier posición, hasta la más especializada en TI,
+            con el paquete adecuado.
+          </p>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-12 col-lg-6 col-md-7 mt-lg-5 mt-5">
+          <h1 class="text1 text-end">Paga en línea</h1>
+          <p class="text2 text-end">
+            De forma rápida y segura, con tu tarjeta de crédito o débito.
+          </p>
+        </div>
+        <div class="col-12 col-lg-6 col-md-5 mt-lg-0 mt-5">
+          <img class="puesto" src="../../assets/img/pagalinea.svg" alt="" />
+        </div>
+      </div>
+      <div class="row mt-5 mb-5">
+        <div class="col-12 col-lg-12 col-md-12 mt-lg-5 mt-5">
+          <h1 class="text1 text-center mb-5">Publica tu vacante</h1>
+        </div>
+        <div class="col-12 col-lg-4 col-md-12 offset-lg-4">
+          <p class="text3 text-center mb-5">
+            Te guiaremos en tu reclutamiento para llamar la atención de miles de
+            personas que hoy buscan empleo en Capital empleo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fondopaq">
+    <img src="../../assets/img/circulopaq.svg" alt="" />
+  </div>
+  <div class="azulpaq">
+    <div class="paquetes">
+      <div class="row">
+        <div class="col-12 col-lg-12 col-md-12">
+          <h1 class="text1 text-center mb-5">Conoce nuestros planes</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div *ngFor="let item of paquetes" class="col-12 col-lg-4 col-md-12">
+          <div>
+            <div class="{{ item.name == 'TI' ? 'card ti' : 'card' }}">
+              <div class="card-header">
+                {{ item.name }}
+                <p class="text" *ngIf="item.name == 'TI'">
+                  ¿Necesitas talento especializado?
+                </p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <div class="row">
+                    <div
+                      class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                    >
+                      <i
+                        class="{{
+                          item.num_vacants > 0
+                            ? 'fas fa-check text-success'
+                            : 'fas fa-times text-danger'
+                        }}"
+                      ></i>
+                    </div>
+                    <div class="col-10 col-lg-10 col-md-10">
+                      <label class="textcheck"
+                        >{{ item.num_vacants }} Vacantes activas</label
+                      >
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div
+                      class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                    >
+                      <i
+                        class="{{
+                          item.num_creds > 0
+                            ? 'fas fa-check text-success'
+                            : 'fas fa-times text-danger'
+                        }}"
+                      ></i>
+                    </div>
+                    <div class="col-10 col-lg-10 col-md-10">
+                      <label class="textcheck"
+                        >{{ item.num_creds }} Créditos para revisar CVs</label
+                      >
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div
+                      class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                    >
+                      <i
+                        class="{{
+                          item.num_recruiters > 0
+                            ? 'fas fa-check text-success'
+                            : 'fas fa-times text-danger'
+                        }}"
+                      ></i>
+                    </div>
+                    <div class="col-10 col-lg-10 col-md-10">
+                      <label class="{{item.num_recruiters > 0? 'textcheck':''}}">{{ item.num_recruiters }} Reclutadores</label>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div
+                      class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                    >
+                      <i
+                        class="{{
+                          item.num_feat > 0
+                            ? 'fas fa-check text-success'
+                            : 'fas fa-times text-danger'
+                        }}"
+                      ></i>
+                    </div>
+                    <div class="col-10 col-lg-10 col-md-10">
+                      <label class="{{item.num_feat > 0? 'textcheck':''}}">{{ item.num_feat }} Vacantes destacadas</label>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div
+                      class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                    >
+                      <i
+                        class="{{
+                          item.num_confidential > 0
+                            ? 'fas fa-check text-success'
+                            : 'fas fa-times text-danger'
+                        }}"
+                      ></i>
+                    </div>
+                    <div class="col-10 col-lg-10 col-md-10">
+                      <label class="{{item.num_confidential > 0? 'textcheck':''}}"
+                        >{{ item.num_confidential }} Vacantes
+                        confidenciales</label
+                      >
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div
+                      class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                    >
+                      <i class="{{
+                          item.name == 'TI'
+                            ? 'fas fa-check text-success'
+                            : 'fas fa-times text-danger'
+                        }}"></i>
+                    </div>
+                    <div class="col-10 col-lg-10 col-md-10">
+                      <label class="{{item.name == 'TI'? 'textcheck':''}}">Talento especializado en TI</label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="card-footer">
+                <p class="text" *ngIf="item.price == 0; else noGratis">
+                  ${{ item.price }} MNX
+                </p>
+                <ng-template #noGratis>
+                  <p class="text2">
+                    ${{ item.price }}.00 MNX <span>/ mes*</span>
+                  </p>
+                  <label class="text3">*Pago semestral</label>
+                </ng-template>
+                <button
+                  *ngIf="item.name == 'GRATIS'; else elseBlock"
+                  type="submit"
+                  style="background: #0e97ff"
+                  class="boton mx-auto d-block mt-5"
+                  [routerLink]="['/registro_empresa']" routerLinkActive="router-link-active" 
+                >
+                  Regístrate gratis
+                </button>
+                <ng-template #elseBlock>
+                  <button type="submit" class="boton mx-auto d-block" [routerLink]="['/pago_nuevoplan',item.id_package]" routerLinkActive="router-link-active" >
+                    Comprar ahora
+                  </button>
+                </ng-template>
+              </div>
+            </div>
+            <button
+              class="text4"
+              type="button"
+              data-toggle="modal"
+              data-target="#modalPlanes"
+            >
+              Compara planes
+            </button>
+          </div>
+        </div>
+        <!--     <div class="col-12 col-lg-4 col-md-12">
+                  <div class="card">
+                      <div class="card-header">
+                          Conócenos
+                      </div>
+                      <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                              <div class="row">
+                                  <div class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center">
+                                      <i class="fas fa-check text-success"></i>
+                                  </div>
+                                  <div class="col-10 col-lg-10 col-md-10">
+                                      <label class="textcheck">10 Vacantes activas</label>
+                                  </div>
+                              </div>
+                          </li>
+                          <li class="list-group-item">
+                              <div class="row">
+                                  <div class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center">
+                                      <i class="fas fa-check text-success"></i>
+                                  </div>
+                                  <div class="col-10 col-lg-10 col-md-10">
+                                      <label class="textcheck">200 Créditos para revisar CVs</label>
+                                  </div>
+                              </div>
+                          </li>
+                          <li class="list-group-item">
+                              <div class="row">
+                                  <div class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center">
+                                      <i class="fas fa-check text-success"></i>
+                                  </div>
+                                  <div class="col-10 col-lg-10 col-md-10">
+                                      <label class="textcheck">1 Reclutador</label>
+                                  </div>
+                              </div>
+                          </li>
+                          <li class="list-group-item">
+                              <div class="row">
+                                  <div class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center">
+                                      <i class="fas fa-times text-danger"></i>
+                                  </div>
+                                  <div class="col-10 col-lg-10 col-md-10">
+                                      <label>0 Vacantes destacadas</label>
+                                  </div>
+                              </div>
+                          </li>
+                          <li class="list-group-item">
+                              <div class="row">
+                                  <div class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center">
+                                      <i class="fas fa-times text-danger"></i>
+                                  </div>
+                                  <div class="col-10 col-lg-10 col-md-10">
+                                      <label>0 Vacantes confidenciales</label>
+                                  </div>
+                              </div>
+                          </li>
+                          <li class="list-group-item">
+                              <div class="row">
+                                  <div class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center">
+                                      <i class="fas fa-times text-danger"></i>
+                                  </div>
+                                  <div class="col-10 col-lg-10 col-md-10">
+                                      <label>Talento especializado en TI</label>
+                                  </div>
+                              </div>
+                          </li>
+                      </ul>
+                      <div class="card-footer">
+                          <p class="text2">$499.00 MNX <span>/ mes*</span></p>
+                          <label class="text3">*Pago semestral</label>
+                          <button type="submit" class="boton mx-auto d-block">Comprar ahora</button>
+                      </div>
+                  </div>
+                  <button class="text4" type="button" data-toggle="modal" data-target="#modalPlanes">Compara planes</button>
+              </div>
+              <div class="col-12 col-lg-4 col-md-12">
+                  <div class="card">
+                      <div class="card-header">
+                          Inicia
+                      </div>
+                      <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                              <div class="row">
+                                  <div class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center">
+                                      <i class="fas fa-check text-success"></i>
+                                  </div>
+                                  <div class="col-10 col-lg-10 col-md-10">
+                                      <label class="textcheck">25 Vacantes activas</label>
+                                  </div>
+                              </div>
+                          </li>
+                          <li class="list-group-item">
+                              <div class="row">
+                                  <div class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center">
+                                      <i class="fas fa-check text-success"></i>
+                                  </div>
+                                  <div class="col-10 col-lg-10 col-md-10">
+                                      <label class="textcheck">500 Créditos para revisar CVs</label>
+                                  </div>
+                              </div>
+                          </li>
+                          <li class="list-group-item">
+                              <div class="row">
+                                  <div class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center">
+                                      <i class="fas fa-check text-success"></i>
+                                  </div>
+                                  <div class="col-10 col-lg-10 col-md-10">
+                                      <label class="textcheck">5 Reclutadores</label>
+                                  </div>
+                              </div>
+                          </li>
+                          <li class="list-group-item">
+                              <div class="row">
+                                  <div class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center">
+                                      <i class="fas fa-check text-success"></i>
+                                  </div>
+                                  <div class="col-10 col-lg-10 col-md-10">
+                                      <label class="textcheck">2  Vacantes destacadas</label>
+                                  </div>
+                              </div>
+                          </li>
+                          <li class="list-group-item">
+                              <div class="row">
+                                  <div class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center">
+                                      <i class="fas fa-check text-success"></i>
+                                  </div>
+                                  <div class="col-10 col-lg-10 col-md-10">
+                                      <label class="textcheck">1 Vacantes confidenciales</label>
+                                  </div>
+                              </div>
+                          </li>
+                          <li class="list-group-item">
+                              <div class="row">
+                                  <div class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center">
+                                      <i class="fas fa-times text-danger"></i>
+                                  </div>
+                                  <div class="col-10 col-lg-10 col-md-10">
+                                      <label>Talento especializado en TI</label>
+                                  </div>
+                              </div>
+                          </li>
+                      </ul>
+                      <div class="card-footer">
+                          <p class="text2">$999.00 MNX <span>/ mes*</span></p>
+                          <label class="text3">*Pago semestral</label>
+                          <button type="submit" class="boton mx-auto d-block">Comprar ahora</button>
+                      </div>
+                  </div>
+                  <button class="text4" type="button" data-toggle="modal" data-target="#modalPlanes">Compara planes</button>
+              </div> -->
+      </div>
+  <!--     <div class="row">
+        <div class="col-12 col-lg-4 col-md-12">
+          <div class="card">
+            <div class="card-header">Crece</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="row">
+                  <div
+                    class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fas fa-check text-success"></i>
+                  </div>
+                  <div class="col-10 col-lg-10 col-md-10">
+                    <label class="textcheck">50 Vacantes activas</label>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div
+                    class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fas fa-check text-success"></i>
+                  </div>
+                  <div class="col-10 col-lg-10 col-md-10">
+                    <label class="textcheck"
+                      >1000 Créditos para revisar CVs</label
+                    >
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div
+                    class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fas fa-check text-success"></i>
+                  </div>
+                  <div class="col-10 col-lg-10 col-md-10">
+                    <label class="textcheck">10 Reclutadores</label>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div
+                    class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fas fa-check text-success"></i>
+                  </div>
+                  <div class="col-10 col-lg-10 col-md-10">
+                    <label class="textcheck">4 Vacantes destacadas</label>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div
+                    class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fas fa-check text-success"></i>
+                  </div>
+                  <div class="col-10 col-lg-10 col-md-10">
+                    <label class="textcheck">2 Vacantes confidenciales</label>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div
+                    class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fas fa-times text-danger"></i>
+                  </div>
+                  <div class="col-10 col-lg-10 col-md-10">
+                    <label>Talento especializado en TI</label>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-footer">
+              <p class="text2">$1,899.00 MNX <span>/ mes*</span></p>
+              <label class="text3">*Pago semestral</label>
+              <button type="submit" class="boton mx-auto d-block">
+                Comprar ahora
+              </button>
+            </div>
+          </div>
+          <button
+            class="text4"
+            type="button"
+            data-toggle="modal"
+            data-target="#modalPlanes"
+          >
+            Compara planes
+          </button>
+        </div>
+        <div class="col-12 col-lg-4 col-md-12">
+          <div class="card">
+            <div class="card-header">Consolida</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="row">
+                  <div
+                    class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fas fa-check text-success"></i>
+                  </div>
+                  <div class="col-10 col-lg-10 col-md-10">
+                    <label class="textcheck">80 Vacantes activas</label>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div
+                    class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fas fa-check text-success"></i>
+                  </div>
+                  <div class="col-10 col-lg-10 col-md-10">
+                    <label class="textcheck"
+                      >1600 Créditos para revisar CVs</label
+                    >
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div
+                    class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fas fa-check text-success"></i>
+                  </div>
+                  <div class="col-10 col-lg-10 col-md-10">
+                    <label class="textcheck">20 Reclutadoresr</label>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div
+                    class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fas fa-check text-success"></i>
+                  </div>
+                  <div class="col-10 col-lg-10 col-md-10">
+                    <label class="textcheck">20 Vacantes destacadas</label>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div
+                    class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fas fa-check text-success"></i>
+                  </div>
+                  <div class="col-10 col-lg-10 col-md-10">
+                    <label class="textcheck">10 Vacantes confidenciales</label>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div
+                    class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fas fa-times text-danger"></i>
+                  </div>
+                  <div class="col-10 col-lg-10 col-md-10">
+                    <label>Talento especializado en TI</label>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-footer">
+              <p class="text2">$2,999.00 MNX <span>/ mes*</span></p>
+              <label class="text3">*Pago semestral</label>
+              <button type="submit" class="boton mx-auto d-block">
+                Comprar ahora
+              </button>
+            </div>
+          </div>
+          <button
+            class="text4"
+            type="button"
+            data-toggle="modal"
+            data-target="#modalPlanes"
+          >
+            Compara planes
+          </button>
+        </div>
+        <div class="col-12 col-lg-4 col-md-12">
+          <div class="card ti">
+            <div class="card-header">
+              TI
+              <p class="text">¿Necesitas talento especializado?</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="row">
+                  <div
+                    class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fas fa-check text-success"></i>
+                  </div>
+                  <div class="col-10 col-lg-10 col-md-10">
+                    <label class="textcheck">15 Vacantes activas</label>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div
+                    class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fas fa-check text-success"></i>
+                  </div>
+                  <div class="col-10 col-lg-10 col-md-10">
+                    <label class="textcheck">300 Créditos para revisar CVs</label>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div
+                    class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fas fa-check text-success"></i>
+                  </div>
+                  <div class="col-10 col-lg-10 col-md-10">
+                    <label class="textcheck">3 Reclutadores</label>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div
+                    class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fas fa-check text-success"></i>
+                  </div>
+                  <div class="col-10 col-lg-10 col-md-10">
+                    <label class="textcheck">4 Vacantes destacadas</label>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div
+                    class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fas fa-check text-success"></i>
+                  </div>
+                  <div class="col-10 col-lg-10 col-md-10">
+                    <label class="textcheck">2 Vacantes confidenciales</label>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div
+                    class="col-2 col-lg-2 col-md-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fas fa-check text-success"></i>
+                  </div>
+                  <div class="col-10 col-lg-10 col-md-10">
+                    <label class="textcheck">Talento especializado en TI</label>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-footer">
+              <p class="text2">$3,499.00 MNX <span>/ mes*</span></p>
+              <label class="text3">*Pago semestral</label>
+              <button type="submit" class="boton mx-auto d-block">
+                Comprar ahora
+              </button>
+            </div>
+          </div>
+          <div class="fondojuan">
+            <img src="../../assets/img/juanplanes.svg" alt="" />
+          </div>
+          <button
+            class="text4"
+            type="button"
+            data-toggle="modal"
+            data-target="#modalPlanes"
+          >
+            Compara planes
+          </button>
+        </div>
+      </div> -->
+    </div>
+    <div class="fondopaq2">
+      <img src="../../assets/img/circulo2.svg" alt="" />
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="paquetes">
+      <div class="row">
+        <div class="col-12 col-lg-5 col-md-5 d-flex justify-content-end">
+          <img class="puesto2" src="../../assets/img/talentoti.svg" alt="" />
+        </div>
+        <div class="col-12 col-lg-7 col-md-7 mt-md-5">
+          <h1 class="text1 mb-5 mt-5">¿Buscas talento especializado en TI?</h1>
+          <p class="text3 mb-4">
+            Encuentra a los mejores en su campo y cubre áreas como:
+          </p>
+          <li class="text3 ml-2 mb-2">
+            <img class="mr-2" src="../../assets/img/listpaq.svg" alt="" />Soporte,
+            administración y diseño de telecomunicaciones y sistemas informáticos
+          </li>
+          <li class="text3 ml-2 mb-2">
+            <img
+              class="mr-2"
+              src="../../assets/img/listpaq.svg"
+              alt=""
+            />Programadores de software
+          </li>
+          <li class="text3 ml-2 mb-2">
+            <img
+              class="mr-2"
+              src="../../assets/img/listpaq.svg"
+              alt=""
+            />Informáticos y control de redes
+          </li>
+          <button type="submit" class="boton2">Comprar por $3,499.00</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Button trigger modal>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPlanes">
+      Launch demo modal
+  </button>
+  <----------------Modal planes--------------------------------->
+  <div
+    class="modal fade modalPlanes"
+    id="modalPlanes"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-end">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5 class="modal-title">Tenemos un plan perfecto para ti</h5>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">GRATIS</th>
+                  <th scope="col">Conócenos</th>
+                  <th scope="col">Inicia</th>
+                  <th scope="col">Crece</th>
+                  <th scope="col">Consolida</th>
+                  <th scope="col">TI</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Vacantes con vigencia de 60 días</th>
+                  <td><i class="fas fa-check text-success"></i>10</td>
+                  <td><i class="fas fa-check text-success"></i>10</td>
+                  <td><i class="fas fa-check text-success"></i>20</td>
+                  <td><i class="fas fa-check text-success"></i>50</td>
+                  <td><i class="fas fa-check text-success"></i>80</td>
+                  <td><i class="fas fa-check text-success"></i>15</td>
+                </tr>
+                <tr>
+                  <th scope="row">CVs postulados</th>
+                  <td><i class="fas fa-check text-success"></i>Ilimitados</td>
+                  <td><i class="fas fa-check text-success"></i>Ilimitados</td>
+                  <td><i class="fas fa-check text-success"></i>Ilimitados</td>
+                  <td><i class="fas fa-check text-success"></i>Ilimitados</td>
+                  <td><i class="fas fa-check text-success"></i>Ilimitados</td>
+                  <td><i class="fas fa-check text-success"></i>Ilimitados</td>
+                </tr>
+                <tr>
+                  <th scope="row">Créditos para revisar CVs</th>
+                  <td><i class="fas fa-check text-success"></i>100</td>
+                  <td><i class="fas fa-check text-success"></i>200</td>
+                  <td><i class="fas fa-check text-success"></i>500</td>
+                  <td><i class="fas fa-check text-success"></i>1000</td>
+                  <td><i class="fas fa-check text-success"></i>1600</td>
+                  <td><i class="fas fa-check text-success"></i>300</td>
+                </tr>
+                <tr>
+                  <th scope="row">Reclutadores</th>
+                  <td class="gris"><i class="fas fa-times text-danger"></i>0</td>
+                  <td><i class="fas fa-check text-success"></i>1</td>
+                  <td><i class="fas fa-check text-success"></i>5</td>
+                  <td><i class="fas fa-check text-success"></i>10</td>
+                  <td><i class="fas fa-check text-success"></i>10</td>
+                  <td><i class="fas fa-check text-success"></i>3</td>
+                </tr>
+                <tr>
+                  <th scope="row">Vacantes destacadas</th>
+                  <td class="gris"><i class="fas fa-times text-danger"></i>0</td>
+                  <td class="gris"><i class="fas fa-times text-danger"></i>0</td>
+                  <td><i class="fas fa-check text-success"></i>2</td>
+                  <td><i class="fas fa-check text-success"></i>4</td>
+                  <td><i class="fas fa-check text-success"></i>20</td>
+                  <td><i class="fas fa-check text-success"></i>4</td>
+                </tr>
+                <tr>
+                  <th scope="row">Vacantes confidenciales</th>
+                  <td class="gris"><i class="fas fa-times text-danger"></i>0</td>
+                  <td class="gris"><i class="fas fa-times text-danger"></i>0</td>
+                  <td><i class="fas fa-check text-success"></i>1</td>
+                  <td><i class="fas fa-check text-success"></i>2</td>
+                  <td><i class="fas fa-check text-success"></i>10</td>
+                  <td><i class="fas fa-check text-success"></i>2</td>
+                </tr>
+                <tr>
+                  <th scope="row">Talento especializado en TI</th>
+                  <td class="gris">
+                    <i class="fas fa-times text-danger"></i>No disponible
+                  </td>
+                  <td class="gris">
+                    <i class="fas fa-times text-danger"></i>No disponible
+                  </td>
+                  <td class="gris">
+                    <i class="fas fa-times text-danger"></i>No disponible
+                  </td>
+                  <td class="gris">
+                    <i class="fas fa-times text-danger"></i>No disponible
+                  </td>
+                  <td class="gris">
+                    <i class="fas fa-times text-danger"></i>No disponible
+                  </td>
+                  <td><i class="fas fa-check text-success"></i>Disponible</td>
+                </tr>
+                <tr class="botones">
+                  <th scope="row"></th>
+                  <td>
+                    <button
+                      type="submit"
+                      class="boton"
+                      style="background: #0e97ff"
+                    >
+                      Regístrate Gratis
+                    </button>
+                  </td>
+                  <td>
+                    <button type="submit" class="boton">
+                      Comprar por $2,994.00
+                    </button>
+                  </td>
+                  <td>
+                    <button type="submit" class="boton">
+                      Comprar por $5,994.00
+                    </button>
+                  </td>
+                  <td>
+                    <button type="submit" class="boton">
+                      Comprar por $11,394.00
+                    </button>
+                  </td>
+                  <td>
+                    <button type="submit" class="boton">
+                      Comprar por $17,994.00
+                    </button>
+                  </td>
+                  <td>
+                    <button type="submit" class="boton">
+                      Comprar por $20,994.00
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

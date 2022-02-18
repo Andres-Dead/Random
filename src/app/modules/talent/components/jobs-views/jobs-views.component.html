@@ -1,0 +1,2872 @@
+<div class="fondo2">
+    <img src="../../../../../assets/img/circulo2.svg" alt="" />
+  </div>
+  <div class="container-fluid">
+    <div class="empleos">
+      <div class="row">
+        <div class="col-12 col-lg-12 col-md-8 mt-lg-0 mt-5">
+          <h1 *ngIf="arrVisible[0]" class="titulo" id="Templeos">Mis empleos</h1>
+          <h1 *ngIf="arrVisible[1]" class="titulo" id="Templeos">Mis empleos</h1>
+          <h1 *ngIf="arrVisible[2]" class="titulo" id="Tempresas">
+            Empresas que sigues
+          </h1>
+          <h1 *ngIf="arrVisible[3]" class="titulo" id="Tperfil">
+            Visualizaciones de perfil
+          </h1>
+        </div>
+      </div>
+      <nav>
+        <div
+          class="nav nav-tabs d-flex justify-content-between"
+          id="nav-tab"
+          role="tablist"
+        >
+          <a
+            class="nav-item nav-link active"
+            id="nav-postulaciones-tab"
+            data-toggle="tab"
+            href="#nav-postulaciones"
+            role="tab"
+            aria-controls="nav-postulaciones"
+            aria-selected="true"
+            (click)="showMenus(0); updateNotify('applications')"
+  
+            >Postulaciones</a
+          >
+          <a
+            class="nav-item nav-link"
+            id="nav-empgua-tab"
+            data-toggle="tab"
+            href="#nav-empgua"
+            role="tab"
+            aria-controls="nav-empgua"
+            aria-selected="false"
+            (click)="showMenus(1)"
+            >Empleos Guardados</a
+          >
+          <a
+            class="nav-item nav-link"
+            id="nav-emprguar-tab"
+            data-toggle="tab"
+            href="#nav-emprguar"
+            role="tab"
+            aria-controls="nav-emprguar"
+            aria-selected="false"
+            (click)="showMenus(2)"
+            >Empresas guardadas</a
+          >
+          <a
+            class="nav-item nav-link"
+            id="nav-visualizaciones-tab"
+            data-toggle="tab"
+            href="#nav-visualizaciones"
+            role="tab"
+            aria-controls="nav-visualizaciones"
+            aria-selected="false"
+            (click)="showMenus(3); updateNotify('profile_viewed')"
+            >Visualizaciones</a
+          >
+        </div>
+      </nav>
+      <!-- <div class="row">
+        <div class="col-12 col-lg-12 col-md-8 mt-lg-0 mt-5">
+          <h1 *ngIf="arrVisible[0]" class="titulo" id="Templeos">Mis empleos</h1>
+          <h1 *ngIf="arrVisible[1]" class="titulo" id="Templeos">Mis empleos</h1>
+          <h1 *ngIf="arrVisible[2]" class="titulo" id="Tempresas">
+            Empresas que sigues
+          </h1>
+          <h1 *ngIf="arrVisible[3]" class="titulo" id="Tperfil">
+            Visualizaciones de perfil
+          </h1>
+        </div>
+      </div> -->
+      <div class="tab-content" id="nav-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="nav-postulaciones"
+          role="tabpanel"
+          aria-labelledby="nav-postulaciones-tab"
+        >
+          <div class="pPostular" id="pPostular">
+            <div class="row mb-5 mt-5">
+              <div class="col-6 col-lg-2 col-md-4">
+                <label class="text">Clasificar por</label>
+              </div>
+              <div class="col-6 col-lg-3 col-md-3">
+                <div class="dropdown">
+                  <button
+                    class="drop2 dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    {{ this.elegido }}
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" (click)="ordenar(0)"
+                      >Mas Recientes</a
+                    >
+                    <a class="dropdown-item" (click)="ordSalarioMax(0)"
+                      >Salario maximo</a
+                    >
+                    <a class="dropdown-item" (click)="ordSalarioMin(0)"
+                      >Salario minimo</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-12 col-lg-3 col-md-5 mt-3 mt-md-0 d-flex justify-content-end"
+              >
+                <label class="text2"
+                  >Página {{ this.p }} de {{ this.paginas }}</label
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-8 col-md-8">
+                <div class="divh">
+                  <div
+                    class="divh"
+                    *ngIf="this.arrApplications.length != 0; else noApplications"
+                  >
+                    <div
+                      class="row"
+                      *ngFor="
+                        let item of this.arrApplications
+                          | paginate
+                            : {
+                                itemsPerPage: this.numPages,
+                                currentPage: p,
+                                id: 'zero'
+                              }
+                      "
+                    >
+                      <div class="card-group">
+                        <div class="col-lg-9 col-md-8">
+                          <div class="card">
+                            <div class="card-body">
+                              <div class="row">
+                                <div class="col-12">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <label class="text1"
+                                        >Postulado el
+                                        {{ item.date_formatted }}</label
+                                      >
+                                    </div>
+                                  </div>
+                                  <div class="row mb-2 mt-3">
+                                    <div class="col-3 col-lg-2 col-md-2">
+                                      <img
+                                        src="../../../../../assets/img/logoCard.svg"
+                                        alt=""
+                                      />
+                                    </div>
+                                    <div class="col-9 col-lg-10 col-md-10">
+                                      <h5 class="card-title">
+                                        {{ item.name }}
+                                      </h5>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-9 col-lg-12 offset-3">
+                                      <label class="text2">{{
+                                        item.display_name
+                                      }}</label>
+                                      <label class="text3"
+                                        ><i class="fas fa-map-marker-alt mr-1"></i
+                                        >{{ item.location }}</label
+                                      >
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-9 col-lg-12 offset-3">
+                                      <label
+                                        class="card-title"
+                                        *ngIf="item.max_salary != 0"
+                                      >
+                                        ${{ item.min_salary }} - ${{
+                                          item.max_salary
+                                        }}
+                                        mxn</label
+                                      >
+                                      <label
+                                        class="card-title"
+                                        *ngIf="item.max_salary == 0"
+                                      >
+                                        ${{ item.min_salary }} mxn</label
+                                      >
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div
+                                      class="col-5 col-lg-4 col-md-6 offset-lg-8 offset-md-6 offset-7 d-flex justify-content-end mt-3"
+                                    >
+                                      <button
+                                        class="botonR"
+                                        type="button"
+                                        [routerLink]="[
+                                          '/detalle_trabajo',
+                                          item.id_vacant
+                                        ]"
+                                      >
+                                        Ver vacante
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4">
+                          <div class="card estatus">
+                            <div class="card-body" *ngIf="item.status == 0">
+                              <h5 class="card-title">Estado</h5>
+                              <img
+                                src="../../../../../assets/img/revisado.svg"
+                                alt=""
+                                class="mx-auto d-block"
+                              />
+                              <label class="card-text revisado">REVISADO</label>
+                            </div>
+                            <div class="card-body" *ngIf="item.status == 1">
+                              <h5 class="card-title">Estado</h5>
+                              <img
+                                src="../../../../../assets/img/pendiente.svg"
+                                alt=""
+                                class="mx-auto d-block"
+                              />
+                              <label class="card-text pendiente">PENDIENTE</label>
+                            </div>
+                            <div class="card-body" *ngIf="item.status == 2">
+                              <h5 class="card-title">Estado</h5>
+                              <img
+                                src="../../../../../assets/img/aceptado.svg"
+                                alt=""
+                                class="mx-auto d-block"
+                              />
+                              <label class="card-text aceptado">ACEPTADO</label>
+                              <button
+                                class="botonR mt-2"
+                                type="button"
+                                (click)="
+                                  verMensaje(
+                                    item.message,
+                                    item.id_vacant,
+                                    item.id_company,
+                                    'aceptado'
+                                  )
+                                "
+                              >
+                                Ver mensaje
+                              </button>
+                            </div>
+                            <div class="card-body" *ngIf="item.status == 3">
+                              <h5 class="card-title">Estado</h5>
+                              <img
+                                src="../../../../../assets/img/descartado.svg"
+                                alt=""
+                                class="mx-auto d-block"
+                              />
+                              <label class="card-text cubierto"
+                                >VACANTE CUBIERTA</label
+                              >
+                              <button
+                                class="botonR mt-2"
+                                type="button"
+                                (click)="
+                                  verMensaje(
+                                    item.message,
+                                    item.id_vacant,
+                                    item.id_company,
+                                    'cubierta'
+                                  )
+                                "
+                              >
+                                Ver mensaje
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <pagination-controls
+                      class="paginacion"
+                      (pageChange)="p = $event"
+                      id="zero"
+             
+                      previousLabel="Anterior"
+                      nextLabel="Siguiente"
+                    ></pagination-controls>
+                  </div>
+                  <ng-template #noApplications>
+                    <div class="alert alert-success" role="alert">
+                      No tienes empleos guardados, ¡vamos, intenta buscar uno!
+                    </div>
+                  </ng-template>
+                  <!--                 <div class="row">
+                    <div class="card-group">
+                      <div class="col-lg-9 col-md-8">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-12">
+                                <div class="row">
+                                  <div class="col-12">
+                                    <label class="text1"
+                                      >Postulado el 12 de agosto de 2021</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="row mb-2 mt-3">
+                                  <div class="col-3 col-lg-2 col-md-2">
+                                    <img
+                                      src="../../../../../assets/img/logoCard.svg"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div class="col-9 col-lg-10 col-md-10">
+                                    <h5 class="card-title">
+                                      Nombre completo del puesto de trabajo
+                                    </h5>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12">
+                                    <label class="text2"
+                                      >Nombre de la empresa que oferta</label
+                                    >
+                                    <label class="text3"
+                                      ><i class="fas fa-map-marker-alt mr-1"></i
+                                      >Ubicación del empleo</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12 col-lg-7 col-md-12">
+                                    <label class="card-title"
+                                      >$5,500 - $7,200 mxn</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div
+                                    class="col-8 col-lg-4 col-md-6 offset-lg-8 offset-md-6 offset-4 d-flex justify-content-end"
+                                  >
+                                    <button class="botonR" type="button">
+                                      Ver vacante
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4">
+                        <div class="card estatus">
+                          <div class="card-body">
+                            <h5 class="card-title">Estado</h5>
+                            <img
+                              src="../../../../../assets/img/pendiente.svg"
+                              alt=""
+                              class="mx-auto d-block"
+                            />
+                            <label class="card-text pendiente">PENDIENTE</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="card-group">
+                      <div class="col-lg-9 col-md-8">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-12">
+                                <div class="row">
+                                  <div class="col-12">
+                                    <label class="text1" 
+                                      >Postulado el 12 de agosto de 2021</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="row mb-2 mt-3">
+                                  <div class="col-3 col-lg-2 col-md-2">
+                                    <img
+                                      src="../../../../../assets/img/logoCard.svg"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div class="col-9 col-lg-10 col-md-10">
+                                    <h5 class="card-title">
+                                      Nombre completo del puesto de trabajo
+                                    </h5>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12">
+                                    <label class="text2"
+                                      >Nombre de la empresa que oferta</label
+                                    >
+                                    <label class="text3"
+                                      ><i class="fas fa-map-marker-alt mr-1"></i
+                                      >Ubicación del empleo</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12 col-lg-7 col-md-12">
+                                    <label class="card-title"
+                                      >$5,500 - $7,200 mxn</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div
+                                    class="col-8 col-lg-4 col-md-6 offset-lg-8 offset-md-6 offset-4 d-flex justify-content-end"
+                                  >
+                                    <button class="botonR" type="button">
+                                      Ver vacante
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4">
+                        <div class="card estatus">
+                          <div class="card-body">
+                            <h5 class="card-title">Estado</h5>
+                            <img
+                              src="../../../../../assets/img/aceptado.svg"
+                              alt=""
+                              class="mx-auto d-block"
+                            />
+                            <label class="card-text aceptado">ACEPTADO</label>
+                            <button class="botonR mt-2" type="button">
+                              Ver mensaje
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="card-group">
+                      <div class="col-lg-9 col-md-8">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-12">
+                                <div class="row">
+                                  <div class="col-12">
+                                    <label class="text1"
+                                      >Postulado el 12 de agosto de 2021</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="row mb-2 mt-3">
+                                  <div class="col-3 col-lg-2 col-md-2">
+                                    <img
+                                      src="../../../../../assets/img/logoCard.svg"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div class="col-9 col-lg-10 col-md-10">
+                                    <h5 class="card-title">
+                                      Nombre completo del puesto de trabajo
+                                    </h5>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12">
+                                    <label class="text2"
+                                      >Nombre de la empresa que oferta</label
+                                    >
+                                    <label class="text3"
+                                      ><i class="fas fa-map-marker-alt mr-1"></i
+                                      >Ubicación del empleo</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12 col-lg-7 col-md-12">
+                                    <label class="card-title"
+                                      >$5,500 - $7,200 mxn</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div
+                                    class="col-8 col-lg-4 col-md-6 offset-lg-8 offset-md-6 offset-4 d-flex justify-content-end"
+                                  >
+                                    <button class="botonR" type="button">
+                                      Ver vacante
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4">
+                        <div class="card estatus">
+                          <div class="card-body">
+                            <h5 class="card-title">Estado</h5>
+                            <img
+                              src="../../../../../assets/img/descartado.svg"
+                              alt=""
+                              class="mx-auto d-block"
+                            />
+                            <label class="card-text cubierto"
+                              >VACANTE CUBIERTA</label
+                            >
+                            <button class="botonR mt-2" type="button">
+                              Ver mensaje
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="card-group">
+                      <div class="col-lg-9 col-md-8">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-12">
+                                <div class="row">
+                                  <div class="col-12">
+                                    <label class="text1"
+                                      >Postulado el 12 de agosto de 2021</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="row mb-2 mt-3">
+                                  <div class="col-3 col-lg-2 col-md-2">
+                                    <img
+                                      src="../../../../../assets/img/logoCard.svg"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div class="col-9 col-lg-10 col-md-10">
+                                    <h5 class="card-title">
+                                      Nombre completo del puesto de trabajo
+                                    </h5>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12">
+                                    <label class="text2"
+                                      >Nombre de la empresa que oferta</label
+                                    >
+                                    <label class="text3"
+                                      ><i class="fas fa-map-marker-alt mr-1"></i
+                                      >Ubicación del empleo</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12 col-lg-7 col-md-12">
+                                    <label class="card-title"
+                                      >$5,500 - $7,200 mxn</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div
+                                    class="col-8 col-lg-4 col-md-6 offset-lg-8 offset-md-6 offset-4 d-flex justify-content-end"
+                                  >
+                                    <button class="botonR" type="button">
+                                      Ver vacante
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4">
+                        <div class="card estatus">
+                          <div class="card-body">
+                            <h5 class="card-title">Estado</h5>
+                            <img
+                              src="../../../../../assets/img/revisado.svg"
+                              alt=""
+                              class="mx-auto d-block"
+                            />
+                            <label class="card-text revisado">REVISADO</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="card-group">
+                      <div class="col-lg-9 col-md-8">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-12">
+                                <div class="row">
+                                  <div class="col-12">
+                                    <label class="text1"
+                                      >Postulado el 12 de agosto de 2021</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="row mb-2 mt-3">
+                                  <div class="col-3 col-lg-2 col-md-2">
+                                    <img
+                                      src="../../../../../assets/img/logoCard.svg"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div class="col-9 col-lg-10 col-md-10">
+                                    <h5 class="card-title">
+                                      Nombre completo del puesto de trabajo
+                                    </h5>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12">
+                                    <label class="text2"
+                                      >Nombre de la empresa que oferta</label
+                                    >
+                                    <label class="text3"
+                                      ><i class="fas fa-map-marker-alt mr-1"></i
+                                      >Ubicación del empleo</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12 col-lg-7 col-md-12">
+                                    <label class="card-title"
+                                      >$5,500 - $7,200 mxn</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div
+                                    class="col-8 col-lg-4 col-md-6 offset-lg-8 offset-md-6 offset-4 d-flex justify-content-end"
+                                  >
+                                    <button class="botonR" type="button">
+                                      Ver vacante
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4">
+                        <div class="card estatus">
+                          <div class="card-body">
+                            <h5 class="card-title">Estado</h5>
+                            <img
+                              src="../../../../../assets/img/pendiente.svg"
+                              alt=""
+                              class="mx-auto d-block"
+                            />
+                            <label class="card-text pendiente">PENDIENTE</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="card-group">
+                      <div class="col-lg-9 col-md-8">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-12">
+                                <div class="row">
+                                  <div class="col-12">
+                                    <label class="text1"
+                                      >Postulado el 12 de agosto de 2021</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="row mb-2 mt-3">
+                                  <div class="col-3 col-lg-2 col-md-2">
+                                    <img
+                                      src="../../../../../assets/img/logoCard.svg"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div class="col-9 col-lg-10 col-md-10">
+                                    <h5 class="card-title">
+                                      Nombre completo del puesto de trabajo
+                                    </h5>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12">
+                                    <label class="text2"
+                                      >Nombre de la empresa que oferta</label
+                                    >
+                                    <label class="text3"
+                                      ><i class="fas fa-map-marker-alt mr-1"></i
+                                      >Ubicación del empleo</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12 col-lg-7 col-md-12">
+                                    <label class="card-title"
+                                      >$5,500 - $7,200 mxn</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div
+                                    class="col-8 col-lg-4 col-md-6 offset-lg-8 offset-md-6 offset-4 d-flex justify-content-end"
+                                  >
+                                    <button class="botonR" type="button">
+                                      Ver vacante
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4">
+                        <div class="card estatus">
+                          <div class="card-body">
+                            <h5 class="card-title">Estado</h5>
+                            <img
+                              src="../../../../../assets/img/revisado.svg"
+                              alt=""
+                              class="mx-auto d-block"
+                            />
+                            <label class="card-text revisado">REVISADO</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+              <!-- Termina postulaciones -->
+              <div class="col-lg-4 col-md-4">
+                <div class="card anuncio">
+                  <div class="card-body">
+                    <label class="text1">Anunciar vacante</label>
+                    <label class="text2"
+                      >¡Estas por expandir tu empresa y necesitas que todos te
+                      vean?</label
+                    >
+                    <label class="text2"><b>¡Anúnciate con nosotros!</b></label>
+                    <img
+                      class="imganuncio mx-auto d-block"
+                      src="../../../../../assets/img/anuncio.svg"
+                      alt=""
+                    />
+                    <button class="botonR mx-auto d-block" type="button">
+                      Crear anuncio
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-empgua"
+          role="tabpanel"
+          aria-labelledby="nav-empgua-tab"
+        >
+          <div class="pEmpleos" id="pEmpleos">
+            <div class="row mb-5 mt-5">
+              <div class="col-6 col-lg-2 col-md-4">
+                <label class="text">Clasificar por</label>
+              </div>
+              <div class="col-6 col-lg-3 col-md-3">
+                <div class="dropdown">
+                  <button
+                    class="drop2 dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    {{ this.elegido }}
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" (click)="ordenar(1)"
+                      >Mas Recientes</a
+                    >
+                    <a class="dropdown-item" (click)="ordenaraz()">Nombre A-Z</a>
+                    <a class="dropdown-item" (click)="ordenarza()">Nombre Z-A</a>
+                    <a class="dropdown-item" (click)="ordSalarioMax(1)"
+                      >Salario maximo</a
+                    >
+                    <a class="dropdown-item" (click)="ordSalarioMin(1)"
+                      >Salario minimo</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-12 col-lg-3 col-md-5 mt-3 mt-md-0 d-flex justify-content-end"
+              >
+                <label class="text2"
+                  >Página {{ this.p1 }} de {{ this.paginas1 }}</label
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-8 col-md-8">
+                <div
+                  class="divh"
+                  *ngIf="this.arrFavs.length != 0; else elseBlock"
+                >
+                  <div
+                    class="card"
+                    *ngFor="
+                      let item of this.arrFavs
+                        | paginate
+                          : {
+                              itemsPerPage: this.numPages,
+                              currentPage: p1,
+                              id: 'first'
+                            }
+                    "
+                  >
+                    <div class="card-body">
+                      <div class="row mb-2">
+                        <div class="col-2 col-lg-1 col-md-2">
+                          <img src="../../../../../assets/img/logoCard.svg" alt="" />
+                        </div>
+                        <div class="col-8 col-lg-4 col-md-9">
+                          <h5 class="card-title">
+                            {{ item.vacant_name }}
+                          </h5>
+                        </div>
+                        <div
+                          class="col-2 col-lg-1 col-md-1 offset-lg-6 offset-md-0"
+                        >
+                          <div
+                            class="cuadrofav"
+                            (click)="borrarFavorito(item.id_fav_job)"
+                          >
+                            <img
+                              class="fav mx-auto d-block"
+                              src="../../../../../assets/img/heart relleno.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-10 col-lg-12 offset-2">
+                          <label class="text2">{{ item.company_name }}</label>
+                          <label class="text3"
+                            ><i class="fas fa-map-marker-alt"></i
+                            >{{ item.location }}</label
+                          >
+                          <p class="text4 text-truncate">
+                            {{ item.description }}
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-12 col-lg-7 col-md-7 offset-lg-5 offset-md-5 d-flex justify-content-end"
+                        >
+                          <label class="card-title" *ngIf="item.max_salary != 0">
+                            ${{ item.min_salary }} - ${{
+                              item.max_salary
+                            }}
+                            mxn</label
+                          >
+                          <label class="card-title" *ngIf="item.max_salary == 0">
+                            ${{ item.min_salary }} mxn</label
+                          >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-8 col-lg-6 col-md-6 offset-lg-6 offset-md-6 offset-4 d-flex justify-content-end"
+                        >
+                          <button
+                            class="botonR mt-2"
+                            type="button"
+                            [routerLink]="['/detalle_trabajo', item.id_vacant]"
+                          >
+                            Postúlate ahora
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <pagination-controls
+                    class="paginacion"
+                    (pageChange)="p1 = $event"
+                    id="first"
+                    
+                    previousLabel="Anterior"
+                    nextLabel="Siguiente"
+                  ></pagination-controls>
+                </div>
+                <ng-template #elseBlock>
+                  <div class="alert alert-success" role="alert">
+                    No tienes empleos guardados, ¡vamos, intenta buscar uno!
+                  </div>
+                </ng-template>
+              </div>
+              <div class="col-lg-4 col-md-4">
+                <div class="card anuncio">
+                  <div class="card-body">
+                    <label class="text1">Anunciar vacante</label>
+                    <label class="text2"
+                      >¡Estas por expandir tu empresa y necesitas que todos te
+                      vean?</label
+                    >
+                    <label class="text2"><b>¡Anúnciate con nosotros!</b></label>
+                    <img
+                      class="imganuncio mx-auto d-block"
+                      src="../../../../../assets/img/anuncio.svg"
+                      alt=""
+                    />
+                    <button class="botonR mx-auto d-block" type="button">
+                      Crear anuncio
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-emprguar"
+          role="tabpanel"
+          aria-labelledby="nav-emprguar-tab"
+        >
+          <div class="pEmpresas seguidas" id="pEmpresas">
+            <div class="row mt-lg-5">
+              <div class="col-lg-12">
+                <div class="row">
+                  <div
+                    class="col-3 col-lg-3"
+                    *ngFor="
+                      let item of this.arrCompanies
+                        | paginate
+                          : {
+                              itemsPerPage: this.numPages,
+                              currentPage: p3,
+                              id: 'third'
+                            }
+                    "
+                  >
+                    <div
+                      class="row mb-5 hand"
+                      (click)="linkToEmpresa(item.id_company)"
+                    >
+                      <div class="col-4 col-lg-3 col-md-3">
+                        <div class="cuadro">
+                          <img
+                            class="mx-auto d-block imgEmpGuar"
+                            [src]="item.profile_pic"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <div class="col-8 col-lg-9 col-md-9">
+                        <label class="nombre">{{ item.display_name }}</label
+                        ><br />
+                        <label class="vacante">{{ item.vacants }} Vacantes</label>
+                      </div>
+                    </div>
+                  </div>
+                  <pagination-controls
+                    class="paginacion"
+                    (pageChange)="p3 = $event"
+                    id="third"
+                    
+                    previousLabel="Anterior"
+                    nextLabel="Siguiente"
+                  ></pagination-controls>
+                </div>
+  
+                <!--------------------- Carrusel-------------------------------------------->
+                <!--<div
+                  id="recipeCarousel"
+                  class="carousel slide"
+                  data-ride="carousel"
+                > 
+                  <div class="carousel-inner w-100" role="listbox">
+                    <div class="carousel-item active">
+                      <div class="row">
+                        <div
+                          class="col-3 col-lg-3"
+                          *ngFor="let item of this.arrCompanies.slice(0, 2)"
+                        >
+                          <div class="row mb-5">
+                            <div class="col-4 col-lg-3 col-md-3">
+                              <div class="cuadro">
+                                <img
+                                  class="mx-auto d-block"
+                                  src="../../../../../assets/img/chivas.svg"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                            <div class="col-8 col-lg-9 col-md-9">
+                              <label class="nombre"
+                                >Nombre completo de la empresa</label
+                              >
+                              <label class="vacante">## Vacantes</label>
+                            </div>
+                          </div>
+                        </div>
+                                                <div class="col-3 col-lg-3">
+                            <div class="row mb-5">
+                              <div class="col-4 col-lg-3 col-md-3">
+                                <div class="cuadro">
+                                  <img
+                                    class="mx-auto d-block"
+                                    src="../../../../../assets/img/chivas.svg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-8 col-lg-9 col-md-9">
+                                <label class="nombre"
+                                  >Nombre completo de la empresa</label
+                                >
+                                <label class="vacante">## Vacantes</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-3 col-lg-3">
+                            <div class="row mb-5">
+                              <div class="col-4 col-lg-3 col-md-3">
+                                <div class="cuadro">
+                                  <img
+                                    class="mx-auto d-block"
+                                    src="../../../../../assets/img/chivas.svg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-8 col-lg-9 col-md-9">
+                                <label class="nombre"
+                                  >Nombre completo de la empresa</label
+                                >
+                                <label class="vacante">## Vacantes</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-3 col-lg-3">
+                            <div class="row mb-5">
+                              <div class="col-4 col-lg-3 col-md-3">
+                                <div class="cuadro">
+                                  <img
+                                    class="mx-auto d-block"
+                                    src="../../../../../assets/img/chivas.svg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-8 col-lg-9 col-md-9">
+                                <label class="nombre"
+                                  >Nombre completo de la empresa</label
+                                >
+                                <label class="vacante">## Vacantes</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-3 col-lg-3">
+                            <div class="row mb-5">
+                              <div class="col-4 col-lg-3 col-md-3">
+                                <div class="cuadro">
+                                  <img
+                                    class="mx-auto d-block"
+                                    src="../../../../../assets/img/chivas.svg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-8 col-lg-9 col-md-9">
+                                <label class="nombre"
+                                  >Nombre completo de la empresa</label
+                                >
+                                <label class="vacante">## Vacantes</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-3 col-lg-3">
+                            <div class="row mb-5">
+                              <div class="col-4 col-lg-3 col-md-3">
+                                <div class="cuadro">
+                                  <img
+                                    class="mx-auto d-block"
+                                    src="../../../../../assets/img/chivas.svg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-8 col-lg-9 col-md-9">
+                                <label class="nombre"
+                                  >Nombre completo de la empresa</label
+                                >
+                                <label class="vacante">## Vacantes</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-3 col-lg-3">
+                            <div class="row mb-5">
+                              <div class="col-4 col-lg-3 col-md-3">
+                                <div class="cuadro">
+                                  <img
+                                    class="mx-auto d-block"
+                                    src="../../../../../assets/img/chivas.svg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-8 col-lg-9 col-md-9">
+                                <label class="nombre"
+                                  >Nombre completo de la empresa</label
+                                >
+                                <label class="vacante">## Vacantes</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-3 col-lg-3">
+                            <div class="row mb-5">
+                              <div class="col-4 col-lg-3 col-md-3">
+                                <div class="cuadro">
+                                  <img
+                                    class="mx-auto d-block"
+                                    src="../../../../../assets/img/chivas.svg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-8 col-lg-9 col-md-9">
+                                <label class="nombre"
+                                  >Nombre completo de la empresa</label
+                                >
+                                <label class="vacante">## Vacantes</label>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="row">
+                        <div
+                          class="col-3 col-lg-3"
+                          *ngFor="let item of this.arrCompanies.slice(2, 6)"
+                        >
+                          <div class="row mb-5">
+                            <div class="col-4 col-lg-3 col-md-3">
+                              <div class="cuadro">
+                                <img
+                                  class="mx-auto d-block"
+                                  src="../../../../../assets/img/chivas.svg"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                            <div class="col-8 col-lg-9 col-md-9">
+                              <label class="nombre"
+                                >Nombre completo de la empresa</label
+                              >
+                              <label class="vacante">## Vacantes</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-3 col-lg-3">
+                            <div class="row mb-5">
+                              <div class="col-4 col-lg-3 col-md-3">
+                                <div class="cuadro">
+                                  <img
+                                    class="mx-auto d-block"
+                                    src="../../../../../assets/img/chivas.svg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-8 col-lg-9 col-md-9">
+                                <label class="nombre"
+                                  >Nombre completo de la empresa</label
+                                >
+                                <label class="vacante">## Vacantes</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-3 col-lg-3">
+                            <div class="row mb-5">
+                              <div class="col-4 col-lg-3 col-md-3">
+                                <div class="cuadro">
+                                  <img
+                                    class="mx-auto d-block"
+                                    src="../../../../../assets/img/chivas.svg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-8 col-lg-9 col-md-9">
+                                <label class="nombre"
+                                  >Nombre completo de la empresa</label
+                                >
+                                <label class="vacante">## Vacantes</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-3 col-lg-3">
+                            <div class="row mb-5">
+                              <div class="col-4 col-lg-3 col-md-3">
+                                <div class="cuadro">
+                                  <img
+                                    class="mx-auto d-block"
+                                    src="../../../../../assets/img/chivas.svg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-8 col-lg-9 col-md-9">
+                                <label class="nombre"
+                                  >Nombre completo de la empresa</label
+                                >
+                                <label class="vacante">## Vacantes</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-3 col-lg-3">
+                            <div class="row mb-5">
+                              <div class="col-4 col-lg-3 col-md-3">
+                                <div class="cuadro">
+                                  <img
+                                    class="mx-auto d-block"
+                                    src="../../../../../assets/img/chivas.svg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-8 col-lg-9 col-md-9">
+                                <label class="nombre"
+                                  >Nombre completo de la empresa</label
+                                >
+                                <label class="vacante">## Vacantes</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-3 col-lg-3">
+                            <div class="row mb-5">
+                              <div class="col-4 col-lg-3 col-md-3">
+                                <div class="cuadro">
+                                  <img
+                                    class="mx-auto d-block"
+                                    src="../../../../../assets/img/chivas.svg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-8 col-lg-9 col-md-9">
+                                <label class="nombre"
+                                  >Nombre completo de la empresa</label
+                                >
+                                <label class="vacante">## Vacantes</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-3 col-lg-3">
+                            <div class="row mb-5">
+                              <div class="col-4 col-lg-3 col-md-3">
+                                <div class="cuadro">
+                                  <img
+                                    class="mx-auto d-block"
+                                    src="../../../../../assets/img/chivas.svg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-8 col-lg-9 col-md-9">
+                                <label class="nombre"
+                                  >Nombre completo de la empresa</label
+                                >
+                                <label class="vacante">## Vacantes</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-3 col-lg-3">
+                            <div class="row mb-5">
+                              <div class="col-4 col-lg-3 col-md-3">
+                                <div class="cuadro">
+                                  <img
+                                    class="mx-auto d-block"
+                                    src="../../../../../assets/img/chivas.svg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-8 col-lg-9 col-md-9">
+                                <label class="nombre"
+                                  >Nombre completo de la empresa</label
+                                >
+                                <label class="vacante">## Vacantes</label>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <a
+                    class="carousel-control-prev"
+                    href="#recipeCarousel"
+                    role="button"
+                    data-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a
+                    class="carousel-control-next"
+                    href="#recipeCarousel"
+                    role="button"
+                    data-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div> -->
+                <!--------------------- Termina Carrusel-------------------------------------------->
+              </div>
+            </div>
+            <div class="row mt-lg-5">
+              <div class="col-lg-4 d-none d-md-block">
+                <div class="row">
+                  <div class="col-12 col-lg-12 col-md-8 mt-lg-0 mt-5">
+                    <h1 class="sub2 mb-3">Filtros</h1>
+                    <label class="text7" (click)="limpiar()"
+                      ><u>Limpiar Filtros</u></label
+                    >
+                  </div>
+                </div>
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading1">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse1"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
+                        Fecha de publicación
+                      </button>
+                    </h2>
+                    <div
+                      id="collapse1"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="heading1"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="fechaPublicacion(this.fechaHoy)">
+                              Hoy
+                            </button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="fechaPublicacion(this.fechaAyer)">
+                              Últimas 24 horas
+                            </button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="fechaPublicacion(this.fechaSemPas)">
+                              Última semana
+                            </button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="fechaPublicacion(this.fechaUlQui)">
+                              Últimos 15 días
+                            </button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading2">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse2"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
+                        Tipo de trabajo
+                      </button>
+                    </h2>
+                    <div
+                      id="collapse2"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="heading2"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="tipodeTrabajo('1')">
+                              Permanente
+                            </button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="tipodeTrabajo('2')">
+                              Temporal/Por proyecto
+                            </button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="tipodeTrabajo('3')">Becario</button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="tipodeTrabajo('4')">
+                              Tiempo Completo
+                            </button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="tipodeTrabajo('5')">
+                              Medio Tiempo
+                            </button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="tipodeTrabajo('6')">Nómina</button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="tipodeTrabajo('7')">
+                              Honorarios Asimilados
+                            </button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingT3">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse3"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        Salario estimado
+                      </button>
+                    </h2>
+                    <div
+                      id="collapse3"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="heading3"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <div class="row">
+                          <form [formGroup]="formGroup">
+                            <div class="col-5">
+                              <input
+                                type="number"
+                                class="input1"
+                                placeholder="1000"
+                                formControlName="min"
+                              />
+                            </div>
+                            <div class="col-2">
+                              <label class="text-center"><b>-</b></label>
+                            </div>
+                            <div class="col-5">
+                              <input
+                                type="number"
+                                class="input1"
+                                placeholder="1000"
+                                formControlName="max"
+                              />
+                            </div>
+                            <button (click)="rango()">Aplicar</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading4">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse4  "
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
+                        Modo de empleo
+                      </button>
+                    </h2>
+                    <div
+                      id="collapse4"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="heading4"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="modoEmpleo('1')">Remoto</button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="modoEmpleo('2')">Presencial</button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="modoEmpleo('3')">Desde casa</button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading5">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse5"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
+                        Nivel de educación
+                      </button>
+                    </h2>
+                    <div
+                      id="collapse5"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="heading5"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="nivelEducativo('1')">
+                              Primaria
+                            </button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="nivelEducativo('2')">
+                              Secundaria
+                            </button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="nivelEducativo('3')">
+                              Preparatoria
+                            </button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="nivelEducativo('4')">
+                              Bachillerato Tecnológico
+                            </button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="nivelEducativo('5')">
+                              Licenciatura
+                            </button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="nivelEducativo('6')">
+                              Especialidad
+                            </button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="nivelEducativo('7')">
+                              Maestria
+                            </button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-8">
+                            <button (click)="nivelEducativo('8')">
+                              Doctorado
+                            </button>
+                          </div>
+                          <div class="col-4">
+                            <label></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 d-md-none d-flex justify-content-end">
+                <button
+                  class="botonfiltro"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalFiltros"
+                >
+                  Filtrar
+                </button>
+              </div>
+              <div class="col-lg-8">
+                <div class="row">
+                  <div class="col-12 col-lg-12 col-md-12 mt-lg-0 mt-5">
+                    <h1 class="sub3">¿Dónde?</h1>
+                  </div>
+                  <div
+                    class="col-12 col-md-4 col-lg-8 col-xl-8 col-xxl-6 mt-md-0 mt-5"
+                  >
+                    <div class="input-group">
+                      <input
+                        [(ngModel)]="txtBuscar"
+                        (search)="limpiar()"
+                        type="search"
+                        style="font-family: 'SegoeUI', 'Font Awesome 5 Pro'"
+                        class="form-control busqueda"
+                        placeholder="&#xf3c5;  Ubicación"
+                        aria-label="Search"
+                        aria-describedby="search-addon"
+                      />
+                      <button
+                        *ngIf="txtBuscar"
+                        type="button"
+                        class="btnBusqueda"
+                        (click)="buscar()"
+                      >
+                        Buscar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-5 mt-3 mt-md-3">
+                  <div class="col-6 col-lg-3 col-md-4">
+                    <label class="text">Clasificar por</label>
+                  </div>
+                  <div class="col-6 col-lg-4 col-md-3">
+                    <div class="dropdown">
+                      <button
+                        class="drop2 dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        {{ this.elegido }}
+                      </button>
+                      <div
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton"
+                      >
+                        <a class="dropdown-item" (click)="ordenar(2)"
+                          >Más recientes</a
+                        >
+                        <a class="dropdown-item" (click)="ordSalarioMin(2)"
+                          >Salario Mínimo</a
+                        >
+                        <a class="dropdown-item" (click)="ordSalarioMax(2)"
+                          >Salario Máximo</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-12 col-lg-3 col-md-5 offset-lg-2 d-flex justify-content-end mt-5 mt-md-0"
+                  >
+                    <label class="text2"
+                      >Página {{ this.p2 }} de {{ this.paginas2 }}</label
+                    >
+                  </div>
+                </div>
+                <div class="divh">
+                  <div
+                    class="divh"
+                    *ngIf="this.arrFavsVacancies.length != 0; else noVacants"
+                  >
+                    <div
+                      class="card"
+                      *ngFor="
+                        let item of this.arrFavsVacancies
+                          | paginate
+                            : {
+                                itemsPerPage: this.numPages,
+                                currentPage: p2,
+                                id: 'second'
+                              }
+                      "
+                    >
+                      <div class="ribbon" *ngIf="item.new == 1">Nuevo</div>
+                      <div class="card-body">
+                        <div class="row mb-2">
+                          <div class="col-3 col-lg-1 col-md-2">
+                            <img src="../../../../../assets/img/logoCard.svg" alt="" />
+                          </div>
+                          <div class="col-9 col-lg-4 col-md-6">
+                            <h5 class="card-title">
+                              {{ item.name }}
+                            </h5>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-9 col-lg-12 offset-3">
+                            <label class="text2">{{ item.company }}</label>
+                            <label class="text3"
+                              ><i class="fas fa-map-marker-alt mr-1"></i
+                              >{{ item.location }}</label
+                            >
+                            <p class="text4 text-truncate">
+                              {{ item.description }}
+                            </p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div
+                            class="col-12 col-lg-7 col-md-7 offset-lg-5 offset-md-5 d-flex justify-content-end"
+                          >
+                            <label
+                              class="card-title"
+                              *ngIf="item.max_salary != 0"
+                            >
+                              ${{ item.min_salary }} - ${{
+                                item.max_salary
+                              }}
+                              mxn</label
+                            >
+                            <label
+                              class="card-title"
+                              *ngIf="item.max_salary == 0"
+                            >
+                              ${{ item.min_salary }} mxn</label
+                            >
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div
+                            class="col-8 col-lg-6 col-md-4 offset-lg-6 offset-md-8 offset-4 d-flex justify-content-end"
+                          >
+                            <button class="botonR mt-2" type="button">
+                              Postúlate ahora
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <pagination-controls
+                    class="paginacion"
+                    (pageChange)="p2 = $event"
+                    id="second"
+                    
+                    previousLabel="Anterior"
+                    nextLabel="Siguiente"
+                  ></pagination-controls>
+                  <ng-template #noVacants>
+                    <div class="alert alert-success" role="alert">
+                      No hay vacantes disponibles
+                    </div>
+                  </ng-template>
+                  <!-- <div class="card">
+                    <div class="ribbon">Nuevo</div>
+                    <div class="card-body">
+                      <div class="row mb-2">
+                        <div class="col-3 col-lg-1 col-md-2">
+                          <img src="../../../../../assets/img/logoCard.svg" alt="" />
+                        </div>
+                        <div class="col-9 col-lg-4 col-md-6">
+                          <h5 class="card-title">
+                            Nombre completo del puesto de trabajo
+                          </h5>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text2"
+                            >Nombre de la empresa que oferta</label
+                          >
+                          <label class="text3"
+                            ><i class="fas fa-map-marker-alt mr-1"></i>Ubicación
+                            del empleo</label
+                          >
+                          <p class="text4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse cillum dolore eu
+                            fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia
+                            deserunt mollit anim id est laborum.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-12 col-lg-7 col-md-7 offset-lg-5 offset-md-5 d-flex justify-content-end"
+                        >
+                          <label class="card-title">$5,500 - $7,200 mxn</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-8 col-lg-4 col-md-4 offset-lg-8 offset-md-8 offset-4 d-flex justify-content-end"
+                        >
+                          <button class="botonR mt-2" type="button">
+                            Postúlate ahora
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="ribbon">Nuevo</div>
+                    <div class="card-body">
+                      <div class="row mb-2">
+                        <div class="col-3 col-lg-1 col-md-2">
+                          <img src="../../../../../assets/img/logoCard.svg" alt="" />
+                        </div>
+                        <div class="col-9 col-lg-4 col-md-6">
+                          <h5 class="card-title">
+                            Nombre completo del puesto de trabajo
+                          </h5>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text2"
+                            >Nombre de la empresa que oferta</label
+                          >
+                          <label class="text3"
+                            ><i class="fas fa-map-marker-alt"></i>Ubicación del
+                            empleo</label
+                          >
+                          <p class="text4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse cillum dolore eu
+                            fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia
+                            deserunt mollit anim id est laborum.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-12 col-lg-7 col-md-7 offset-lg-5 offset-md-5 d-flex justify-content-end"
+                        >
+                          <label class="card-title">$5,500 - $7,200 mxn</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-8 col-lg-4 col-md-4 offset-lg-8 offset-md-8 offset-4 d-flex justify-content-end"
+                        >
+                          <button class="botonR mt-2" type="button">
+                            Postúlate ahora
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="ribbon">Nuevo</div>
+                    <div class="card-body">
+                      <div class="row mb-2">
+                        <div class="col-3 col-lg-1 col-md-2">
+                          <img src="../../../../../assets/img/logoCard.svg" alt="" />
+                        </div>
+                        <div class="col-9 col-lg-4 col-md-6">
+                          <h5 class="card-title">
+                            Nombre completo del puesto de trabajo
+                          </h5>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text2"
+                            >Nombre de la empresa que oferta</label
+                          >
+                          <label class="text3"
+                            ><i class="fas fa-map-marker-alt"></i>Ubicación del
+                            empleo</label
+                          >
+                          <p class="text4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse cillum dolore eu
+                            fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia
+                            deserunt mollit anim id est laborum.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-12 col-lg-7 col-md-7 offset-lg-5 offset-md-5 d-flex justify-content-end"
+                        >
+                          <label class="card-title">$5,500 - $7,200 mxn</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-8 col-lg-4 col-md-4 offset-lg-8 offset-md-8 offset-4 d-flex justify-content-end"
+                        >
+                          <button class="botonR mt-2" type="button">
+                            Postúlate ahora
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="ribbon">Nuevo</div>
+                    <div class="card-body">
+                      <div class="row mb-2">
+                        <div class="col-3 col-lg-1 col-md-2">
+                          <img src="../../../../../assets/img/logoCard.svg" alt="" />
+                        </div>
+                        <div class="col-9 col-lg-4 col-md-6">
+                          <h5 class="card-title">
+                            Nombre completo del puesto de trabajo
+                          </h5>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text2"
+                            >Nombre de la empresa que oferta</label
+                          >
+                          <label class="text3"
+                            ><i class="fas fa-map-marker-alt"></i>Ubicación del
+                            empleo</label
+                          >
+                          <p class="text4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse cillum dolore eu
+                            fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia
+                            deserunt mollit anim id est laborum.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-12 col-lg-7 col-md-7 offset-lg-5 offset-md-5 d-flex justify-content-end"
+                        >
+                          <label class="card-title">$5,500 - $7,200 mxn</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-8 col-lg-4 col-md-4 offset-lg-8 offset-md-8 offset-4 d-flex justify-content-end"
+                        >
+                          <button class="botonR mt-2" type="button">
+                            Postúlate ahora
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="ribbon">Nuevo</div>
+                    <div class="card-body">
+                      <div class="row mb-2">
+                        <div class="col-3 col-lg-1 col-md-2">
+                          <img src="../../../../../assets/img/logoCard.svg" alt="" />
+                        </div>
+                        <div class="col-9 col-lg-4 col-md-6">
+                          <h5 class="card-title">
+                            Nombre completo del puesto de trabajo
+                          </h5>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text2"
+                            >Nombre de la empresa que oferta</label
+                          >
+                          <label class="text3"
+                            ><i class="fas fa-map-marker-alt"></i>Ubicación del
+                            empleo</label
+                          >
+                          <p class="text4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse cillum dolore eu
+                            fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia
+                            deserunt mollit anim id est laborum.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-12 col-lg-7 col-md-7 offset-lg-5 offset-md-5 d-flex justify-content-end"
+                        >
+                          <label class="card-title">$5,500 - $7,200 mxn</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-8 col-lg-4 col-md-4 offset-lg-8 offset-md-8 offset-4 d-flex justify-content-end"
+                        >
+                          <button class="botonR mt-2" type="button">
+                            Postúlate ahora
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="ribbon">Nuevo</div>
+                    <div class="card-body">
+                      <div class="row mb-2">
+                        <div class="col-3 col-lg-1 col-md-2">
+                          <img src="../../../../../assets/img/logoCard.svg" alt="" />
+                        </div>
+                        <div class="col-9 col-lg-4 col-md-6">
+                          <h5 class="card-title">
+                            Nombre completo del puesto de trabajo
+                          </h5>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text2"
+                            >Nombre de la empresa que oferta</label
+                          >
+                          <label class="text3"
+                            ><i class="fas fa-map-marker-alt"></i>Ubicación del
+                            empleo</label
+                          >
+                          <p class="text4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse cillum dolore eu
+                            fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia
+                            deserunt mollit anim id est laborum.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-12 col-lg-7 col-md-7 offset-lg-5 offset-md-5 d-flex justify-content-end"
+                        >
+                          <label class="card-title">$5,500 - $7,200 mxn</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-8 col-lg-4 col-md-4 offset-lg-8 offset-md-8 offset-4 d-flex justify-content-end"
+                        >
+                          <button class="botonR mt-2" type="button">
+                            Postúlate ahora
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="ribbon">Nuevo</div>
+                    <div class="card-body">
+                      <div class="row mb-2">
+                        <div class="col-3 col-lg-1 col-md-2">
+                          <img src="../../../../../assets/img/logoCard.svg" alt="" />
+                        </div>
+                        <div class="col-9 col-lg-4 col-md-6">
+                          <h5 class="card-title">
+                            Nombre completo del puesto de trabajo
+                          </h5>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label class="text2"
+                            >Nombre de la empresa que oferta</label
+                          >
+                          <label class="text3"
+                            ><i class="fas fa-map-marker-alt"></i>Ubicación del
+                            empleo</label
+                          >
+                          <p class="text4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse cillum dolore eu
+                            fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia
+                            deserunt mollit anim id est laborum.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-12 col-lg-7 col-md-7 offset-lg-5 offset-md-5 d-flex justify-content-end"
+                        >
+                          <label class="card-title">$5,500 - $7,200 mxn</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div
+                          class="col-8 col-lg-4 col-md-4 offset-lg-8 offset-md-8 offset-4 d-flex justify-content-end"
+                        >
+                          <button class="botonR mt-2" type="button">
+                            Postúlate ahora
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-visualizaciones"
+          role="tabpanel"
+          aria-labelledby="nav-visualizaciones-tab"
+        >
+          <div class="pVisitas" id="pVisitas">
+            <div class="row">
+              <div
+                class="col-12 col-lg-3 col-md-6"
+                *ngFor="let item of this.arrVisualizations"
+              >
+                <div class="card">
+                  <div class="card-body">
+                    <label class="text">Visto el {{ item.date_visit }}</label>
+                    <div class="cuadroimg mx-auto d-block">
+                      <img
+                        class="mx-auto d-block"
+                        [src]="item.profile_pic"
+                        alt=""
+                      />
+                    </div>
+                    <label class="text2">{{ item.display_name }}</label>
+                    <label class="text3">{{ item.vacants }} Vacantes</label>
+                    <label class="text4"
+                      ><i class="fas fa-map-marker-alt mr-2"></i>{{ item.city }},
+                      {{ item.state }}, {{ item.country }}</label
+                    >
+                    <button
+                      class="botonR mt-2"
+                      type="button"
+                      (click)="linkToEmpresa(item.id_company)"
+                    >
+                      Ver perfil de la empresa
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!--  <div class="col-12 col-lg-3 col-md-6">
+                <div class="card">
+                  <div class="card-body">
+                    <label class="text">Hace 1 día</label>
+                    <div class="cuadroimg mx-auto d-block">
+                      <img
+                        class="mx-auto d-block"
+                        src="../../../../../assets/img/chivas.svg"
+                        alt=""
+                      />
+                    </div>
+                    <label class="text2">Nombre completo de la empresa</label>
+                    <label class="text3">## Vacantes</label>
+                    <label class="text4"
+                      ><i class="fas fa-map-marker-alt mr-2"></i>Ubicación del
+                      empleo</label
+                    >
+                    <button class="botonR mt-2" type="button">
+                      Ver perfil de la empresa
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-3 col-md-6">
+                <div class="card">
+                  <div class="card-body">
+                    <label class="text">Hace 1 día</label>
+                    <div class="cuadroimg mx-auto d-block">
+                      <img
+                        class="mx-auto d-block"
+                        src="../../../../../assets/img/chivas.svg"
+                        alt=""
+                      />
+                    </div>
+                    <label class="text2">Nombre completo de la empresa</label>
+                    <label class="text3">## Vacantes</label>
+                    <label class="text4"
+                      ><i class="fas fa-map-marker-alt mr-2"></i>Ubicación del
+                      empleo</label
+                    >
+                    <button class="botonR mt-2" type="button">
+                      Ver perfil de la empresa
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-3 col-md-6">
+                <div class="card">
+                  <div class="card-body">
+                    <label class="text">Hace 1 día</label>
+                    <div class="cuadroimg mx-auto d-block">
+                      <img
+                        class="mx-auto d-block"
+                        src="../../../../../assets/img/chivas.svg"
+                        alt=""
+                      />
+                    </div>
+                    <label class="text2">Nombre completo de la empresa</label>
+                    <label class="text3">## Vacantes</label>
+                    <label class="text4"
+                      ><i class="fas fa-map-marker-alt mr-2"></i>Ubicación del
+                      empleo</label
+                    >
+                    <button class="botonR mt-2" type="button">
+                      Ver perfil de la empresa
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-3 col-md-6">
+                <div class="card">
+                  <div class="card-body">
+                    <label class="text">Hace 1 día</label>
+                    <div class="cuadroimg mx-auto d-block">
+                      <img
+                        class="mx-auto d-block"
+                        src="../../../../../assets/img/chivas.svg"
+                        alt=""
+                      />
+                    </div>
+                    <label class="text2">Nombre completo de la empresa</label>
+                    <label class="text3">## Vacantes</label>
+                    <label class="text4"
+                      ><i class="fas fa-map-marker-alt mr-2"></i>Ubicación del
+                      empleo</label
+                    >
+                    <button class="botonR mt-2" type="button">
+                      Ver perfil de la empresa
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-3 col-md-6">
+                <div class="card">
+                  <div class="card-body">
+                    <label class="text">Hace 1 día</label>
+                    <div class="cuadroimg mx-auto d-block">
+                      <img
+                        class="mx-auto d-block"
+                        src="../../../../../assets/img/chivas.svg"
+                        alt=""
+                      />
+                    </div>
+                    <label class="text2">Nombre completo de la empresa</label>
+                    <label class="text3">## Vacantes</label>
+                    <label class="text4"
+                      ><i class="fas fa-map-marker-alt mr-2"></i>Ubicación del
+                      empleo</label
+                    >
+                    <button class="botonR mt-2" type="button">
+                      Ver perfil de la empresa
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-3 col-md-6">
+                <div class="card">
+                  <div class="card-body">
+                    <label class="text">Hace 1 día</label>
+                    <div class="cuadroimg mx-auto d-block">
+                      <img
+                        class="mx-auto d-block"
+                        src="../../../../../assets/img/chivas.svg"
+                        alt=""
+                      />
+                    </div>
+                    <label class="text2">Nombre completo de la empresa</label>
+                    <label class="text3">## Vacantes</label>
+                    <label class="text4"
+                      ><i class="fas fa-map-marker-alt mr-2"></i>Ubicación del
+                      empleo</label
+                    >
+                    <button class="botonR mt-2" type="button">
+                      Ver perfil de la empresa
+                    </button>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="modal fade modalMensaje"
+    id="modalMensaje"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row mb-2">
+            <div class="col-3 col-lg-2 col-md-2">
+              <img src="../../../../../assets/img/logoCard.svg" alt="" />
+            </div>
+            <div class="col-9 col-lg-10 col-md-6">
+              <h5 class="card-title">Nombre completo del puesto de trabajo</h5>
+              <label class="text">Nombre completo del puesto de trabajo</label>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-12">
+              <label class="card-title">¡Felicidades!</label>
+              <p class="text2">
+                Nos gusta mucho tu perfil y nos encantaría tener una entrevista
+                contigo. Pronto nos pondremos en contacto contigo para conocerte
+                en persona.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-start">
+          <div class="row mb-2">
+            <div class="col-12">
+              <button type="button" class="boton" data-dismiss="modal">
+                Ver perfil de la empresa
+              </button>
+            </div>
+            <div class="col-12">
+              <button type="button" class="boton2" data-dismiss="modal">
+                Ver vacante
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal filtro-->
+  <div
+    class="modal fade modalFiltros"
+    id="modalFiltros"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="row ps-4">
+            <div class="col-12 col-lg-12 col-md-8 mt-lg-0 mt-5">
+              <h1 class="text9">Filtros</h1>
+              <label class="text7" (click)="limpiar()"
+                ><u>Limpiar Filtros</u></label
+              >
+            </div>
+          </div>
+          <div class="accordion mt-4" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading1">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse1"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Fecha de publicación
+                </button>
+              </h2>
+              <div
+                id="collapse1"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading1"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="fechaPublicacion(this.fechaHoy)">
+                        Hoy
+                      </button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="fechaPublicacion(this.fechaAyer)">
+                        Últimas 24 horas
+                      </button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="fechaPublicacion(this.fechaSemPas)">
+                        Última semana
+                      </button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="fechaPublicacion(this.fechaUlQui)">
+                        Últimos 15 días
+                      </button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading2">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse2"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Tipo de trabajo
+                </button>
+              </h2>
+              <div
+                id="collapse2"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading2"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="tipodeTrabajo('1')">Permanente</button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="tipodeTrabajo('2')">
+                        Temporal/Por proyecto
+                      </button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="tipodeTrabajo('3')">Becario</button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="tipodeTrabajo('4')">
+                        Tiempo Completo
+                      </button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="tipodeTrabajo('5')">Medio Tiempo</button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="tipodeTrabajo('6')">Nómina</button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="tipodeTrabajo('7')">
+                        Honorarios Asimilados
+                      </button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingT3">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse3"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  Salario estimado
+                </button>
+              </h2>
+              <div
+                id="collapse3"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading3"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <form [formGroup]="formGroup">
+                    <div class="row">
+                      <div class="col-1">
+                        <label class="text-center"><b>De</b></label>
+                      </div>
+                      <div class="col-4">
+                        <input
+                          type="number"
+                          class="input1"
+                          placeholder="1000"
+                          formControlName="min"
+                        />
+                      </div>
+                      <div class="col-1">
+                        <label class="text-center"><b>a</b></label>
+                      </div>
+                      <div class="col-4">
+                        <input
+                          type="number"
+                          class="input1"
+                          placeholder="1000"
+                          formControlName="max"
+                        />
+                      </div>
+                    </div>
+                    <button (click)="rango()">Aplicar</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading4">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse4  "
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Modo de empleo
+                </button>
+              </h2>
+              <div
+                id="collapse4"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading4"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="modoEmpleo('1')">Remoto</button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="modoEmpleo('2')">Presencial</button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="modoEmpleo('3')">Desde casa</button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading5">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse5"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Nivel de educación
+                </button>
+              </h2>
+              <div
+                id="collapse5"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading5"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="nivelEducativo('1')">Primaria</button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="nivelEducativo('2')">Secundaria</button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="nivelEducativo('3')">Preparatoria</button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="nivelEducativo('4')">
+                        Bachillerato Tecnológico
+                      </button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="nivelEducativo('5')">Licenciatura</button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="nivelEducativo('6')">Especialidad</button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="nivelEducativo('7')">Maestria</button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <button (click)="nivelEducativo('8')">Doctorado</button>
+                    </div>
+                    <div class="col-4">
+                      <label></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="boton mx-auto d-block">Filtrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

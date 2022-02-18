@@ -1,1 +1,201 @@
-<p>new-payment works!</p>
+  
+<div class="container-fluid">   
+    <div class="comprapaq">
+        <div class="row mb-5">
+            <div class="col-12 col-lg-12 col-md-12 mt-lg-0 mt-5">
+                <h1 class="titulo2">Selecciona tu forma de pago</h1>
+            </div> 
+            <div class="col-12 col-lg-6 col-md-12 mt-lg-0 mt-5">
+                <!-- <div class="form1">
+                    <div class="row">
+                        <div class="col-12 col-lg-8 col-md-8">
+                            <h1 class="text">¡Agrega a tu paquete 2 Vacantaes destacadas!</h1>
+                            <p class="text3 mt-4">Dale a tu publicación mayor visibilidad y resalta tu vacante de la 
+                                competencia para tener mayor número de candidatos.
+                            </p>
+                        </div>
+                        <div class="col-12 col-lg-4 col-md-4">
+                            <p class="text2 text-end">$499.00 MNX</p>
+                            <button type="submit" class="boton">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="text4">Métodos de pago</h1> -->
+                <div class="form">
+                    <div class="row">
+                        <div class="col-6 col-lg-6 col-md-4 col-xl-3">
+                            <label class="radio mb-4">
+                                <input name="radio" type="radio" id='radioP'>
+                                <span>Pagar con tarjeta</span>
+                            </label>
+                        </div>
+                        <div class="col-6 col-lg-4 col-md-4">
+                            <img src="../../../../../assets/img/pagotarjeta.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg-5 col-md-5">
+                            <label for="" class="text5">Número de tarjeta</label>
+                            <input type="text" class="input1" id="" placeholder="____-____-____-____">
+                        </div>
+                        <div class="col-12 col-lg-4 col-md-4">
+                            <label for="" class="text5">Vencimiento</label>
+                            <input type="text" class="input1" id="" placeholder="MM/AA">
+                        </div>
+                        <div class="col-12 col-lg-3 col-md-3">
+                            <label for="" class="text5">CVV</label>
+                            <input type="text" class="input1" id="" placeholder="000">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12 col-lg-5 col-md-5">
+                            <label for="" class="text5">Nombre del tarjetahabiente</label>
+                            <input type="text" class="input1" id="" placeholder="Nombre y apellido">
+                        </div>
+                        <div class="col-12 col-lg-4 col-md-4">
+                            <label for="" class="text5">Fecha de Nacimiento</label>
+                            <input type="text" class="input1" id="" placeholder="DD/MM/AAAA">
+                        </div>
+                        <div class="col-12 col-lg-3 col-md-3 d-flex align-items-end">
+                            <button type="submit" class="boton4">Continuar</button>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-8 col-lg-6 col-md-4 col-xl-3">
+                            <label class="radio mb-4">
+                                <input name="radio" type="radio" id='radioP'>
+                                <span>Pagar con Paypal</span>
+                            </label>
+                        </div>
+                        <div #paypal></div>
+                        <div class="col-4 col-lg-4 col-md-4">
+                            <img src="../../../../../assets/img/paypal.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="col-12 col-lg-6 col-md-12 mt-lg-0 mt-5">
+                <div class="form">
+                    <h1 class="text4 mb-3">Tu nuevo plan</h1>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td colspan="4" class="text2 pb-4">{{this.arrInfoPaquete['packageName']}}</td>
+                                <td class="text text-end">${{this.arrInfoPaquete['packagePrice']}}.00 MNX</td>
+                            </tr>
+                            <tr class="linea" *ngIf="this.arrInfoPaquete['lastPackagePrice'] != 0;" >
+                                <td colspan="4" class="text6 pt-2">Tu plan anterior</td>
+                            </tr>
+                            <tr *ngIf="this.arrInfoPaquete['lastPackagePrice'] != 0;">
+                                <td colspan="4" class="text2 pb-4">{{this.arrInfoPaquete['lastPackageName']}}</td>
+                                <td class="text text-end"><span>-</span>${{this.arrInfoPaquete['lastPackagePrice']}}.00 MNX</td>
+                            </tr>
+                            <tr class="linea">
+                                <td colspan="4" class="text">Subtotal</td>
+                                <td class="text text-end">${{this.arrInfoPaquete['total']}}.00 MNX</td>
+                            </tr>
+                            <tr class="linea">
+                                <td colspan="4" class="text4">Total</td>
+                                <td class="text5 text-end">${{this.arrInfoPaquete['total']}}.00 MNX</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <label class="radio mb-4">
+                        <input name="factura" type="radio" id='factura' value="factura">
+                        <span>Deseo facturar</span>
+                    </label>
+                    <button type="submit" class="boton2 mx-auto d-block ">Realizar pago</button>
+                    <div class="row mt-4 mb-4">
+                        <div class="col-8 col-lg-7 col-md-7">
+                            <input type="text" class="input2" id="" placeholder="Código de promoción">
+                        </div>
+                        <div class="col-4 col-lg-3 col-md-3 offset-md-2">
+                            <button type="submit" class="boton5">Aplicar</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg-12 col-md-12">
+                            <p class="text5">Al hacer clic en el botón "Realizar pago", aceptas nuestros <a>Términos de uso</a> y nuestro <a>Aviso de privacidad</a>, 
+                                y declaras que tienes más de 18 años.
+                            </p>
+                            <p class="text5 mt-3">Vigencia 30 días naturales a partir de su compra.</p>
+                        </div>
+                    </div>
+                    <!--div class="row">
+                        <div class="col-12 col-lg-12 col-md-12">
+                            <h1 class="text4">Datos de facturación</h1>
+                            <p class="text">Revisa tus datos, una vez generada tu factura no podrá cambiarse.</p>
+                            <label class="text6">Fulanito de tal</label>
+                            <label class="text6">tucorreo@gmail.com</label>
+                            <label class="text6">R.F.C. ZAGF860826U1A</label>
+                            <button type="submit" class="boton6">Editar</button>
+                        </div>
+                    </div-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Button trigger modal -->
+    <!--button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalFacturacion">
+        Launch demo modal
+    </button>
+    < Modal mensaje-->
+    <div class="modal fade modalFacturacion" id="modalFacturacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <h5 class="titulo">Datos de facturación</h5>
+                        <label class="text">Razón social</label>
+                        <label class="text2">Razón social Ingresada</label>
+                        <label class="text">R.F.C.</label>
+                        <label class="text2">JKHIUL12335</label>
+                        <input type="text" class="input1" id="" placeholder="Nombre completo">
+                        <input type="email" class="input1" id="" placeholder="tucorreo@tucorreo.com">
+                        <input type="text" class="input1" id="" placeholder="Teléfono de contácto">
+                        <div class="row">
+                            <div class="col-12 col-lg-4 col-md-4">
+                                <input type="text" class="input1 pl-2" id="" placeholder="C.P.">
+                            </div>
+                            <div class="col-12 col-lg-4 col-md-4">
+                                <input type="text" class="input1 pl-2" id="" placeholder="País">
+                            </div>
+                            <div class="col-12 col-lg-4 col-md-4">
+                                <input type="text" class="input1 pl-2" id="" placeholder="Estado">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6 col-md-6">
+                                <input type="text" class="input1 pl-2" id="" placeholder="Municipio">
+                            </div>
+                            <div class="col-12 col-lg-6 col-md-6">
+                                <input type="text" class="input1 pl-2" id="" placeholder="Ciudad">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6 col-md-6">
+                                <input type="text" class="input1 pl-2" id="" placeholder="Calle">
+                            </div>
+                            <div class="col-12 col-lg-3 col-md-3">
+                                <input type="text" class="input1 pl-2" id="" placeholder="No. ext">
+                            </div>
+                            <div class="col-12 col-lg-3 col-md-3">
+                                <input type="text" class="input1 pl-2" id="" placeholder="No. int">
+                            </div>
+                        </div>
+                        <p class="text mt-3">Debe completar los datos de facturación para continuar</p>
+                    </form>
+                </div>
+                <div class="modal-footer d-flex justify-content-start">
+                    <button type="button" class="boton mx-auto d-block" data-dismiss="modal">Guardar información</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
