@@ -14,10 +14,31 @@ export class RecruiterServiceService {
     private session: SessionService
   ) {}
 
-  // service GET portal component
+  // service GET portal component active
   public getWorkTableVacants(token) {
     return this.httpService
       .get(`${this.session.API}recruiterTable/getActiveVacants`, {
+        headers: new HttpHeaders({ Authorization: token }),
+      })
+      .pipe(
+        timeout(30000),
+        catchError((e) => {
+          Swal.close();
+          Swal.fire({
+            icon: 'error',
+            title: '404',
+            text: e.error.message ? e.error.message : this.session.excededTime,
+            confirmButtonColor: '#1c4a83',
+          });
+          return of(null);
+        })
+      );
+  }
+
+  // service GET portal component inactive
+  public getWorkTableVacantsInactive(token) {
+    return this.httpService
+      .get(`${this.session.API}recruiterTable/getInactiveVacants`, {
         headers: new HttpHeaders({ Authorization: token }),
       })
       .pipe(

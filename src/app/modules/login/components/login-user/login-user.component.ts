@@ -127,7 +127,7 @@ export class LoginUserComponent implements OnInit {
                     confirmButtonColor: '#1c4a83',
                   }).then((result) => {
                     if (result.isConfirmed) {
-                      /*  window.open(`http://06d7-187-212-196-100.ngrok.io/API/resendActivationCode?login=${this.userLogin.email}`).setTimeout(()=>{
+                      /*  window.open(`http://380d-187-212-196-100.ngrok.io/API/resendActivationCode?login=${this.userLogin.email}`).setTimeout(()=>{
                       window.close()
                     },2000); */
                       this.session
