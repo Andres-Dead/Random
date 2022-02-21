@@ -156,4 +156,64 @@ export class RecruiterServiceService {
         })
       );
   }
+
+  UpdateInfo(token: string, body: any) {
+    return this.httpService
+      .put(`${this.session.API}updateInfo`, body, {
+        headers: new HttpHeaders({ Authorization: token }),
+      })
+      .pipe(
+        timeout(30000),
+        catchError((e) => {
+          Swal.close();
+          Swal.fire({
+            icon: 'error',
+            title: '404',
+            text: e.error.message ? e.error.message : this.session.excededTime,
+            confirmButtonColor: '#1c4a83',
+          });
+          return of(null);
+        })
+      );
+  }
+
+  updateEmail(token: string, body: any) {
+    return this.httpService
+      .put(`${this.session.API}email`, body, {
+        headers: new HttpHeaders({ Authorization: token }),
+      })
+      .pipe(
+        timeout(30000),
+        catchError((e) => {
+          Swal.close();
+          Swal.fire({
+            icon: 'error',
+            title: '404',
+            text: e.error.message ? e.error.message : this.session.excededTime,
+            confirmButtonColor: '#1c4a83',
+          });
+          return of(null);
+        })
+      );
+  }
+
+  updatePassword(token: string, body: any) {
+    return this.httpService
+      .put(`${this.session.API}password`, body, {
+        headers: new HttpHeaders({ Authorization: token }),
+      })
+      .pipe(
+        timeout(30000),
+        catchError((e) => {
+          Swal.close();
+          Swal.fire({
+            icon: 'error',
+            title: '404',
+            text: e.error.message ? e.error.message : this.session.excededTime,
+            confirmButtonColor: '#1c4a83',
+          });
+          return of(null);
+        })
+      );
+  }
 }
