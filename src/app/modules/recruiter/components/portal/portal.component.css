@@ -688,3 +688,7 @@
   border-radius: 7px;
   text-align: center;
 }
+
+.border {
+  cursor: pointer;
+}
