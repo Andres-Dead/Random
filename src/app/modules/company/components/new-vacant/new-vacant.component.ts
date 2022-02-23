@@ -86,8 +86,8 @@ export class NewVacantComponent implements OnInit {
   ngOnInit(): void {
     //traer el nombre de la vacante de la ruta desde la mesa de trabajo
     this.route.queryParams.subscribe((params) => {
-      this.nameVacant = params.nameVacant;
-      console.log(params.nameVacant);
+      this.nameVacant = params['nameVacant'];
+      console.log(params['nameVacant']);
     });
     this.location.get('pais')?.valueChanges.subscribe((estado) => {
       this.service.getStates(estado).subscribe((estados) => {

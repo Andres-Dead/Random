@@ -131,9 +131,9 @@ export class HeaderComponent {
       .subscribe((data: Data) => {
         console.log(data);
         if (data != null) {
-          Object.entries(data.data).forEach(([key, value]) => {
+          /* Object.entries(data.data).forEach(([key, value]) => {
             this.arrNotifications[key] = value;
-          });
+          }); */
           this.numNotifi =
             parseInt(this.arrNotifications['applications']) +
             parseInt(this.arrNotifications['profile_viewed']);

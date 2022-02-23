@@ -11,7 +11,6 @@ import { WorkTableComponent } from './components/work-table/work-table.component
 import { PortalComponent } from './components/portal/portal.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { EditVacantComponent } from './components/edit-vacant/edit-vacant.component';
-import { PostulatesComponent } from './components/postulates/postulates.component';
 
 
 @NgModule({
@@ -23,7 +22,6 @@ import { PostulatesComponent } from './components/postulates/postulates.componen
     PortalComponent,
     ProfileComponent,
     EditVacantComponent,
-    PostulatesComponent
   ],
   imports: [
     CommonModule,
