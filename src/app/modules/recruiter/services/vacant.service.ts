@@ -79,6 +79,14 @@ export class VacantService {
       return of(null);
     }))
   }
+
+  getVacant(id){
+    return this.httpService.get(`${this.session.API}vacant/${id}`)
+    .pipe(timeout(5000), catchError(err =>{
+      console.log(err);
+      return of(null)
+    }))
+  }
   
 
 }

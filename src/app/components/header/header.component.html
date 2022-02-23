@@ -71,102 +71,115 @@
 
 <!--Talento NO logeado-->
 <header *ngIf="getGroup() == null">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-      <a class="navbar-brand" href="/">
-        <img src="../../../assets/img/logo.svg" alt="" />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon">
-          <i class="fas fa-bars"></i>
-        </span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav d-flex justify-content-end">
-          <!-- <li class="nav-item me-xxl-3">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <a class="navbar-brand" href="/">
+      <img src="../../../assets/img/logo.svg" alt="" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon">
+        <i class="fas fa-bars"></i>
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav d-flex justify-content-end">
+        <!-- <li class="nav-item me-xxl-3">
                       <a class="nav-link" href="empresa">Capital Talento</a>
                   </li> -->
-          <li class="nav-item me-xxl-3">
-            <a class="nav-link" href="/login/registrar_empresa">Publica una vacante</a>
-          </li>
-          <li class="nav-item me-xxl-3">
-            <a class="nav-link" href="/login">Inicia sesión</a>
-          </li>
-          <li class="nav-item me-xxl-3">
-            <a class="nav-link registro" (click)="registrarse()">Registrate</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <!--Empresa logeado-->
-  <header *ngIf="getGroup() == '2'">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-      <a class="navbar-brand" href="#">
-        <img src="../../../assets/img/logo.svg" alt="" />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon">
-          <i class="fas fa-bars"></i>
-        </span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav d-flex justify-content-end">
-          <li class="nav-item me-xxl-3">
-            <a class="nav-link" href="/empresa/mesa_trabajo">Mesa de trabajo</a>
-          </li>
-          <li class="nav-item me-xxl-3" (click)="vacantes()">
-            <a class="nav-link">Vacantes</a>
-          </li>
-          <li class="nav-item me-xxl-3" (click)="buscarTalento()">
-            <a class="nav-link" href="/empresa/buscar_talento">Buscar talento</a>
-          </li>
-          <li class="nav-item dropdown me-xxl-3">
-            <a
-              class="nav-link"
-              href="#"
-              id="navbarDropdown"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <div class="iempresa me-1"></div>
-              Mi empresa
-            </a>
-            <ul class="dropdown-menu empresa" aria-labelledby="navbarDropdown">
-              <li (click)="perfilEmpresa()">
-                <a class="dropdown-item"
-                  >Perfil <img src="../../../assets/img/dropicono1.svg" alt=""
-                /></a>
-              </li>
-              <li (click)="cerrarSesion()">
-                <a class="dropdown-item"
-                  >Cerrar sesión
-                  <img src="../../../assets/img/dropicono6.svg" alt=""
-                /></a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  
-  <!--Reclutador logeado>
+        <li class="nav-item me-xxl-3">
+          <a class="nav-link" (click)="registroEmpresa()"
+            >Publica una vacante</a
+          >
+        </li>
+        <li class="nav-item me-xxl-3">
+          <a class="nav-link" (click)="is()">Inicia sesión</a>
+        </li>
+        <li class="nav-item dropdown me-xxl-3">
+          <a class="nav-link registro" (click)="registrarse()">Registrate</a>
+          <ul
+            class="dropdown-menu empresa pt-3"
+            aria-labelledby="navbarDropdown"
+          >
+            <li (click)="registrarse()">
+              <a class="dropdown-item">Busco trabajo</a>
+            </li>
+            <li (click)="registroEmpresa()">
+              <a class="dropdown-item">Soy empresa</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<!--Empresa logeado-->
+<header *ngIf="getGroup() == '2'">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <a class="navbar-brand" href="#">
+      <img src="../../../assets/img/logo.svg" alt="" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon">
+        <i class="fas fa-bars"></i>
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav d-flex justify-content-end">
+        <li class="nav-item me-xxl-3">
+          <a class="nav-link" href="/empresa/mesa_trabajo">Mesa de trabajo</a>
+        </li>
+        <li class="nav-item me-xxl-3" (click)="vacantes()">
+          <a class="nav-link">Vacantes</a>
+        </li>
+        <li class="nav-item me-xxl-3" (click)="buscarTalento()">
+          <a class="nav-link" href="/empresa/buscar_talento">Buscar talento</a>
+        </li>
+        <li class="nav-item dropdown me-xxl-3">
+          <a
+            class="nav-link"
+            href="#"
+            id="navbarDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <div class="iempresa me-1"></div>
+            Mi empresa
+          </a>
+          <ul class="dropdown-menu empresa" aria-labelledby="navbarDropdown">
+            <li (click)="perfilEmpresa()">
+              <a class="dropdown-item"
+                >Perfil <img src="../../../assets/img/dropicono1.svg" alt=""
+              /></a>
+            </li>
+            <li (click)="cerrarSesion()">
+              <a class="dropdown-item"
+                >Cerrar sesión
+                <img src="../../../assets/img/dropicono6.svg" alt=""
+              /></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!--Reclutador logeado>
   <header >
       <nav class="navbar navbar-expand-lg navbar-light fixed-top">
           <a class="navbar-brand" href="#">
@@ -207,98 +220,108 @@
           </div>
       </nav>
   </header-->
-  
-  <!--Talento logeado-->
-  <header *ngIf="getGroup() == '1'">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-      <a class="navbar-brand">
-        <img src="../../../assets/img/logo.svg" (click)="home()" />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon">
-          <i class="fas fa-bars"></i>
-        </span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav d-flex justify-content-end">
-          <!--    <li class="nav-item me-lg-3">
+
+<!--Talento logeado-->
+<header *ngIf="getGroup() == '1'">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <a class="navbar-brand">
+      <img src="../../../assets/img/logo.svg" (click)="home()" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon">
+        <i class="fas fa-bars"></i>
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav d-flex justify-content-end">
+        <!--    <li class="nav-item me-lg-3">
             <a class="nav-link" href="#">Capital Talento</a>
           </li> -->
-          <li class="nav-item me-lg-3" (click)="mesaTrabajoTalento()">
-            <a class="nav-link">Mesa de trabajo</a>
-          </li>
-          <li class="nav-item me-lg-3" (click)="buscarEmpleos()">
-            <a class="nav-link">Buscar empleos</a>
-          </li>
-          <li class="nav-item dropdown me-xxl-3">
-            <a
-              class="nav-link"
-              href="#"
-              id="navbarDropdown"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <div class="num">
-                <div class="imensaje me-1"></div>
-                <span *ngIf="this.numNotifi > 0">{{this.numNotifi}}</span>
-              </div>
-            </a>
-            <ul class="dropdown-menu empresa" aria-labelledby="navbarDropdown">
-              <li>
-                <a class="dropdown-item" (click)="goToNotifi()"
-                  >{{this.arrNotifications['applications']>0?this.arrNotifications['applications']:''}} Alertas de postulacion</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" (click)="goToNotifi()"
-                  >{{this.arrNotifications['profile_viewed']>0?this.arrNotifications['profile_viewed']:''}} Empresas vieron tu perfil</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown me-lg-3">
-            <a
-              class="nav-link"
-              href="#"
-              id="navbarDropdown"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <div class="isesion me-1"></div>
-            </a>
-            <ul
-              class="dropdown-menu dropdown-menu-end"
-              aria-labelledby="navbarDropdown"
-            >
-              <li (click)="perfilTalento()">
-                <a class="dropdown-item"
-                  >Perfil <img src="../../../assets/img/dropicono1.svg" alt=""
-                /></a>
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="http://c6c4-187-212-196-100.ngrok.io/API/Pdfs/{{ this.cvTkn }}"
-                  target="_blank"
-                  >Descargar CV
-                  <img src="../../../assets/img/dropicono2.svg" alt=""
-                /></a>
-              </li>
-              <!--      <li (click)="mesaTrabajoTalento()">
+        <li class="nav-item me-lg-3" (click)="mesaTrabajoTalento()">
+          <a class="nav-link">Mesa de trabajo</a>
+        </li>
+        <li class="nav-item me-lg-3" (click)="buscarEmpleos()">
+          <a class="nav-link">Buscar empleos</a>
+        </li>
+        <li class="nav-item dropdown me-xxl-3">
+          <a
+            class="nav-link"
+            href="#"
+            id="navbarDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <div class="num">
+              <div class="imensaje me-1"></div>
+              <span *ngIf="this.numNotifi > 0">{{ this.numNotifi }}</span>
+            </div>
+          </a>
+          <ul class="dropdown-menu empresa" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" (click)="goToNotifi()"
+                >{{
+                  this.arrNotifications["applications"] > 0
+                    ? this.arrNotifications["applications"]
+                    : ""
+                }}
+                Alertas de postulacion</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" (click)="goToNotifi()"
+                >{{
+                  this.arrNotifications["profile_viewed"] > 0
+                    ? this.arrNotifications["profile_viewed"]
+                    : ""
+                }}
+                Empresas vieron tu perfil</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown me-lg-3">
+          <a
+            class="nav-link"
+            href="#"
+            id="navbarDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <div class="isesion me-1"></div>
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdown"
+          >
+            <li (click)="perfilTalento()">
+              <a class="dropdown-item"
+                >Perfil <img src="../../../assets/img/dropicono1.svg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="https://ci.capitalempleo.com/API/Pdfs/{{ this.cvTkn }}"
+                target="_blank"
+                >Descargar CV
+                <img src="../../../assets/img/dropicono2.svg" alt=""
+              /></a>
+            </li>
+            <!--      <li (click)="mesaTrabajoTalento()">
                 <a class="dropdown-item" 
                   >Mis empleos
                   <img src="../../../assets/img/dropicono3.svg" alt=""
                 /></a>
               </li> -->
-              <li (click)="mesaTrabajoTalento()">
+              <li (click)="goToNotifi()">
                 <a class="dropdown-item"
                   >Empresas que sigues
                   <img src="../../../assets/img/dropicono4.svg" alt=""
@@ -321,5 +344,4 @@
         </ul>
       </div>
     </nav>
-  </header>
-  
+  </header> 

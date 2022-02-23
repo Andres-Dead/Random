@@ -5,9 +5,9 @@
           <div class="row">
             <div class="col-12 col-lg-12 col-md-8 mt-lg-0 mt-5 mb-3">
               <h1 class="sub2">Filtros</h1>
-              <label class="text7" (click)="limpiar()"
+              <!-- <label class="text7" (click)="limpiar()"
                 ><u>Limpiar Filtros</u></label
-              >
+              > -->
             </div>
           </div>
           <div class="accordion" id="accordionExample">
@@ -33,7 +33,7 @@
                 <div class="accordion-body">
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="fechaPublicacion(this.fechaHoy)">
+                      <button (click)="fechaPublicacion(this.fechaHoy)" [class.active]="isActive('btn1')" (click)="setActive('btn1')">
                         Hoy
                       </button>
                     </div>
@@ -43,7 +43,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="fechaPublicacion(this.fechaAyer)">
+                      <button (click)="fechaPublicacion(this.fechaAyer)" [class.active]="isActive('btn2')" (click)="setActive('btn2')">
                         Últimas 24 horas
                       </button>
                     </div>
@@ -53,7 +53,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="fechaPublicacion(this.fechaSemPas)">
+                      <button (click)="fechaPublicacion(this.fechaSemPas)" [class.active]="isActive('btn3')" (click)="setActive('btn3')">
                         Última semana
                       </button>
                     </div>
@@ -63,7 +63,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="fechaPublicacion(this.fechaUlQui)">
+                      <button (click)="fechaPublicacion(this.fechaUlQui)" [class.active]="isActive('btn4')" (click)="setActive('btn4')">
                         Últimos 15 días
                       </button>
                     </div>
@@ -96,7 +96,7 @@
                 <div class="accordion-body">
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="tipodeTrabajo('1')">Permanente</button>
+                      <button (click)="tipodeTrabajo('1')" [class.active]="isActive('btn6')" (click)="setActive('btn6')">Permanente</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -104,7 +104,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="tipodeTrabajo('2')">
+                      <button (click)="tipodeTrabajo('2')" [class.active]="isActive('btn7')" (click)="setActive('btn7')">
                         Temporal/Por proyecto
                       </button>
                     </div>
@@ -114,7 +114,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="tipodeTrabajo('3')">Becario</button>
+                      <button (click)="tipodeTrabajo('3')" [class.active]="isActive('btn8')" (click)="setActive('btn8')">Becario</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -122,7 +122,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="tipodeTrabajo('4')">
+                      <button (click)="tipodeTrabajo('4')" [class.active]="isActive('btn9')" (click)="setActive('btn9')">
                         Tiempo Completo
                       </button>
                     </div>
@@ -132,7 +132,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="tipodeTrabajo('5')">Medio Tiempo</button>
+                      <button (click)="tipodeTrabajo('5')" [class.active]="isActive('btn10')" (click)="setActive('btn10')">Medio Tiempo</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -140,7 +140,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="tipodeTrabajo('6')">Nómina</button>
+                      <button (click)="tipodeTrabajo('6')" [class.active]="isActive('btn11')" (click)="setActive('btn11')">Nómina</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -148,7 +148,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="tipodeTrabajo('7')">
+                      <button (click)="tipodeTrabajo('7')" [class.active]="isActive('btn12')" (click)="setActive('btn12')">
                         Honorarios Asimilados
                       </button>
                     </div>
@@ -228,7 +228,7 @@
                 <div class="accordion-body">
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="modoEmpleo('1')">Remoto</button>
+                      <button (click)="modoEmpleo('1')" [class.active]="isActive('btn13')" (click)="setActive('btn13')">Remoto</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -236,7 +236,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="modoEmpleo('2')">Presencial</button>
+                      <button (click)="modoEmpleo('2')" [class.active]="isActive('btn14')" (click)="setActive('btn14')">Presencial</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -244,7 +244,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="modoEmpleo('3')">Desde casa</button>
+                      <button (click)="modoEmpleo('3')" [class.active]="isActive('btn15')" (click)="setActive('btn15')">Desde casa</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -275,7 +275,7 @@
                 <div class="accordion-body">
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="nivelEducativo('1')">Primaria</button>
+                      <button (click)="nivelEducativo('1')" [class.active]="isActive('btn17')" (click)="setActive('btn17')">Primaria</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -283,7 +283,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="nivelEducativo('2')">Secundaria</button>
+                      <button (click)="nivelEducativo('2')" [class.active]="isActive('btn18')" (click)="setActive('btn18')">Secundaria</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -291,7 +291,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="nivelEducativo('3')">Preparatoria</button>
+                      <button (click)="nivelEducativo('3')" [class.active]="isActive('btn19')" (click)="setActive('btn19')">Preparatoria</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -299,7 +299,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="nivelEducativo('4')">
+                      <button (click)="nivelEducativo('4')" [class.active]="isActive('btn20')" (click)="setActive('btn20')">
                         Bachillerato Tecnológico
                       </button>
                     </div>
@@ -309,7 +309,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="nivelEducativo('5')">Licenciatura</button>
+                      <button (click)="nivelEducativo('5')" [class.active]="isActive('btn21')" (click)="setActive('btn21')">Licenciatura</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -317,7 +317,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="nivelEducativo('6')">Especialidad</button>
+                      <button (click)="nivelEducativo('6')" [class.active]="isActive('btn22')" (click)="setActive('btn22')">Especialidad</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -325,7 +325,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="nivelEducativo('7')">Maestria</button>
+                      <button (click)="nivelEducativo('7')" [class.active]="isActive('btn23')" (click)="setActive('btn23')">Maestria</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -333,7 +333,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="nivelEducativo('8')">Doctorado</button>
+                      <button (click)="nivelEducativo('8')" [class.active]="isActive('btn24')" (click)="setActive('btn24')">Doctorado</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -834,9 +834,9 @@
           <div class="row">
             <div class="col-12 col-lg-12 col-md-8 mt-lg-0 mt-5 mb-3">
               <h1 class="sub2">Filtros</h1>
-              <label class="text7" (click)="limpiar()"
+              <!-- <label class="text7" (click)="limpiar()"
                 ><u>Limpiar Filtros</u></label
-              >
+              > -->
             </div>
           </div>
           <div class="accordion" id="accordionExample">
@@ -862,7 +862,7 @@
                 <div class="accordion-body">
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="fechaPublicacion(this.fechaHoy)">
+                      <button (click)="fechaPublicacion(this.fechaHoy)" [class.active]="isActive('btn1')" (click)="setActive('btn1')">
                         Hoy
                       </button>
                     </div>
@@ -872,7 +872,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="fechaPublicacion(this.fechaAyer)">
+                      <button (click)="fechaPublicacion(this.fechaAyer)" [class.active]="isActive('btn2')" (click)="setActive('btn2')">
                         Últimas 24 horas
                       </button>
                     </div>
@@ -882,7 +882,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="fechaPublicacion(this.fechaSemPas)">
+                      <button (click)="fechaPublicacion(this.fechaSemPas)" [class.active]="isActive('btn3')" (click)="setActive('btn3')">
                         Última semana
                       </button>
                     </div>
@@ -892,7 +892,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="fechaPublicacion(this.fechaUlQui)">
+                      <button (click)="fechaPublicacion(this.fechaUlQui)" [class.active]="isActive('btn4')" (click)="setActive('btn4')">
                         Últimos 15 días
                       </button>
                     </div>
@@ -925,7 +925,7 @@
                 <div class="accordion-body">
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="tipodeTrabajo('1')">Permanente</button>
+                      <button (click)="tipodeTrabajo('1')" [class.active]="isActive('btn6')" (click)="setActive('btn6')">Permanente</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -933,7 +933,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="tipodeTrabajo('2')">
+                      <button (click)="tipodeTrabajo('2')" [class.active]="isActive('btn7')" (click)="setActive('btn7')">
                         Temporal/Por proyecto
                       </button>
                     </div>
@@ -943,7 +943,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="tipodeTrabajo('3')">Becario</button>
+                      <button (click)="tipodeTrabajo('3')" [class.active]="isActive('btn8')" (click)="setActive('btn8')">Becario</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -951,7 +951,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="tipodeTrabajo('4')">
+                      <button (click)="tipodeTrabajo('4')" [class.active]="isActive('btn9')" (click)="setActive('btn9')">
                         Tiempo Completo
                       </button>
                     </div>
@@ -961,7 +961,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="tipodeTrabajo('5')">Medio Tiempo</button>
+                      <button (click)="tipodeTrabajo('5')" [class.active]="isActive('btn10')" (click)="setActive('btn10')">Medio Tiempo</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -969,7 +969,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="tipodeTrabajo('6')">Nómina</button>
+                      <button (click)="tipodeTrabajo('6')" [class.active]="isActive('btn11')" (click)="setActive('btn11')">Nómina</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -977,7 +977,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="tipodeTrabajo('7')">
+                      <button (click)="tipodeTrabajo('7')" [class.active]="isActive('btn12')" (click)="setActive('btn12')">
                         Honorarios Asimilados
                       </button>
                     </div>
@@ -1057,7 +1057,7 @@
                 <div class="accordion-body">
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="modoEmpleo('1')">Remoto</button>
+                      <button (click)="modoEmpleo('1')" [class.active]="isActive('btn13')" (click)="setActive('btn13')">Remoto</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -1065,7 +1065,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="modoEmpleo('2')">Presencial</button>
+                      <button (click)="modoEmpleo('2')" [class.active]="isActive('btn14')" (click)="setActive('btn14')">Presencial</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -1073,7 +1073,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="modoEmpleo('3')">Desde casa</button>
+                      <button (click)="modoEmpleo('3')" [class.active]="isActive('btn15')" (click)="setActive('btn15')">Desde casa</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -1104,7 +1104,7 @@
                 <div class="accordion-body">
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="nivelEducativo('1')">Primaria</button>
+                      <button (click)="nivelEducativo('1')" [class.active]="isActive('btn17')" (click)="setActive('btn17')">Primaria</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -1112,7 +1112,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="nivelEducativo('2')">Secundaria</button>
+                      <button (click)="nivelEducativo('2')" [class.active]="isActive('btn18')" (click)="setActive('btn18')">Secundaria</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -1120,7 +1120,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="nivelEducativo('3')">Preparatoria</button>
+                      <button (click)="nivelEducativo('3')" [class.active]="isActive('btn19')" (click)="setActive('btn19')">Preparatoria</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -1128,7 +1128,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="nivelEducativo('4')">
+                      <button (click)="nivelEducativo('4')" [class.active]="isActive('btn20')" (click)="setActive('btn20')">
                         Bachillerato Tecnológico
                       </button>
                     </div>
@@ -1138,7 +1138,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="nivelEducativo('5')">Licenciatura</button>
+                      <button (click)="nivelEducativo('5')" [class.active]="isActive('btn21')" (click)="setActive('btn21')">Licenciatura</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -1146,7 +1146,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="nivelEducativo('6')">Especialidad</button>
+                      <button (click)="nivelEducativo('6')" [class.active]="isActive('btn22')" (click)="setActive('btn22')">Especialidad</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -1154,7 +1154,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="nivelEducativo('7')">Maestria</button>
+                      <button (click)="nivelEducativo('7')" [class.active]="isActive('btn23')" (click)="setActive('btn23')">Maestria</button>
                     </div>
                     <div class="col-4">
                       <label></label>
@@ -1162,7 +1162,7 @@
                   </div>
                   <div class="row">
                     <div class="col-8">
-                      <button (click)="nivelEducativo('8')">Doctorado</button>
+                      <button (click)="nivelEducativo('8')" [class.active]="isActive('btn24')" (click)="setActive('btn24')">Doctorado</button>
                     </div>
                     <div class="col-4">
                       <label></label>

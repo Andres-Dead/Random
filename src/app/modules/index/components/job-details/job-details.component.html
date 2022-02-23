@@ -1,245 +1,257 @@
 <div class="container-fluid">
-    <div class="detalles">
-      <div class="row mt-5">
-        <div class="col-12">
-          <label class="text1"
-            >Publicada el {{ this.arrInfo["date_published"] }}</label
-          >
-        </div>
+  <div class="detalles">
+    <div class="row mt-5">
+      <div class="col-12">
+        <label class="text1"
+          >Publicada el {{ this.arrInfo["date_published"] }}</label
+        >
       </div>
-      <div class="row">
-        <div class="col-12 col-lg-9 col-md-12">
-          <div class="row mt-3">
-            <div class="col-12 col-lg-3 col-md-5">
-              <div class="cuadro">
-                <img
-                  class="mx-auto d-block"
-                  [src]="this.arrInfo['profile_pic']"
-                  alt=""
-                />
-              </div>
-              <div class="row estrellas d-flex justify-content-center mt-3">
-                <div class="col" *ngIf="this.arrInfo['avg'] % 2 == 0; else media">
-                  <div
-                    class="completa"
-                    *ngFor="let item of this.fakeArray(this.arrInfo['avg'])"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title="{{ this.arrInfo['avg'] }}"
-                  ></div>
-                </div>
-                <ng-template #media>
-                  <div
-                    class="completa"
-                    *ngFor="let item of this.fakeArray(this.arrInfo['avg'])"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title="{{ this.arrInfo['avg'] }}"
-                  ></div>
-                  <div
-                    class="media"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title="{{ this.arrInfo['avg'] }}"
-                  ></div>
-                </ng-template>
-              </div>
-  
-              <div class="row mt-2">
-                <div class="col-12 text-center">
-                  <label class="text1"
-                    ><b>{{ this.arrInfo["quant"] }} evaluaciones</b></label
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-lg-9 col-md-7">
-              <h5 class="titulo">{{ this.arrInfo["name"] }}</h5>
-              <label class="text2">{{ this.arrInfo["company"] }}</label>
-              <label
-                *ngIf="this.arrInfo['company'] == 1"
-                class="text2 mt-3 mb-3"
-                style="color: #63d82e; font-size: 0.69rem; display: block"
-              >
-                <img class="" src="../../assets/img/verificada.svg" alt="" />
-                Empresa verificada
-              </label>
-              <label class="text3"
-                ><i class="fas fa-map-marker-alt me-1"></i
-                >{{ this.arrInfo["location"] }}</label
-              >
-              <label class="text4" *ngIf="this.arrInfo['hide_salary'] == 0">
-                ${{ this.arrInfo["min_salary"] }}
-                {{
-                  this.arrInfo["max_salary"] == 0
-                    ? "mxn"
-                    : "$" + this.arrInfo["max_salary"] + " mxn"
-                }}</label
-              >
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-3 col-md-6 mt-lg-0 mt-5">
-          <div class="row">
-            <div
-              class="col-2"
-              (click)="olvidarVacante(this.vacanteAct)"
-              *ngIf="!isfollow; else elseBlock"
-            >
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-9 col-md-12">
+        <div class="row mt-3">
+          <div class="col-12 col-lg-3 col-md-5">
+            <div class="cuadro">
               <img
-                class="favorito"
-                src="../../assets/img/favorito-filled.svg"
+                class="mx-auto d-block"
+                [src]="this.arrInfo['profile_pic']"
                 alt=""
               />
             </div>
-            <ng-template #elseBlock>
-              <div class="col-2" (click)="seguirVacante(this.id_vacante)">
-                <img class="favorito" src="../../assets/img/favorito.svg" alt="" />
+            <div class="row estrellas d-flex justify-content-center mt-3">
+              <div class="col" *ngIf="this.arrInfo['avg'] % 2 == 0; else media">
+                <div
+                  class="completa"
+                  *ngFor="let item of this.fakeArray(this.arrInfo['avg'])"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="{{ this.arrInfo['avg'] }}"
+                ></div>
               </div>
-            </ng-template>
-            <div class="col-6">
-              <button
-                (click)="postular()"
-                type="submit"
-                class="boton"
-                data-toggle="modal"
-                data-target="#modalPostulacion"
-              >
-                Postularme
-              </button>
+              <ng-template #media>
+                <div
+                  class="completa"
+                  *ngFor="let item of this.fakeArray(this.arrInfo['avg'])"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="{{ this.arrInfo['avg'] }}"
+                ></div>
+                <div
+                  class="media"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="{{ this.arrInfo['avg'] }}"
+                ></div>
+              </ng-template>
+            </div>
+
+            <div class="row mt-2">
+              <div class="col-12 text-center">
+                <label class="text1"
+                  ><b>{{ this.arrInfo["quant"] }} evaluaciones</b></label
+                >
+              </div>
             </div>
           </div>
-          <label class="text5 mt-lg-3 mb-3">Compartir por:</label>
-          <div class="row">
-            <div class="col-2 col-lg-3 col-xl-2">
-              <a
-                href="http://www.facebook.com/sharer.php?s=100&p[url]=http://www.lostiemposcambian.com/blog/posts/share-fb/share-facebook.html&p[title]=Compartir URLs en Face&p[summary]=Un buen recurso para aprender a compartir enlaces por código&&p[images][0]=http://www.lostiemposcambian.com/blog/posts/share-fb/img/200x200_lostiemposcambian_ejemplo_facebook_foto3.jpg
+          <div class="col-12 col-lg-9 col-md-7">
+            <h5 class="titulo">{{ this.arrInfo["name"] }}</h5>
+            <label class="text2">{{ this.arrInfo["company"] }}</label>
+            <label
+              *ngIf="this.arrInfo['company'] == 1"
+              class="text2 mt-3 mb-3"
+              style="color: #63d82e; font-size: 0.69rem; display: block"
+            >
+              <img class="" src="../../assets/img/verificada.svg" alt="" />
+              Empresa verificada
+            </label>
+            <label class="text3"
+              ><i class="fas fa-map-marker-alt me-1"></i
+              >{{ this.arrInfo["location"] }}</label
+            >
+            <label class="text4" *ngIf="this.arrInfo['hide_salary'] == 0">
+              ${{ this.arrInfo["min_salary"] }}
+              {{
+                this.arrInfo["max_salary"] == 0
+                  ? "mxn"
+                  : "$" + this.arrInfo["max_salary"] + " mxn"
+              }}</label
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-3 col-md-6 mt-lg-0 mt-5">
+        <div class="row">
+          <div
+            class="col-3 col-md-4 col-lg-4 col-xl-3 col-xxl-3"
+            (click)="olvidarVacante(this.vacanteAct)"
+            *ngIf="!isfollow; else elseBlock"
+          >
+            <img
+              class="favorito"
+              src="../../assets/img/favorito-filled.svg"
+              alt=""
+            />
+          </div>
+          <ng-template #elseBlock>
+            <div class="col-3 col-md-4 col-lg-4 col-xl-3 col-xxl-3" (click)="seguirVacante(this.id_vacante)">
+              <img
+                class="favorito"
+                src="../../assets/img/favorito.svg"
+                alt=""
+              />
+            </div>
+          </ng-template>
+          <div class="col-6">
+            <button
+              (click)="postular()"
+              type="submit"
+              class="boton"
+              data-toggle="modal"
+              data-target="#modalPostulacion"
+            >
+              Postularme
+            </button>
+          </div>
+        </div>
+        <label class="text5 mt-lg-3 mb-3">Compartir por:</label>
+        <div class="row">
+          <div class="col-2 col-lg-3 col-xl-2">
+            <a
+              href="http://www.facebook.com/sharer.php?s=100&p[url]=http://www.lostiemposcambian.com/blog/posts/share-fb/share-facebook.html&p[title]=Compartir URLs en Face&p[summary]=Un buen recurso para aprender a compartir enlaces por código&&p[images][0]=http://www.lostiemposcambian.com/blog/posts/share-fb/img/200x200_lostiemposcambian_ejemplo_facebook_foto3.jpg
     
               "
-              >
-                <img
-                  class="iconoRedes"
-                  src="../../assets/img/facebook.svg"
-                  alt=""
-                />
-              </a>
-            </div>
-  
-            <div class="col-2 col-lg-3 col-xl-2">
-              <a
-                href="https://api.whatsapp.com/send?text=Hechale un vistazo a esta vacante https://campitalempleo.com"
-                target="_blank"
-              >
-                <img
-                  class="iconoRedes"
-                  src="../../assets/img/whatsapp.svg"
-                  alt=""
-                />
-              </a>
-            </div>
-            <div class="col-2 col-lg-3 col-xl-2">
-              <a
-                href="https://www.linkedin.com/sharing/share-offsite/?url=https://capitalempleo.com"
-              >
-                <img
-                  class="iconoRedes"
-                  src="../../assets/img/linkedin.svg"
-                  alt=""
-                />
-              </a>
-            </div>
-            <div class="col-2 col-lg-3 col-xl-2">
-              <a
-                href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-                target="_blank"
-                class="twitter-share-button"
-                data-text="Hecha un vistazo a esta oportunidad de empleo"
-                data-url="https://zapitalempleo.com/detalle_trabajo/"
-                data-show-count="false"
-              >
-                <img
-                  class="iconoRedes"
-                  src="../../assets/img/twitter.svg"
-                  alt=""
-                />
-              </a>
-              <script
-                async
-                src="https://platform.twitter.com/widgets.js"
-                charset="utf-8"
-              ></script>
-            </div>
+            >
+              <img
+                class="iconoRedes"
+                src="../../assets/img/facebook.svg"
+                alt=""
+              />
+            </a>
           </div>
-        </div>
-      </div>
-      <div class="row mt-5">
-        <div class="col-12 col-lg-9 col-md-12">
-          <label class="sub">Descripción</label>
-          <p class="text5">
-            {{ this.arrInfo["description"] }}
-          </p>
-  
-          <li class="text5">
-            {{ this.arrInfo["education"] }}
-          </li>
-  
-          <li *ngIf="this.arrInfo['experience'] == 0" class="text5">
-            Sin Experiencia
-          </li>
-          <li *ngIf="this.arrInfo['experience'] == 1" class="text5">
-            1 año de Experiencia
-          </li>
-          <li *ngIf="this.arrInfo['experience'] == 2" class="text5">
-            2 año de Experiencia
-          </li>
-          <li *ngIf="this.arrInfo['experience'] == 3" class="text5">
-            5 año de Experiencia
-          </li>
-          <li *ngIf="this.arrInfo['experience'] == 4" class="text5">
-            10 año de Experiencia
-          </li>
-          <li *ngIf="this.arrInfo['travel'] == 1" class="text5">
-            Con disponibilidad para viajar
-          </li>
-          <li *ngIf="this.arrInfo['handicap'] == 1" class="text5">
-            Personas con discapacidad bienvenidas
-          </li>
-          <li *ngIf="this.arrInfo['move'] == 1" class="text5">
-            Con disponibilidad para reubicarse
-          </li>
-          <div *ngFor="let item of this.arrInfo['job_type']">
-            <li class="text5">
-              {{item}}
-            </li>
+
+          <div class="col-2 col-lg-3 col-xl-2">
+            <a
+              href="https://api.whatsapp.com/send?text=Hechale un vistazo a esta vacante https://campitalempleo.com"
+              target="_blank"
+            >
+              <img
+                class="iconoRedes"
+                src="../../assets/img/whatsapp.svg"
+                alt=""
+              />
+            </a>
           </div>
-          <div *ngFor="let item of this.arrInfo['modality']">
-            <li class="text5">
-              {{item}}
-            </li>
+          <div class="col-2 col-lg-3 col-xl-2">
+            <a
+              href="https://www.linkedin.com/sharing/share-offsite/?url=https://capitalempleo.com"
+            >
+              <img
+                class="iconoRedes"
+                src="../../assets/img/linkedin.svg"
+                alt=""
+              />
+            </a>
           </div>
-        </div>
-        <div
-          class="col-12 col-lg-3 col-md-8 offset-md-4 offset-lg-0"
-          *ngIf="this.grupo.group == 1"
-        >
-          <img class="imgtrabajo" src="../../assets/img/imgtrabajo.svg" alt="" />
-          <button type="submit" class="boton3" (click)="viewCv()">
-            Visualiza tu CV de capital empleo
-          </button>
-        </div>
-      </div>
-      <div class="row me-md-5 me-0 mt-lg-5" style="margin-right: 40%">
-        <div class="col-12">
-          <button type="submit" class="btn btn-light" disabled>{{this.arrInfo['category']}}</button>
-        </div>
-      </div>
-      <div class="row mt-5">
-        <div class="col-8 col-lg-2 col-md-4">
-          <button type="submit" class="boton5" (click)="reportar()">
-            Reportar empleo
-          </button>
+          <div class="col-2 col-lg-3 col-xl-2">
+            <a
+              href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+              target="_blank"
+              class="twitter-share-button"
+              data-text="Hecha un vistazo a esta oportunidad de empleo"
+              data-url="https://zapitalempleo.com/detalle_trabajo/"
+              data-show-count="false"
+            >
+              <img
+                class="iconoRedes"
+                src="../../assets/img/twitter.svg"
+                alt=""
+              />
+            </a>
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script>
+          </div>
         </div>
       </div>
     </div>
+    <div class="row mt-5">
+      <div class="col-12 col-lg-9 col-md-12">
+        <label class="sub">Descripción</label>
+        <p class="text5">
+          {{ this.arrInfo["description"] }}
+        </p>
+
+        <li class="text5">
+          {{ this.arrInfo["education"] }}
+        </li>
+
+        <li *ngIf="this.arrInfo['experience'] == 0" class="text5">
+          Sin Experiencia
+        </li>
+        <li *ngIf="this.arrInfo['experience'] == 1" class="text5">
+          1 año de Experiencia
+        </li>
+        <li *ngIf="this.arrInfo['experience'] == 2" class="text5">
+          2 año de Experiencia
+        </li>
+        <li *ngIf="this.arrInfo['experience'] == 3" class="text5">
+          5 año de Experiencia
+        </li>
+        <li *ngIf="this.arrInfo['experience'] == 4" class="text5">
+          10 año de Experiencia
+        </li>
+        <li *ngIf="this.arrInfo['travel'] == 1" class="text5">
+          Con disponibilidad para viajar
+        </li>
+        <li *ngIf="this.arrInfo['handicap'] == 1" class="text5">
+          Personas con discapacidad bienvenidas
+        </li>
+        <li *ngIf="this.arrInfo['move'] == 1" class="text5">
+          Con disponibilidad para reubicarse
+        </li>
+        <div *ngFor="let item of this.arrInfo['job_type']">
+          <li class="text5">
+            {{ item }}
+          </li>
+        </div>
+        <div *ngFor="let item of this.arrInfo['modality']">
+          <li class="text5">
+            {{ item }}
+          </li>
+        </div>
+      </div>
+      <div
+        class="col-12 col-lg-3 col-md-8 offset-md-4 offset-lg-0"
+        *ngIf="this.grupo.group == 1"
+      >
+        <img class="imgtrabajo" src="../../assets/img/imgtrabajo.svg" alt="" />
+        <a href="https://ci.capitalempleo.com/API/Pdfs/{{ this.cvTkn }}" target="_blank" *ngIf="cvTkn != null; else alert">
+          <button type="submit" class="boton3">
+            Visualiza tu CV de capital empleo
+          </button>
+        </a>
+        <ng-template #alert>
+           <button type="submit" class="boton3">
+            Visualiza tu CV de capital empleo
+          </button>
+        </ng-template>
+      </div>
+    </div>
+    <div class="row me-md-5 me-0 mt-lg-5" style="margin-right: 40%">
+      <div class="col-12">
+        <button type="submit" class="btn btn-light" disabled>
+          {{ this.arrInfo["category"] }}
+        </button>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-8 col-lg-2 col-md-4">
+        <button type="submit" class="boton5" (click)="reportar()">
+          Reportar empleo
+        </button>
+      </div>
+    </div>
   </div>
-  
+</div>

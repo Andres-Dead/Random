@@ -1,129 +1,129 @@
 <div class="container-fluid">
-    <div class="Perfilempresa">
-      <div class="row">
-        <div class="col-12 col-lg-9 col-md-12">
-          <div class="row mt-5">
-            <div class="col-5 col-lg-3 col-md-4">
-              <div class="cuadro">
-                <img
-                  class="mx-auto d-block"
-                  [src]="this.arrInfo['profile_pic']"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="col-7 col-lg-9 col-md-7">
-              <h5 class="text1">{{ this.arrInfo["display_name"] }}</h5>
-              <label class="text2">
-                <img class="me-2" src="../../assets/img/verifica.svg" alt="" />{{
-                  this.arrInfo["verified"] == 0
-                    ? "Empresa no verificada"
-                    : "Empresa verificada"
-                }}</label
-              >
-              <label class="text3 mt-2">
-                <img class="me-2" src="../../assets/img/ubicacion.svg" alt="" />{{
-                  this.arrInfo["city"]
-                }}
-                - {{ this.arrInfo["state"] }} , {{ this.arrInfo["country"] }}
-              </label>
-              <div class="row mt-2">
-                <div class="col-12 col-lg-3 col-md-4 ms-2">
-                  <div class="row estrellas">
-                    <div
-                      class="col"
-                      *ngIf="this.arrInfo['avg'] % 2 == 0; else media"
-                    >
-                      <div
-                        class="completa"
-                        *ngFor="let item of this.fakeArray(this.arrInfo['avg'])"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="{{ this.arrInfo['avg'] }}"
-                      ></div>
-                    </div>
-                    <ng-template #media>
-                      <div
-                        class="completa"
-                        *ngFor="let item of this.fakeArray(this.arrInfo['avg'])"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="{{ this.arrInfo['avg'] }}"
-                      ></div>
-                      <div
-                        class="media"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="{{ this.arrInfo['avg'] }}"
-                      ></div>
-                    </ng-template>
-                  </div>
-                </div>
-              </div>
-              <label class="text4 mt-2"
-                >{{ this.arrInfo["quant"] }} <u>evaluaciones</u></label
-              >
+  <div class="Perfilempresa">
+    <div class="row">
+      <div class="col-12 col-lg-9 col-md-12">
+        <div class="row mt-5">
+          <div class="col-5 col-lg-3 col-md-4">
+            <div class="cuadro">
+              <img
+                class="mx-auto d-block"
+                [src]="this.arrInfo['profile_pic']"
+                alt=""
+              />
             </div>
           </div>
-          <div class="row">
-            <div
-              class="col-5 col-lg-3 col-md-4 offset-md-8 offset-5 d-flex justify-content-md-end mt-md-5"
+          <div class="col-7 col-lg-9 col-md-7">
+            <h5 class="text1">{{ this.arrInfo["display_name"] }}</h5>
+            <label class="text2">
+              <img class="me-2" src="../../assets/img/verifica.svg" alt="" />{{
+                this.arrInfo["verified"] == 0
+                  ? "Empresa no verificada"
+                  : "Empresa verificada"
+              }}</label
             >
+            <label class="text3 mt-2">
+              <img class="me-2" src="../../assets/img/ubicacion.svg" alt="" />{{
+                this.arrInfo["city"]
+              }}
+              - {{ this.arrInfo["state"] }} , {{ this.arrInfo["country"] }}
+            </label>
+            <div class="row mt-2">
+              <div class="col-12 col-lg-3 col-md-4 ms-2">
+                <div class="row estrellas">
+                  <div
+                    class="col"
+                    *ngIf="this.arrInfo['avg'] % 2 == 0; else media"
+                  >
+                    <div
+                      class="completa"
+                      *ngFor="let item of this.fakeArray(this.arrInfo['avg'])"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="{{ this.arrInfo['avg'] }}"
+                    ></div>
+                  </div>
+                  <ng-template #media>
+                    <div
+                      class="completa"
+                      *ngFor="let item of this.fakeArray(this.arrInfo['avg'])"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="{{ this.arrInfo['avg'] }}"
+                    ></div>
+                    <div
+                      class="media"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="{{ this.arrInfo['avg'] }}"
+                    ></div>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+            <label class="text4 mt-2"
+              >{{ this.arrInfo["quant"] }} <u>evaluaciones</u></label
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col-5 col-lg-3 col-md-4 offset-md-8 offset-5 d-flex justify-content-md-end mt-md-5"
+          >
+            <button
+              (click)="olvidarEmpresa(this.empactual)"
+              *ngIf="!isfollow; else elseBlock"
+              type="button"
+              class="botonu mt-3 mt-md-0"
+            >
+              <img
+                class="corazon me-2"
+                src="../../assets/img/heartazul.svg"
+                alt=""
+              />
+              Olvidar Empresa
+            </button>
+
+            <ng-template #elseBlock>
               <button
-                (click)="olvidarEmpresa(this.empactual)"
-                *ngIf="!isfollow; else elseBlock"
+                (click)="seguirEmpresa(id_company)"
                 type="button"
-                class="botonu mt-3 mt-md-0"
+                class="botonf mt-5 mt-md-0"
               >
-                <img
-                  class="corazon me-2"
-                  src="../../assets/img/heartazul.svg"
-                  alt=""
-                />
-                Olvidar Empresa
+                <img class="me-2" src="../../assets/img/heartazul.svg" alt="" />
+                Seguir empresa
               </button>
-  
-              <ng-template #elseBlock>
-                <button
-                  (click)="seguirEmpresa(id_company)"
-                  type="button"
-                  class="botonf mt-5 mt-md-0"
-                >
-                  <img class="me-2" src="../../assets/img/heartazul.svg" alt="" />
-                  Seguir empresa
-                </button>
-              </ng-template>
-            </div>
+            </ng-template>
           </div>
-          <div class="row">
-            <div class="col-12 mt-5">
-              <label class="text5 mb-2">{{ this.arrInfo["display_name"] }}</label>
-              <p class="text6">
-                {{ this.arrInfo["description"] }}
-              </p>
-            </div>
+        </div>
+        <div class="row">
+          <div class="col-12 mt-5">
+            <label class="text5 mb-2">{{ this.arrInfo["display_name"] }}</label>
+            <p class="text6">
+              {{ this.arrInfo["description"] }}
+            </p>
           </div>
-          <div class="row mb-md-5 mt-5">
-            <div class="col-8 col-lg-5 col-md-12 redes">
-              <label class="text5 mb-2">Nuestras redes sociales</label>
-              <div class="row">
-                <div class="col-2 col-md-1 col-lg-2 col-xl-2 col-xxl-1">
-                  <img src="../../assets/img/facebook.svg" alt="" />
-                </div>
-                <div class="col-2 col-md-1 col-lg-2 col-xl-2 col-xxl-1">
-                  <img src="../../assets/img/instagram.svg" alt="" />
-                </div>
-                <div class="col-2 col-md-1 col-lg-2 col-xl-2 col-xxl-1">
-                  <img src="../../assets/img/linkedin.svg" alt="" />
-                </div>
-                <div class="col-2 col-md-1 col-lg-2 col-xl-2 col-xxl-1">
-                  <img src="../../assets/img/twitter.svg" alt="" />
-                </div>
+        </div>
+        <div class="row mb-md-5 mt-5">
+          <div class="col-8 col-lg-5 col-md-12 redes">
+            <label class="text5 mb-2">Nuestras redes sociales</label>
+            <div class="row">
+              <div class="col-2 col-md-1 col-lg-2 col-xl-2 col-xxl-1">
+                <img src="../../assets/img/facebook.svg" alt="" />
+              </div>
+              <div class="col-2 col-md-1 col-lg-2 col-xl-2 col-xxl-1">
+                <img src="../../assets/img/instagram.svg" alt="" />
+              </div>
+              <div class="col-2 col-md-1 col-lg-2 col-xl-2 col-xxl-1">
+                <img src="../../assets/img/linkedin.svg" alt="" />
+              </div>
+              <div class="col-2 col-md-1 col-lg-2 col-xl-2 col-xxl-1">
+                <img src="../../assets/img/twitter.svg" alt="" />
               </div>
             </div>
           </div>
         </div>
-        <!-- <div class="col-12 col-lg-3 col-md-6 offset-md-3">
+      </div>
+      <!-- <div class="col-12 col-lg-3 col-md-6 offset-md-3">
           <div class="card anuncio mt-5">
             <div class="card-body">
               <label class="text7">Anunciar vacante</label>
@@ -140,556 +140,668 @@
             </div>
           </div>
         </div> -->
-      </div>
-      <nav>
-        <div class="nav nav-tabs mt-5" id="nav-tab" role="tablist">
-          <button
-            class="nav-link active"
-            id="nav-home-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#nav-home"
-            type="button"
-            role="tab"
-            aria-controls="nav-home"
-            aria-selected="true"
-          >
-            Empleos en {{ this.arrInfo["display_name"] }}
-          </button>
-          <button
-            class="nav-link"
-            id="nav-profile-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#nav-profile"
-            type="button"
-            role="tab"
-            aria-controls="nav-profile"
-            aria-selected="false"
-          >
-            Reseñas
-          </button>
-          <button
-            class="nav-link nuevo"
-            id="nav-contact-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#nav-contact"
-            type="button"
-            role="tab"
-            aria-controls="nav-contact"
-            aria-selected="false"
-            [routerLink]="['/talento/resena_empresa', this.id_company]"
-            routerLinkActive="router-link-active"
-          >
-            Reseñar esta empresa
-          </button>
-        </div>
-      </nav>
-      <div class="tab-content" id="nav-tabContent">
-        <div
-          class="tab-pane fade show active"
-          id="nav-home"
-          role="tabpanel"
-          aria-labelledby="nav-home-tab"
+    </div>
+    <nav>
+      <div class="nav nav-tabs mt-5" id="nav-tab" role="tablist">
+        <button
+          class="nav-link active"
+          id="nav-home-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-home"
+          type="button"
+          role="tab"
+          aria-controls="nav-home"
+          aria-selected="true"
         >
-          <div class="row mt-md-0 mt-lg-5">
-            <div class="col-lg-4 d-none d-md-block">
-              <div class="row">
-                <div class="col-12 col-lg-12 col-md-8 mt-lg-0 mt-5">
-                  <h1 class="text9">Filtros</h1>
-                  <label class="text7" (click)="limpiar()"
-                    ><u>Limpiar Filtros</u></label
+          Empleos en {{ this.arrInfo["display_name"] }}
+        </button>
+        <button
+          class="nav-link"
+          id="nav-profile-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-profile"
+          type="button"
+          role="tab"
+          aria-controls="nav-profile"
+          aria-selected="false"
+        >
+          Reseñas
+        </button>
+        <button
+          class="nav-link nuevo"
+          id="nav-contact-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-contact"
+          type="button"
+          role="tab"
+          aria-controls="nav-contact"
+          aria-selected="false"
+          [routerLink]="['/talento/resena_empresa', this.id_company]"
+          routerLinkActive="router-link-active"
+        >
+          Reseñar esta empresa
+        </button>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div
+        class="tab-pane fade show active"
+        id="nav-home"
+        role="tabpanel"
+        aria-labelledby="nav-home-tab"
+      >
+        <div class="row mt-md-0 mt-lg-5">
+          <div class="col-lg-4 d-none d-md-block">
+            <div class="row">
+              <div class="col-12 col-lg-12 col-md-8 mt-lg-0 mt-5">
+                <h1 class="text9">Filtros</h1>
+                <label class="text7" (click)="limpiar()"
+                  ><u>Limpiar Filtros</u></label
+                >
+              </div>
+            </div>
+            <div class="accordion mt-4" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading1">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse1"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
                   >
+                    Fecha de publicación
+                  </button>
+                </h2>
+                <div
+                  id="collapse1"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="heading1"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="fechaPublicacion(this.fechaHoy)"
+                          [class.active]="isActive('btn1')"
+                          (click)="setActive('btn1')"
+                        >
+                          Hoy
+                        </button>
+                      </div>
+                      <div class="col-4">
+                        <label></label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="fechaPublicacion(this.fechaAyer)"
+                          [class.active]="isActive('btn2')"
+                          (click)="setActive('btn2')"
+                        >
+                          Últimas 24 horas
+                        </button>
+                      </div>
+                      <div class="col-4">
+                        <label></label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="fechaPublicacion(this.fechaSemPas)"
+                          [class.active]="isActive('btn3')"
+                          (click)="setActive('btn3')"
+                        >
+                          Última semana
+                        </button>
+                      </div>
+                      <div class="col-4">
+                        <label></label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="fechaPublicacion(this.fechaUlQui)"
+                          [class.active]="isActive('btn4')"
+                          (click)="setActive('btn4')"
+                        >
+                          Últimos 15 días
+                        </button>
+                      </div>
+                      <div class="col-4">
+                        <label></label>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="accordion mt-4" id="accordionExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="heading1">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse1"
-                      aria-expanded="false"
-                      aria-controls="collapseTwo"
-                    >
-                      Fecha de publicación
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse1"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading1"
-                    data-bs-parent="#accordionExample"
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading2">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse2"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
                   >
-                    <div class="accordion-body">
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="fechaPublicacion(this.fechaHoy)">
-                            Hoy
-                          </button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                    Tipo de trabajo
+                  </button>
+                </h2>
+                <div
+                  id="collapse2"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="heading2"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="tipodeTrabajo('1')"
+                          [class.active]="isActive('btn5')"
+                          (click)="setActive('btn5')"
+                        >
+                          Permanente
+                        </button>
                       </div>
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="fechaPublicacion(this.fechaAyer)">
-                            Últimas 24 horas
-                          </button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                      <div class="col-4">
+                        <label></label>
                       </div>
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="fechaPublicacion(this.fechaSemPas)">
-                            Última semana
-                          </button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="tipodeTrabajo('2')"
+                          [class.active]="isActive('btn6')"
+                          (click)="setActive('btn6')"
+                        >
+                          Temporal/Por proyecto
+                        </button>
                       </div>
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="fechaPublicacion(this.fechaUlQui)">
-                            Últimos 15 días
-                          </button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                      <div class="col-4">
+                        <label></label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="tipodeTrabajo('3')"
+                          [class.active]="isActive('btn7')"
+                          (click)="setActive('btn7')"
+                        >
+                          Becario
+                        </button>
+                      </div>
+                      <div class="col-4">
+                        <label></label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="tipodeTrabajo('4')"
+                          [class.active]="isActive('btn8')"
+                          (click)="setActive('btn8')"
+                        >
+                          Tiempo Completo
+                        </button>
+                      </div>
+                      <div class="col-4">
+                        <label></label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="tipodeTrabajo('5')"
+                          [class.active]="isActive('btn9')"
+                          (click)="setActive('btn9')"
+                        >
+                          Medio Tiempo
+                        </button>
+                      </div>
+                      <div class="col-4">
+                        <label></label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="tipodeTrabajo('6')"
+                          [class.active]="isActive('btn10')"
+                          (click)="setActive('btn10')"
+                        >
+                          Nómina
+                        </button>
+                      </div>
+                      <div class="col-4">
+                        <label></label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="tipodeTrabajo('7')"
+                          [class.active]="isActive('btn11')"
+                          (click)="setActive('btn11')"
+                        >
+                          Honorarios Asimilados
+                        </button>
+                      </div>
+                      <div class="col-4">
+                        <label></label>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="heading2">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse2"
-                      aria-expanded="false"
-                      aria-controls="collapseTwo"
-                    >
-                      Tipo de trabajo
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse2"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading2"
-                    data-bs-parent="#accordionExample"
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingT3">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse3"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
                   >
-                    <div class="accordion-body">
+                    Salario estimado
+                  </button>
+                </h2>
+                <div
+                  id="collapse3"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="heading3"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <form [formGroup]="formGroup">
                       <div class="row">
-                        <div class="col-8">
-                          <button (click)="tipodeTrabajo('1')">Permanente</button>
+                        <div class="col-5">
+                          <input
+                            type="number"
+                            class="input1"
+                            placeholder="1000"
+                            formControlName="min"
+                          />
                         </div>
-                        <div class="col-4">
-                          <label></label>
+                        <div class="col-2">
+                          <label class="text-center"><b>-</b></label>
+                        </div>
+                        <div class="col-5">
+                          <input
+                            type="number"
+                            class="input1"
+                            placeholder="1000"
+                            formControlName="max"
+                          />
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="tipodeTrabajo('2')">
-                            Temporal/Por proyecto
-                          </button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                      <button (click)="rango()">Aplicar</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading4">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse4  "
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    Modo de empleo
+                  </button>
+                </h2>
+                <div
+                  id="collapse4"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="heading4"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="modoEmpleo('1')"
+                          [class.active]="isActive('btn12')"
+                          (click)="setActive('btn12')"
+                        >
+                          Remoto
+                        </button>
                       </div>
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="tipodeTrabajo('3')">Becario</button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                      <div class="col-4">
+                        <label></label>
                       </div>
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="tipodeTrabajo('4')">
-                            Tiempo Completo
-                          </button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="modoEmpleo('2')"
+                          [class.active]="isActive('btn13')"
+                          (click)="setActive('btn13')"
+                        >
+                          Presencial
+                        </button>
                       </div>
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="tipodeTrabajo('5')">
-                            Medio Tiempo
-                          </button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                      <div class="col-4">
+                        <label></label>
                       </div>
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="tipodeTrabajo('6')">Nómina</button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="modoEmpleo('3')"
+                          [class.active]="isActive('btn14')"
+                          (click)="setActive('btn14')"
+                        >
+                          Desde casa
+                        </button>
                       </div>
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="tipodeTrabajo('7')">
-                            Honorarios Asimilados
-                          </button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                      <div class="col-4">
+                        <label></label>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingT3">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse3"
-                      aria-expanded="false"
-                      aria-controls="collapseThree"
-                    >
-                      Salario estimado
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse3"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading3"
-                    data-bs-parent="#accordionExample"
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading5">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse5"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
                   >
-                    <div class="accordion-body">
-                      <form [formGroup]="formGroup">
-                        <div class="row">
-                          <div class="col-5">
-                            <input
-                              type="number"
-                              class="input1"
-                              placeholder="1000"
-                              formControlName="min"
-                            />
-                          </div>
-                          <div class="col-2">
-                            <label class="text-center"><b>-</b></label>
-                          </div>
-                          <div class="col-5">
-                            <input
-                              type="number"
-                              class="input1"
-                              placeholder="1000"
-                              formControlName="max"
-                            />
-                          </div>
-                        </div>
-                        <button (click)="rango()">Aplicar</button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="heading4">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse4  "
-                      aria-expanded="false"
-                      aria-controls="collapseTwo"
-                    >
-                      Modo de empleo
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse4"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading4"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="modoEmpleo('1')">Remoto</button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                    Nivel de educación
+                  </button>
+                </h2>
+                <div
+                  id="collapse5"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="heading5"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="nivelEducativo('1')"
+                          [class.active]="isActive('btn15')"
+                          (click)="setActive('btn15')"
+                        >
+                          Primaria
+                        </button>
                       </div>
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="modoEmpleo('2')">Presencial</button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="modoEmpleo('3')">Desde casa</button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                      <div class="col-4">
+                        <label></label>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="heading5">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse5"
-                      aria-expanded="false"
-                      aria-controls="collapseTwo"
-                    >
-                      Nivel de educación
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse5"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading5"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="nivelEducativo('1')">Primaria</button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="nivelEducativo('2')"
+                          [class.active]="isActive('btn16')"
+                          (click)="setActive('btn16')"
+                        >
+                          Secundaria
+                        </button>
                       </div>
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="nivelEducativo('2')">
-                            Secundaria
-                          </button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                      <div class="col-4">
+                        <label></label>
                       </div>
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="nivelEducativo('3')">
-                            Preparatoria
-                          </button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="nivelEducativo('3')"
+                          [class.active]="isActive('btn17')"
+                          (click)="setActive('btn17')"
+                        >
+                          Preparatoria
+                        </button>
                       </div>
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="nivelEducativo('4')">
-                            Bachillerato Tecnológico
-                          </button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                      <div class="col-4">
+                        <label></label>
                       </div>
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="nivelEducativo('5')">
-                            Licenciatura
-                          </button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="nivelEducativo('4')"
+                          [class.active]="isActive('btn18')"
+                          (click)="setActive('btn18')"
+                        >
+                          Bachillerato Tecnológico
+                        </button>
                       </div>
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="nivelEducativo('6')">
-                            Especialidad
-                          </button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                      <div class="col-4">
+                        <label></label>
                       </div>
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="nivelEducativo('7')">Maestria</button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="nivelEducativo('5')"
+                          [class.active]="isActive('btn19')"
+                          (click)="setActive('btn19')"
+                        >
+                          Licenciatura
+                        </button>
                       </div>
-                      <div class="row">
-                        <div class="col-8">
-                          <button (click)="nivelEducativo('8')">Doctorado</button>
-                        </div>
-                        <div class="col-4">
-                          <label></label>
-                        </div>
+                      <div class="col-4">
+                        <label></label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="nivelEducativo('6')"
+                          [class.active]="isActive('btn20')"
+                          (click)="setActive('btn20')"
+                        >
+                          Especialidad
+                        </button>
+                      </div>
+                      <div class="col-4">
+                        <label></label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="nivelEducativo('7')"
+                          [class.active]="isActive('btn21')"
+                          (click)="setActive('btn21')"
+                        >
+                          Maestria
+                        </button>
+                      </div>
+                      <div class="col-4">
+                        <label></label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <button
+                          (click)="nivelEducativo('8')"
+                          [class.active]="isActive('btn22')"
+                          (click)="setActive('btn22')"
+                        >
+                          Doctorado
+                        </button>
+                      </div>
+                      <div class="col-4">
+                        <label></label>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-8">
-              <div class="row">
-                <div class="col-12 col-lg-12 col-md-12 mt-lg-0 mt-5">
-                  <h1 class="text14">¿Dónde?</h1>
-                </div>
-                <div
-                  class="col-12 col-md-4 col-lg-4 col-xl-8 col-xxl-6 mt-lg-0 mt-3"
-                >
-                  <div class="input-group">
-                    <input
-                      [(ngModel)]="txtBuscar"
-                      (search)="limpiar()"
-                      type="search"
-                      class="form-control busqueda"
-                      placeholder="&#xf3c5;  Ubicación"
-                      aria-label="Search"
-                      aria-describedby="search-addon"
-                    />
-                    <button
-                      *ngIf="txtBuscar"
-                      type="button"
-                      class="btnBusqueda"
-                      (click)="buscar()"
-                    >
-                      Buscar
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="row mb-5 mt-5">
-                <div class="col-8 col-md-4 col-lg-4 col-xl-4 col-xxl-2 col-md-4">
-                  <label class="text11">Clasificar por</label>
-                  <div class="dropdown">
-                    <button
-                      class="drop2 dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      {{ this.elegido }}
-                    </button>
-                    <div
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <a class="dropdown-item" (click)="ordenarVacanciesSm()"
-                        >Salario minimo</a
-                      >
-                      <a class="dropdown-item" (click)="ordenarVacanciesSmax()"
-                        >Salario maximo</a
-                      >
-                      <a class="dropdown-item" href="#">Modo de empleo</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4 d-md-none">
-                  <button
-                    class="botonfiltro"
-                    type="button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalFiltros"
-                  >
-                    Filtrar
-                  </button>
-                </div>
-                <div
-                  class="col-12 col-md-6 col-lg-6 col-xl-4 col-xxl-6 d-flex justify-content-end mt-5 mt-md-0"
-                >
-                  <label class="text11"
-                    >Página {{ this.p }} de {{ this.paginas }}</label
-                  >
-                </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="row">
+              <div class="col-12 col-lg-12 col-md-12 mt-lg-0 mt-5">
+                <h1 class="text14">¿Dónde?</h1>
               </div>
               <div
-                class="divh"
-                *ngIf="this.arrVacancies.length != 0; else noVacants"
+                class="col-12 col-md-4 col-lg-4 col-xl-8 col-xxl-6 mt-lg-0 mt-3"
               >
-                <div
-                  class="card"
-                  *ngFor="
-                    let item of this.arrVacancies
-                      | paginate: { itemsPerPage: this.numPages, currentPage: p }
-                  "
+                <div class="input-group">
+                  <input
+                    [(ngModel)]="txtBuscar"
+                    (search)="limpiar()"
+                    type="search"
+                    class="form-control busqueda"
+                    placeholder="&#xf3c5;  Ubicación"
+                    aria-label="Search"
+                    aria-describedby="search-addon"
+                  />
+                  <button
+                    *ngIf="txtBuscar"
+                    type="button"
+                    class="btnBusqueda"
+                    (click)="buscar()"
+                  >
+                    Buscar
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-5 mt-5">
+              <div class="col-8 col-md-4 col-lg-4 col-xl-4 col-xxl-2 col-md-4">
+                <label class="text11">Clasificar por</label>
+                <div class="dropdown">
+                  <button
+                    class="drop2 dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    {{ this.elegido }}
+                  </button>
+                  <div
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <a class="dropdown-item" (click)="ordenarVacanciesSm()"
+                      >Salario minimo</a
+                    >
+                    <a class="dropdown-item" (click)="ordenarVacanciesSmax()"
+                      >Salario maximo</a
+                    >
+                    <a class="dropdown-item" href="#">Modo de empleo</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 d-md-none">
+                <button
+                  class="botonfiltro"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalFiltros"
                 >
-                  <div class="ribbon" *ngIf="item.new == 1">Nuevo</div>
-                  <div class="card-body">
-                    <div class="row mb-2 mt-3">
-                      <div class="col-12 col-md-12 col-lg-2 col-xl-2 col-xxl-1">
-                        <img src="../../assets/img/logoCard.svg" alt="" />
-                      </div>
-                      <div class="col-12 col-md-12 col-lg-10 col-xl-8 col-xxl-11">
-                        <h5 class="card-title">
-                          {{ item.name }}
-                        </h5>
-                      </div>
+                  Filtrar
+                </button>
+              </div>
+              <div
+                class="col-12 col-md-6 col-lg-6 col-xl-4 col-xxl-6 d-flex justify-content-end mt-5 mt-md-0"
+              >
+                <label class="text11"
+                  >Página {{ this.p }} de {{ this.paginas }}</label
+                >
+              </div>
+            </div>
+            <div
+              class="divh"
+              *ngIf="this.arrVacancies.length != 0; else noVacants"
+            >
+              <div
+                class="card"
+                *ngFor="
+                  let item of this.arrVacancies
+                    | paginate: { itemsPerPage: this.numPages, currentPage: p }
+                "
+              >
+                <div class="ribbon" *ngIf="item.new == 1">Nuevo</div>
+                <div class="card-body">
+                  <div class="row mb-2 mt-3">
+                    <div class="col-12 col-md-12 col-lg-2 col-xl-2 col-xxl-1">
+                      <img src="../../assets/img/logoCard.svg" alt="" />
                     </div>
-                    <div class="row">
-                      <div class="col-12">
-                        <label class="text2">{{
-                          this.arrInfo["display_name"]
-                        }}</label>
-                        <label class="text3 mt-2"
-                          ><i class="fas fa-map-marker-alt me-2"></i
-                          >{{ item.location }}</label
-                        >
-                        <p class="text4 text-truncate">
-                          {{ item.description }}
-                        </p>
-                      </div>
+                    <div class="col-12 col-md-12 col-lg-10 col-xl-8 col-xxl-11">
+                      <h5 class="card-title">
+                        {{ item.name }}
+                      </h5>
                     </div>
-                    <div class="row">
-                      <div
-                        class="col-12 col-lg-7 col-md-7 offset-lg-5 offset-md-5 d-flex justify-content-end"
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <label class="text2">{{
+                        this.arrInfo["display_name"]
+                      }}</label>
+                      <label class="text3 mt-2"
+                        ><i class="fas fa-map-marker-alt me-2"></i
+                        >{{ item.location }}</label
                       >
-                        <label class="card-title" *ngIf="item.max_salary != 0">
-                          ${{ item.min_salary }} - ${{
-                            item.max_salary
-                          }}
-                          mxn</label
-                        >
-                        <label class="card-title" *ngIf="item.max_salary == 0">
-                          ${{ item.min_salary }}
-                          mxn</label
-                        >
-                      </div>
+                      <p class="text4 text-truncate">
+                        {{ item.description }}
+                      </p>
                     </div>
-                    <div class="row">
-                      <div
-                        class="col-8 col-lg-3 col-md-4 offset-lg-9 offset-md-8 offset-4 d-flex justify-content-end"
+                  </div>
+                  <div class="row">
+                    <div
+                      class="col-12 col-lg-7 col-md-7 offset-lg-5 offset-md-5 d-flex justify-content-end"
+                    >
+                      <label class="card-title" *ngIf="item.max_salary != 0">
+                        ${{ item.min_salary }} - ${{
+                          item.max_salary
+                        }}
+                        mxn</label
                       >
-                        <button class="boton mt-2" type="button" [routerLink]="['/detalle_trabajo', item.id_vacant]">
-                          Postúlate ahora
-                        </button>
-                      </div>
+                      <label class="card-title" *ngIf="item.max_salary == 0">
+                        ${{ item.min_salary }} mxn</label
+                      >
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div
+                      class="col-8 col-lg-3 col-md-4 offset-lg-9 offset-md-8 offset-4 d-flex justify-content-end"
+                    >
+                      <button
+                        class="boton mt-2"
+                        type="button"
+                        [routerLink]="[
+                          '/inicio/detalle_empleo',
+                          item.id_vacant
+                        ]"
+                      >
+                        Postúlate ahora
+                      </button>
                     </div>
                   </div>
                 </div>
-                <pagination-controls
-                  class="paginacion"
-                  (pageChange)="p = $event"
-                  previousLabel="Anterior"
-                  nextLabel="Siguiente"
-                ></pagination-controls>
-                <!-- <div class="card">
+              </div>
+              <pagination-controls
+                class="paginacion"
+                (pageChange)="p = $event"
+                previousLabel="Anterior"
+                nextLabel="Siguiente"
+              ></pagination-controls>
+              <!-- <div class="card">
                   <div class="ribbon">Nuevo</div>
                   <div class="card-body">
                     <div class="row">
@@ -1085,13 +1197,13 @@
                     </div>
                   </div>
                 </div> -->
+            </div>
+            <ng-template #noVacants>
+              <div class="alert alert-success" role="alert">
+                No hay vacantes disponibles
               </div>
-              <ng-template #noVacants>
-                <div class="alert alert-success" role="alert">
-                  No hay vacantes disponibles
-                </div>
-              </ng-template>
-              <!-- <div class="row mb-5 mt-5">
+            </ng-template>
+            <!-- <div class="row mb-5 mt-5">
                 <div class="col-5">
                   <nav aria-label="Page navigation example">
                     <ul class="pagination">
@@ -1122,69 +1234,69 @@
                   </nav>
                 </div>
               </div> -->
-            </div>
           </div>
         </div>
-        <div
-          class="tab-pane fade resena"
-          id="nav-profile"
-          role="tabpanel"
-          aria-labelledby="nav-profile-tab"
-        >
-          <div class="row mt-3 mb-3">
-            <div
-              class="col-12 col-md-12 col-lg-2 col-xl-2 col-xxl-2 d-flex align-items-center"
-            >
-              <label class="text11">Clasificar por </label>
-            </div>
-            <div class="col-12 col-md-4 col-lg-3 col-xl-3 col-xxl-2">
-              <div class="dropdown">
-                <button
-                  class="drop2 dropdown-toggle"
-                  type="button"
-                  id="dropdownMenuButton"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
+      </div>
+      <div
+        class="tab-pane fade resena"
+        id="nav-profile"
+        role="tabpanel"
+        aria-labelledby="nav-profile-tab"
+      >
+        <div class="row mt-3 mb-3">
+          <div
+            class="col-12 col-md-12 col-lg-2 col-xl-2 col-xxl-2 d-flex align-items-center"
+          >
+            <label class="text11">Clasificar por </label>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 col-xl-3 col-xxl-2">
+            <div class="dropdown">
+              <button
+                class="drop2 dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                {{ this.elegido }}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" (click)="ordenarScoreMay()"
+                  >Mayor Calificación</a
                 >
-                  {{ this.elegido }}
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" (click)="ordenarScoreMay()"
-                    >Mayor Calificación</a
-                  >
-                  <a class="dropdown-item" (click)="ordenarScoreMen()"
-                    >Menor Calificación</a
-                  >
-                  <a class="dropdown-item" (click)="ordenarFecha()"
-                    >Más Recientes</a
-                  >
-                  <a class="dropdown-item" (click)="ordenarFecha2()"
-                    >Más Antiguas</a
-                  >
-                </div>
+                <a class="dropdown-item" (click)="ordenarScoreMen()"
+                  >Menor Calificación</a
+                >
+                <a class="dropdown-item" (click)="ordenarFecha()"
+                  >Más Recientes</a
+                >
+                <a class="dropdown-item" (click)="ordenarFecha2()"
+                  >Más Antiguas</a
+                >
               </div>
             </div>
           </div>
-  
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <ul class="list-group list-group-flush">
-                  <li
-                    class="list-group-item mt-4"
-                    *ngFor="let item of this.arrReviews"
-                  >
-                    <div class="row ms-3 mb-2">
-                      <div class="col-12 col-lg-2 col-md-3 ms-2">
-                        <div class="row estrellas">
-                          <div
-                            class="col"
-                            *ngFor="let item of this.fakeArray(item.score)"
-                          >
-                            <div class="completa"></div>
-                          </div>
-                          <!-- <div class="col">
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item mt-4"
+                  *ngFor="let item of this.arrReviews"
+                >
+                  <div class="row ms-3 mb-2">
+                    <div class="col-12 col-lg-2 col-md-3 ms-2">
+                      <div class="row estrellas">
+                        <div
+                          class="col"
+                          *ngFor="let item of this.fakeArray(item.score)"
+                        >
+                          <div class="completa"></div>
+                        </div>
+                        <!-- <div class="col">
                             <div class="completa"></div>
                           </div>
                           <div class="col">
@@ -1199,399 +1311,511 @@
                           <div class="col">
                             <div class="vacia"></div>
                           </div> -->
-                        </div>
                       </div>
                     </div>
-                    <div class="row ms-3 mb-3">
-                      <div class="col-11">
-                        <label class="text3 gris">{{ item.datetime }}</label>
-                        <label class="text13">{{ item.title }}</label>
-                        <p class="text3 mt-3">
-                          {{ item.review }}
-                        </p>
-                      </div>
+                  </div>
+                  <div class="row ms-3 mb-3">
+                    <div class="col-11">
+                      <label class="text3 gris">{{ item.datetime }}</label>
+                      <label class="text13">{{ item.title }}</label>
+                      <p class="text3 mt-3">
+                        {{ item.review }}
+                      </p>
                     </div>
-                    <div class="row">
-                      <div
-                        class="col-12 col-lg-2 col-md-3 offset-lg-10 offset-md-9"
-                      >
-                        <button class="boton" type="button">Denunciar</button>
-                      </div>
+                  </div>
+                  <div class="row">
+                    <div
+                      class="col-12 col-lg-2 col-md-3 offset-lg-10 offset-md-9"
+                    >
+                      <button class="boton" type="button">Denunciar</button>
                     </div>
-                  </li>
-                </ul>
-              </div>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- Button trigger modal -->
-  <!--button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalFiltros">
+</div>
+<!-- Button trigger modal -->
+<!--button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalFiltros">
     Launch demo modal
   </button-->
-  
-  <!-- Modal filtro-->
-  <div
-    class="modal fade modalFiltros"
-    id="modalFiltros"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div class="row ps-4">
-            <div class="col-12 col-lg-12 col-md-8 mt-lg-0 mt-5">
-              <h1 class="text9">Filtros</h1>
-              <label class="text7" (click)="limpiar()"
-                ><u>Limpiar Filtros</u></label
+
+<!-- Modal filtro-->
+<div
+  class="modal fade modalFiltros"
+  id="modalFiltros"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row ps-4">
+          <div class="col-12 col-lg-12 col-md-8 mt-lg-0 mt-5">
+            <h1 class="text9">Filtros</h1>
+            <label class="text7" (click)="limpiar()"
+              ><u>Limpiar Filtros</u></label
+            >
+          </div>
+        </div>
+        <div class="accordion mt-4" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading1">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse1"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
               >
+                Fecha de publicación
+              </button>
+            </h2>
+            <div
+              id="collapse1"
+              class="accordion-collapse collapse"
+              aria-labelledby="heading1"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="fechaPublicacion(this.fechaHoy)"
+                      [class.active]="isActive('btn1')"
+                      (click)="setActive('btn1')"
+                    >
+                      Hoy
+                    </button>
+                  </div>
+                  <div class="col-4">
+                    <label></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="fechaPublicacion(this.fechaAyer)"
+                      [class.active]="isActive('btn2')"
+                      (click)="setActive('btn2')"
+                    >
+                      Últimas 24 horas
+                    </button>
+                  </div>
+                  <div class="col-4">
+                    <label></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="fechaPublicacion(this.fechaSemPas)"
+                      [class.active]="isActive('btn3')"
+                      (click)="setActive('btn3')"
+                    >
+                      Última semana
+                    </button>
+                  </div>
+                  <div class="col-4">
+                    <label></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="fechaPublicacion(this.fechaUlQui)"
+                      [class.active]="isActive('btn4')"
+                      (click)="setActive('btn4')"
+                    >
+                      Últimos 15 días
+                    </button>
+                  </div>
+                  <div class="col-4">
+                    <label></label>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="accordion mt-4" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="heading1">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapse1"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
-                  Fecha de publicación
-                </button>
-              </h2>
-              <div
-                id="collapse1"
-                class="accordion-collapse collapse"
-                aria-labelledby="heading1"
-                data-bs-parent="#accordionExample"
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse2"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
               >
-                <div class="accordion-body">
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="fechaPublicacion(this.fechaHoy)">
-                        Hoy
-                      </button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                Tipo de trabajo
+              </button>
+            </h2>
+            <div
+              id="collapse2"
+              class="accordion-collapse collapse"
+              aria-labelledby="heading2"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="tipodeTrabajo('1')"
+                      [class.active]="isActive('btn5')"
+                      (click)="setActive('btn5')"
+                    >
+                      Permanente
+                    </button>
                   </div>
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="fechaPublicacion(this.fechaAyer)">
-                        Últimas 24 horas
-                      </button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                  <div class="col-4">
+                    <label></label>
                   </div>
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="fechaPublicacion(this.fechaSemPas)">
-                        Última semana
-                      </button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="tipodeTrabajo('2')"
+                      [class.active]="isActive('btn6')"
+                      (click)="setActive('btn6')"
+                    >
+                      Temporal/Por proyecto
+                    </button>
                   </div>
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="fechaPublicacion(this.fechaUlQui)">
-                        Últimos 15 días
-                      </button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                  <div class="col-4">
+                    <label></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="tipodeTrabajo('3')"
+                      [class.active]="isActive('btn7')"
+                      (click)="setActive('btn7')"
+                    >
+                      Becario
+                    </button>
+                  </div>
+                  <div class="col-4">
+                    <label></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="tipodeTrabajo('4')"
+                      [class.active]="isActive('btn8')"
+                      (click)="setActive('btn8')"
+                    >
+                      Tiempo Completo
+                    </button>
+                  </div>
+                  <div class="col-4">
+                    <label></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="tipodeTrabajo('5')"
+                      [class.active]="isActive('btn9')"
+                      (click)="setActive('btn9')"
+                    >
+                      Medio Tiempo
+                    </button>
+                  </div>
+                  <div class="col-4">
+                    <label></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="tipodeTrabajo('6')"
+                      [class.active]="isActive('btn10')"
+                      (click)="setActive('btn10')"
+                    >
+                      Nómina
+                    </button>
+                  </div>
+                  <div class="col-4">
+                    <label></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="tipodeTrabajo('7')"
+                      [class.active]="isActive('btn11')"
+                      (click)="setActive('btn11')"
+                    >
+                      Honorarios Asimilados
+                    </button>
+                  </div>
+                  <div class="col-4">
+                    <label></label>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="heading2">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapse2"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
-                  Tipo de trabajo
-                </button>
-              </h2>
-              <div
-                id="collapse2"
-                class="accordion-collapse collapse"
-                aria-labelledby="heading2"
-                data-bs-parent="#accordionExample"
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingT3">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse3"
+                aria-expanded="false"
+                aria-controls="collapseThree"
               >
-                <div class="accordion-body">
+                Salario estimado
+              </button>
+            </h2>
+            <div
+              id="collapse3"
+              class="accordion-collapse collapse"
+              aria-labelledby="heading3"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <form [formGroup]="formGroup">
                   <div class="row">
-                    <div class="col-8">
-                      <button (click)="tipodeTrabajo('1')">Permanente</button>
+                    <div class="col-5">
+                      <input
+                        type="number"
+                        class="input1"
+                        placeholder="1000"
+                        formControlName="min"
+                      />
                     </div>
-                    <div class="col-4">
-                      <label></label>
+                    <div class="col-2">
+                      <label class="text-center"><b>-</b></label>
+                    </div>
+                    <div class="col-5">
+                      <input
+                        type="number"
+                        class="input1"
+                        placeholder="1000"
+                        formControlName="max"
+                      />
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="tipodeTrabajo('2')">
-                        Temporal/Por proyecto
-                      </button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                  <button (click)="rango()">Aplicar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading4">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse4  "
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Modo de empleo
+              </button>
+            </h2>
+            <div
+              id="collapse4"
+              class="accordion-collapse collapse"
+              aria-labelledby="heading4"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="modoEmpleo('1')"
+                      [class.active]="isActive('btn12')"
+                      (click)="setActive('btn12')"
+                    >
+                      Remoto
+                    </button>
                   </div>
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="tipodeTrabajo('3')">Becario</button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                  <div class="col-4">
+                    <label></label>
                   </div>
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="tipodeTrabajo('4')">
-                        Tiempo Completo
-                      </button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="modoEmpleo('2')"
+                      [class.active]="isActive('btn13')"
+                      (click)="setActive('btn13')"
+                    >
+                      Presencial
+                    </button>
                   </div>
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="tipodeTrabajo('5')">Medio Tiempo</button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                  <div class="col-4">
+                    <label></label>
                   </div>
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="tipodeTrabajo('6')">Nómina</button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="modoEmpleo('3')"
+                      [class.active]="isActive('btn14')"
+                      (click)="setActive('btn14')"
+                    >
+                      Desde casa
+                    </button>
                   </div>
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="tipodeTrabajo('7')">
-                        Honorarios Asimilados
-                      </button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                  <div class="col-4">
+                    <label></label>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingT3">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapse3"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
-                  Salario estimado
-                </button>
-              </h2>
-              <div
-                id="collapse3"
-                class="accordion-collapse collapse"
-                aria-labelledby="heading3"
-                data-bs-parent="#accordionExample"
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading5">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse5"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
               >
-                <div class="accordion-body">
-                  <form [formGroup]="formGroup">
-                    <div class="row">
-                      <div class="col-1">
-                        <label class="text-center"><b>De</b></label>
-                      </div>
-                      <div class="col-4">
-                        <input
-                          type="number"
-                          class="input1"
-                          placeholder="1000"
-                          formControlName="min"
-                        />
-                      </div>
-                      <div class="col-1">
-                        <label class="text-center"><b>a</b></label>
-                      </div>
-                      <div class="col-4">
-                        <input
-                          type="number"
-                          class="input1"
-                          placeholder="1000"
-                          formControlName="max"
-                        />
-                      </div>
-                    </div>
-                    <button (click)="rango()">Aplicar</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="heading4">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapse4  "
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
-                  Modo de empleo
-                </button>
-              </h2>
-              <div
-                id="collapse4"
-                class="accordion-collapse collapse"
-                aria-labelledby="heading4"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="modoEmpleo('1')">Remoto</button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                Nivel de educación
+              </button>
+            </h2>
+            <div
+              id="collapse5"
+              class="accordion-collapse collapse"
+              aria-labelledby="heading5"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="nivelEducativo('1')"
+                      [class.active]="isActive('btn15')"
+                      (click)="setActive('btn15')"
+                    >
+                      Primaria
+                    </button>
                   </div>
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="modoEmpleo('2')">Presencial</button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="modoEmpleo('3')">Desde casa</button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                  <div class="col-4">
+                    <label></label>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="heading5">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapse5"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
-                  Nivel de educación
-                </button>
-              </h2>
-              <div
-                id="collapse5"
-                class="accordion-collapse collapse"
-                aria-labelledby="heading5"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="nivelEducativo('1')">Primaria</button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="nivelEducativo('2')"
+                      [class.active]="isActive('btn16')"
+                      (click)="setActive('btn16')"
+                    >
+                      Secundaria
+                    </button>
                   </div>
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="nivelEducativo('2')">Secundaria</button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                  <div class="col-4">
+                    <label></label>
                   </div>
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="nivelEducativo('3')">Preparatoria</button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="nivelEducativo('3')"
+                      [class.active]="isActive('btn17')"
+                      (click)="setActive('btn17')"
+                    >
+                      Preparatoria
+                    </button>
                   </div>
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="nivelEducativo('4')">
-                        Bachillerato Tecnológico
-                      </button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                  <div class="col-4">
+                    <label></label>
                   </div>
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="nivelEducativo('5')">Licenciatura</button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="nivelEducativo('4')"
+                      [class.active]="isActive('btn18')"
+                      (click)="setActive('btn18')"
+                    >
+                      Bachillerato Tecnológico
+                    </button>
                   </div>
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="nivelEducativo('6')">Especialidad</button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                  <div class="col-4">
+                    <label></label>
                   </div>
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="nivelEducativo('7')">Maestria</button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="nivelEducativo('5')"
+                      [class.active]="isActive('btn19')"
+                      (click)="setActive('btn19')"
+                    >
+                      Licenciatura
+                    </button>
                   </div>
-                  <div class="row">
-                    <div class="col-8">
-                      <button (click)="nivelEducativo('8')">Doctorado</button>
-                    </div>
-                    <div class="col-4">
-                      <label></label>
-                    </div>
+                  <div class="col-4">
+                    <label></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="nivelEducativo('6')"
+                      [class.active]="isActive('btn20')"
+                      (click)="setActive('btn20')"
+                    >
+                      Especialidad
+                    </button>
+                  </div>
+                  <div class="col-4">
+                    <label></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="nivelEducativo('7')"
+                      [class.active]="isActive('btn21')"
+                      (click)="setActive('btn21')"
+                    >
+                      Maestria
+                    </button>
+                  </div>
+                  <div class="col-4">
+                    <label></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                    <button
+                      (click)="nivelEducativo('8')"
+                      [class.active]="isActive('btn22')"
+                      (click)="setActive('btn22')"
+                    >
+                      Doctorado
+                    </button>
+                  </div>
+                  <div class="col-4">
+                    <label></label>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="boton mx-auto d-block">Filtrar</button>
-        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="boton mx-auto d-block">Filtrar</button>
       </div>
     </div>
   </div>
-  
+</div>

@@ -1,0 +1,51 @@
+<div class="fondo9">
+    <img src="../../../../../assets/img/fondoB2.svg" alt="">
+</div>  
+<div class="container-fluid">   
+    <div class="inicio bienvenido pb-5 pt-5 pt-0">
+        <div class="row mb-5">
+            <div class="col-12 col-lg-4 col-md-5 mt-lg-0 mt-5 mt-md-0">
+                <img class="imgBienv" src="../../../../../assets/img/Personaje6.svg" alt="">
+            </div> 
+            <div class="col-12 col-lg-5 col-md-7 mt-xl-5 mt-5">
+                <h1 class="titulo1 text-center">Bienvenido</h1>
+                <label class="sub1 mb-5">Completa tu perfil de empresa para comenzar a <br>buscar talento.</label>
+                <div class="row">
+                    <div class="col-6 col-lg-6 col-md-6">
+                        <button type="submit" class="boton mx-auto d-block mt-2 mt-md-5" [routerLink]="['/empresa/perfil']" routerLinkActive="router-link-active" >Completar perfil</button>
+                    </div>   
+                    <div class="col-6 col-lg-6 col-md-6">
+                        <button type="submit" class="boton mx-auto d-block mt-2 mt-md-5" disabled>Omitir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fondo8">
+    <img src="../../../../../assets/img/fondoB1.svg" alt="">
+</div>
+    <!-- Button trigger modal -->
+    <!--button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalConfianza">
+        Launch demo modal
+    </button>
+    < Modal mensaje-->
+    <div class="modal fade modalConfianza" id="modalConfianza" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class="mx-auto d-block" src="../../../../../assets/img/modalConfianza.svg" alt="">
+                    <h5 class="titulo">La confianza esesencial</h5>
+                    <p class="text">Recuerda que es importante completar tu perfil para generar confianza entre los postulantes</p>
+                </div>
+                <div class="modal-footer d-flex justify-content-start">
+                    <button type="button" class="boton mx-auto d-block" data-dismiss="modal">Comenzar</button>
+                </div>
+            </div>
+        </div>
+    </div>

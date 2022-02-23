@@ -9,7 +9,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-register-company',
   templateUrl: './register-company.component.html',
-  styleUrls: ['./register-company.component.css']
+  styleUrls: ['./register-company.component.css'],
 })
 export class RegisterCompanyComponent implements OnInit {
   formGroup: FormGroup;
@@ -30,7 +30,11 @@ export class RegisterCompanyComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.iniciarForm();
+    if (localStorage.getItem('token') != null) {
+      this.router.navigate(['/']);
+    } else {
+      this.iniciarForm();
+    }
   }
 
   iniciarForm(): void {
@@ -177,5 +181,4 @@ export class RegisterCompanyComponent implements OnInit {
 
     console.log(this.formGroup.value);
   }
-
 }

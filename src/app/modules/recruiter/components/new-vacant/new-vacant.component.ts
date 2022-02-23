@@ -78,7 +78,6 @@ export class NewVacantComponent implements OnInit {
 
 
   constructor(
-    private workTable : RecruiterServiceService,
     private service   : VacantService, 
     private session   : RecruiterServiceService,
     private fb        : FormBuilder

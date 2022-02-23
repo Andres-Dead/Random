@@ -49,7 +49,7 @@ import { SocialAuthServiceConfig } from 'angularx-social-login';
           },
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('433145578310963')
+            provider: new FacebookLoginProvider('993066204897753')
           }
         ]
       } as SocialAuthServiceConfig,

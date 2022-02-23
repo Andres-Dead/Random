@@ -1,4 +1,4 @@
-<form [formGroup]="profileForm" >
+<form [formGroup]="profileForm" (ngSubmit)="updateInfo()">
     <h1 class="titulo">Información personal</h1>
     <label class="sub">Nombre - Obligatorio</label>
     <input

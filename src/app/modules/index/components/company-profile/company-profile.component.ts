@@ -8,9 +8,12 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-company-profile',
   templateUrl: './company-profile.component.html',
-  styleUrls: ['./company-profile.component.css']
+  styleUrls: ['./company-profile.component.css'],
 })
 export class CompanyProfileComponent implements OnInit {
+  //toggle filters accordeon
+  public activeButton: string;
+
   public formGroup: FormGroup;
   public id_company: number;
   public isfollow = false;
@@ -173,7 +176,9 @@ export class CompanyProfileComponent implements OnInit {
               }
               Object.entries(data['data'].info).forEach(([key, value]) => {
                 this.arrInfo[key] = value;
-                this.arrInfo['profile_pic']= 'https://capitalempleo.com/profile_pic/'+ data['data'].info['profile_pic'];
+                this.arrInfo['profile_pic'] =
+                  'https://ci.capitalempleo.com/profile_pic/' +
+                  data['data'].info['profile_pic'];
               });
               this.empactual = data['data'].follow.id_follow;
               this.paginas = Math.ceil(
@@ -349,4 +354,17 @@ export class CompanyProfileComponent implements OnInit {
     return this.arrVacancies;
   }
 
+  //toggleFilters
+  public setActive(buttonName) {
+    console.log(buttonName, this.activeButton);
+    if (buttonName == this.activeButton) {
+      this.activeButton = '';
+      this.limpiar();
+    } else {
+      this.activeButton = buttonName;
+    }
+  }
+  public isActive(buttonName) {
+    return this.activeButton === buttonName;
+  }
 }

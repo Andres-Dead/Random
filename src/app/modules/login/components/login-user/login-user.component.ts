@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Data, Router } from '@angular/router';
-import {  HttpErrorResponse } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SocialUser, SocialAuthService } from 'angularx-social-login';
-import { FacebookLoginProvider, GoogleLoginProvider } from 'angularx-social-login';
-import  Swal  from 'sweetalert2';
+import {
+  FacebookLoginProvider,
+  GoogleLoginProvider,
+} from 'angularx-social-login';
+import Swal from 'sweetalert2';
 import { SessionService } from '../../services/session.service';
 
 @Component({
   selector: 'app-login-user',
   templateUrl: './login-user.component.html',
-  styleUrls: ['./login-user.component.css']
+  styleUrls: ['./login-user.component.css'],
 })
 export class LoginUserComponent implements OnInit {
   formGroup: FormGroup;
@@ -23,8 +26,8 @@ export class LoginUserComponent implements OnInit {
   submitted = false;
 
   userLogin = {
-    email:'',
-    password: ''
+    email: '',
+    password: '',
   };
 
   constructor(
@@ -32,10 +35,14 @@ export class LoginUserComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private socialAuthService: SocialAuthService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    this.startForm();
+    if (localStorage.getItem('token') != null) {
+      this.router.navigate(['/']);
+    } else {
+      this.startForm();
+    }
   }
 
   startForm(): void {
@@ -45,42 +52,44 @@ export class LoginUserComponent implements OnInit {
     });
   }
 
-  validateUser(token : any) {
+  validateUser(token: any) {
     this.session.getInfo(token).subscribe((datos: Data) => {
       //llama al servicio de getinfo y le pasa el token
       console.log(datos['data']);
       this.session.getGroup(token).subscribe((tipo: Data) => {
         Swal.close();
         if (tipo['group'] == 1) {
+          localStorage.setItem('group', '1');
           if (datos['data'].complete == false) {
-            this.router.navigate(['/talent/perfil']);
+            this.router.navigate(['/talento/bienvenido']);
             console.log(datos['data'].complete);
           } else {
             this.router.navigate(['/']);
           }
         } else if (tipo['group'] == 2) {
+          localStorage.setItem('group', '2');
           if (datos['data'].complete == false) {
-            this.router.navigate(['/empresa']);
+            this.router.navigate(['/empresa/bienvenido']);
             console.log(datos['data'].complete);
           } else {
             this.router.navigate(['/empresa/mesa_trabajo']);
           }
         } else if (tipo['group'] == 4) {
+          localStorage.setItem('group', '4');
           if (datos['data'].complete == false) {
-            this.router.navigate(['/']);
+            this.router.navigate(['/inicio']);
             console.log(datos['data'].complete);
           } else {
-            this.router.navigate(['/reclutador']);
+            this.router.navigate(['/recruiters']);
           }
-        }
-         else {
+        } else {
           console.log('No tienes permisos');
         }
       });
     });
   }
 
-  normalLogin(){
+  normalLogin() {
     this.userLogin.email = this.formGroup.get('email').value; //guardamos el email en el userLogin
     this.userLogin.password = this.formGroup.get('password').value; //guardamos el password en el userLogin
     if (this.userLogin.email == '' || this.userLogin.password == '') {
@@ -88,9 +97,11 @@ export class LoginUserComponent implements OnInit {
       Swal.fire({
         //mostramos un mensaje de error
         icon: 'warning',
-        title: 'Datos Insuficientes',
-        text: 'Por Favor Ingresa tu correo y contraseña',
+        title: 'Datos insuficientes',
+        text: 'Por favor ingresa tu correo y contraseña',
+        confirmButtonText: 'Aceptar',
         confirmButtonColor: '#1c4a83',
+        focusConfirm: false,
       });
       return;
     } else {
@@ -106,11 +117,11 @@ export class LoginUserComponent implements OnInit {
             (data) => {
               ///llama al servicio de login y le pasa el email y el password
               //if(data['resultado'] != 'ok')
-                /* console.log(data);   */
-                localStorage.setItem('token', data['token']); //se guarda el token en el localstorage
-                //se verifica que el perfil esté lleno
-                this.validateUser(localStorage.getItem('token'));
-                /* this.router.navigate(['/bienvenido']); */
+              /* console.log(data);   */
+              localStorage.setItem('token', data['token']); //se guarda el token en el localstorage
+              //se verifica que el perfil esté lleno
+              this.validateUser(localStorage.getItem('token'));
+              /* this.router.navigate(['/bienvenido']); */
             },
             (error: HttpErrorResponse) => {
               if (error.status === 401) {
@@ -127,7 +138,7 @@ export class LoginUserComponent implements OnInit {
                     confirmButtonColor: '#1c4a83',
                   }).then((result) => {
                     if (result.isConfirmed) {
-                      /*  window.open(`http://c6c4-187-212-196-100.ngrok.io/API/resendActivationCode?login=${this.userLogin.email}`).setTimeout(()=>{
+                      /*  window.open(`http://localhost:8080/API/resendActivationCode?login=${this.userLogin.email}`).setTimeout(()=>{
                       window.close()
                     },2000); */
                       this.session
@@ -157,8 +168,8 @@ export class LoginUserComponent implements OnInit {
       });
     }
   }
-   //google
-   loginGoogle() {
+  //google
+  loginGoogle() {
     //Iniciar sesion con google
     this.socialAuthService
       .signIn(GoogleLoginProvider.PROVIDER_ID)

@@ -1,83 +1,61 @@
-<form method="get">
+<form [formGroup]="profileForm">
     <h1 class="titulo">Preferencias de empleo</h1>
     <label class="sub">Puesto de trabajo deseado</label>
-    <input value="">
-    <label class="sub">Industria deseada</label>
-    <input value="">
+    <input value="" formControlName="role">
     <label class="sub">Tipo de trabajo</label>
     <div class="row">
         <div class="col-12 col-lg-4 col-md-4">
             <!--Input checkox-->
-            <label class="checkbox">
-                <input type="checkbox">
-                <span class="check"></span>
-                <span class="textCheck">Tiempo completo</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" checked>
-                <span class="check"></span>
-                <span class="textCheck">Medio tiempo</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox">
-                <span class="check"></span>
-                <span class="textCheck">Tiempo indefinido</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox">
-                <span class="check"></span>
-                <span class="textCheck">Por contrato</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox">
-                <span class="check"></span>
-                <span class="textCheck">Temporal</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox">
-                <span class="check"></span>
-                <span class="textCheck">Comisión</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox">
-                <span class="check"></span>
-                <span class="textCheck">Becario/Prácticas profesionales</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox">
-                <span class="check"></span>
-                <span class="textCheck">Desde casa</span>
-            </label>
+            <ng-container formArrayName="job_type">
+                <div class="row" [formGroup]="jobTypeForm">
+                    <div class="dropdown col-12 col-lg-4 col-md-4">
+                        <select class="drop2 dropdown-toggle" style="color:black" formControlName="ID"
+                            >
+                            <option [value]="tipos[0].ID">{{tipos[0].type}}</option>
+                            <option [value]="tipos[1].ID">{{tipos[1].type}}</option>
+                            <option [value]="tipos[2].ID">{{tipos[2].type}}</option>
+                        </select>
+                    </div>
+                    <div class="dropdown col-12 col-lg-4 col-md-4">
+                        <select class="drop2 dropdown-toggle" style="color:black" formControlName="ID1"
+                            >
+                            <option [value]="tipos[3].ID">{{tipos[3].type}}</option>
+                            <option [value]="tipos[4].ID">{{tipos[4].type}}</option>
+                        </select>
+                    </div>
+                    <div class="dropdown col-12 col-lg-4 col-md-4">
+                        <select class="drop2 dropdown-toggle" style="color:black" formControlName="ID2"
+                            >
+                            <option [value]=tipos[5].ID>{{tipos[5].type}}</option>
+                            <option [value]=tipos[6].ID>{{tipos[6].type}}</option>
+                        </select>
+                    </div>
+                </div>
+            </ng-container>
         </div>
     </div>
     <label class="sub">Tiempo de experiencia</label>
     <div class="dropdown">
-        <button class="drop dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Selecciona una opción
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Jr. (0-2 años de experiencia)</a>
-            <a class="dropdown-item" href="#">Full (3-6 años de experiencia)</a>
-            <a class="dropdown-item" href="#">Sr. (+ 6 años de experiencia)</a>
-        </div>
+        <select class="drop dropdown-toggle" formControlName="laboral_exp">
+            <option class="dropdown-item" value=0>Jr. (0-2 años de experiencia)</option>
+            <option class="dropdown-item" value=1>Full (3-6 años de experiencia)</option>
+            <option class="dropdown-item" value=2>Sr. (+ 6 años de experiencia)</option>
+        </select>
     </div>
     <label class="sub">Rango de salario deseado</label>
     <div class="row">
         <div class="col-8 col-lg-5 col-md-8">                        
-            <input type="number">
+            <input type="number" formControlName="expected_salary">
         </div>
         <div class="col-4 col-lg-3 col-md-4">
             <div class="dropdown">
-                <button class="drop dropdown-toggle mt-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    al mes
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">al mes</a>
-                    <a class="dropdown-item" href="#">al año</a>
-                    <a class="dropdown-item" href="#">por semana</a>
-                    <a class="dropdown-item" href="#">al día</a>
-                    <a class="dropdown-item" href="#">por hora</a>
-                </div>
+                <select class="drop dropdown-toggle mt-3" formControlName="expected_period">
+                    <option class="dropdown-item" value=4>al mes</option>
+                    <option class="dropdown-item" value=3>al año</option>
+                    <option class="dropdown-item" value=2>por semana</option>
+                    <option class="dropdown-item" value=1>al día</option>
+                    <option class="dropdown-item" value=0>por hora</option>
+                </select>
             </div>
         </div>
     </div>

@@ -37,7 +37,7 @@ export class CompanyServiceService {
 
   public getCategories() {
     return this.httpService.get(`${this.session.API}getCategories`).pipe(
-      timeout(3000),
+      timeout(10000),
       catchError((err) => {
         console.log(err);
         return of(null);

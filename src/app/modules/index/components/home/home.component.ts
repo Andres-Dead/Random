@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
   public formGroup: FormGroup; //formulario
@@ -27,15 +27,22 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    //Cuando se inicia el componente se obtienen los datos y se inizializa el formulario
-    this.getHomeData();
-    this.iniciarForm();
-    /*     console.log(
+    if (
+      localStorage.getItem('group') != '2' &&
+      localStorage.getItem('group') != '4'
+    ) {
+      //Cuando se inicia el componente se obtienen los datos y se inizializa el formulario
+      this.getHomeData();
+      this.iniciarForm();
+      /*     console.log(
       this.arrCompanies,
       this.arrNewVacants,
       this.arrUrgentVacants,
       this.arrCategories
     ); */
+    } else {
+      this.route.navigate(['/empresa/mesa_trabajo']);
+    }
   }
 
   iniciarForm(): void {
@@ -83,7 +90,7 @@ export class HomeComponent implements OnInit {
           for (let item of data['data'].companies) {
             //llena el array de empresas
             item.profile_pic =
-              'https://capitalempleo.com/profile_pic/' + item.profile_pic; //cambia la url de la imagen
+              'https://ci.capitalempleo.com/profile_pic/' + item.profile_pic; //cambia la url de la imagen
             this.arrCompanies.push(item);
           }
           Swal.close(); //cierra el loading cuando se obtienen los datos

@@ -35,6 +35,8 @@ export class BasicInfoComponent implements OnInit {
       .getInfo(localStorage.getItem('token'))
       .subscribe((response) => {
         this.information = response['data'].company_info;
+        console.log(this.information);
+        
         this.basicInfo.patchValue({
           display_name: this.information.display_name,
           business_name: this.information.business_name,

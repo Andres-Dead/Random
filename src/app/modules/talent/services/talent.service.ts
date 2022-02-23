@@ -39,4 +39,36 @@ export class TalentServiceService {
       headers: new HttpHeaders({ Authorization: token }),
     });
   }
+
+  updateJob(token, form) {
+    return this.httpService.put(`${this.session.API}updateJob`, form, {
+      headers: new HttpHeaders({ Authorization: token }),
+    });
+  }
+
+  getEducation(token) {
+    return this.httpService
+      .get(`${this.session.API}getEducation`, {
+        headers: new HttpHeaders({ Authorization: token }),
+      })
+      .pipe(
+        timeout(30000),
+        catchError((e) => {
+          Swal.close();
+          Swal.fire({
+            icon: 'error',
+            title: '404',
+            text: e.error.message ? e.error.message : this.session.excededTime,
+            confirmButtonColor: '#1c4a83',
+          });
+          return of(null);
+        })
+      );
+  }
+
+  updateWorkExperience(token, form) {
+    return this.httpService.put(`${this.session.API}/WorkExperience`, form, {
+      headers: new HttpHeaders({ Authorization: token }),
+    });
+  }
 }

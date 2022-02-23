@@ -23,6 +23,9 @@ import { NewPaymentComponent } from './components/new-payment/new-payment.compon
 import { NewVacantComponent } from './components/new-vacant/new-vacant.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { PortalComponent } from './components/portal/portal.component';
+import { EditVacantComponent } from './components/edit-vacant/edit-vacant.component';
+import { PostulatesComponent } from './components/postulates/postulates.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 
 @NgModule({
@@ -45,7 +48,10 @@ import { PortalComponent } from './components/portal/portal.component';
     NewPaymentComponent,
     NewVacantComponent,
     PaymentComponent,
-    PortalComponent
+    PortalComponent,
+    EditVacantComponent,
+    PostulatesComponent,
+    WelcomeComponent
   ],
   imports: [
     CommonModule,

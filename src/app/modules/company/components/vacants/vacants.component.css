@@ -3,6 +3,14 @@
     margin-left: 10%;
     margin-right: 10%;
 }
+.nv{
+    width: 20%;
+    min-height: 62px;
+    font-family: 'SegoeUIBold';
+    font-size: 1.25rem;
+    color: #707070;
+    text-decoration: none;
+}
 .nav-link{
     width: 20%;
     min-height: 62px;

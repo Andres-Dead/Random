@@ -7,12 +7,15 @@ import { RegisterService } from '../../../login/services/register.service';
 @Component({
   selector: 'app-jobs',
   templateUrl: './jobs.component.html',
-  styleUrls: ['./jobs.component.css']
+  styleUrls: ['./jobs.component.css'],
 })
 export class JobsComponent implements OnInit {
   public formGroup: FormGroup;
   public formGroup2: FormGroup;
-  
+
+  //var para el accordeon (filtro seleccionado)
+  activeButton: string;
+
   //paginacion
   public p: number = 1;
   public paginas: number;
@@ -175,20 +178,31 @@ export class JobsComponent implements OnInit {
   //Limpiar y Buscar
 
   public buscar() {
-    this.arrEmpleos = this.allEmpleos.filter(
-      (vac) =>
-        vac.location
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, '')
-          .includes(this.formGroup2.get('ubicacion').value.toLowerCase()) &&
-        vac.name_category
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, '')
-          .includes(this.formGroup2.get('area').value.toLowerCase())
-    );
-    this.paginas = Math.ceil(this.arrEmpleos.length / this.numPages);
+    if (
+      this.formGroup2.get('ubicacion').value != '' ||
+      this.formGroup2.get('area').value != ''
+    ) {
+      this.arrEmpleos = this.allEmpleos.filter(
+        (vac) =>
+          vac.location
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .includes(this.formGroup2.get('ubicacion').value.toLowerCase()) &&
+          vac.name_category
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .includes(this.formGroup2.get('area').value.toLowerCase())
+      );
+      this.paginas = Math.ceil(this.arrEmpleos.length / this.numPages);
+    } else {
+      Swal.fire({
+        title: 'Opps!',
+        icon: 'warning',
+        text: 'Al menos un campo debe estar lleno para poder buscar',
+      });
+    }
     return this.arrEmpleos;
   }
 
@@ -253,6 +267,19 @@ export class JobsComponent implements OnInit {
       );
     }
     return this.arrEmpleos;
+  }
+
+  public setActive(buttonName) {
+    console.log(buttonName, this.activeButton);
+    if (buttonName == this.activeButton) {
+      this.activeButton = '';
+      this.limpiar();
+    } else {
+      this.activeButton = buttonName;
+    }
+  }
+  public isActive(buttonName) {
+    return this.activeButton === buttonName;
   }
 
 }

@@ -48,7 +48,7 @@ export class ListCompaniesComponent implements OnInit {
           data['data'].forEach((element) => {
             Swal.close();
             element.profile_pic =
-              'https://capitalempleo.com/profile_pic/' + element.profile_pic;
+              'https://ci.capitalempleo.com/profile_pic/' + element.profile_pic;
             this.arrEmpresas.push(element);
             this.allEmpresas.push(element);
           });

@@ -7,9 +7,12 @@ import { RegisterService } from 'src/app/modules/login/services/register.service
 @Component({
   selector: 'app-jobs-views',
   templateUrl: './jobs-views.component.html',
-  styleUrls: ['./jobs-views.component.css']
+  styleUrls: ['./jobs-views.component.css'],
 })
 export class JobsViewsComponent implements OnInit {
+  //toggle filters accordeon
+  public activeButton: string;
+
   public formGroup: FormGroup;
   public arrApplications: any[] = [];
   public arrFavsVacancies: any[] = [];
@@ -470,19 +473,19 @@ export class JobsViewsComponent implements OnInit {
       denyButtonColor: '#68B744',
     }).then((result) => {
       if (result.isConfirmed) {
-        this.router.navigate(['/perfil_empresa', id_company]);
+        this.router.navigate(['/inicio/perfil_empresa', id_company]);
       } else if (result.isDenied) {
-        this.router.navigate(['/detalle_trabajo', id_vacant]);
+        this.router.navigate(['/inicio/detalle_empleo', id_vacant]);
       }
     });
   }
 
   public linkToVacante(id: number) {
-    this.router.navigate(['/detalle_trabajo', id]);
+    this.router.navigate(['/inicio/detalle_empleo', id]);
   }
 
   public linkToEmpresa(id: number) {
-    this.router.navigate(['/perfil_empresa', id]);
+    this.router.navigate(['/inicio/perfil_empresa', id]);
   }
 
   //notificaciones
@@ -492,4 +495,17 @@ export class JobsViewsComponent implements OnInit {
       .subscribe((data: Data) => {});
   }
 
+  //toggleFilters
+  public setActive(buttonName) {
+    console.log(buttonName, this.activeButton);
+    if (buttonName == this.activeButton) {
+      this.activeButton = '';
+      this.limpiar();
+    } else {
+      this.activeButton = buttonName;
+    }
+  }
+  public isActive(buttonName) {
+    return this.activeButton === buttonName;
+  }
 }

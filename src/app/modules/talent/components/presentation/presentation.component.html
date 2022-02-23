@@ -1,21 +1,20 @@
-<form>
+<form [formGroup]="profileForm" (ngSubmit)="updateInfo()">
     <h1 class="titulo">Presentación</h1>
     <label class="sub mb-3">Cuéntanos de qué manera aportarían tus conocimientos a la empresa que te contrate.</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Ej., Aportar, desarrollar y aplicar mis conocimiento y experiencia a la empresa contratante, con el firme propósito de contribuir a su crecimiento y rentabilidad."></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+        placeholder="Ej., Aportar, desarrollar y aplicar mis conocimiento y experiencia a la empresa contratante, con el firme propósito de contribuir a su crecimiento y rentabilidad."
+        formControlName="description" [readonly]="readOnly"></textarea>
     <p class="subP text-right mt-3">
         Máximo 300 caracteres
     </p>
     <div class="row">
         <div class="col-8 col-lg-4 col-md-6 mt-3">
-            <button type="submit" class="boton2">Editar información</button>
+            <button type="submit" class="boton2" (click)="disabled()">Editar información</button>
         </div>
     </div>
     <div class="row">
-        <div class="col-6 col-lg-4 col-md-6">
-            <!--button type="submit" class="boton2">Guardar</button-->
-        </div>
-        <div class="col-6 col-lg-4 col-md-6">
-            <!--button type="submit" class="boton5">Cancelar</button-->
+        <div class="col-8 col-lg-4 col-md-6 mt-3">
+            <button class="boton2" type="submit" [disabled]="readOnly">Guardar</button>
         </div>
     </div>
 </form>

@@ -1,0 +1,129 @@
+.nav-link{
+    width: 25%;
+    min-height: 96px;
+    font-family: 'SegoeUIBold';
+    font-size: 1.25rem;
+    color: #707070;
+    background: #F3F3F3;
+    border-radius: 0; 
+    text-align: center;
+    border-bottom: 4px solid #707070;
+    padding-top: 2.5%;
+}
+.nav-tabs{
+    position: relative;
+    z-index: 1;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+    background: #EEF5FF;
+    border: none;
+    border-bottom: 4px solid #1C4A83;
+    color: #1C4A83;
+}
+/*pagination*/
+.paginacion /deep/ .ngx-pagination .pagination-next a::after{
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+}
+.paginacion /deep/ .ngx-pagination .pagination-next.disabled::after{
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+}
+.paginacion /deep/ .ngx-pagination .pagination-previous a::before{
+    font-family: "Font Awesome 5 Pro";
+    content: "\f053";
+}
+.paginacion /deep/  .ngx-pagination .pagination-previous.disabled::before{
+    font-family: "Font Awesome 5 Pro";
+    content: "\f053";
+}
+
+img.mx-auto.d-block.imgEmpGuar {
+    width:5vh;
+}
+
+.row.mb-5.hand {
+    cursor: pointer;
+}
+.text9{
+    font-family: 'SegoeUIBold';
+    font-size: 1.5rem;
+    color: #707070;
+}
+.accordion-button{
+    font-family: 'SegoeUISemibold';
+    font-size: 1.1rem;
+    color: #707070;
+    background: #F3F3F3;
+    box-shadow: none;
+    border: none;
+}
+ .accordion-button:not(.collapsed){
+    color: #707070;
+    background: #fff;
+    box-shadow: none;
+    border: none;
+}
+ .accordion-button:focus{
+    box-shadow: none;
+}
+ .accordion-body{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.accordion-body button{
+    color: #707070;
+    background: #fff;
+    border: none;
+    font-family: 'SegoeUI';
+    font-size: .9rem;
+    margin-bottom: 5%;
+    width: 100%;
+    height: 35px;
+    text-align: left;
+    padding-left: 5%;
+}
+ .accordion-body button:active{
+    background: #EEF5FF;
+    border-radius: 21px;
+}
+.accordion-body label{
+    font-family: 'SegoeUI';
+    font-size: .9rem;
+    color: #707070;
+}
+/*modal filtros*/
+.modalFiltros .modal-content .modal-body{
+    padding: 0;
+}
+.modalFiltros .modal-content .text7{
+    color: #1C4A83;
+    text-decoration: underline;
+}
+.modalFiltros .modal-content .input1{
+    width: 100%;
+    border-radius: 10px;
+    min-height: 36px;
+    border: 1px solid #707070;
+}
+.modalFiltros .modal-content .accordion{
+    border: none;
+    padding-right: 0;
+    margin-right: 0;
+}
+.modalFiltros .modal-content .boton{
+    width: 40%;
+    min-height: 34px;
+    border: none;
+    border-radius: 23px;
+    background: #1C4A83;
+    color: #fff;
+}
+.modalFiltros .modal-content .accordion-button{
+    font-family: 'SegoeUISemibold';
+    font-size: 1.1rem;
+    color: #707070;
+    background: #F3F3F3;
+    box-shadow: none;
+    border: none;
+}

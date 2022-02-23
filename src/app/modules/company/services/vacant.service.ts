@@ -80,4 +80,15 @@ export class VacantService {
       return of(null);
     }))
   }
+
+  getVacant(token, id){
+    return this.httpService.get(`${this.session.API}vacant/${id}`,{
+      headers: new HttpHeaders({ Authorization: token })})
+    .pipe(timeout(5000), catchError(err =>{
+      console.log(err);
+      return of(null);
+    }))
+  }
+
+
 }

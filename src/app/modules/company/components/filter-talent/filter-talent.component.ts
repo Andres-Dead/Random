@@ -7,9 +7,12 @@ import { CompanyServiceService } from '../../services/company-service.service';
 @Component({
   selector: 'app-filter-talent',
   templateUrl: './filter-talent.component.html',
-  styleUrls: ['./filter-talent.component.css']
+  styleUrls: ['./filter-talent.component.css'],
 })
 export class FilterTalentComponent implements OnInit {
+  //toggle filters accordeon
+  public activeButton: string;
+
   public formGroup: FormGroup;
   public formGroup2: FormGroup;
 
@@ -214,7 +217,8 @@ export class FilterTalentComponent implements OnInit {
     if (
       this.formGroup.get('tipo').value == null ||
       this.formGroup.get('estado').value == null
-    ) { return this.arrTalentos;
+    ) {
+      return this.arrTalentos;
     } else {
       this.arrTalentos = this.allTalentos.filter(
         (vac) =>
@@ -248,4 +252,17 @@ export class FilterTalentComponent implements OnInit {
     });
   }
 
+  //toggleFilters
+  public setActive(buttonName) {
+    console.log(buttonName, this.activeButton);
+    if (buttonName == this.activeButton) {
+      this.activeButton = '';
+      this.limpiar();
+    } else {
+      this.activeButton = buttonName;
+    }
+  }
+  public isActive(buttonName) {
+    return this.activeButton === buttonName;
+  }
 }

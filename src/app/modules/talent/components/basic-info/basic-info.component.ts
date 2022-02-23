@@ -48,30 +48,31 @@ export class BasicInfoComponent implements OnInit {
       .getInfo(localStorage.getItem('token'))
       .subscribe((response) => {
         this.information = response['data'];
+        console.log(this.information);
         this.profileForm.patchValue({
-          first_name: this.information.first_name,
-          last_name:   this.information.last_name,
-          gender:   this.information.gender,
-          birthdate:   this.information.birthdate,
-          country:  this.information.country,
-          location:  this.information.state,
-          handicap:  this.information.handicap,
-          civil_status:  this.information.civil_status,
-          travel:  this.information.travel,
-          education:  this.information.education,
-          has_car:  this.information.has_car,
-          has_job:  this.information.has_job,
-          license:   this.information.license,
-          contact_email: this.information.contact_email,
-          linkedin: this.information.linkedin,
-          phone: this.information.phone,
-          whatsapp: this.information.whatsapp
+          first_name: this.information['persona_info'].first_name,
+          last_name:   this.information['persona_info'].last_name,
+          gender:   this.information['persona_info'].gender,
+          birthdate:   this.information['persona_info'].birthdate,
+          country:  this.information['persona_info'].country,
+          location:  this.information['persona_info'].state,
+          handicap:  this.information['persona_info'].handicap,
+          civil_status:  this.information['persona_info'].civil_status,
+          travel:  this.information['persona_info'].travel,
+          education:  this.information['persona_info'].education,
+          has_car:  this.information['persona_info'].has_car,
+          has_job:  this.information['persona_info'].has_job,
+          license:   this.information['persona_info'].license,
+          contact_email: this.information['persona_info'].contact_email,
+          linkedin: this.information['persona_info'].linkedin,
+          phone: this.information['persona_info'].phone,
+          whatsapp: this.information['persona_info'].whatsapp
         });
       });
   }
 
   updateInfo(){
-    return this.service.updateInfo(localStorage.getItem('token'),this.profileForm.value)
+    return this.service.updateInfo(localStorage.getItem('token'),this.information['persona_info'].value)
   }
 
   MoveLocation() {

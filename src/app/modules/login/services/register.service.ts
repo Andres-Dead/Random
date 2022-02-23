@@ -9,10 +9,11 @@ import { of } from 'rxjs/internal/observable/of';
 import Swal from 'sweetalert2';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RegisterService {
-  API: string = 'http://c6c4-187-212-196-100.ngrok.io/API';
+  /* API: string = 'http://380d-187-212-196-100.ngrok.io/API'; */
+  API: string = 'https://ci.capitalempleo.com/API';
   constructor(private clienteHttp: HttpClient) {}
   public TiempoAgotado: string =
     'Tiempo de espera agotado. Intente de nuevo más tarde.';
@@ -25,7 +26,7 @@ export class RegisterService {
         Swal.fire({
           icon: 'error',
           title: '404',
-          text: e.error.error ? e.error.error : this.TiempoAgotado,
+          text: e.error.email ? e.error.email : this.TiempoAgotado,
           confirmButtonColor: '#1c4a83',
         });
         return of(null);
@@ -578,5 +579,4 @@ export class RegisterService {
         })
       );
   }
-
 }

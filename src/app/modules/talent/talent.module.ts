@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { TalentRoutingModule } from './talent-routing.module';
@@ -18,6 +18,8 @@ import { ReviewCompanyComponent } from './components/review-company/review-compa
 import { WorkTableComponent } from './components/work-table/work-table.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { JobsViewsComponent } from './components/jobs-views/jobs-views.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { JobsViewsComponent } from './components/jobs-views/jobs-views.component
     ReviewCompanyComponent,
     WorkTableComponent,
     JobsViewsComponent,
+    ProfileComponent,
+    WelcomeComponent,
   ],
   imports: [
     CommonModule,
@@ -43,5 +47,8 @@ import { JobsViewsComponent } from './components/jobs-views/jobs-views.component
     FormsModule,
     NgxPaginationModule
   ],
+  schemas:[
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class TalentModule {}

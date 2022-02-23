@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Data } from '@angular/router';
+import { Component, Inject, OnInit } from '@angular/core';
+import { ActivatedRoute, Data, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { HttpErrorResponse } from '@angular/common/http';
 import { RegisterService } from '../../../login/services/register.service';
 import { SessionService } from '../../../login/services/session.service';
 
+import { DOCUMENT } from '@angular/common';
+
 @Component({
   selector: 'app-job-details',
   templateUrl: './job-details.component.html',
-  styleUrls: ['./job-details.component.css']
+  styleUrls: ['./job-details.component.css'],
 })
 export class JobDetailsComponent implements OnInit {
   public id_vacante: number;
@@ -20,13 +22,18 @@ export class JobDetailsComponent implements OnInit {
   public favs: any;
   public isfollow = false;
 
+  public cvTkn: string;
+
   constructor(
+    @Inject(DOCUMENT) private document: Document,
     private route: ActivatedRoute,
     private servicio: RegisterService,
-    private group: SessionService
+    private group: SessionService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
+    this.cvTkn = localStorage.getItem('token'); //obtenemos el token y lo guardamos en la variable cvTkn
     this.obtenerGroup();
     this.id_vacante = this.route.snapshot.params['id']; //obtener el id de la vacante
     this.vacView();
@@ -62,7 +69,7 @@ export class JobDetailsComponent implements OnInit {
               Object.entries(data['data'].info).forEach(([key, value]) => {
                 this.arrInfo[key] = value;
                 this.arrInfo['profile_pic'] =
-                  'https://capitalempleo.com/profile_pic/' +
+                  'https://ci.capitalempleo.com/profile_pic/' +
                   data['data'].info['profile_pic'];
               });
               this.vacanteAct = data['data'].follow.id_follow;
@@ -229,24 +236,18 @@ export class JobDetailsComponent implements OnInit {
 
   public viewCv() {
     //checo que la sesion este iniciada
-    if (localStorage.getItem('token') != null) {
-      //si esta iniciada
-      window.location.href = '/perfil_usuario';
-    } else {
-      //si no esta iniciada
-      Swal.fire({
-        icon: 'warning',
-        title: 'Oops...',
-        text: 'Debes iniciar sesión para ver tu CV',
-        confirmButtonColor: '#1c4a83',
-        confirmButtonText: 'Iniciar sesión',
-        focusConfirm: false,
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = '/login';
-        }
-      });
-    }
+    Swal.fire({
+      icon: 'warning',
+      title: 'Oops...',
+      text: 'Debes iniciar sesión para ver tu CV',
+      confirmButtonColor: '#1c4a83',
+      confirmButtonText: 'Iniciar sesión',
+      focusConfirm: false,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = '/login';
+      }
+    });
   }
 
   public reportar() {
@@ -319,5 +320,4 @@ export class JobDetailsComponent implements OnInit {
       });
     }
   }
-
 }
