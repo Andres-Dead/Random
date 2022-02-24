@@ -1,87 +1,58 @@
-<div class="lesson-form-row" [formGroup]="workExperienceForms">
-    <h1 class="titulo">Experiencia laboral</h1>
-    <ng-container>
-        <ng-container>
-            <div>
-            <label class="sub">Nombre de la empresa</label>
-            <input type="text" formControlName="company_name"/>
-            <label class="sub">Puesto</label>
-            <input type="text" formControlName="role"/>
-            <div class="row">
-                <div class="row">
-                    <div class="col-12 col-lg-4 col-md-4">
-                        <label class="sub">Fecha de inicio</label>
-                        <input type="date" formControlName="start_date"/>
-                    </div>
-                    <div class="col-12 col-lg-4 col-md-4">
-                        <label class="sub">Fecha de termino</label>
-                        <input type="date" formControlName="end_date"/>
-                    </div>
-                    <div class="col-12 col-lg-4 col-md-4 mt-lg-4 mt-3">
-                        <label class="checkbox">
-                            <input type="checkbox" formControlName="active" />
-                            <span class="check"></span>
-                            <span class="textCheck">Sigo en ese puesto</span>
-                        </label>
-                    </div>
-                </div>
-                <label class="sub mt-3">Estado/Localidad</label>
-                <input type="text" formControlName="location"/>
-                <label class="sub">Detalles</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="details"></textarea>
-            </div>
-            </div>
-        </ng-container>
-        <div class="row">
-            <div class="col-6 col-lg-4 col-md-6">
-                <button type="submit" class="boton2">Guardar</button>
-            </div>
-        </div>
+<div class="lesson-form-row">
+  <h1 class="titulo">Experiencia laboral</h1>
+  <div [formGroup]="form">
+    <ng-container formArrayName="lesson">
+      <ng-container *ngFor="let lessons of lesson.controls; let i = index">
+        
+          <label class="sub">Nombre de la empresa</label>
+          <mat-form-field appearance="fill">
+            <input matInput type="text" [formControlName]="i" />
+          </mat-form-field>
+          <!-- <label class="sub">Puesto</label> -->
+          <!-- <input type="text" formControlName="role" /> -->
+          <!-- <div class="row"> -->
+          <!-- <div class="row"> -->
+          <!-- <div class="col-12 col-lg-4 col-md-4"> -->
+          <!-- <label class="sub">Fecha de inicio</label> -->
+          <!-- <input type="date" formControlName="start_date" /> -->
+          <!-- </div> -->
+          <!-- <div class="col-12 col-lg-4 col-md-4"> -->
+          <!-- <label class="sub">Fecha de termino</label> -->
+          <!-- <input type="date" formControlName="end_date" /> -->
+          <!-- </div> -->
+          <!-- <div class="col-12 col-lg-4 col-md-4 mt-lg-4 mt-3"> -->
+          <!-- <label class="checkbox"> -->
+          <!-- <input type="checkbox" formControlName="active" /> -->
+          <!-- <span class="check"></span> -->
+          <!-- <span class="textCheck">Sigo en ese puesto</span> -->
+          <!-- </label> -->
+          <!-- </div> -->
+          <!-- </div> -->
+          <!-- <label class="sub mt-3">Estado/Localidad</label> -->
+          <!-- <input type="text" formControlName="location" /> -->
+          <!-- <label class="sub">Detalles</label> -->
+          <!-- <textarea -->
+          <!-- class="form-control" -->
+          <!-- id="exampleFormControlTextarea1" -->
+          <!-- rows="3" -->
+          <!-- formControlName="details" -->
+          <!-- ></textarea> -->
+        
+      </ng-container>
     </ng-container>
-    <div class="row">
-        <div class="col-3 col-lg-4 col-md-3">
-            <button class="boton2">Agregar</button>
-        </div>
+  </div>
+  <!-- <div class="row"> -->
+  <!-- <div class="col-6 col-lg-4 col-md-6"> -->
+  <!-- <button type="submit" class="boton2">Guardar</button> -->
+  <!-- </div> -->
+  <!-- </div> -->
+  <div class="row">
+    <div class="col-3 col-lg-4 col-md-3">
+      <button class="boton2" type="button" (click)="AddWorkExperience()">Agregar</button>
     </div>
-</div>
-<div class="lesson-form-row" *ngFor="let item of profileForm.get('work_experience').value" [formGroup]="workExperienceForms">
-    <h1 class="titulo">Experiencia laboral</h1>
-    <ng-container>
-        <ng-container>
-            <div>
-            <label class="sub">Nombre de la empresa</label>
-            <input type="text" formControlName="">
-            <label class="sub">Puesto</label>
-            <input type="text" />
-            <div class="row">
-                <div class="row">
-                    <div class="col-12 col-lg-4 col-md-4">
-                        <label class="sub">Fecha de inicio</label>
-                        <input type="date"/>
-                    </div>
-                    <div class="col-12 col-lg-4 col-md-4">
-                        <label class="sub">Fecha de termino</label>
-                        <input type="date"/>
-                    </div>
-                    <div class="col-12 col-lg-4 col-md-4 mt-lg-4 mt-3">
-                        <label class="checkbox">
-                            <input type="checkbox"/>
-                            <span class="check"></span>
-                            <span class="textCheck">Sigo en ese puesto</span>
-                        </label>
-                    </div>
-                </div>
-                <label class="sub mt-3">Estado/Localidad</label>
-                <input type="text"/>
-                <label class="sub">Detalles</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            </div>
-            <div class="row">
-                <div class="col-3 col-lg-4 col-md-3">
-                    <button class="boton2">Eliminar</button>
-                </div>
-            </div>
-        </ng-container>
-    </ng-container>
+
+    <!-- <div class="col-3 col-lg-4 col-md-3"> -->
+    <!-- <button class="boton2" (click)="deleteWorkExperience(i)">Eliminar</button> -->
+    <!-- </div> -->
+  </div>
 </div>
