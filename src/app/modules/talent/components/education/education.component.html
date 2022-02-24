@@ -1,38 +1,45 @@
-<ng-container>
-    <ng-container>
-        <div>
-            <h1 class="titulo">Educación y formación</h1>
-            <label class="sub">Nombre de la institución</label>
-            <input type="text">
-            <label class="sub">Título o grado académico</label>
-            <input type="text">
-        </div>
-        <div class="row">
-            <div class="col-12 col-lg-4 col-md-4">
-                <label class="sub">Fecha de inicio</label>
-                <input type="date">
+<div>
+    <h1 class="titulo">Educación y formación</h1>
+</div>
+<div [formGroup]="educationForm">
+    <ng-container formArrayName="education">
+        <ng-container *ngFor="let formEducation of education.controls">
+            <div [formGroup]="formEducation">
+                <label class="sub">Nombre de la institución</label>
+                <input type="text" formControlName="institution">
+                <label class="sub">Título o grado académico</label>
+                <input type="text" formControlName="academic_level">
+                <div class="row">
+                    <div class="col-12 col-lg-4 col-md-4">
+                        <label class="sub">Fecha de inicio</label>
+                        <input type="date" formControlName="start_date">
+                    </div>
+                    <div class="col-12 col-lg-4 col-md-4">
+                        <label class="sub">Fecha de termino</label>
+                        <input type="date" formControlName="end_date">
+                    </div>
+                    <div class="col-12 col-lg-4 col-md-4 mt-lg-4 mt-3">
+                        <label class="checkbox">
+                            <input type="checkbox" formControlName="student">
+                            <span class="check"></span>
+                            <span class="textCheck">Aún soy estudiante</span>
+                        </label>
+                    </div>
+                    <label class="sub mt-3">Estado/Localidad</label>
+                    <input type="text" formControlName="location">
+                </div>
+                <div class="row">
+                    <div class="col-6 col-lg-4 col-md-6">
+                        <button type="submit" class="boton2">Guardar</button>
+                    </div>
+                    <div class="col-6 col-lg-4 col-md-6">
+                        <button type="submit" class="boton5">Cancelar</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-12 col-lg-4 col-md-4">
-                <label class="sub">Fecha de termino</label>
-                <input type="date">
-            </div>
-            <div class="col-12 col-lg-4 col-md-4 mt-lg-4 mt-3">
-                <label class="checkbox">
-                    <input type="checkbox">
-                    <span class="check"></span>
-                    <span class="textCheck">Aún soy estudiante</span>
-                </label>
-            </div>
-            <label class="sub mt-3">Estado/Localidad</label>
-            <input type="text">
-        </div>
-        <div class="row">
-            <div class="col-6 col-lg-4 col-md-6">
-                <button type="submit" class="boton2">Guardar</button>
-            </div>
-            <div class="col-6 col-lg-4 col-md-6">
-                <button type="submit" class="boton5">Cancelar</button>
-            </div>
-        </div>
+        </ng-container>
     </ng-container>
-</ng-container>
+</div>
+<div>
+    <button type="submit" class="boton4"><img src="../../../../../assets/img/agregar.svg"></button>
+</div>
