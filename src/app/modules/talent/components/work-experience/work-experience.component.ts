@@ -70,7 +70,6 @@ export class WorkExperienceComponent implements OnInit {
             this.information = response['data'];
             this.loadForm(this.information.work_experience)
           });
-          //AHORA QUE HAGO XDDDDD
       },
     });
   }
