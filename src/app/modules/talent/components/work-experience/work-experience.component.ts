@@ -49,7 +49,6 @@ export class WorkExperienceComponent implements OnInit{
   // }
 
   getInfo() {
-<<<<<<< HEAD
   Swal.fire({
   title: 'Cargando...',
   html: 'Espere un momento por favor',
@@ -65,23 +64,5 @@ export class WorkExperienceComponent implements OnInit{
   });
   },
   });
-=======
-    Swal.fire({
-      title: 'Cargando...',
-      html: 'Espere un momento por favor',
-      allowOutsideClick: false,
-      allowEscapeKey: false,
-      didOpen: () => {
-        Swal.showLoading();
-        return this.service
-          .getInfo(localStorage.getItem('token'))
-          .subscribe((response) => {
-            Swal.close();
-            this.information = response['data'];
-            this.loadForm(this.information.work_experience)
-          });
-      },
-    });
->>>>>>> 95ca9909048148e83b77453b83d80ecc2f0c2f4e
   }
 }
