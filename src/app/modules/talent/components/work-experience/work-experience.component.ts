@@ -8,10 +8,13 @@ import Swal from 'sweetalert2';
   templateUrl: './work-experience.component.html',
   styleUrls: ['./work-experience.component.css'],
 })
-export class WorkExperienceComponent implements OnInit{
+export class WorkExperienceComponent implements OnInit {
   public readOnly: boolean = true;
 
   information: any;
+  workE: any;
+  lessonsForm: any;
+  experiencias = [];
   // workExperienceForms: FormGroup;
   form: FormGroup = this.fb.group({
     lesson: this.fb.array([this.fb.control('', [Validators.required])]),
@@ -20,7 +23,7 @@ export class WorkExperienceComponent implements OnInit{
   constructor(private fb: FormBuilder, private service: TalentServiceService) {}
 
   ngOnInit(): void {
-  this.getInfo();
+    this.getInfo();
   }
 
   get lesson() {
@@ -28,41 +31,41 @@ export class WorkExperienceComponent implements OnInit{
   }
 
   AddWorkExperience() {
-    this.lesson.push(this.fb.control('', [Validators.required]));
-    // const lessonForm = this.fb.group({
-    // company_name: ['', Validators.required],
-    // role: ['', Validators.required],
-    // start_date: ['', Validators.required],
-    // end_date: ['', Validators.required],
-    // active: [false, Validators.required],
-    // location: ['', Validators.required],
-    // details: ['', Validators.required],
-    // });
+    const lessonForm = this.fb.group({
+      company_name: ['', Validators.required],
+      role: ['', Validators.required],
+      start_date: ['', Validators.required],
+      end_date: ['', Validators.required],
+      active: [false, Validators.required],
+      location: ['', Validators.required],
+      details: ['', Validators.required],
+    });
+    this.lesson.push(lessonForm);
+    console.log(this.form.value);
   }
 
-  // deleteWorkExperience(experienceIndex) {
-  // this.work_experience.removeAt(experienceIndex);
-  // }
-
-  // disabled() {
-  // return (this.readOnly = false);
-  // }
-
   getInfo() {
-  Swal.fire({
-  title: 'Cargando...',
-  html: 'Espere un momento por favor',
-  allowOutsideClick: false,
-  allowEscapeKey: false,
-  didOpen: () => {
-  Swal.showLoading();
-  return this.service
-  .getInfo(localStorage.getItem('token'))
-  .subscribe((response) => {
-  Swal.close();
-  this.information = response['data'];
-  });
-  },
-  });
+    Swal.fire({
+      title: 'Cargando...',
+      html: 'Espere un momento por favor',
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      didOpen: () => {
+        Swal.showLoading();
+        return this.service
+          .getInfo(localStorage.getItem('token'))
+          .subscribe((response) => {
+            Swal.close();
+            this.information = response['data'];
+            this.workE = this.information.work_experience;
+            this.fillForm(this.workE);
+          });
+      },
+    });
+  }
+
+  fillForm(data) {
+    this.experiencias.push(data);
+    console.log(this.experiencias);
   }
 }

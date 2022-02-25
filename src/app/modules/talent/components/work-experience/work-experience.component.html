@@ -1,58 +1,84 @@
 <div class="lesson-form-row">
   <h1 class="titulo">Experiencia laboral</h1>
+  <div *ngFor="let item of this.workE">
+    <br>
+    <label class="sub">Nombre de la empresa</label>
+    <mat-form-field appearance="fill">
+      <p>{{item.company_name}}</p>
+    </mat-form-field>
+    <label class="sub">Puesto</label>
+    <mat-form-field>
+      <p>{{item.role}}</p>
+    </mat-form-field>
+    <div class="col-12 col-lg-4 col-md-4">
+      <label class="sub">Fecha de inicio</label>
+      <p>{{item.start_date | date : 'dd/MM/yyyy'}}</p>
+    </div>
+    <div class="col-12 col-lg-4 col-md-4">
+      <label class="sub">Fecha de termino</label>
+      <p>{{item.end_date | date : 'dd/MM/yyyy'}}</p>
+    </div>
+    <div class="col-12 col-lg-4 col-md-4 mt-lg-4 mt-3">
+      <label class="checkbox">
+        <input type="checkbox" />
+        <span class="check"></span>
+        <span class="textCheck">Sigo en ese puesto</span>
+      </label>
+    </div>
+    <label class="sub mt-3">Estado/Localidad</label>
+    <p>{{item.location}}</p>
+    <label class="sub">Detalles</label>
+    <p>{{item.details}}</p>
+  </div>
+</div>
+{{form.value|json}}
+<div class="lesson-form-row">
   <div [formGroup]="form">
     <ng-container formArrayName="lesson">
       <ng-container *ngFor="let lessons of lesson.controls; let i = index">
-        
+        <div [formGroup]="lessonsForm">
           <label class="sub">Nombre de la empresa</label>
           <mat-form-field appearance="fill">
-            <input matInput type="text" [formControlName]="i" />
+            <input matInput type="text" formControlName="company_name" />
           </mat-form-field>
-          <!-- <label class="sub">Puesto</label> -->
-          <!-- <input type="text" formControlName="role" /> -->
-          <!-- <div class="row"> -->
-          <!-- <div class="row"> -->
-          <!-- <div class="col-12 col-lg-4 col-md-4"> -->
-          <!-- <label class="sub">Fecha de inicio</label> -->
-          <!-- <input type="date" formControlName="start_date" /> -->
-          <!-- </div> -->
-          <!-- <div class="col-12 col-lg-4 col-md-4"> -->
-          <!-- <label class="sub">Fecha de termino</label> -->
-          <!-- <input type="date" formControlName="end_date" /> -->
-          <!-- </div> -->
-          <!-- <div class="col-12 col-lg-4 col-md-4 mt-lg-4 mt-3"> -->
-          <!-- <label class="checkbox"> -->
-          <!-- <input type="checkbox" formControlName="active" /> -->
-          <!-- <span class="check"></span> -->
-          <!-- <span class="textCheck">Sigo en ese puesto</span> -->
-          <!-- </label> -->
-          <!-- </div> -->
-          <!-- </div> -->
-          <!-- <label class="sub mt-3">Estado/Localidad</label> -->
-          <!-- <input type="text" formControlName="location" /> -->
-          <!-- <label class="sub">Detalles</label> -->
-          <!-- <textarea -->
-          <!-- class="form-control" -->
-          <!-- id="exampleFormControlTextarea1" -->
-          <!-- rows="3" -->
-          <!-- formControlName="details" -->
-          <!-- ></textarea> -->
-        
+          <label class="sub">Puesto</label>
+          <mat-form-field>
+            <input type="text" formControlName="role" />
+          </mat-form-field>
+          <div class="col-12 col-lg-4 col-md-4">
+            <label class="sub">Fecha de inicio</label>
+            <input type="date" formControlName="start_date" />
+          </div>
+          <div class="col-12 col-lg-4 col-md-4">
+            <label class="sub">Fecha de termino</label>
+            <input type="date" formControlName="end_date" />
+          </div>
+          <div class="col-12 col-lg-4 col-md-4 mt-lg-4 mt-3">
+            <label class="checkbox">
+              <input type="checkbox" formControlName="active" />
+              <span class="check"></span>
+              <span class="textCheck">Sigo en ese puesto</span>
+            </label>
+          </div>
+          <label class="sub mt-3">Estado/Localidad</label>
+          <input type="text" formControlName="location" />
+          <label class="sub">Detalles</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="details"></textarea>
+          <button type="submit" class="boton2" >Guardar</button>
+        </div>
       </ng-container>
     </ng-container>
   </div>
-  <!-- <div class="row"> -->
-  <!-- <div class="col-6 col-lg-4 col-md-6"> -->
-  <!-- <button type="submit" class="boton2">Guardar</button> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <div class="row">
-    <div class="col-3 col-lg-4 col-md-3">
-      <button class="boton2" type="button" (click)="AddWorkExperience()">Agregar</button>
-    </div>
-
-    <!-- <div class="col-3 col-lg-4 col-md-3"> -->
-    <!-- <button class="boton2" (click)="deleteWorkExperience(i)">Eliminar</button> -->
-    <!-- </div> -->
+</div>
+<!-- <div class="row"> -->
+<!-- <div class="col-6 col-lg-4 col-md-6"> -->
+<!-- </div> -->
+<!-- </div> -->
+<div class="row">
+  <div class="col-3 col-lg-4 col-md-3">
+    <button class="boton2" type="button" (click)="AddWorkExperience()">Agregar</button>
   </div>
+  <!-- <div class="col-3 col-lg-4 col-md-3"> -->
+  <!-- <button class="boton2" (click)="deleteWorkExperience(i)">Eliminar</button> -->
+  <!-- </div> -->
 </div>
